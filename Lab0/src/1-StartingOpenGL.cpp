@@ -82,9 +82,9 @@ void checkOpenGLInfo() {
     const GLubyte* vendor = glGetString(GL_VENDOR);
     const GLubyte* version = glGetString(GL_VERSION);
     const GLubyte* glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
-    std::cerr << "OpenGL Renderer: " << renderer << " (" << vendor << ")" << std::endl;
-    std::cerr << "OpenGL version " << version << std::endl;
-    std::cerr << "GLSL version " << glslVersion << std::endl;
+    std::cout << "OpenGL Renderer: " << renderer << " (" << vendor << ")" << std::endl;
+    std::cout << "OpenGL version " << version << std::endl;
+    std::cout << "GLSL version " << glslVersion << std::endl;
 }
 
 void setupOpenGL() {
@@ -142,6 +142,15 @@ void init(int argc, char* argv[]) {
 
 int main(int argc, char* argv[]) {
     init(argc, argv);
+
+#if OS_WINDOWS
+    std::clog << "Engine running in Windows." << std::endl;
+#elif OS_MAC
+    std::clog << "Engine running in Mac." << std::endl;
+#elif OS_LINUX
+    std::cout << "Engine running in Linux." << std::endl;
+#endif
+
     glutMainLoop();
     exit(EXIT_SUCCESS);
 }
