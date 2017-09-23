@@ -101,6 +101,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -115,6 +116,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -135,6 +137,7 @@ copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDi
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -153,6 +156,7 @@ copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDi
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

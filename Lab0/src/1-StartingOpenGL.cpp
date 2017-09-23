@@ -143,10 +143,10 @@ void init(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
     init(argc, argv);
 
-#if OS_WINDOWS
-    std::clog << "Engine running in Windows." << std::endl;
+#if OS_WIN
+    std::cout << "Engine running in Windows." << std::endl;
 #elif OS_MAC
-    std::clog << "Engine running in Mac." << std::endl;
+    std::cout << "Engine running in Mac." << std::endl;
 #elif OS_LINUX
     std::cout << "Engine running in Linux." << std::endl;
 #endif
