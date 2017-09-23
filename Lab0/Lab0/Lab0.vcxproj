@@ -73,27 +73,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\..\dependencies\glew-msvc\include;$(SolutionDir)\..\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <OutDir>$(SolutionDir)..\bin\$(Platform)\</OutDir>
+    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)_dbg</TargetName>
-    <IntDir>$(SolutionDir)..\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\..\dependencies\glew-msvc\include;$(SolutionDir)\..\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <OutDir>$(SolutionDir)..\bin\$(Platform)\</OutDir>
+    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)_dbg</TargetName>
-    <IntDir>$(SolutionDir)..\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)..\bin\$(Platform)\</OutDir>
-    <IncludePath>$(SolutionDir)\..\dependencies\glew-msvc\include;$(SolutionDir)\..\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
+    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>$(ProjectName)_rls</TargetName>
-    <IntDir>$(SolutionDir)..\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)..\bin\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)_rls</TargetName>
-    <IntDir>$(SolutionDir)..\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,7 +103,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\dependencies\freeglut-msvc\lib\;$(SolutionDir)..\dependencies\glew-msvc\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -116,15 +117,15 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)..\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying FreeGLUT
-copy "$(SolutionDir)..\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
+copy "$(SolutionDir)\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
 echo Copying GLEW
-copy "$(SolutionDir)..\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -138,6 +139,8 @@ copy "$(SolutionDir)..\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(Out
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
@@ -154,11 +157,15 @@ copy "$(SolutionDir)..\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(Out
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)..\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
+      <Command>echo Copying FreeGLUT
+copy "$(SolutionDir)\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
+echo Copying GLEW
+copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
