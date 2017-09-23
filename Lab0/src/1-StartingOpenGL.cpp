@@ -20,7 +20,6 @@
 
 #include <iostream>
 #include <sstream>
-#include <string>
 
 #include "GL/glew.h"
 #include "GL/freeglut.h"
@@ -38,32 +37,27 @@ unsigned int FrameCount = 0;
 
 /////////////////////////////////////////////////////////////////////// CALLBACKS
 
-void cleanup()
-{
+void cleanup() {
 }
 
-void display()
-{
+void display() {
     ++FrameCount;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     // Draw something
     glutSwapBuffers();
 }
 
-void idle()
-{
+void idle() {
     glutPostRedisplay();
 }
 
-void reshape(int w, int h)
-{
+void reshape(int w, int h) {
     WinX = w;
     WinY = h;
     glViewport(0, 0, WinX, WinY);
 }
 
-void timer(int value)
-{
+void timer(int value) {
     std::ostringstream oss;
     oss << CAPTION << ": " << FrameCount << " FPS @ (" << WinX << "x" << WinY << ")";
     std::string s = oss.str();
@@ -75,28 +69,25 @@ void timer(int value)
 
 /////////////////////////////////////////////////////////////////////// SETUP
 
-void setupCallbacks() 
-{
+void setupCallbacks() {
     glutCloseFunc(cleanup);
     glutDisplayFunc(display);
     glutIdleFunc(idle);
     glutReshapeFunc(reshape);
-    glutTimerFunc(0,timer,0);
+    glutTimerFunc(0, timer, 0);
 }
 
-void checkOpenGLInfo()
-{
-    const GLubyte *renderer = glGetString(GL_RENDERER);
-    const GLubyte *vendor = glGetString(GL_VENDOR);
-    const GLubyte *version = glGetString(GL_VERSION);
-    const GLubyte *glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
+void checkOpenGLInfo() {
+    const GLubyte* renderer = glGetString(GL_RENDERER);
+    const GLubyte* vendor = glGetString(GL_VENDOR);
+    const GLubyte* version = glGetString(GL_VERSION);
+    const GLubyte* glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
     std::cerr << "OpenGL Renderer: " << renderer << " (" << vendor << ")" << std::endl;
     std::cerr << "OpenGL version " << version << std::endl;
     std::cerr << "GLSL version " << glslVersion << std::endl;
 }
 
-void setupOpenGL() 
-{
+void setupOpenGL() {
     checkOpenGLInfo();
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glEnable(GL_DEPTH_TEST);
@@ -109,8 +100,7 @@ void setupOpenGL()
     glFrontFace(GL_CCW);
 }
 
-void setupGLEW() 
-{
+void setupGLEW() {
     glewExperimental = GL_TRUE;
     // Allow extension entry points to be loaded even if the extension isn't 
     // present in the driver's extensions string.
@@ -118,44 +108,41 @@ void setupGLEW()
     if (result != GLEW_OK) {
         std::cerr << "ERROR glewInit: " << glewGetString(result) << std::endl;
         exit(EXIT_FAILURE);
-    } 
+    }
     GLenum err_code = glGetError();
     // You might get GL_INVALID_ENUM when loading GLEW.
 }
 
-void setupGLUT(int argc, char* argv[])
-{
+void setupGLUT(int argc, char* argv[]) {
     glutInit(&argc, argv);
-    
+
     glutInitContextVersion(4, 3);
     glutInitContextProfile(GLUT_CORE_PROFILE);
     //glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
     glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
     //glutInitContextFlags(GLUT_DEBUG);
 
-    glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_GLUTMAINLOOP_RETURNS);
-    
+    glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
+
     glutInitWindowSize(WinX, WinY);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
     WindowHandle = glutCreateWindow(CAPTION);
-    if(WindowHandle < 1) {
+    if (WindowHandle < 1) {
         std::cerr << "ERROR: Could not create a new rendering window." << std::endl;
         exit(EXIT_FAILURE);
     }
 }
 
-void init(int argc, char* argv[])
-{
+void init(int argc, char* argv[]) {
     setupGLUT(argc, argv);
     setupGLEW();
     setupOpenGL();
     setupCallbacks();
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     init(argc, argv);
-    glutMainLoop();	
+    glutMainLoop();
     exit(EXIT_SUCCESS);
 }
 
