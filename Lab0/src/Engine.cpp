@@ -11,14 +11,13 @@
 #include "Engine.h"
 #include "Debug.h"
 
-#define CAPTION "Hello Blank World"
-
 namespace ThreeEngine {
 
     Engine* Engine::instance = nullptr;
 
     Engine::Engine() {
         instance = this;
+		windowCaption = "Hello World 3Engine";
     }
 
     Engine::~Engine() = default;
@@ -57,7 +56,7 @@ namespace ThreeEngine {
 
         glutInitWindowSize(WinX, WinY);
         glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-        WindowHandle = glutCreateWindow(CAPTION);
+        WindowHandle = glutCreateWindow(windowCaption.c_str());
         if (WindowHandle < 1) {
             Debug::Error("ERROR: Could not create a new rendering window.");
             exit(EXIT_FAILURE);
@@ -135,7 +134,7 @@ namespace ThreeEngine {
 
     void Engine::timer(int) {
         std::ostringstream oss;
-        oss << CAPTION << ": " << instance->FrameCount << " FPS @ (" << instance->WinX << "x"
+        oss << instance->windowCaption << ": " << instance->FrameCount << " FPS @ (" << instance->WinX << "x"
             << instance->WinY << ")";
         std::string s = oss.str();
         glutSetWindow(instance->WindowHandle);

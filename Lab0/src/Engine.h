@@ -16,6 +16,8 @@ namespace ThreeEngine {
             int WinX = 640, WinY = 480;
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
+
+			std::string windowCaption;
         public:
             Engine();
 

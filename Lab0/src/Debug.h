@@ -28,7 +28,12 @@ namespace ThreeEngine {
                 while (1) {
                     formatted.reset(
                             new char[n]); /* Wrap the plain char array into the unique_ptr */
-                    std::strcpy(&formatted[0], fmt_str.c_str());
+					//strcpy(&formatted[0], fmt_str.c_str());
+#if OS_WIN
+					strcpy_s(&formatted[0], n, fmt_str.c_str());
+#else
+					strncpy(&formatted[0], fmt_str.c_str(), n);
+#endif
                     va_start(ap, fmt_str);
                     final_n = vsnprintf(&formatted[0], n, fmt_str.c_str(), ap);
                     va_end(ap);
