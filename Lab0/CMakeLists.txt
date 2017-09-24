@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast")
 
 set(SOURCE_FILES
         src/1-StartingOpenGL.cpp
-        )
+        src/Debug.h src/Engine.cpp src/Engine.h)
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
