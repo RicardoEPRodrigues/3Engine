@@ -1,0 +1,6 @@
+{
+  "shaders": {
+    "vertex": "path/to/shader",
+    "fragment": "path/to/shader"
+  }
+}

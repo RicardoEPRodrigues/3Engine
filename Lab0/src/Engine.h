@@ -14,10 +14,16 @@ namespace ThreeEngine {
             static Engine* instance;
 
             int WinX = 640, WinY = 480;
+            std::string windowCaption;
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
 
-			std::string windowCaption;
+            int openGLMajorVersion = 4;
+            int openGLMinorVersion = 3;
+
+            float clearColor[4] = {0.1, 0.1, 0.1, 1.0};
+            float depthRange[2] = {0.0, 1.0};
+            float clearDepth = 1.0;
         public:
             Engine();
 
@@ -26,6 +32,8 @@ namespace ThreeEngine {
             void init(int argc, char* argv[]);
 
             void checkSystemInfo();
+
+            void setupConfig();
 
             void setupGLUT(int argc, char* argv[]);
 

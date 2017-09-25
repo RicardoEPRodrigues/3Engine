@@ -4,12 +4,16 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include <sstream>
+#include <fstream>
 
 #include "GL/glew.h"
 #include "GL/freeglut.h"
 
 #include "Engine.h"
 #include "Debug.h"
+#include "json.hpp"
+
+using json = nlohmann::json;
 
 namespace ThreeEngine {
 
@@ -17,7 +21,7 @@ namespace ThreeEngine {
 
     Engine::Engine() {
         instance = this;
-		windowCaption = "Hello World 3Engine";
+        windowCaption = "Hello World 3Engine";
     }
 
     Engine::~Engine() = default;
@@ -26,6 +30,7 @@ namespace ThreeEngine {
 
     void Engine::init(int argc, char* argv[]) {
         checkSystemInfo();
+        setupConfig();
         setupGLUT(argc, argv);
         setupGLEW();
         checkOpenGLInfo();
@@ -43,10 +48,52 @@ namespace ThreeEngine {
 #endif
     }
 
+    void Engine::setupConfig() {
+        // Assuming always the same path config/SetupConfig.json
+        std::ifstream file("config/SetupConfig.json");
+        if (file.good()) {
+
+            Debug::Log("Using SetupConfig JSON file.");
+
+            json config;
+            file >> config;
+
+            json windowInfo = config["window"];
+            if (windowInfo != nullptr) {
+                WinX = windowInfo["x"];
+                WinY = windowInfo["y"];
+                windowCaption = windowInfo["caption"];
+            }
+
+            json openglOptions = config["opengl"];
+            if (openglOptions != nullptr) {
+                openGLMajorVersion = openglOptions["major"];
+                openGLMinorVersion = openglOptions["minor"];
+            }
+
+            json viewportOptions = config["viewport"];
+            if (viewportOptions != nullptr) {
+                int i = 0;
+                for (json::iterator it = viewportOptions["clearColor"].begin();
+                     it != viewportOptions["clearColor"].end(); ++it) {
+                    clearColor[i] = *it;
+                    ++i;
+                }
+                i = 0;
+                for (json::iterator it = viewportOptions["depthRange"].begin();
+                     it != viewportOptions["depthRange"].end(); ++it) {
+                    depthRange[i] = *it;
+                    ++i;
+                }
+                clearDepth = viewportOptions["clearDepth"];
+            }
+        }
+    }
+
     void Engine::setupGLUT(int argc, char* argv[]) {
         glutInit(&argc, argv);
 
-        glutInitContextVersion(4, 3);
+        glutInitContextVersion(openGLMajorVersion, openGLMinorVersion);
         glutInitContextProfile(GLUT_CORE_PROFILE);
         //glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
         glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
@@ -72,17 +119,20 @@ namespace ThreeEngine {
             Debug::Error("ERROR glewInit: %s", glewGetString(result));
             exit(EXIT_FAILURE);
         }
-//        GLenum err_code = glGetError();
+        GLenum err_code;
+        while ((err_code = glGetError()) != GL_NO_ERROR) {
+            Debug::GLError(err_code);
+        }
         // You might get GL_INVALID_ENUM when loading GLEW.
     }
 
     void Engine::setupOpenGL() {
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LEQUAL);
         glDepthMask(GL_TRUE);
-        glDepthRange(0.0, 1.0);
-        glClearDepth(1.0);
+        glDepthRange(depthRange[0], depthRange[1]);
+        glClearDepth(clearDepth);
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         glFrontFace(GL_CCW);
@@ -133,8 +183,10 @@ namespace ThreeEngine {
     }
 
     void Engine::timer(int) {
+        // Update Window Title
         std::ostringstream oss;
-        oss << instance->windowCaption << ": " << instance->FrameCount << " FPS @ (" << instance->WinX << "x"
+        oss << instance->windowCaption << ": " << instance->FrameCount << " FPS @ ("
+            << instance->WinX << "x"
             << instance->WinY << ")";
         std::string s = oss.str();
         glutSetWindow(instance->WindowHandle);
