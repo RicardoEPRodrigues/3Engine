@@ -6,6 +6,9 @@
 #ifndef THREEENGINE_ENGINE_H
 #define THREEENGINE_ENGINE_H
 
+#include <string>
+#include "json.hpp"
+
 namespace ThreeEngine {
 
     class Engine {
@@ -13,17 +16,25 @@ namespace ThreeEngine {
             // GLUT needs static method for it's callback functions.
             static Engine* instance;
 
-            int WinX = 640, WinY = 480;
-            std::string windowCaption;
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
 
-            int openGLMajorVersion = 4;
-            int openGLMinorVersion = 3;
-
-            float clearColor[4] = {0.1, 0.1, 0.1, 1.0};
-            float depthRange[2] = {0.0, 1.0};
-            float clearDepth = 1.0;
+            nlohmann::json config = {
+                {"window", {
+                    {"x", 800},
+                    {"y" , 600},
+                    {"caption", "Hello World"}
+                }},
+                {"opengl", {
+                    {"major", 4},
+                    {"minor", 3}
+                }},
+                {"viewport", {
+                    {"clearColor",{0.1f, 0.1f, 0.1f, 1.0f}},
+                    {"depthRange",{0.0f, 1.0f}},
+                    {"clearDepth", 1.0f}
+                }}
+            };
         public:
             Engine();
 

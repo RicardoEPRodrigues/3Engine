@@ -12894,6 +12894,15 @@ basic_json_parser_74:
         return result;
     }
 
+    static basic_json merge(const basic_json &a, const basic_json &b)
+    {
+        basic_json result = a.flatten();
+        basic_json tmp = b.flatten();
+        for (auto it = tmp.begin(); it != tmp.end(); ++it)
+            result[it.key()] = it.value();
+        return result.unflatten();
+    }
+
     /// @}
 };
 

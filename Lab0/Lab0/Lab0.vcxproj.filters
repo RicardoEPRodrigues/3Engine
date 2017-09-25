@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\1-StartingOpenGL.cpp">
+    <ClCompile Include="..\src\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Engine.cpp">
+    <ClCompile Include="..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,5 +29,16 @@
     <ClInclude Include="..\src\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\config\RuntimeConfig.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\config\SetupConfig.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

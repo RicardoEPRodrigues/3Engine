@@ -11,7 +11,6 @@
 
 #include "Engine.h"
 #include "Debug.h"
-#include "json.hpp"
 
 using json = nlohmann::json;
 
@@ -21,7 +20,6 @@ namespace ThreeEngine {
 
     Engine::Engine() {
         instance = this;
-        windowCaption = "Hello World 3Engine";
     }
 
     Engine::~Engine() = default;
@@ -58,42 +56,14 @@ namespace ThreeEngine {
             json config;
             file >> config;
 
-            json windowInfo = config["window"];
-            if (windowInfo != nullptr) {
-                WinX = windowInfo["x"];
-                WinY = windowInfo["y"];
-                windowCaption = windowInfo["caption"];
-            }
-
-            json openglOptions = config["opengl"];
-            if (openglOptions != nullptr) {
-                openGLMajorVersion = openglOptions["major"];
-                openGLMinorVersion = openglOptions["minor"];
-            }
-
-            json viewportOptions = config["viewport"];
-            if (viewportOptions != nullptr) {
-                int i = 0;
-                for (json::iterator it = viewportOptions["clearColor"].begin();
-                     it != viewportOptions["clearColor"].end(); ++it) {
-                    clearColor[i] = *it;
-                    ++i;
-                }
-                i = 0;
-                for (json::iterator it = viewportOptions["depthRange"].begin();
-                     it != viewportOptions["depthRange"].end(); ++it) {
-                    depthRange[i] = *it;
-                    ++i;
-                }
-                clearDepth = viewportOptions["clearDepth"];
-            }
+            this->config = json::merge(this->config, config);
         }
     }
 
     void Engine::setupGLUT(int argc, char* argv[]) {
         glutInit(&argc, argv);
 
-        glutInitContextVersion(openGLMajorVersion, openGLMinorVersion);
+        glutInitContextVersion(config["opengl"]["major"], config["opengl"]["minor"]);
         glutInitContextProfile(GLUT_CORE_PROFILE);
         //glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
         glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
@@ -101,9 +71,9 @@ namespace ThreeEngine {
 
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 
-        glutInitWindowSize(WinX, WinY);
+        glutInitWindowSize(config["window"]["x"], config["window"]["y"]);
         glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-        WindowHandle = glutCreateWindow(windowCaption.c_str());
+        WindowHandle = glutCreateWindow(config["window"]["caption"].dump().c_str());
         if (WindowHandle < 1) {
             Debug::Error("ERROR: Could not create a new rendering window.");
             exit(EXIT_FAILURE);
@@ -127,12 +97,12 @@ namespace ThreeEngine {
     }
 
     void Engine::setupOpenGL() {
-        glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+        glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1], config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LEQUAL);
         glDepthMask(GL_TRUE);
-        glDepthRange(depthRange[0], depthRange[1]);
-        glClearDepth(clearDepth);
+        glDepthRange(config["viewport"]["depthRange"][0], config["viewport"]["depthRange"][1]);
+        glClearDepth(config["viewport"]["clearDepth"]);
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         glFrontFace(GL_CCW);
@@ -177,17 +147,17 @@ namespace ThreeEngine {
     }
 
     void Engine::reshape(int w, int h) {
-        instance->WinX = w;
-        instance->WinY = h;
-        glViewport(0, 0, instance->WinX, instance->WinY);
+        instance->config["window"]["x"] = w;
+        instance->config["window"]["y"] = h;
+        glViewport(0, 0, instance->config["window"]["x"], instance->config["window"]["y"]);
     }
 
     void Engine::timer(int) {
         // Update Window Title
         std::ostringstream oss;
-        oss << instance->windowCaption << ": " << instance->FrameCount << " FPS @ ("
-            << instance->WinX << "x"
-            << instance->WinY << ")";
+        oss << instance->config["window"]["caption"] << ": " << instance->FrameCount << " FPS @ ("
+            << instance->config["window"]["x"] << "x"
+            << instance->config["window"]["y"] << ")";
         std::string s = oss.str();
         glutSetWindow(instance->WindowHandle);
         glutSetWindowTitle(s.c_str());

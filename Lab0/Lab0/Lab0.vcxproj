@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\1-StartingOpenGL.cpp" />
     <ClCompile Include="..\src\Engine.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Debug.h" />
     <ClInclude Include="..\src\Engine.h" />
+    <ClInclude Include="..\src\json.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\config\RuntimeConfig.json" />
+    <None Include="..\config\SetupConfig.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -85,15 +90,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)_dbg</TargetName>
-    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>$(ProjectName)_rls</TargetName>
-    <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
@@ -132,7 +137,13 @@
       <Command>echo Copying FreeGLUT
 copy "$(SolutionDir)\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
 echo Copying GLEW
-copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
+echo Copying Config Files
+cd "$(OutDir)"
+if exist config rd /s /q config
+mkdir config
+copy "$(SolutionDir)config\SetupConfig.json" "$(OutDir)config\"
+copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -174,7 +185,13 @@ copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDi
       <Command>echo Copying FreeGLUT
 copy "$(SolutionDir)\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
 echo Copying GLEW
-copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"</Command>
+copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
+echo Copying Config Files
+cd "$(OutDir)"
+if exist config rd /s /q config
+mkdir config
+copy "$(SolutionDir)config\SetupConfig.json" "$(OutDir)config\"
+copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
