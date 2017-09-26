@@ -35,16 +35,15 @@ namespace ThreeEngine {
                     {"clearDepth", 1.0f}
                 }}
             };
-        public:
-            Engine();
 
-            virtual ~Engine();
-
-            void init(int argc, char* argv[]);
+            nlohmann::json runtimeConfig;
+        protected:
 
             void checkSystemInfo();
 
             void setupConfig();
+
+            void setupRuntimeConfig();
 
             void setupGLUT(int argc, char* argv[]);
 
@@ -56,8 +55,6 @@ namespace ThreeEngine {
 
             void setupCallbacks();
 
-            void run();
-
             static void cleanup();
 
             static void display();
@@ -67,6 +64,15 @@ namespace ThreeEngine {
             static void reshape(int w, int h);
 
             static void timer(int value);
+
+        public:
+            Engine();
+
+            virtual ~Engine();
+
+            void init(int argc, char* argv[]);
+
+            void run();
     };
 
 } /* namespace Divisaction */

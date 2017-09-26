@@ -1,6 +1,6 @@
 /*
  * File ThreeEngine.cpp in project ThreeEngine
- * 
+ *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include <sstream>
@@ -24,7 +24,7 @@ namespace ThreeEngine {
 
     Engine::~Engine() = default;
 
-/////////////////////////////////////////////////////////////////////// SETUP
+    /////////////////////////////////////////////////////////////////////// SETUP
 
     void Engine::init(int argc, char* argv[]) {
         checkSystemInfo();
@@ -57,6 +57,25 @@ namespace ThreeEngine {
             file >> config;
 
             this->config = json::merge(this->config, config);
+        }
+    }
+
+    void Engine::setupRuntimeConfig() {
+        // Assuming always the same path config/SetupConfig.json
+        std::ifstream file("config/RuntimeConfig.json");
+        if (file.good()) {
+            json runtimeConfig;
+            file >> runtimeConfig;
+
+            if (this->runtimeConfig != runtimeConfig)
+            {
+                this->runtimeConfig = json::merge(this->runtimeConfig, runtimeConfig);
+
+                if (this->runtimeConfig["viewport"].is_object() && this->runtimeConfig["viewport"]["clearColor"].is_array())
+                {
+                    glClearColor(this->runtimeConfig["viewport"]["clearColor"][0], this->runtimeConfig["viewport"]["clearColor"][1], this->runtimeConfig["viewport"]["clearColor"][2], this->runtimeConfig["viewport"]["clearColor"][3]);
+                }
+            }
         }
     }
 
@@ -130,7 +149,7 @@ namespace ThreeEngine {
         glutMainLoop();
     }
 
-/////////////////////////////////////////////////////////////////////// CALLBACKS
+    /////////////////////////////////////////////////////////////////////// CALLBACKS
 
     void Engine::cleanup() {
     }
@@ -153,6 +172,8 @@ namespace ThreeEngine {
     }
 
     void Engine::timer(int) {
+        instance->setupRuntimeConfig();
+
         // Update Window Title
         std::ostringstream oss;
         oss << instance->config["window"]["caption"] << ": " << instance->FrameCount << " FPS @ ("

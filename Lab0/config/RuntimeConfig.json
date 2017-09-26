@@ -1,6 +1,5 @@
 {
-  "shaders": {
-    "vertex": "path/to/shader",
-    "fragment": "path/to/shader"
-  }
+    "viewport": {
+        "clearColor": [ 0.1, 0.0, 0.0, 1.0 ]
+    }
 }
