@@ -92,7 +92,8 @@ namespace ThreeEngine {
 
         glutInitWindowSize(config["window"]["x"], config["window"]["y"]);
         glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-        WindowHandle = glutCreateWindow(config["window"]["caption"].dump().c_str());
+        std::string caption = config["window"]["caption"];
+        WindowHandle = glutCreateWindow(caption.c_str());
         if (WindowHandle < 1) {
             Debug::Error("ERROR: Could not create a new rendering window.");
             exit(EXIT_FAILURE);
@@ -174,9 +175,10 @@ namespace ThreeEngine {
     void Engine::timer(int) {
         instance->setupRuntimeConfig();
 
+        std::string caption = instance->config["window"]["caption"];
         // Update Window Title
         std::ostringstream oss;
-        oss << instance->config["window"]["caption"] << ": " << instance->FrameCount << " FPS @ ("
+        oss << caption << ": " << instance->FrameCount << " FPS @ ("
             << instance->config["window"]["x"] << "x"
             << instance->config["window"]["y"] << ")";
         std::string s = oss.str();

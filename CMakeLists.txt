@@ -21,7 +21,7 @@ ENDIF ()
 set(SOURCE_FILES
         src/main.cpp
         src/Debug.h src/Engine.cpp src/Engine.h
-        src/json.hpp)
+        src/json.hpp src/Math/Vector.cpp src/Math/Vector.h)
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
