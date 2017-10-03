@@ -23,20 +23,6 @@ set(SOURCE_FILES
         src/Debug.h src/Engine.cpp src/Engine.h
         src/json.hpp src/Math/Vector.cpp src/Math/Vector.h)
 
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
-find_package(GLEW REQUIRED)
-
-if (NOT (OpenGL_FOUND AND GLUT_FOUND AND GLEW_FOUND))
-    message(FATAL_ERROR "Some needed libraries were not found. Try running:\n\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
-endif ()
-
-include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
-
-add_executable(ThreeEngine ${SOURCE_FILES})
-
-target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
-
 
 if (WIN32)
     add_definitions(-DOS_WIN)
@@ -44,7 +30,21 @@ elseif (APPLE)
     add_definitions(-DOS_MAC)
 elseif (UNIX AND NOT APPLE)
     add_definitions(-DOS_LINUX)
+
+    find_package(OpenGL REQUIRED)
+    find_package(GLUT REQUIRED)
+    find_package(GLEW REQUIRED)
+
+    if (NOT (OpenGL_FOUND AND GLUT_FOUND AND GLEW_FOUND))
+        message(FATAL_ERROR "Some needed libraries were not found. Try running:\n\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
+    endif ()
 endif ()
+
+include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
+
+add_executable(ThreeEngine ${SOURCE_FILES})
+
+target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 add_custom_command(TARGET ThreeEngine POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files

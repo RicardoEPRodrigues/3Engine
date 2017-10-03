@@ -40,6 +40,8 @@ int main(int argc, char* argv[]) {
     Debug::Log(Vector::ForwardVector ^ Vector::LeftVector);
     Debug::Log(Vector::LeftVector ^ Vector::ForwardVector);
 
+    Vector additionInversion = -(Vector::ForwardVector + Vector::LeftVector);
+
 
 //    Engine engine;
 //    engine.init(argc, argv);
