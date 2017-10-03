@@ -44,6 +44,10 @@ This project is cross-platform, because of that there are two ways of opening an
 
 In Windows we created a Visual Studio Project. We recommend Visual Studio 2017 Community edition. To open the project just double-click the `3Engine.sln`.
 
+We recommend the use of CMake, although we'll try to make it compatible with the Microsoft way.
+
+To use CMake in Visual Studio you need to install the `Desktop development with C++` (`Visual Studio Installer > Modify of Install > Desktop development with C++`).
+
 #### Linux
 
 In Linux we created a CMake project and currently use CLion IDE. To open a project open the `CMakeLists.txt` file with CLion.
