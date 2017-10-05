@@ -4,9 +4,9 @@ Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for 
 
 Fun feature: uses JSON files for configuration with realtime change detection.
 
-* [Dependencies](#Dependencies)
-* [Project](#Project)
-* [Building](#Building)
+* [Dependencies](#dependencies)
+* [Project](#project)
+* [Building](#building)
 
 ---
 
