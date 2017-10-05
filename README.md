@@ -46,7 +46,9 @@ In Windows we created a Visual Studio Project. We recommend Visual Studio 2017 C
 
 We recommend the use of CMake, although we made it compatible with the Microsoft `sln` way.
 
-To use CMake in Visual Studio you need to install the `Desktop development with C++` (`Visual Studio Installer > Modify of Install > Desktop development with C++`).
+To use CMake in Visual Studio you need to install the `Desktop development with C++` (`Visual Studio Installer > Modify of Install > Desktop development with C++`). After install open Visual Studio and click on `Solution Explorer > Solution and Folders`, this will change the solution explorer to a folder view of the project and automatically detects the `CMakeLists.txt`.
+
+![Solution Explorer > Solution and Folders](https://image.ibb.co/cRn65b/Solutions_And_Folders.png)
 
 #### Linux
 
