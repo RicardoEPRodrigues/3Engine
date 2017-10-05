@@ -1,18 +1,20 @@
-# 3Engine
+# [3Engine](https://ricardoeprodrigues.github.io/3Engine/)
 
-Game Engine `3Engine` using OpenGL made for a class on "Computer Graphics for Games".
+Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for Games*.
 
-One fun feature is the use of JSON files for configuration.
+Fun feature: uses JSON files for configuration with realtime change detection.
 
-## Install
+* [Dependencies](#Dependencies)
+* [Project](#Project)
+* [Building](#Building)
 
-### Dependencies
+---
 
-#### GLEW and FreeGLUT
+## Dependencies
 
-This project depends on OpenGL, GLEW and FreeGLUT. While OpenGL is normally installed by default in most systems the latter libraries are not.
+This project depends on OpenGL, GLEW and FreeGLUT. While the first is normally installed by default in most systems the latter libraries are not.
 
-##### Windows
+### Windows
 
 The inclusion of the said libraries are needed, yet dependencies are ignored to reduce the size of the project. To get the project to run follow the steps.
 
@@ -26,7 +28,7 @@ The inclusion of the said libraries are needed, yet dependencies are ignored to 
     * freeglut-msvc
     * glew-msvc
 
-##### Linux (Ubuntu)
+### Linux (Ubuntu)
 
 Please open a terminal and run:
 
@@ -36,11 +38,11 @@ sudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev
 
 (This will only work on Debian/Ubuntu based systems, if anyone wants to give me the commands for other OSes)
 
-### Project
+## Project
 
 This project is cross-platform, because of that there are two ways of opening and running the project.
 
-#### Windows
+### Windows
 
 In Windows we created a Visual Studio Project. We recommend Visual Studio 2017 Community edition. To open the project just double-click the `3Engine.sln`.
 
@@ -50,13 +52,13 @@ To use CMake in Visual Studio you need to install the `Desktop development with 
 
 ![Solution Explorer > Solution and Folders](https://image.ibb.co/cRn65b/Solutions_And_Folders.png)
 
-#### Linux
+### Linux
 
 In Linux we created a CMake project and currently use CLion IDE. To open a project open the `CMakeLists.txt` file with CLion.
 
 Note that you can use CMake and other IDE to run the project, yet it was only tested in CLion.
 
-### Building
+## Building
 
 When build the project it's important to note that files are being copied to the build folder.
 
