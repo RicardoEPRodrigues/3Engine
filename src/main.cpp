@@ -42,6 +42,9 @@ int main(int argc, char* argv[]) {
 
     Vector additionInversion = -(Vector::ForwardVector + Vector::LeftVector);
 
+    std::cout << vector << std::endl;
+    //std::cin >> vector;
+
 
     Engine engine;
     engine.init(argc, argv);

@@ -11,7 +11,6 @@
 namespace ThreeEngine {
 
     struct Vector {
-        public:
             float X, Y, Z;
 
 
@@ -224,6 +223,17 @@ namespace ThreeEngine {
              * @return Copy of the vector after division.
              */
             Vector operator/=(const Vector& V);
+
+
+            friend std::ostream &operator<<(std::ostream& os, const Vector& vector) {
+                os << "{ " << vector.X << ", " << vector.Y << ", " <<
+                    vector.Z << " }" << std::endl;
+                return os;
+            };
+            friend std::istream &operator>>(std::istream& is, const Vector& vector) {
+                // TODO Implement in stream
+                return is;
+            };
 
             operator std::string() const {
                 return std::string("{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
