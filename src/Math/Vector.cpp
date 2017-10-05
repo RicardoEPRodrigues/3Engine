@@ -3,8 +3,8 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include <cmath>
 #include "Vector.h"
+#include <cmath>
 
 namespace ThreeEngine {
 
@@ -23,6 +23,8 @@ namespace ThreeEngine {
     Vector::Vector(float in) : Vector(in, in, in) {}
 
     Vector::Vector(float inX, float inY, float inZ) : X(inX), Y(inY), Z(inZ) {}
+
+    Vector::Vector(const Vector2& other, float inZ) : Vector(other.X, other.Y, inZ) {}
 
     Vector::Vector(const Vector& other) {
         operator=(other);
@@ -84,19 +86,19 @@ namespace ThreeEngine {
         return Vector(X / V.X, Y / V.Y, Z / V.Z);
     }
 
-    Vector operator-(const float value, const Vector vector) {
+    Vector operator-(const float& value, const Vector& vector) {
         return Vector(value - vector.X, value - vector.Y, value - vector.Z);
     }
 
-    Vector operator+(float value, Vector vector) {
+    Vector operator+(const float& value, const Vector& vector) {
         return vector + value;
     }
 
-    Vector operator*(float value, Vector vector) {
+    Vector operator*(const float& value, const Vector& vector) {
         return vector * value;
     }
 
-    Vector operator/(float value, Vector vector) {
+    Vector operator/(const float& value, const Vector& vector) {
         return Vector(value / vector.X, value / vector.Y, value / vector.Z);
     }
 
@@ -166,6 +168,12 @@ namespace ThreeEngine {
         Y /= V.Y;
         Z /= V.Z;
         return *this;
+    }
+
+    void Vector::Set(const float& inX, const float& inY, const float& inZ) {
+        X = inX;
+        Y = inY;
+        Z = inZ;
     }
 
     float Vector::Dist() const {

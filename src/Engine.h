@@ -18,25 +18,6 @@ namespace ThreeEngine {
 
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
-
-            nlohmann::json config = {
-                {"window", {
-                    {"x", 800},
-                    {"y" , 600},
-                    {"caption", "Hello World"}
-                }},
-                {"opengl", {
-                    {"major", 4},
-                    {"minor", 3}
-                }},
-                {"viewport", {
-                    {"clearColor",{0.1f, 0.1f, 0.1f, 1.0f}},
-                    {"depthRange",{0.0f, 1.0f}},
-                    {"clearDepth", 1.0f}
-                }}
-            };
-
-            nlohmann::json runtimeConfig;
         protected:
 
             void checkSystemInfo();
@@ -73,6 +54,25 @@ namespace ThreeEngine {
             void init(int argc, char* argv[]);
 
             void run();
+
+            nlohmann::json config = {
+                    {"window", {
+                                       {"x", 800},
+                                       {"y" , 600},
+                                       {"caption", "Hello World"}
+                               }},
+                    {"opengl", {
+                                       {"major", 4},
+                                       {"minor", 3}
+                               }},
+                    {"viewport", {
+                                       {"clearColor",{0.1f, 0.1f, 0.1f, 1.0f}},
+                                       {"depthRange",{0.0f, 1.0f}},
+                                       {"clearDepth", 1.0f}
+                               }}
+            };
+
+            nlohmann::json runtimeConfig;
     };
 
 } /* namespace Divisaction */

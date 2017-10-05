@@ -36,7 +36,7 @@ sudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev
 
 (This will only work on Debian/Ubuntu based systems, if anyone wants to give me the commands for other OSes)
 
-### Opening the Project
+### Project
 
 This project is cross-platform, because of that there are two ways of opening and running the project.
 
@@ -44,7 +44,7 @@ This project is cross-platform, because of that there are two ways of opening an
 
 In Windows we created a Visual Studio Project. We recommend Visual Studio 2017 Community edition. To open the project just double-click the `3Engine.sln`.
 
-We recommend the use of CMake, although we'll try to make it compatible with the Microsoft way.
+We recommend the use of CMake, although we made it compatible with the Microsoft `sln` way.
 
 To use CMake in Visual Studio you need to install the `Desktop development with C++` (`Visual Studio Installer > Modify of Install > Desktop development with C++`).
 

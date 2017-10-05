@@ -10,8 +10,6 @@
 
 using namespace ThreeEngine;
 
-#define CAPTION "Hello Blank World"
-
 // NVIDIA Dedicated Graphics
 //extern "C" {
 //	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
