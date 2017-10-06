@@ -1,10 +1,12 @@
 /*
  * File Vector.cpp in project ThreeEngine
- * 
+ *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Vector.h"
 #include <cmath>
+#include <ctime>
+#include <cstdlib>
 
 namespace ThreeEngine {
 
@@ -36,6 +38,16 @@ namespace ThreeEngine {
         Z = other.Z;
 
         return *this;
+    }
+
+    Vector Vector::GetRandom(const float& max) {
+        float X = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
+        float Y = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
+        float Z = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
+        //float X = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+        //float Y = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+        //float Z = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+        return Vector(X, Y, Z);
     }
 
     Vector Vector::operator^(const Vector& V) const {
@@ -103,7 +115,15 @@ namespace ThreeEngine {
     }
 
     bool Vector::operator==(const Vector& V) const {
-        return X == V.X && Y == V.Y && Z == V.Z;
+        static float IGNORE = (float)1.0e-5;
+        bool XValid = std::abs(X - V.X) < IGNORE;
+        bool YValid = std::abs(Y - V.Y) < IGNORE;
+        bool ZValid = std::abs(Z - V.Z) < IGNORE;
+        //static float ULP = 3;
+        //bool XValid = std::abs(X - V.X) < std::numeric_limits<float>::epsilon() * std::abs(X + V.X) * ULP;
+        //bool YValid = std::abs(Y - V.Y) < std::numeric_limits<float>::epsilon() * std::abs(Y + V.Y) * ULP;
+        //bool ZValid = std::abs(Z - V.Z) < std::numeric_limits<float>::epsilon() * std::abs(Z + V.Z) * ULP;
+        return XValid && YValid && ZValid;
     }
 
     bool Vector::operator!=(const Vector& V) const {

@@ -43,6 +43,8 @@ namespace ThreeEngine {
 
         Vector& operator=(const Vector& other);
 
+        static Vector GetRandom(const float& max);
+
         /**
          * Calculate cross product between this and another vector.
          *

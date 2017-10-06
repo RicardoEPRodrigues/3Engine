@@ -8,6 +8,8 @@
 #include "Math/Vector.h"
 #include "Debug.h"
 
+#include <ctime>
+
 using namespace ThreeEngine;
 
 // NVIDIA Dedicated Graphics
@@ -16,7 +18,7 @@ using namespace ThreeEngine;
 //}
 
 int main(int argc, char* argv[]) {
-    Vector vector = Vector::ZeroVector;
+    /*Vector vector = Vector::ZeroVector;
     Debug::Log(vector);
     vector = 1.0f - vector;
     vector = 1.0f * vector;
@@ -40,9 +42,26 @@ int main(int argc, char* argv[]) {
 
     Vector additionInversion = -(Vector::ForwardVector + Vector::LeftVector);
 
-    std::cout << vector << std::endl;
+    std::cout << vector << std::endl;*/
     //std::cin >> vector;
 
+    srand(static_cast <unsigned> (time(0)));
+
+    float max = 1;
+    for (int w = 0; w < 10; w++)
+    {
+        Vector i = Vector::GetRandom(max);
+        Debug::Log(i);
+        Vector j = Vector::GetRandom(max);
+        Debug::Log(j);
+        Vector k = Vector::GetRandom(max);
+        Debug::Log(k);
+        Vector rightSide = i ^ (j ^ k);
+        Debug::Log(rightSide);
+        Vector leftSide = (j * (i | k)) - (k * (i | j));
+        Debug::Log(leftSide);
+        rightSide == leftSide ? Debug::Log("The vectors are equal.") : Debug::Error("The vector are different!");
+    }
 
     Engine engine;
     engine.init(argc, argv);
