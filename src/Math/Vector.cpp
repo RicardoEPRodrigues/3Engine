@@ -5,8 +5,6 @@
  */
 #include "Vector.h"
 #include <cmath>
-#include <ctime>
-#include <cstdlib>
 
 namespace ThreeEngine {
 
@@ -22,11 +20,11 @@ namespace ThreeEngine {
 
     Vector::Vector() : Vector(0) {}
 
-    Vector::Vector(float in) : Vector(in, in, in) {}
+    Vector::Vector(number in) : Vector(in, in, in) {}
 
-    Vector::Vector(float inX, float inY, float inZ) : X(inX), Y(inY), Z(inZ) {}
+    Vector::Vector(number inX, number inY, number inZ) : X(inX), Y(inY), Z(inZ) {}
 
-    Vector::Vector(const Vector2& other, float inZ) : Vector(other.X, other.Y, inZ) {}
+    Vector::Vector(const Vector2& other, number inZ) : Vector(other.X, other.Y, inZ) {}
 
     Vector::Vector(const Vector& other) {
         operator=(other);
@@ -40,13 +38,10 @@ namespace ThreeEngine {
         return *this;
     }
 
-    Vector Vector::GetRandom(const float& max) {
-        float X = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
-        float Y = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
-        float Z = (static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (2 * max)))) - max;
-        //float X = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-        //float Y = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
-        //float Z = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+    Vector Vector::GetRandom(const number& max) {
+        number X = Maths::GetRandom(-max, 2*max);
+        number Y = Maths::GetRandom(-max, 2 * max);
+        number Z = Maths::GetRandom(-max, 2*max);
         return Vector(X, Y, Z);
     }
 
@@ -58,11 +53,11 @@ namespace ThreeEngine {
         return A ^ B;
     }
 
-    float Vector::operator|(const Vector& V) const {
+    number Vector::operator|(const Vector& V) const {
         return (X * V.X) + (Y * V.Y) + (Z * V.Z);
     }
 
-    float Vector::DotProduct(const Vector& A, const Vector& B) {
+    number Vector::DotProduct(const Vector& A, const Vector& B) {
         return A | B;
     }
 
@@ -74,19 +69,19 @@ namespace ThreeEngine {
         return Vector(X - V.X, Y - V.Y, Z - V.Z);
     }
 
-    Vector Vector::operator-(float value) const {
+    Vector Vector::operator-(number value) const {
         return Vector(X - value, Y - value, Z - value);
     }
 
-    Vector Vector::operator+(float value) const {
+    Vector Vector::operator+(number value) const {
         return Vector(X + value, Y + value, Z + value);
     }
 
-    Vector Vector::operator*(float scale) const {
+    Vector Vector::operator*(number scale) const {
         return Vector(X * scale, Y * scale, Z * scale);
     }
 
-    Vector Vector::operator/(float scale) const {
+    Vector Vector::operator/(number scale) const {
         return Vector(X / scale, Y / scale, Z / scale);
     }
 
@@ -98,31 +93,27 @@ namespace ThreeEngine {
         return Vector(X / V.X, Y / V.Y, Z / V.Z);
     }
 
-    Vector operator-(const float& value, const Vector& vector) {
+    Vector operator-(const number& value, const Vector& vector) {
         return Vector(value - vector.X, value - vector.Y, value - vector.Z);
     }
 
-    Vector operator+(const float& value, const Vector& vector) {
+    Vector operator+(const number& value, const Vector& vector) {
         return vector + value;
     }
 
-    Vector operator*(const float& value, const Vector& vector) {
+    Vector operator*(const number& value, const Vector& vector) {
         return vector * value;
     }
 
-    Vector operator/(const float& value, const Vector& vector) {
+    Vector operator/(const number& value, const Vector& vector) {
         return Vector(value / vector.X, value / vector.Y, value / vector.Z);
     }
 
     bool Vector::operator==(const Vector& V) const {
-        static float IGNORE = (float)1.0e-5;
-        bool XValid = std::abs(X - V.X) < IGNORE;
-        bool YValid = std::abs(Y - V.Y) < IGNORE;
-        bool ZValid = std::abs(Z - V.Z) < IGNORE;
-        //static float ULP = 3;
-        //bool XValid = std::abs(X - V.X) < std::numeric_limits<float>::epsilon() * std::abs(X + V.X) * ULP;
-        //bool YValid = std::abs(Y - V.Y) < std::numeric_limits<float>::epsilon() * std::abs(Y + V.Y) * ULP;
-        //bool ZValid = std::abs(Z - V.Z) < std::numeric_limits<float>::epsilon() * std::abs(Z + V.Z) * ULP;
+        // http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon
+        bool XValid = std::abs(X - V.X) < Epsilon * std::abs(X + V.X) * ULP;
+        bool YValid = std::abs(Y - V.Y) < Epsilon * std::abs(Y + V.Y) * ULP;
+        bool ZValid = std::abs(Z - V.Z) < Epsilon * std::abs(Z + V.Z) * ULP;
         return XValid && YValid && ZValid;
     }
 
@@ -141,7 +132,7 @@ namespace ThreeEngine {
         return *this;
     }
 
-    Vector Vector::operator+=(float in) {
+    Vector Vector::operator+=(number in) {
         X += in;
         Y += in;
         Z += in;
@@ -155,21 +146,21 @@ namespace ThreeEngine {
         return *this;
     }
 
-    Vector Vector::operator-=(float in) {
+    Vector Vector::operator-=(number in) {
         X -= in;
         Y -= in;
         Z -= in;
         return *this;
     }
 
-    Vector Vector::operator*=(float in) {
+    Vector Vector::operator*=(number in) {
         X *= in;
         Y *= in;
         Z *= in;
         return *this;
     }
 
-    Vector Vector::operator/=(float in) {
+    Vector Vector::operator/=(number in) {
         X /= in;
         Y /= in;
         Z /= in;
@@ -190,17 +181,17 @@ namespace ThreeEngine {
         return *this;
     }
 
-    void Vector::Set(const float& inX, const float& inY, const float& inZ) {
+    void Vector::Set(const number& inX, const number& inY, const number& inZ) {
         X = inX;
         Y = inY;
         Z = inZ;
     }
 
-    float Vector::Dist() const {
+    number Vector::Dist() const {
         return sqrtf(DistSquared());
     }
 
-    float Vector::DistSquared() const {
+    number Vector::DistSquared() const {
         return (X * X) + (Y * Y) + (Z * Z);
     }
 

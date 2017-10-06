@@ -8,12 +8,13 @@
 
 #include <string>
 #include <iostream>
+#include "Maths.h"
 #include "Vector2.h"
 
 namespace ThreeEngine {
 
     struct Vector {
-        float X, Y, Z;
+        number X, Y, Z;
 
 
         /** A zero vector (0,0,0) */
@@ -33,17 +34,17 @@ namespace ThreeEngine {
 
         Vector();
 
-        explicit Vector(float in);
+        explicit Vector(number in);
 
-        Vector(float inX, float inY, float inZ);
+        Vector(number inX, number inY, number inZ);
 
-        Vector(const Vector2& other, float inZ = 0);
+        Vector(const Vector2& other, number inZ = 0);
 
         Vector(const Vector& other);
 
         Vector& operator=(const Vector& other);
 
-        static Vector GetRandom(const float& max);
+        static Vector GetRandom(const number& max);
 
         /**
          * Calculate cross product between this and another vector.
@@ -68,7 +69,7 @@ namespace ThreeEngine {
          * @param V The other vector.
          * @return The dot product.
          */
-        float operator|(const Vector& V) const;
+        number operator|(const Vector& V) const;
 
         /**
          * Calculate the dot product of two vectors.
@@ -77,7 +78,7 @@ namespace ThreeEngine {
          * @param B The second vector.
          * @return The dot product.
          */
-        static float DotProduct(const Vector& A, const Vector& B);
+        static number DotProduct(const Vector& A, const Vector& B);
 
         /**
          * Gets the result of component-wise addition of this and another vector.
@@ -101,7 +102,7 @@ namespace ThreeEngine {
          * @param value How much to subtract from each component.
          * @return The result of subtraction.
          */
-        Vector operator-(float value) const;
+        Vector operator-(number value) const;
 
         /**
          * Gets the result of adding to each component of the vector.
@@ -109,7 +110,7 @@ namespace ThreeEngine {
          * @param value How much to add to each component.
          * @return The result of addition.
          */
-        Vector operator+(float value) const;
+        Vector operator+(number value) const;
 
         /**
          * Gets the result of scaling the vector (multiplying each component by a value).
@@ -117,7 +118,7 @@ namespace ThreeEngine {
          * @param scale What to multiply each component by.
          * @return The result of multiplication.
          */
-        Vector operator*(float scale) const;
+        Vector operator*(number scale) const;
 
         /**
          * Gets the result of dividing each component of the vector by a value.
@@ -125,7 +126,7 @@ namespace ThreeEngine {
          * @param scale What to divide each component by.
          * @return The result of division.
          */
-        Vector operator/(float scale) const;
+        Vector operator/(number scale) const;
 
         /**
          * Gets the result of component-wise multiplication of this vector by another.
@@ -180,7 +181,7 @@ namespace ThreeEngine {
          * @param in Scalar to add to this.
          * @return Copy of the vector after addition.
          */
-        Vector operator+=(float in);
+        Vector operator+=(number in);
 
         /**
          * Subtracts another vector from this.
@@ -196,7 +197,7 @@ namespace ThreeEngine {
          * @param in Scalar to add to this.
          * @return Copy of the vector after subtraction.
          */
-        Vector operator-=(float in);
+        Vector operator-=(number in);
 
         /**
          * Scales the vector.
@@ -204,7 +205,7 @@ namespace ThreeEngine {
          * @param in Amount to scale this vector by.
          * @return Copy of the vector after scaling.
          */
-        Vector operator*=(float in);
+        Vector operator*=(number in);
 
         /**
          * Divides the vector by a number.
@@ -212,7 +213,7 @@ namespace ThreeEngine {
          * @param in What to divide this vector by.
          * @return Copy of the vector after division.
          */
-        Vector operator/=(float in);
+        Vector operator/=(number in);
 
         /**
          * Multiplies the vector with another vector, using component-wise multiplication.
@@ -236,7 +237,7 @@ namespace ThreeEngine {
          * @param vector to subtract with.
          * @return returns a vector after subtraction.
          */
-        friend Vector operator-(const float& value, const Vector& vector);
+        friend Vector operator-(const number& value, const Vector& vector);
 
         /**
          * Results in a vector where each element is the value added with the vector's component.
@@ -244,7 +245,7 @@ namespace ThreeEngine {
          * @param vector to add with.
          * @return returns a vector after addition.
          */
-        friend Vector operator+(const float& value, const Vector& vector);
+        friend Vector operator+(const number& value, const Vector& vector);
 
 
         /**
@@ -253,7 +254,7 @@ namespace ThreeEngine {
          * @param vector to multiply with.
          * @return returns a vector after multiplying.
          */
-        friend Vector operator*(const float& value, const Vector& vector);
+        friend Vector operator*(const number& value, const Vector& vector);
 
         /**
          * Results in a vector where each element is the value divided with the vector's component.
@@ -261,9 +262,9 @@ namespace ThreeEngine {
          * @param vector to divide with.
          * @return returns a vector after division.
          */
-        friend Vector operator/(const float& value, const Vector& vector);
+        friend Vector operator/(const number& value, const Vector& vector);
 
-        void Set(const float& inX, const float& inY, const float& inZ);
+        void Set(const number& inX, const number& inY, const number& inZ);
 
         friend std::ostream& operator<<(std::ostream& os, const Vector& vector) {
             os << "{ " << vector.X << ", " << vector.Y << ", " << vector.Z << " }" << std::endl;
@@ -280,9 +281,9 @@ namespace ThreeEngine {
                                std::to_string(Z) + " }");
         }
 
-        float Dist() const;
+        number Dist() const;
 
-        float DistSquared() const;
+        number DistSquared() const;
 
         Vector ProjectOnTo(const Vector& A) const;
 

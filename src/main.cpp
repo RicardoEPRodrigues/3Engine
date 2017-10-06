@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
     srand(static_cast <unsigned> (time(0)));
 
-    float max = 1;
+    number max = 1000;
     for (int w = 0; w < 10; w++)
     {
         Vector i = Vector::GetRandom(max);

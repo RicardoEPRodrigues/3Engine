@@ -21,7 +21,10 @@ ENDIF ()
 set(SOURCE_FILES
         src/main.cpp
         src/Debug.h src/Engine.cpp src/Engine.h
-        src/json.hpp src/Math/Vector.cpp src/Math/Vector.h src/Math/Vector2.cpp src/Math/Vector2.h)
+        src/json.hpp 
+        src/Math/Vector.cpp src/Math/Vector.h
+        src/Math/Vector2.cpp src/Math/Vector2.h
+        src/Math/Maths.cpp src/Math/Maths.h)
         
 
 find_package(OpenGL REQUIRED)
