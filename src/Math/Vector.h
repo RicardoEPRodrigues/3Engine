@@ -271,7 +271,7 @@ namespace ThreeEngine {
             return os;
         };
 
-        friend std::istream& operator>>(std::istream& is, const Vector& vector) {
+        friend std::istream& operator>>(std::istream& is, const Vector&) {
             // TODO Implement in stream
             return is;
         };

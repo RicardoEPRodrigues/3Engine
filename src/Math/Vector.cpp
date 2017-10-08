@@ -4,7 +4,6 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Vector.h"
-#include <cmath>
 
 namespace ThreeEngine {
 
@@ -111,9 +110,9 @@ namespace ThreeEngine {
 
     bool Vector::operator==(const Vector& V) const {
         // http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon
-        bool XValid = std::abs(X - V.X) < Epsilon * std::abs(X + V.X) * ULP;
-        bool YValid = std::abs(Y - V.Y) < Epsilon * std::abs(Y + V.Y) * ULP;
-        bool ZValid = std::abs(Z - V.Z) < Epsilon * std::abs(Z + V.Z) * ULP;
+        bool XValid = std::abs(X - V.X) < Epsilon + Epsilon * std::abs(X + V.X) * ULP;
+        bool YValid = std::abs(Y - V.Y) < Epsilon + Epsilon * std::abs(Y + V.Y) * ULP;
+        bool ZValid = std::abs(Z - V.Z) < Epsilon + Epsilon * std::abs(Z + V.Z) * ULP;
         return XValid && YValid && ZValid;
     }
 

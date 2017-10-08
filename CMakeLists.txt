@@ -19,12 +19,13 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
 ENDIF ()
 
 set(SOURCE_FILES
-        src/main.cpp
         src/Debug.h src/Engine.cpp src/Engine.h
         src/json.hpp 
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
         src/Math/Maths.cpp src/Math/Maths.h)
+
+set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h)
         
 
 find_package(OpenGL REQUIRED)
@@ -54,9 +55,11 @@ endif ()
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
-add_executable(ThreeEngine ${SOURCE_FILES})
-
+add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES})
 target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
+add_executable(ThreeEngineTests ${SOURCE_FILES} ${TESTS_SOURCE_FILES})
+target_link_libraries(ThreeEngineTests ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 
 if (WIN32) # WINDOWS post build
@@ -69,9 +72,21 @@ if (WIN32) # WINDOWS post build
             COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             )
+
+    add_custom_command(TARGET ThreeEngineTests POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E echo Copying Libraries
+            COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
+            COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
+            )
 endif()
 
 add_custom_command(TARGET ThreeEngine POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/SetupConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/RuntimeConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
+        )
+add_custom_command(TARGET ThreeEngineTests POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
         COMMAND ${CMAKE_COMMAND} -E make_directory ${EXECUTABLE_OUTPUT_PATH}/config/
         COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/SetupConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
