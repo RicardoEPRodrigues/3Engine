@@ -180,6 +180,20 @@ namespace ThreeEngine {
         return *this;
     }
 
+    Vector& Vector::operator++() {
+        ++X;
+        ++Y;
+        ++Z;
+        return *this;
+    }
+
+    Vector& Vector::operator--() {
+        --X;
+        --Y;
+        --Z;
+        return *this;
+    }
+
     void Vector::Set(const number& inX, const number& inY, const number& inZ) {
         X = inX;
         Y = inY;

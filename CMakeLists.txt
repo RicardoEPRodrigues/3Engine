@@ -23,7 +23,7 @@ set(SOURCE_FILES
         src/json.hpp 
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
-        src/Math/Maths.cpp src/Math/Maths.h)
+        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h)
         

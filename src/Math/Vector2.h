@@ -209,6 +209,20 @@ namespace ThreeEngine {
         Vector2 operator/=(const Vector2& V);
 
         /**
+         * Adds one to the vector.
+         *
+         * @return Reference to this vector after addition.
+         */
+        Vector2& operator++();
+
+        /**
+         * Subtract one to the vector.
+         *
+         * @return Reference to this vector after subtraction.
+         */
+        Vector2& operator--();
+
+        /**
          * Results in a vector where each element is the value subtracted with the vector's component.
          * @param value to subtract from.
          * @param vector to subtract with.
@@ -257,10 +271,23 @@ namespace ThreeEngine {
             return std::string("{ " + std::to_string(X) + ", " + std::to_string(Y) + " }");
         }
 
+        /**
+         * Calculates the distance value of this vector
+         * @return Distance
+         */
         number Dist() const;
 
+        /**
+         * Calculates the square of the distance value of this vector
+         * @return Square of the distance
+         */
         number DistSquared() const;
 
+        /**
+         * Calculates the projection of this vector onto the given one.
+         * @param A vector to project onto.
+         * @return Vector that resulted from the projection.
+         */
         Vector2 ProjectOnTo(const Vector2& A) const;
     };
 

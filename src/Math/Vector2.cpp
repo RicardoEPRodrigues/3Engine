@@ -96,8 +96,8 @@ namespace ThreeEngine {
 
     bool Vector2::operator==(const Vector2& V) const {
         // http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon
-        bool XValid = std::abs(X - V.X) < Epsilon * std::abs(X + V.X) * ULP;
-        bool YValid = std::abs(Y - V.Y) < Epsilon * std::abs(Y + V.Y) * ULP;
+        bool XValid = std::abs(X - V.X) < Epsilon + Epsilon * std::abs(X + V.X) * ULP;
+        bool YValid = std::abs(Y - V.Y) < Epsilon + Epsilon * std::abs(Y + V.Y) * ULP;
         return XValid && YValid;
     }
 
@@ -154,6 +154,18 @@ namespace ThreeEngine {
     Vector2 Vector2::operator/=(const Vector2& V) {
         X /= V.X;
         Y /= V.Y;
+        return *this;
+    }
+
+    Vector2& Vector2::operator++() {
+        ++X;
+        ++Y;
+        return *this;
+    }
+
+    Vector2& Vector2::operator--() {
+        --X;
+        --Y;
         return *this;
     }
 
