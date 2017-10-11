@@ -216,6 +216,23 @@ namespace ThreeEngine {
         return *this;
     }
 
+    bool Vector4::Normalize() {
+        const float squaredSum = DistSquared3();
+        if (squaredSum < Epsilon) {
+            return false;
+        }
+
+        const float scale = 1.f/sqrtf(squaredSum);
+        X *= scale;
+        Y *= scale;
+        Z *= scale;
+        return true;
+    }
+
+    bool Vector4::IsNormalized() const {
+        return (std::abs(1.0f - DistSquared3()) < Epsilon);
+    }
+
     void Vector4::Set(const number& inX, const number& inY, const number& inZ) {
         X = inX;
         Y = inY;

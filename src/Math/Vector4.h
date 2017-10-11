@@ -297,6 +297,20 @@ namespace ThreeEngine {
         void Set(const number& inX, const number& inY, const number& inZ);
 
         /**
+         * Normalize this vector in-place if it is large enough.
+         *
+         * @return true if the vector was normalized correctly, false otherwise.
+         */
+        bool Normalize();
+
+        /**
+         * Checks whether vector is normalized.
+         *
+         * @return true if Normalized, false otherwise.
+         */
+        bool IsNormalized() const;
+
+        /**
          * Sets the vectors components to the given values
          *
          * @param inX X coordinate

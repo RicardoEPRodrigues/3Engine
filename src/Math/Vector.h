@@ -278,6 +278,20 @@ namespace ThreeEngine {
          */
         friend Vector operator/(const number& value, const Vector& vector);
 
+        /**
+         * Normalize this vector in-place if it is large enough.
+         *
+         * @return true if the vector was normalized correctly, false otherwise.
+         */
+        bool Normalize();
+
+        /**
+         * Checks whether vector is normalized.
+         *
+         * @return true if Normalized, false otherwise.
+         */
+        bool IsNormalized() const;
+
         void Set(const number& inX, const number& inY, const number& inZ);
 
         friend std::ostream& operator<<(std::ostream& os, const Vector& vector) {

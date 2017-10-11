@@ -23,9 +23,9 @@ set(SOURCE_FILES
         src/json.hpp 
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
-        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h)
+        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h src/Math/Matrix.cpp src/Math/Matrix.h src/Math/TMatrix.h src/Math/Matrix3.cpp src/Math/Matrix3.h src/Math/Matrix2.cpp src/Math/Matrix2.h)
 
-set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h)
+set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
         
 
 find_package(OpenGL REQUIRED)

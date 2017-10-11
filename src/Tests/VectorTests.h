@@ -76,6 +76,15 @@ SCENARIO("vectors arithmetic testing", "[vector]") {
                 CHECK((v1 /= v2) == ThreeEngine::Vector2::OneVector);
             }
         }
+
+        WHEN("normalizing and testing") {
+            Vector2 vector = Vector2(2, 4);
+            CHECK(vector.Normalize());
+            CHECK(vector.IsNormalized());
+            vector = Vector2::ZeroVector;
+            CHECK(!vector.Normalize());
+            CHECK(!vector.IsNormalized());
+        }
     }
 
     GIVEN("Vector One (1,1,1)") {
@@ -140,6 +149,44 @@ SCENARIO("vectors arithmetic testing", "[vector]") {
                 CHECK((v1 -= v2) == ThreeEngine::Vector::OneVector);
                 CHECK((v1 *= v2) == v2);
                 CHECK((v1 /= v2) == ThreeEngine::Vector::OneVector);
+            }
+        }
+
+        WHEN("normalizing and testing") {
+            Vector vector = Vector(2, 4, 2);
+            CHECK(vector.Normalize());
+            CHECK(vector.IsNormalized());
+            vector = Vector::ZeroVector;
+            CHECK(!vector.Normalize());
+            CHECK(!vector.IsNormalized());
+        }
+    }
+
+    GIVEN("Vector with random numbers") {
+        srand(static_cast <unsigned> (time(0)));
+
+        WHEN("using triple product") {
+            THEN("Vector component values = 1") {
+                ThreeEngine::number max = 1;
+                for (int w = 0; w < 10; w++) {
+                    ThreeEngine::Vector i = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector j = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector k = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector rightSide = i ^(j ^ k);
+                    ThreeEngine::Vector leftSide = (j * (i | k)) - (k * (i | j));
+                    CHECK(rightSide == leftSide);
+                }
+            }
+            THEN("Vector component values = 1000") {
+                ThreeEngine::number max = 1000;
+                for (int w = 0; w < 10; w++) {
+                    ThreeEngine::Vector i = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector j = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector k = ThreeEngine::Vector::GetRandom(max);
+                    ThreeEngine::Vector rightSide = i ^(j ^ k);
+                    ThreeEngine::Vector leftSide = (j * (i | k)) - (k * (i | j));
+                    CHECK(rightSide == leftSide);
+                }
             }
         }
     }
@@ -210,6 +257,15 @@ SCENARIO("vectors arithmetic testing", "[vector]") {
                 CHECK((v1 *= v2) == v2);
                 CHECK((v1 /= v2) == ThreeEngine::Vector4::OneVector);
             }
+        }
+
+        WHEN("normalizing and testing") {
+            Vector4 vector = Vector4(2, 4, 2);
+            CHECK(vector.Normalize());
+            CHECK(vector.IsNormalized());
+            vector = Vector4::ZeroVector;
+            CHECK(!vector.Normalize());
+            CHECK(!vector.IsNormalized());
         }
     }
 }
