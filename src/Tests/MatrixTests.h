@@ -154,6 +154,20 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
 
                 CHECK(m21 == m21Result);
             }
+
+            // TODO Test Inverse and other methods
+
+            THEN("Invert") {
+                Matrix3 m31 = Matrix3(1, 2, 3,
+                                      0, 1, 4,
+                                      5, 6, 0);
+
+                Matrix3 m31Result = Matrix3(-24, 18, 5,
+                                      20, -15, -4,
+                                      -5, 4, 1);
+
+                CHECK(m31.Inverse() == m31Result);
+            }
         }
 
         WHEN("Matrix 2x2") {

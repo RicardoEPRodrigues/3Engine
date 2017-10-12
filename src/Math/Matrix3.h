@@ -59,6 +59,12 @@ namespace ThreeEngine {
         float Determinant() const;
 
         Matrix3 Inverse() const;
+
+        Matrix3 Minors() const;
+
+        Matrix3 Cofactor() const;
+
+        Matrix3 Adjugate() const;
     };
 
 } /* namespace Divisaction */

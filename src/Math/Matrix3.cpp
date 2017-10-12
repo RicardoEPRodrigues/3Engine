@@ -99,7 +99,51 @@ namespace ThreeEngine {
     }
 
     Matrix3 Matrix3::Inverse() const {
-        return Matrix3();
+        return (1 / Determinant()) * Adjugate();
+    }
+
+    Matrix3 Matrix3::Minors() const {
+        Matrix3 m;
+
+        Matrix2 m00 = {M[1][1], M[1][2],
+                       M[2][1], M[2][2]};
+        Matrix2 m01 = {M[1][0], M[1][2],
+                       M[2][0], M[2][2]};
+        Matrix2 m02 = {M[1][0], M[1][1],
+                       M[2][0], M[2][1]};
+
+        Matrix2 m10 = {M[0][1], M[0][2],
+                       M[2][1], M[2][2]};
+        Matrix2 m11 = {M[0][0], M[0][2],
+                       M[2][0], M[2][2]};
+        Matrix2 m12 = {M[0][0], M[0][1],
+                       M[2][0], M[2][1]};
+
+        Matrix2 m20 = {M[0][1], M[0][2],
+                       M[1][1], M[1][2]};
+        Matrix2 m21 = {M[0][0], M[0][2],
+                       M[1][0], M[1][2]};
+        Matrix2 m22 = {M[0][0], M[0][1],
+                       M[1][0], M[1][1]};
+
+        return {
+                m00.Determinant(), m01.Determinant(), m02.Determinant(),
+                m10.Determinant(), m11.Determinant(), m12.Determinant(),
+                m20.Determinant(), m21.Determinant(), m22.Determinant()
+        };
+    }
+
+    Matrix3 Matrix3::Cofactor() const {
+        Matrix3 m = Minors();
+        m.M[0][1] *= (-1);
+        m.M[1][0] *= (-1);
+        m.M[1][2] *= (-1);
+        m.M[2][1] *= (-1);
+        return m;
+    }
+
+    Matrix3 Matrix3::Adjugate() const {
+        return Cofactor().GetTransposed();
     }
 
 } /* namespace Divisaction */
