@@ -269,6 +269,22 @@ namespace ThreeEngine {
          */
         bool IsNormalized() const;
 
+        /**
+         * Gets specific component of the vector.
+         *
+         * @param Index the index of vector component
+         * @return reference to component.
+         */
+        float& operator[](int Index);
+
+        /**
+         * Gets specific component of the vector.
+         *
+         * @param Index the index of vector component
+         * @return reference to component.
+         */
+        float operator[](int Index) const;
+
         void Set(const number& inX, const number& inY);
 
         friend std::ostream& operator<<(std::ostream& os, const Vector2& vector) {

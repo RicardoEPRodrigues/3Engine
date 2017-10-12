@@ -7,6 +7,8 @@
 
 #include "../Math/Matrix.h"
 #include "../Math/TMatrix.h"
+#include "../Math/Matrix3.h"
+#include "../Math/Matrix2.h"
 
 SCENARIO("matrix arithmetic testing", "[matrix]") {
 
@@ -114,6 +116,70 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                 CHECK(m.GetTransposed() == m2);
             }
         }
+
+        WHEN("Matrix 3x3") {
+            THEN("multiplication with vector") {
+                Matrix3 m31 = Matrix3(0, 0, 0,
+                                      0, 1, 0,
+                                      0, 1, 0);
+
+                Vector v = Vector::OneVector,
+                        vResult1 = Vector(0, 1, 1),
+                        vResult2 = Vector(0, 2, 0);
+
+                CHECK((m31 * v) == vResult1);
+                CHECK((v * m31) == vResult2);
+            }
+
+            THEN("converting to array with column major format") {
+                Matrix3 m31 = Matrix3(0, 1, 2,
+                                      3, 4, 5,
+                                      6, 7, 8);
+                number a[9];
+                number aResult[9] = {0, 3, 6,
+                                     1, 4, 7,
+                                     2, 5, 8};
+
+                m31.ToArray(a);
+                CHECK(std::equal(std::begin(a), std::end(a), std::begin(aResult)));
+            }
+
+            THEN("converting to Matrix 2x2") {
+                Matrix3 m31 = Matrix3(1, 2, 2,
+                                      0, 1, 5,
+                                      6, 7, 8);
+                Matrix2 m21 = m31;
+                Matrix2 m21Result = Matrix2(1, 2,
+                                            0, 1);
+
+                CHECK(m21 == m21Result);
+            }
+        }
+
+        WHEN("Matrix 2x2") {
+            THEN("multiplication with vector") {
+                Matrix2 m21 = Matrix2(1, 2,
+                                      0, 1);
+
+                Vector2 v = Vector2(5, 6),
+                        vResult1 = Vector2(17, 6),
+                        vResult2 = Vector2(5, 16);
+
+                CHECK((m21 * v) == vResult1);
+                CHECK((v * m21) == vResult2);
+            }
+
+            THEN("converting to array with column major format") {
+                Matrix2 m21 = Matrix2(0, 1,
+                                      2, 3);
+                number a[4];
+                number aResult[4] = {0, 2,
+                                     1, 3};
+
+                m21.ToArray(a);
+                CHECK(std::equal(std::begin(a), std::end(a), std::begin(aResult)));
+            }
+        }
     }
 
     GIVEN("Matrix 4x4") {
@@ -199,10 +265,10 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
             number array[16];
             m.ToArray(array);
 
-            number result[] = { 5, 0, 3, 1,
+            number result[] = {5, 0, 3, 1,
                                2, 6, 8, 8,
                                6, 2, 1, 5,
-                               1, 0, 4, 6 };
+                               1, 0, 4, 6};
 
             CHECK(std::equal(std::begin(array), std::end(array), std::begin(result)));
         }
@@ -221,6 +287,35 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
 
                 CHECK(m.GetTransposed() == m2);
             }
+        }
+
+
+        WHEN("multiplication with vector") {
+            Matrix m = Matrix(0, 0, 0, 0,
+                              0, 1, 0, 0,
+                              0, 1, 0, 0,
+                              0, 0, 0, 0);
+
+            Vector4 v = Vector4::OneVector,
+                    vResult1 = Vector4(0, 1, 1, 0),
+                    vResult2 = Vector4(0, 2, 0, 0);
+
+            CHECK((m * v) == vResult1);
+            CHECK((v * m) == vResult2);
+
+        }
+
+
+        WHEN("converting to Matrix 3x3") {
+            Matrix m = Matrix(5, 2, 6, 1,
+                              0, 6, 2, 0,
+                              3, 8, 1, 4,
+                              1, 8, 5, 6);
+            Matrix3 m3 = m;
+            Matrix3 m3Result = Matrix3(5, 2, 6,
+                                       0, 6, 2,
+                                       3, 8, 1);
+            CHECK(m3 == m3Result);
         }
     }
 }

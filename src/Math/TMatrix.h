@@ -25,6 +25,16 @@ namespace ThreeEngine {
         }
 
         explicit TMatrix(const number (& m)[lines * columns]) {
+            Set(m);
+        }
+
+        void Reset(const float& value = 0) {
+            for (int i = 0; i < lines; ++i) {
+                std::fill(std::begin(M[i]), std::end(M[i]), value);
+            }
+        }
+
+        void Set(const number (& m)[lines * columns]) {
             for (int i = 0; i < lines; ++i) {
                 for (int j = 0; j < columns; ++j) {
                     M[i][j] = m[(i * columns) + j];
@@ -32,9 +42,25 @@ namespace ThreeEngine {
             }
         }
 
-        void Reset(const float& value = 0) {
+        /**
+         * Set this to the identity matrix
+         */
+        void SetIdentity() {
+            Reset(0);
+            for (int i = 0; i < lines && i < columns; ++i) {
+                M[i][i] = 1;
+            }
+        }
+
+        /**
+         * Transforms the matrix to a uni-dimensional array column major format.
+         * @return uni-dimensional version of the matrix.
+         */
+        void ToArray(number (& array)[lines * columns]) {
             for (int i = 0; i < lines; ++i) {
-                std::fill(std::begin(M[i]), std::end(M[i]), value);
+                for (int j = 0; j < columns; ++j) {
+                    array[(i * columns) + j] = M[j][i];
+                }
             }
         }
 

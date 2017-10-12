@@ -9,6 +9,8 @@
 #include <ostream>
 #include <string>
 #include "Maths.h"
+#include "Vector4.h"
+#include "Matrix3.h"
 
 namespace ThreeEngine {
 
@@ -22,6 +24,8 @@ namespace ThreeEngine {
         Matrix();
 
         explicit Matrix(number in);
+
+        explicit Matrix(Matrix3 m);
 
         Matrix(number in0, number in1, number in2, number in3,
                number in4, number in5, number in6, number in7,
@@ -46,6 +50,11 @@ namespace ThreeEngine {
          * Set this to the identity matrix
          */
         void SetIdentity();
+
+        /**
+         * Set this to the identity matrix
+         */
+        void SetMatrix3(const Matrix3& m);
 
         /**
          * Set all values in this to given value
@@ -115,6 +124,20 @@ namespace ThreeEngine {
          * @return The result of multiplication.
          */
         Matrix operator*(const Matrix& V) const;
+
+        /**
+         * Results in the multiplication of this matrix with a Vector.
+         * @param v
+         * @return multiplication vector
+         */
+        Vector4 operator*(const Vector4& v);
+
+        /**
+         * Results in the multiplication of a vector with this matrix.
+         * @param v
+         * @return multiplication vector
+         */
+        friend Vector4 operator*(const Vector4& v, const Matrix& m);
 
         /**
          * Check against another matrix for equality.
@@ -280,6 +303,28 @@ namespace ThreeEngine {
             }
             return message;
         }
+
+        operator Matrix3() const {
+            Matrix3 m;
+            for (int i = 0; i < 3; ++i) {
+                for (int j = 0; j < 3; ++j) {
+                    m.M[i][j] = M[i][j];
+                }
+            }
+            return m;
+        }
+
+        static Matrix
+        ScaleMatrix(const number& inX, const number& inY, const number& inZ, const number& inW);
+
+        static Matrix ScaleMatrixInverted(const number& inX, const number& inY, const number& inZ,
+                                           const number& inW);
+
+        static Matrix RotationMatrix(Maths::Axis axis, const number& angle);
+
+        static Matrix TranslationMatrix(const Vector& vector);
+
+        static Matrix TranslationMatrix(const Vector4& vector);
     };
 
 } /* namespace Divisaction */

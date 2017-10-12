@@ -4,6 +4,7 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Vector4.h"
+#include "../Debug.h"
 
 namespace ThreeEngine {
 
@@ -231,6 +232,38 @@ namespace ThreeEngine {
 
     bool Vector4::IsNormalized() const {
         return (std::abs(1.0f - DistSquared3()) < Epsilon);
+    }
+
+    float& Vector4::operator[](int Index) {
+        switch (Index) {
+            case 0:
+                return X;
+            case 1:
+                return Y;
+            case 2:
+                return Z;
+            case 3:
+                return W;
+            default:
+                Debug::Error("Invalid Index");
+                return W;
+        }
+    }
+
+    float Vector4::operator[](int Index) const {
+        switch (Index) {
+            case 0:
+                return X;
+            case 1:
+                return Y;
+            case 2:
+                return Z;
+            case 3:
+                return W;
+            default:
+                Debug::Error("Invalid Index");
+                return W;
+        }
     }
 
     void Vector4::Set(const number& inX, const number& inY, const number& inZ) {

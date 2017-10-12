@@ -16,16 +16,21 @@
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Maths.h" afterPath="$PROJECT_DIR$/src/Math/Maths.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix.cpp" afterPath="$PROJECT_DIR$/src/Math/Matrix.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix.h" afterPath="$PROJECT_DIR$/src/Math/Matrix.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix2.cpp" afterPath="$PROJECT_DIR$/src/Math/Matrix2.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix2.h" afterPath="$PROJECT_DIR$/src/Math/Matrix2.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix3.cpp" afterPath="$PROJECT_DIR$/src/Math/Matrix3.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Matrix3.h" afterPath="$PROJECT_DIR$/src/Math/Matrix3.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/TMatrix.h" afterPath="$PROJECT_DIR$/src/Math/TMatrix.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector.cpp" afterPath="$PROJECT_DIR$/src/Math/Vector.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector.h" afterPath="$PROJECT_DIR$/src/Math/Vector.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector2.cpp" afterPath="$PROJECT_DIR$/src/Math/Vector2.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector2.h" afterPath="$PROJECT_DIR$/src/Math/Vector2.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector4.cpp" afterPath="$PROJECT_DIR$/src/Math/Vector4.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Math/Vector4.h" afterPath="$PROJECT_DIR$/src/Math/Vector4.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/VectorTests.h" afterPath="$PROJECT_DIR$/src/Tests/VectorTests.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/tests.cpp" afterPath="$PROJECT_DIR$/src/Tests/tests.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tests/MatrixTests.h" afterPath="$PROJECT_DIR$/src/Tests/MatrixTests.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/bin/release/" />
@@ -41,185 +46,227 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="ThreeEngine" />
+  </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5074627">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Matrix.h" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="795">
-                  <caret line="56" column="60" lean-forward="true" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-                  <folding>
-                    <element signature="e#172#190#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1197">
-                  <caret line="324" column="28" lean-forward="false" selection-start-line="324" selection-start-column="28" selection-end-line="324" selection-end-column="28" />
-                  <folding>
-                    <element signature="e#115#135#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="TMatrix.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/TMatrix.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#175#193#0" expanded="true" />
-                    <element signature="e#252#276#0" expanded="true" />
-                    <element signature="e#4371#4389#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix3.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix3.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix2.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix2.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vector.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Vector.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="856">
-                  <caret line="194" column="5" lean-forward="false" selection-start-line="194" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vector4.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Vector4.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="942">
-                  <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vector2.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Vector2.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1117">
-                  <caret line="179" column="19" lean-forward="false" selection-start-line="179" selection-start-column="19" selection-end-line="179" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="Vector4.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Vector4.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="560">
+                      <caret line="244" column="18" lean-forward="false" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="18" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="TMatrix.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/TMatrix.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="302">
+                      <caret line="403" column="45" lean-forward="false" selection-start-line="403" selection-start-column="32" selection-end-line="403" selection-end-column="45" />
+                      <folding>
+                        <element signature="e#175#193#0" expanded="true" />
+                        <element signature="e#252#276#0" expanded="true" />
+                        <element signature="e#5109#5127#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Maths.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Maths.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="520">
+                      <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Vector.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Vector.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="1259">
+                      <caret line="220" column="19" lean-forward="false" selection-start-line="220" selection-start-column="19" selection-end-line="220" selection-end-column="19" />
+                      <folding>
+                        <element signature="e#114#133#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Vector4.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Vector4.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-538">
+                      <caret line="299" column="18" lean-forward="false" selection-start-line="299" selection-start-column="11" selection-end-line="299" selection-end-column="18" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Vector.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="684">
+                      <caret line="329" column="9" lean-forward="false" selection-start-line="329" selection-start-column="9" selection-end-line="329" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix2.h" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="683">
+                      <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+                      <folding>
+                        <element signature="e#175#195#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix2.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-160">
+                      <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="18" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="Matrix3.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="579">
+                      <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+                      <folding>
+                        <element signature="e#175#195#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix3.cpp" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="743">
+                      <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="tests.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tests/tests.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#213#233#0" expanded="true" />
-                    <element signature="e#376#400#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MatrixTests.h" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Tests/MatrixTests.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="717">
-                  <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#110#137#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-134">
-                  <caret line="479" column="7" lean-forward="false" selection-start-line="479" selection-start-column="7" selection-end-line="479" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix.h" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="644">
-                  <caret line="165" column="11" lean-forward="false" selection-start-line="165" selection-start-column="11" selection-end-line="165" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#11146#11380#1" expanded="false" />
-                    <element signature="e#11484#11857#0" expanded="false" />
-                    <element signature="e#11860#12064#1" expanded="false" />
-                    <element signature="e#12068#12356#1" expanded="false" />
-                    <element signature="e#12369#12371#0" expanded="true" />
-                    <element signature="e#12429#15105#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Matrix.inl" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.inl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="704">
-                  <caret line="196" column="19" lean-forward="false" selection-start-line="196" selection-start-column="19" selection-end-line="216" selection-end-column="29" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.5">
+          <split-first>
+            <leaf>
+              <file leaf-file-name="MatrixTests.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Tests/MatrixTests.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="630">
+                      <caret line="303" column="39" lean-forward="false" selection-start-line="303" selection-start-column="39" selection-end-line="303" selection-end-column="39" />
+                      <folding>
+                        <element signature="e#110#137#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="559">
+                      <caret line="404" column="49" lean-forward="false" selection-start-line="404" selection-start-column="49" selection-end-line="404" selection-end-column="49" />
+                      <folding>
+                        <element signature="e#115#135#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix.h" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Math/Matrix.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="328">
+                      <caret line="270" column="28" lean-forward="false" selection-start-line="270" selection-start-column="15" selection-end-line="270" selection-end-column="28" />
+                      <folding>
+                        <element signature="e#172#190#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
+                <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="532">
+                      <caret line="1417" column="9" lean-forward="false" selection-start-line="1417" selection-start-column="4" selection-end-line="1417" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix.h" pinned="false" current-in-tab="false">
+                <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="-436">
+                      <caret line="174" column="24" lean-forward="false" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+                      <folding>
+                        <element signature="e#11146#11380#1" expanded="false" />
+                        <element signature="e#11484#11857#0" expanded="false" />
+                        <element signature="e#11860#12064#1" expanded="false" />
+                        <element signature="e#12068#12356#1" expanded="false" />
+                        <element signature="e#12369#12371#0" expanded="true" />
+                        <element signature="e#12429#15105#0" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="RotationMatrix.h" pinned="false" current-in-tab="false">
+                <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/RotationMatrix.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="388">
+                      <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Matrix.inl" pinned="false" current-in-tab="true">
+                <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.inl">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="238">
+                      <caret line="228" column="19" lean-forward="true" selection-start-line="228" selection-start-column="19" selection-end-line="228" selection-end-column="19" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -246,7 +293,6 @@
       <find>operator^</find>
       <find>proje</find>
       <find>Vector</find>
-      <find>operator[]</find>
       <find>IsNormalized</find>
       <find>THRESH_VECTOR_NORMALIZED</find>
       <find>normalize</find>
@@ -257,6 +303,12 @@
       <find>Matrix</find>
       <find>4</find>
       <find>column</find>
+      <find>operator[]</find>
+      <find>check(</find>
+      <find>check</find>
+      <find>normali</find>
+      <find>GetTransposed</find>
+      <find>Rotation</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -286,22 +338,23 @@
         <option value="$PROJECT_DIR$/src/Tests/tests.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/Tests/tests.cpp" />
-        <option value="$PROJECT_DIR$/src/Math/Vector.cpp" />
-        <option value="$PROJECT_DIR$/src/Math/Vector2.h" />
         <option value="$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector4.h" />
+        <option value="$PROJECT_DIR$/src/Tests/VectorTests.h" />
+        <option value="$PROJECT_DIR$/src/Math/Vector2.h" />
+        <option value="$PROJECT_DIR$/src/Math/Vector.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Vector2.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Vector4.cpp" />
-        <option value="$PROJECT_DIR$/src/Tests/VectorTests.h" />
-        <option value="$PROJECT_DIR$/src/Math/Matrix.cpp" />
         <option value="$PROJECT_DIR$/src/Math/TMatrix.h" />
+        <option value="$PROJECT_DIR$/src/Math/Vector4.h" />
+        <option value="$PROJECT_DIR$/src/Math/Vector.h" />
+        <option value="$PROJECT_DIR$/src/Math/Maths.h" />
+        <option value="$PROJECT_DIR$/src/Math/Matrix.h" />
+        <option value="$PROJECT_DIR$/src/Math/Matrix.cpp" />
         <option value="$PROJECT_DIR$/src/Tests/MatrixTests.h" />
-        <option value="$PROJECT_DIR$/src/Math/Matrix3.h" />
         <option value="$PROJECT_DIR$/src/Math/Matrix2.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Matrix3.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Matrix2.h" />
-        <option value="$PROJECT_DIR$/src/Math/Matrix.h" />
+        <option value="$PROJECT_DIR$/src/Math/Matrix3.h" />
       </list>
     </option>
   </component>
@@ -318,9 +371,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="y" value="33" />
-    <option name="width" value="2462" />
+    <option name="width" value="2457" />
     <option name="height" value="2048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -415,7 +469,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.h&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h" />
+    <property name="SearchEverywhereHistoryKey" value="vector.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;vector&#9;FILE&#9;file:///home/ricardo/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h&#10;Vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix.h&#10;vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix2.h&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.cpp&#10;vector4.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4.c&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -493,12 +547,12 @@
       <workItem from="1507217493192" duration="12943000" />
       <workItem from="1507461698288" duration="4757000" />
       <workItem from="1507487397469" duration="21458000" />
-      <workItem from="1507734889311" duration="22273000" />
+      <workItem from="1507734889311" duration="34516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102676000" />
+    <option name="totallyTimeSpent" value="114919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -510,22 +564,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="33" width="2462" height="2048" extended-state="0" />
+    <frame x="0" y="33" width="2457" height="2048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16535433" sideWeight="0.57824594" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16535433" sideWeight="0.4217541" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18005249" sideWeight="0.4217541" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23779528" sideWeight="0.6223022" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238247" sideWeight="0.37460977" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10323383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10343008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24977416" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24094488" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14068241" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -533,6 +587,27 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16535433" sideWeight="0.57824594" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16535433" sideWeight="0.4217541" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23779528" sideWeight="0.6223022" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238247" sideWeight="0.37460977" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10343008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24977416" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24086538" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -550,33 +625,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Debug.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -715,17 +768,9 @@
         <state relative-caret-position="240">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#213#233#0" expanded="true" />
-            <element signature="e#376#400#0" expanded="true" />
+            <element signature="e#213#233#0" expanded="false" />
+            <element signature="e#376#400#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/catch.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="11454" column="15" lean-forward="false" selection-start-line="11454" selection-start-column="15" selection-end-line="11454" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,71 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Maths.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/tests.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#213#233#0" expanded="true" />
-            <element signature="e#376#400#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector2.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="256" column="0" lean-forward="false" selection-start-line="256" selection-start-column="0" selection-end-line="269" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector4.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="297" column="0" lean-forward="false" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector4.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1010">
           <caret line="315" column="58" lean-forward="true" selection-start-line="315" selection-start-column="58" selection-end-line="315" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="292" column="34" lean-forward="false" selection-start-line="292" selection-start-column="34" selection-end-line="292" selection-end-column="34" />
-          <folding>
-            <element signature="e#172#189#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1117">
-          <caret line="179" column="19" lean-forward="false" selection-start-line="179" selection-start-column="19" selection-end-line="179" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="194" column="5" lean-forward="false" selection-start-line="194" selection-start-column="5" selection-end-line="211" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -845,22 +829,6 @@
           <folding>
             <element signature="e#110#137#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector4.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="942">
-          <caret line="228" column="20" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <caret line="479" column="7" lean-forward="false" selection-start-line="479" selection-start-column="7" selection-end-line="479" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,10 +848,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector2.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1163">
+          <caret line="285" column="42" lean-forward="false" selection-start-line="285" selection-start-column="42" selection-end-line="285" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1571">
+          <caret line="207" column="29" lean-forward="false" selection-start-line="207" selection-start-column="29" selection-end-line="207" selection-end-column="29" />
+          <folding>
+            <element signature="e#116#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1259">
+          <caret line="220" column="19" lean-forward="false" selection-start-line="220" selection-start-column="19" selection-end-line="220" selection-end-column="19" />
+          <folding>
+            <element signature="e#114#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#213#233#0" expanded="false" />
+            <element signature="e#376#400#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector4.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="244" column="18" lean-forward="false" selection-start-line="244" selection-start-column="18" selection-end-line="244" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/catch.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="2244" column="8" lean-forward="false" selection-start-line="2244" selection-start-column="8" selection-end-line="2244" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="1417" column="9" lean-forward="false" selection-start-line="1417" selection-start-column="4" selection-end-line="1417" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/bits/mathcalls.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <folding>
+            <element signature="e#1968#2046#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/6/cmath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="206" column="2" lean-forward="false" selection-start-line="206" selection-start-column="2" selection-end-line="206" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="329" column="9" lean-forward="false" selection-start-line="329" selection-start-column="9" selection-end-line="329" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Maths.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Matrix.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="404" column="49" lean-forward="false" selection-start-line="404" selection-start-column="49" selection-end-line="404" selection-end-column="49" />
+          <folding>
+            <element signature="e#115#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/MatrixTests.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="303" column="39" lean-forward="false" selection-start-line="303" selection-start-column="39" selection-end-line="303" selection-end-column="39" />
+          <folding>
+            <element signature="e#110#137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Vector4.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-538">
+          <caret line="299" column="18" lean-forward="false" selection-start-line="299" selection-start-column="11" selection-end-line="299" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Matrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="270" column="28" lean-forward="false" selection-start-line="270" selection-start-column="15" selection-end-line="270" selection-end-column="28" />
+          <folding>
+            <element signature="e#172#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/TMatrix.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="403" column="45" lean-forward="false" selection-start-line="403" selection-start-column="32" selection-end-line="403" selection-end-column="45" />
+          <folding>
+            <element signature="e#175#193#0" expanded="true" />
+            <element signature="e#252#276#0" expanded="true" />
+            <element signature="e#5109#5127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="18" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="165" column="11" lean-forward="false" selection-start-line="165" selection-start-column="11" selection-end-line="165" selection-end-column="37" />
+        <state relative-caret-position="-436">
+          <caret line="174" column="24" lean-forward="false" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
           <folding>
             <element signature="e#11146#11380#1" expanded="false" />
             <element signature="e#11484#11857#0" expanded="false" />
@@ -895,85 +1018,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.inl">
+    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/RotationMatrix.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="196" column="19" lean-forward="false" selection-start-line="196" selection-start-column="19" selection-end-line="216" selection-end-column="29" />
+        <state relative-caret-position="388">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix.cpp">
+    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.inl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="324" column="28" lean-forward="false" selection-start-line="324" selection-start-column="28" selection-end-line="324" selection-end-column="28" />
-          <folding>
-            <element signature="e#115#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/TMatrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#175#193#0" expanded="true" />
-            <element signature="e#252#276#0" expanded="true" />
-            <element signature="e#4371#4389#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="228" column="19" lean-forward="true" selection-start-line="228" selection-start-column="19" selection-end-line="228" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="579">
+          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+          <folding>
+            <element signature="e#175#195#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="683">
+          <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+          <folding>
+            <element signature="e#175#195#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/MatrixTests.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-          <folding>
-            <element signature="e#110#137#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="56" column="60" lean-forward="true" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding>
-            <element signature="e#172#190#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

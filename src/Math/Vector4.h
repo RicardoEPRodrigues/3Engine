@@ -311,6 +311,22 @@ namespace ThreeEngine {
         bool IsNormalized() const;
 
         /**
+         * Gets specific component of the vector.
+         *
+         * @param Index the index of vector component
+         * @return reference to component.
+         */
+        float& operator[](int Index);
+
+        /**
+         * Gets specific component of the vector.
+         *
+         * @param Index the index of vector component
+         * @return reference to component.
+         */
+        float operator[](int Index) const;
+
+        /**
          * Sets the vectors components to the given values
          *
          * @param inX X coordinate
@@ -334,6 +350,14 @@ namespace ThreeEngine {
         operator std::string() const {
             return std::string("{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
                                std::to_string(Z) + ", " + std::to_string(W) + " }");
+        }
+
+        operator Vector() const {
+            return Vector(X, Y, Z);
+        }
+
+        operator Vector2() const {
+            return Vector2(X, Y);
         }
 
         /**

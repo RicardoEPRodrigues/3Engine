@@ -4,6 +4,7 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Vector.h"
+#include "../Debug.h"
 
 namespace ThreeEngine {
 
@@ -38,9 +39,9 @@ namespace ThreeEngine {
     }
 
     Vector Vector::GetRandom(const number& max) {
-        number X = Maths::GetRandom(-max, 2*max);
+        number X = Maths::GetRandom(-max, 2 * max);
         number Y = Maths::GetRandom(-max, 2 * max);
-        number Z = Maths::GetRandom(-max, 2*max);
+        number Z = Maths::GetRandom(-max, 2 * max);
         return Vector(X, Y, Z);
     }
 
@@ -200,7 +201,7 @@ namespace ThreeEngine {
             return false;
         }
 
-        const float scale = 1.f/sqrtf(squaredSum);
+        const float scale = 1.f / sqrtf(squaredSum);
         X *= scale;
         Y *= scale;
         Z *= scale;
@@ -209,6 +210,34 @@ namespace ThreeEngine {
 
     bool Vector::IsNormalized() const {
         return (std::abs(1.0f - DistSquared()) < Epsilon);
+    }
+
+    float& Vector::operator[](int Index) {
+        switch (Index) {
+            case 0:
+                return X;
+            case 1:
+                return Y;
+            case 2:
+                return Z;
+            default:
+                Debug::Error("Invalid Index");
+                return Z;
+        }
+    }
+
+    float Vector::operator[](int Index) const {
+        switch (Index) {
+            case 0:
+                return X;
+            case 1:
+                return Y;
+            case 2:
+                return Z;
+            default:
+                Debug::Error("Invalid Index");
+                return Z;
+        }
     }
 
     void Vector::Set(const number& inX, const number& inY, const number& inZ) {

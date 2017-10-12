@@ -13,6 +13,7 @@
 
 namespace ThreeEngine {
 
+
     typedef float number;
 
     /// Epsilon is the difference between 1.0 and the next value representable by the floating-point.
@@ -22,9 +23,10 @@ namespace ThreeEngine {
     /// Units in the Last Place to take into account in a floating-point type.
     const float ULP = 3.0f;
 
-    struct Maths
-    {
-        static number GetRandom(const number& lowLimit, const number& HighLimit);
+    struct Maths {
+            enum Axis { X, Y, Z, W };
+
+            static number GetRandom(const number& lowLimit, const number& HighLimit);
 
         private:
             Maths() = default;
