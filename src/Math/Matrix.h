@@ -7,6 +7,7 @@
 #define THREEENGINE_MATRIX_H
 
 #include <ostream>
+#include <string>
 #include "Maths.h"
 
 namespace ThreeEngine {

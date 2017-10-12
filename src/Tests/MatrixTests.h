@@ -13,56 +13,61 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
     // TODO Test constructors
 
     GIVEN("Template Matrix with different sizes") {
+        TMatrix<3, 2> m0 = TMatrix<3, 2>(0);
+        TMatrix<3, 2> m1 = TMatrix<3, 2>(1);
+        TMatrix<3, 2> mm1 = TMatrix<3, 2>(-1);
+        TMatrix<3, 2> m2 = TMatrix<3, 2>(2);
+        TMatrix<3, 2> m3 = TMatrix<3, 2>(3);
+        TMatrix<3, 2> m5 = TMatrix<3, 2>(0.5f);
 
         WHEN("using Unary arithmetic functions") {
-            TMatrix<3, 2> m = TMatrix<3, 2>(1);
-            CHECK((-m) == TMatrix<3, 2>(-1));
+            TMatrix<3, 2> m = m1;
+            CHECK((-m) == mm1);
         }
 
         WHEN("using binaries arithmetic functions") {
-            TMatrix<3, 2> m = TMatrix<3, 2>(1);
-            CHECK((++m) == TMatrix<3, 2>(2));
-            CHECK((--m) == TMatrix<3, 2>(1));
+            TMatrix<3, 2> m = m1;
+            CHECK((++m) == m2);
+            CHECK((--m) == m1);
         }
 
         WHEN("using arithmetic functions on numbers") {
-            TMatrix<3, 2> m = TMatrix<3, 2>(1);
+            TMatrix<3, 2> m = m1;
 
             THEN("vector +-*/ number") {
 
-                CHECK((m + 1.0f) == TMatrix<3, 2>(2));
-                CHECK((m - 1.0f) == TMatrix<3, 2>(0));
-                CHECK((m * 2.0f) == TMatrix<3, 2>(2));
-                CHECK((m / 2.0f) == TMatrix<3, 2>(.5f));
+                CHECK((m + 1.0f) == m2);
+                CHECK((m - 1.0f) == m0);
+                CHECK((m * 2.0f) == m2);
+                CHECK((m / 2.0f) == m5);
             }
 
             THEN("number +-*/ vector") {
-                CHECK((1.0f + m) == TMatrix<3, 2>(2));
-                CHECK((1.0f - m) == TMatrix<3, 2>(0));
-                CHECK((2.0f * m) == TMatrix<3, 2>(2));
-                CHECK((2.0f / m) == TMatrix<3, 2>(2));
+                CHECK((1.0f + m) == m2);
+                CHECK((1.0f - m) == m0);
+                CHECK((2.0f * m) == m2);
+                CHECK((2.0f / m) == m2);
             }
 
             THEN("vector =+-*/ number") {
-                CHECK((m += 1.0f) == TMatrix<3, 2>(2));
-                CHECK((m -= 1.0f) == TMatrix<3, 2>(1));
-                CHECK((m *= 2.0f) == TMatrix<3, 2>(2));
-                CHECK((m /= 2.0f) == TMatrix<3, 2>(1));
+                CHECK((m += 1.0f) == m2);
+                CHECK((m -= 1.0f) == m1);
+                CHECK((m *= 2.0f) == m2);
+                CHECK((m /= 2.0f) == m1);
             }
         }
 
         WHEN("using arithmetic functions on other vectors") {
-            TMatrix<3, 2> m = TMatrix<3, 2>(1);
-            TMatrix<3, 2> m2 = TMatrix<3, 2>(2);
+            TMatrix<3, 2> m = m1;
 
             THEN("vector +- vector") {
-                CHECK((m + m2) == TMatrix<3, 2>(3));
+                CHECK((m + m2) == m3);
                 CHECK((m - m2) == -m);
             }
 
             THEN("vector =+- vector") {
-                CHECK((m += m2) == TMatrix<3, 2>(3));
-                CHECK((m -= m2) == TMatrix<3, 2>(1));
+                CHECK((m += m2) == m3);
+                CHECK((m -= m2) == m1);
             }
 
             THEN("vector * vector") {
@@ -72,7 +77,7 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                         5, 2,
                         0, 4
                 };
-                TMatrix<3, 2> m1 = TMatrix<3, 2>(m1a);
+                TMatrix<3, 2> M1 = TMatrix<3, 2>(m1a);
 
                 const number m2a[] = {
                         3, 6, 9, 4,
@@ -85,9 +90,9 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                         19, 44, 61, 26,
                         8, 28, 32, 12
                 };
-                TMatrix<3, 4> m3 = TMatrix<3, 4>(m3a);
+                TMatrix<3, 4> M3 = TMatrix<3, 4>(m3a);
 
-                CHECK((m1 * M2) == m3);
+                CHECK((M1 * M2) == M3);
             }
         }
 
@@ -194,10 +199,10 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
             number array[16];
             m.ToArray(array);
 
-            number result[] = {5, 0, 3, 1,
+            number result[] = { 5, 0, 3, 1,
                                2, 6, 8, 8,
                                6, 2, 1, 5,
-                               1, 0, 4, 6};
+                               1, 0, 4, 6 };
 
             CHECK(std::equal(std::begin(array), std::end(array), std::begin(result)));
         }

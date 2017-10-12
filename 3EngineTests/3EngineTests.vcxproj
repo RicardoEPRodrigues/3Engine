@@ -19,21 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Engine.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Math\Maths.cpp" />
-    <ClCompile Include="..\src\Math\Matrix.cpp" />
-    <ClCompile Include="..\src\Math\Matrix2.cpp" />
-    <ClCompile Include="..\src\Math\Matrix3.cpp" />
-    <ClCompile Include="..\src\Math\Vector.cpp" />
-    <ClCompile Include="..\src\Math\Vector2.cpp" />
-    <ClCompile Include="..\src\Math\Vector4.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\config\RuntimeConfig.json" />
-    <None Include="..\config\SetupConfig.json" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\src\Debug.h" />
     <ClInclude Include="..\src\Engine.h" />
     <ClInclude Include="..\src\json.hpp" />
@@ -45,13 +30,27 @@
     <ClInclude Include="..\src\Math\Vector.h" />
     <ClInclude Include="..\src\Math\Vector2.h" />
     <ClInclude Include="..\src\Math\Vector4.h" />
+    <ClInclude Include="..\src\Tests\catch.hpp" />
+    <ClInclude Include="..\src\Tests\MatrixTests.h" />
+    <ClInclude Include="..\src\Tests\VectorTests.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Engine.cpp" />
+    <ClCompile Include="..\src\Math\Maths.cpp" />
+    <ClCompile Include="..\src\Math\Matrix.cpp" />
+    <ClCompile Include="..\src\Math\Matrix2.cpp" />
+    <ClCompile Include="..\src\Math\Matrix3.cpp" />
+    <ClCompile Include="..\src\Math\Vector.cpp" />
+    <ClCompile Include="..\src\Math\Vector2.cpp" />
+    <ClCompile Include="..\src\Math\Vector4.cpp" />
+    <ClCompile Include="..\src\Tests\tests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{D9085C74-190E-4E3C-80EA-3405E00C8A19}</ProjectGuid>
-    <RootNamespace>3Engine</RootNamespace>
+    <ProjectGuid>{47B432F2-09CA-4FDD-AF38-C504143827B8}</ProjectGuid>
+    <RootNamespace>3EngineTests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
-    <ProjectName>3Engine</ProjectName>
+    <ProjectName>3EngineTests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -142,11 +141,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
@@ -188,13 +188,14 @@ copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
