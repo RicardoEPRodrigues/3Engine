@@ -42,6 +42,12 @@ namespace ThreeEngine {
             }
         }
 
+        static TMatrix<lines, columns> Identity() {
+            TMatrix<lines, columns> m;
+            m.SetIdentity();
+            return m;
+        }
+
         /**
          * Set this to the identity matrix
          */

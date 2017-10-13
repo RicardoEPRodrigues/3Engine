@@ -1,6 +1,6 @@
 /*
  * File Matrix3.h in project ThreeEngine
- * 
+ *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #ifndef THREEENGINE_MATRIX3_H
@@ -31,6 +31,8 @@ namespace ThreeEngine {
         static Matrix3 ScaleMatrixInverted(const number& inX, const number& inY, const number& inZ);
 
         static Matrix3 RotationMatrix(Maths::Axis axis, const number& angle);
+
+        static Matrix3 RotationMatrix(const Vector& vector, const number& angle);
 
         /**
          * Results in the multiplication of this matrix with a Vector.

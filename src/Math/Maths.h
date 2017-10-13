@@ -26,6 +26,8 @@ namespace ThreeEngine {
     struct Maths {
             enum Axis { X, Y, Z, W };
 
+            static number PI;
+
             static number GetRandom(const number& lowLimit, const number& HighLimit);
 
         private:

@@ -55,21 +55,33 @@ namespace ThreeEngine {
     }
 
     Matrix3 Matrix3::RotationMatrix(Maths::Axis axis, const number& angle) {
+        number angleInRadian = angle * Maths::PI / 180.0f;
         switch (axis) {
             case Maths::Axis::X:
                 return {1, 0, 0,
-                        0, cos(angle), -sin(angle),
-                        0, -sin(angle), cos(angle)};
+                        0, cos(angleInRadian), -sin(angleInRadian),
+                        0, -sin(angleInRadian), cos(angleInRadian)};
             case Maths::Axis::Y:
-                return {cos(angle), 0, -sin(angle),
+                return {cos(angleInRadian), 0, -sin(angleInRadian),
                         0, 1, 0,
-                        -sin(angle), 0, cos(angle)};
+                        -sin(angleInRadian), 0, cos(angleInRadian)};
             case Maths::Axis::Z:
             default:
-                return {cos(angle), -sin(angle), 0,
-                        -sin(angle), cos(angle), 0,
+                return {cos(angleInRadian), -sin(angleInRadian), 0,
+                        -sin(angleInRadian), cos(angleInRadian), 0,
                         0, 0, 1};
         }
+    }
+
+    Matrix3 Matrix3::RotationMatrix(const Vector& vector, const number& angle) {
+        number angleInRadian = angle * Maths::PI / 180.0f;
+
+        // Rodrigues Formula
+        Vector vNorm = vector;
+        vNorm.Normalize();
+        Matrix3 dualM = DualMatrix(vNorm);
+        Matrix3 dualMSqr = (TMatrix)dualM * dualM;
+        return Identity() + (TMatrix)dualM * sin(angleInRadian) + (1.0f - cos(angleInRadian)) * dualMSqr;
     }
 
     Vector Matrix3::operator*(const Vector& v) {

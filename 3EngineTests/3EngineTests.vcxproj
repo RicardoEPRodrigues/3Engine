@@ -107,13 +107,13 @@
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)_dbg</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>$(ProjectName)_rls</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
