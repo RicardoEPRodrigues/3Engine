@@ -10,6 +10,8 @@
 using namespace std;
 
 namespace ThreeEngine {
+
+
     Matrix::Matrix() {
         Reset(0.0f);
     }
@@ -363,6 +365,13 @@ namespace ThreeEngine {
         m.M[3][3] = M[3][3];
 
         return m;
+    }
+
+    Matrix Matrix::IdentityMatrix() {
+        return {1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 1, 0,
+                0, 0, 0, 1};
     }
 
     Matrix Matrix::ScaleMatrix(const number& inX, const number& inY, const number& inZ,

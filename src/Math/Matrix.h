@@ -18,9 +18,6 @@ namespace ThreeEngine {
 
         number M[4][4];
 
-        /** Identity Matrix */
-        static const Matrix IdentityMatrix;
-
         Matrix();
 
         explicit Matrix(number in);
@@ -313,6 +310,9 @@ namespace ThreeEngine {
             }
             return m;
         }
+
+        /** Identity Matrix */
+        static Matrix IdentityMatrix();
 
         static Matrix
         ScaleMatrix(const number& inX, const number& inY, const number& inZ, const number& inW);

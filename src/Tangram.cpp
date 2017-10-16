@@ -100,31 +100,17 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
 
-    Matrix I = {
-            1.0f, 0.0f, 0.0f, 0.0f,
-            0.0f, 1.0f, 0.0f, 0.0f,
-            0.0f, 0.0f, 1.0f, 0.0f,
-            0.0f, 0.0f, 0.0f, 1.0f
-    }; // Row Major (GLSL is Column Major)
-
-    Matrix M = {
-            1.0f, 0.0f, 0.0f, -1.0f,
-            0.0f, 1.0f, 0.0f, -1.0f,
-            0.0f, 0.0f, 1.0f, 0.0f,
-            0.0f, 0.0f, 0.0f, 1.0f
-    }; // Row Major (GLSL is Column Major)
-
     void Tangram::DrawScene() {
         glBindVertexArray(VaoId);
         shaderProgram.Use();
 
         number identityArray[16];
-        I.ToArray(identityArray);
+        Matrix::IdentityMatrix().ToArray(identityArray);
         glUniformMatrix4fv(UniformId, 1, GL_FALSE, identityArray);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, (GLvoid*) 0);
 
         number translationArray[16];
-        M.ToArray(translationArray);
+        Matrix::TranslationMatrix({-1, -1, 0, 0}).ToArray(translationArray);
         glUniformMatrix4fv(UniformId, 1, GL_FALSE, translationArray);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, (GLvoid*) 0);
 
