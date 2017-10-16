@@ -163,34 +163,40 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                                       5, 6, 0);
 
                 Matrix3 m31Result = Matrix3(-24, 18, 5,
-                                      20, -15, -4,
-                                      -5, 4, 1);
+                                            20, -15, -4,
+                                            -5, 4, 1);
 
                 CHECK(m31.Inverse() == m31Result);
             }
 
             THEN("applying rotations") {
 
-                Vector v1 = { 1,0,0 };
-                Vector v2 = { 0,2,0 };
-                Vector v3 = { 0,0,3 };
+                Vector v1 = {1, 0, 0};
+                Vector v2 = {0, 2, 0};
+                Vector v3 = {0, 0, 3};
 
                 Matrix3 v1Rot = Matrix3::RotationMatrix(v1, 90.0f);
                 Matrix3 v2Rot = Matrix3::RotationMatrix(v2, 90.0f);
                 Matrix3 v3Rot = Matrix3::RotationMatrix(v3, 90.0f);
 
-                CHECK((v1Rot * v1) == v1);
-                std::cout << v1 << " rotated by 90 on axis " << std::endl << v2Rot << " results in " << (v2Rot * v1) << std::endl;
-                std::cout << v1 << " rotated by 90 on axis " << std::endl << v3Rot << " results in " << (v3Rot * v1) << std::endl;
-
-                std::cout << v2 << " rotated by 90 on axis " << std::endl << v1Rot << " results in " << (v1Rot * v2) << std::endl;
-                std::cout << v2 << " rotated by 90 on axis " << std::endl << v2Rot << " results in " << (v2Rot * v2) << std::endl;
-                std::cout << v2 << " rotated by 90 on axis " << std::endl << v3Rot << " results in " << (v3Rot * v2) << std::endl;
-
-                std::cout << v3 << " rotated by 90 on axis " << std::endl << v1Rot << " results in " << (v1Rot * v3) << std::endl;
-                std::cout << v3 << " rotated by 90 on axis " << std::endl << v2Rot << " results in " << (v2Rot * v3) << std::endl;
-                std::cout << v3 << " rotated by 90 on axis " << std::endl << v3Rot << " results in " << (v3Rot * v3) << std::endl;
-
+                Vector vResult = Vector(1, 0, 0);
+                CHECK((v1Rot * v1) == vResult);
+                vResult = Vector(0, 0, -1);
+                CHECK((v2Rot * v1) == vResult);
+                vResult = Vector(0, 1, 0);
+                CHECK((v3Rot * v1) == vResult);
+                vResult = Vector(0, 0, 2);
+                CHECK((v1Rot * v2) == vResult);
+                vResult = Vector(0, 2, 0);
+                CHECK((v2Rot * v2) == vResult);
+                vResult = Vector(-2, 0, 0);
+                CHECK((v3Rot * v2) == vResult);
+                vResult = Vector(0, -3, 0);
+                CHECK((v1Rot * v3) == vResult);
+                vResult = Vector(3, 0, 0);
+                CHECK((v2Rot * v3) == vResult);
+                vResult = Vector(0, 0, 3);
+                CHECK((v3Rot * v3) == vResult);
             }
         }
 
