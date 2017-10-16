@@ -22,13 +22,13 @@ ENDIF ()
 
 set(SOURCE_FILES
         src/Debug.h src/Engine.cpp src/Engine.h
-        src/json.hpp 
+        src/json.hpp
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
         src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h src/Math/Matrix.cpp src/Math/Matrix.h src/Math/TMatrix.h src/Math/Matrix3.cpp src/Math/Matrix3.h src/Math/Matrix2.cpp src/Math/Matrix2.h src/Shader/Shader.cpp src/Shader/Shader.h src/Shader/ShaderProgram.cpp src/Shader/ShaderProgram.h src/OpenGLUtils.h src/Tangram.cpp src/Tangram.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
-        
+
 
 find_package(OpenGL REQUIRED)
 
@@ -80,23 +80,20 @@ if (WIN32) # WINDOWS post build
             COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             )
-endif()
+endif ()
 
 add_custom_command(TARGET ThreeEngine POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/SetupConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/RuntimeConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
         )
 add_custom_command(TARGET ThreeEngineTests POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/SetupConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/RuntimeConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
         )
 add_custom_target(CopyConfigFiles
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/SetupConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/config/RuntimeConfig.json ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
         )

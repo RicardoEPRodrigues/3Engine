@@ -6,6 +6,7 @@
 #include <GL/glew.h>
 #include "Tangram.h"
 #include "OpenGLUtils.h"
+#include "Math/Matrix.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -21,44 +22,14 @@ namespace ThreeEngine {
 
     Tangram::~Tangram() = default;
 
-    const GLchar* VertexShader =
-            {
-                    "#version 330 core\n"
-
-                            "in vec4 in_Position;\n"
-                            "in vec4 in_Color;\n"
-                            "out vec4 ex_Color;\n"
-
-                            "uniform mat4 Matrix;\n"
-
-                            "void main(void)\n"
-                            "{\n"
-                            "	gl_Position = Matrix * in_Position;\n"
-                            "	ex_Color = in_Color;\n"
-                            "}\n"
-            };
-
-    const GLchar* FragmentShader =
-            {
-                    "#version 330 core\n"
-
-                            "in vec4 ex_Color;\n"
-                            "out vec4 out_Color;\n"
-
-                            "void main(void)\n"
-                            "{\n"
-                            "	out_Color = ex_Color;\n"
-                            "}\n"
-            };
-
     void createBufferObjects();
 
     void destroyBufferObjects();
 
     void Tangram::OnInit() {
         shaderProgram.Init();
-        shaderProgram.Add({GL_VERTEX_SHADER, VertexShader});
-        shaderProgram.Add({GL_FRAGMENT_SHADER, FragmentShader});
+        shaderProgram.Add(Shader::LoadFile(GL_VERTEX_SHADER, "shaders/SimpleColor/vertex.glsl"));
+        shaderProgram.Add(Shader::LoadFile(GL_FRAGMENT_SHADER, "shaders/SimpleColor/fragment.glsl"));
         shaderProgram.BindAttributeLocation(VERTICES, "in_Position");
         shaderProgram.BindAttributeLocation(COLORS, "in_Color");
         shaderProgram.Link();
@@ -129,18 +100,14 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
 
-/////////////////////////////////////////////////////////////////////// SCENE
-
-    typedef GLfloat Matrix[16];
-
-    const Matrix I = {
+    Matrix I = {
             1.0f, 0.0f, 0.0f, 0.0f,
             0.0f, 1.0f, 0.0f, 0.0f,
             0.0f, 0.0f, 1.0f, 0.0f,
             0.0f, 0.0f, 0.0f, 1.0f
     }; // Row Major (GLSL is Column Major)
 
-    const Matrix M = {
+    Matrix M = {
             1.0f, 0.0f, 0.0f, -1.0f,
             0.0f, 1.0f, 0.0f, -1.0f,
             0.0f, 0.0f, 1.0f, 0.0f,
@@ -151,10 +118,14 @@ namespace ThreeEngine {
         glBindVertexArray(VaoId);
         shaderProgram.Use();
 
-        glUniformMatrix4fv(UniformId, 1, GL_TRUE, I);
+        number identityArray[16];
+        I.ToArray(identityArray);
+        glUniformMatrix4fv(UniformId, 1, GL_FALSE, identityArray);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, (GLvoid*) 0);
 
-        glUniformMatrix4fv(UniformId, 1, GL_TRUE, M);
+        number translationArray[16];
+        M.ToArray(translationArray);
+        glUniformMatrix4fv(UniformId, 1, GL_FALSE, translationArray);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, (GLvoid*) 0);
 
         shaderProgram.Stop();
