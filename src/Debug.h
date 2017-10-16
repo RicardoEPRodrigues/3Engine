@@ -22,7 +22,7 @@ namespace ThreeEngine {
             Debug() {}
 
 
-            static std::string string_format(const std::string fmt_str, ...) {
+            static std::string string_format(const std::string& fmt_str, ...) {
                 int final_n, n = ((int) fmt_str.size()) *
                                  2; /* Reserve two times as much as the length of the fmt_str */
                 std::unique_ptr<char[]> formatted;
@@ -47,45 +47,56 @@ namespace ThreeEngine {
             }
 
         public:
-            static void Print(std::string message) {
+            static void Print(const std::string& message) {
+#ifdef DEBUG
                 std::cout << message << std::endl;
+#endif
             }
 
             template<typename... Args>
-            static void Print(const std::string fmt_str, Args... args) {
+            static void Print(const std::string& fmt_str, Args... args) {
+#ifdef DEBUG
                 Print(string_format(fmt_str, args...));
+#endif
             }
 
-            static void Log(std::string message) {
+            static void Log(const std::string& message) {
+#ifdef DEBUG
                 std::cout << "LOG: " << message << std::endl;
+#endif
             }
 
             template<typename... Args>
-            static void Log(const std::string fmt_str, Args... args) {
+            static void Log(const std::string& fmt_str, Args... args) {
+#ifdef DEBUG
                 Log(string_format(fmt_str, args...));
+#endif
             }
 
-            static void Warn(std::string message) {
+            static void Warn(const std::string& message) {
+#ifdef DEBUG
                 std::cerr << "WARNING: " << message << std::endl;
+#endif
             }
 
             template<typename... Args>
-            static void Warn(const std::string fmt_str, Args... args) {
+            static void Warn(const std::string& fmt_str, Args... args) {
+#ifdef DEBUG
                 Warn(string_format(fmt_str, args...));
+#endif
             }
 
-            static void Error(std::string message) {
+            static void Error(const std::string& message) {
                 std::cerr << "ERROR: " << message << std::endl;
             }
 
             template<typename... Args>
-            static void Error(const std::string fmt_str, Args... args) {
+            static void Error(const std::string& fmt_str, Args... args) {
                 Error(string_format(fmt_str, args...));
             }
 
-            static void GLError(GLenum errorCode) {
-                std::string message = "OpenGL Error: ";
-                // Taken from https://www.khronos.org/opengl/wiki/OpenGL_Error
+            static std::string getGLErrorMessage(GLenum errorCode) {// Taken from https://www.khronos.org/opengl/wiki/OpenGL_Error
+                std::string message;
                 switch (errorCode) {
                     case GL_INVALID_ENUM:
                         message += "Invalid Enumeration: Enumeration parameter is not legal enumeration for function.";
@@ -115,6 +126,21 @@ namespace ThreeEngine {
                         message += "Unknown: Error Code " + errorCode;
                         break;
                 }
+                return message;
+            }
+
+            static void GLWarn(GLenum errorCode) {
+#ifdef DEBUG
+                std::string error = "OpenGL Warning: ";
+                std::string message = getGLErrorMessage(errorCode);
+                Warn(error + message);
+#endif
+            }
+
+            static void GLError(GLenum errorCode) {
+                std::string error = "OpenGL Error: ";
+                std::string message = getGLErrorMessage(errorCode);
+                Error(error + message);
             }
     };
 }

@@ -11,6 +11,7 @@
 
 #include "Engine.h"
 #include "Debug.h"
+#include "OpenGLUtils.h"
 
 using json = nlohmann::json;
 
@@ -26,17 +27,18 @@ namespace ThreeEngine {
 
     /////////////////////////////////////////////////////////////////////// SETUP
 
-    void Engine::init(int argc, char* argv[]) {
-        checkSystemInfo();
-        setupConfig();
-        setupGLUT(argc, argv);
-        setupGLEW();
-        checkOpenGLInfo();
-        setupOpenGL();
-        setupCallbacks();
+    void Engine::Init(int argc, char** argv) {
+        CheckSystemInfo();
+        SetupConfig();
+        SetupGLUT(argc, argv);
+        SetupGLEW();
+        CheckOpenGLInfo();
+        SetupOpenGL();
+        OnInit();
+        SetupCallbacks();
     }
 
-    void Engine::checkSystemInfo() {
+    void Engine::CheckSystemInfo() {
 #if OS_WIN
         Debug::Log("3Engine running in Windows.");
 #elif OS_MAC
@@ -46,7 +48,7 @@ namespace ThreeEngine {
 #endif
     }
 
-    void Engine::setupConfig() {
+    void Engine::SetupConfig() {
         // Assuming always the same path config/SetupConfig.json
         std::ifstream file("config/SetupConfig.json");
         if (file.good()) {
@@ -60,7 +62,7 @@ namespace ThreeEngine {
         }
     }
 
-    void Engine::setupRuntimeConfig() {
+    void Engine::SetupRuntimeConfig() {
         // Assuming always the same path config/SetupConfig.json
         std::ifstream file("config/RuntimeConfig.json");
         if (file.good()) {
@@ -79,7 +81,7 @@ namespace ThreeEngine {
         }
     }
 
-    void Engine::setupGLUT(int argc, char* argv[]) {
+    void Engine::SetupGLUT(int argc, char** argv) {
         glutInit(&argc, argv);
 
         glutInitContextVersion(config["opengl"]["major"], config["opengl"]["minor"]);
@@ -100,7 +102,7 @@ namespace ThreeEngine {
         }
     }
 
-    void Engine::setupGLEW() {
+    void Engine::SetupGLEW() {
         glewExperimental = GL_TRUE;
         // Allow extension entry points to be loaded even if the extension isn't
         // present in the driver's extensions string.
@@ -109,14 +111,11 @@ namespace ThreeEngine {
             Debug::Error("ERROR glewInit: %s", glewGetString(result));
             exit(EXIT_FAILURE);
         }
-        GLenum err_code;
-        while ((err_code = glGetError()) != GL_NO_ERROR) {
-            Debug::GLError(err_code);
-        }
+        CheckOpenGLError("Failed to setup GLEW.");
         // You might get GL_INVALID_ENUM when loading GLEW.
     }
 
-    void Engine::setupOpenGL() {
+    void Engine::SetupOpenGL() {
         glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1], config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LEQUAL);
@@ -128,7 +127,7 @@ namespace ThreeEngine {
         glFrontFace(GL_CCW);
     }
 
-    void Engine::checkOpenGLInfo() {
+    void Engine::CheckOpenGLInfo() {
         const GLubyte* renderer = glGetString(GL_RENDERER);
         const GLubyte* vendor = glGetString(GL_VENDOR);
         const GLubyte* version = glGetString(GL_VERSION);
@@ -138,42 +137,45 @@ namespace ThreeEngine {
         Debug::Log("GLSL version: %s", glslVersion);
     }
 
-    void Engine::setupCallbacks() {
-        glutCloseFunc(cleanup);
-        glutDisplayFunc(display);
-        glutIdleFunc(idle);
-        glutReshapeFunc(reshape);
-        glutTimerFunc(0, timer, 0);
+    void Engine::SetupCallbacks() {
+        glutCloseFunc(Cleanup);
+        glutDisplayFunc(Display);
+        glutIdleFunc(Idle);
+        glutReshapeFunc(Reshape);
+        glutTimerFunc(0, Timer, 0);
     }
 
-    void Engine::run() {
+    void Engine::Run() {
         glutMainLoop();
     }
 
     /////////////////////////////////////////////////////////////////////// CALLBACKS
 
-    void Engine::cleanup() {
+    void Engine::Cleanup() {
+        glUseProgram(0);
+        glBindVertexArray(0);
+        instance->OnCleanup();
     }
 
-    void Engine::display() {
+    void Engine::Display() {
         ++instance->FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        // Draw something
+        instance->DrawScene();
         glutSwapBuffers();
     }
 
-    void Engine::idle() {
+    void Engine::Idle() {
         glutPostRedisplay();
     }
 
-    void Engine::reshape(int w, int h) {
+    void Engine::Reshape(int w, int h) {
         instance->config["window"]["x"] = w;
         instance->config["window"]["y"] = h;
         glViewport(0, 0, instance->config["window"]["x"], instance->config["window"]["y"]);
     }
 
-    void Engine::timer(int) {
-        instance->setupRuntimeConfig();
+    void Engine::Timer(int) {
+        instance->SetupRuntimeConfig();
 
         std::string caption = instance->config["window"]["caption"];
         // Update Window Title
@@ -185,7 +187,7 @@ namespace ThreeEngine {
         glutSetWindow(instance->WindowHandle);
         glutSetWindowTitle(s.c_str());
         instance->FrameCount = 0;
-        glutTimerFunc(1000, timer, 0);
+        glutTimerFunc(1000, Timer, 0);
     }
 
 } /* namespace Divisaction */

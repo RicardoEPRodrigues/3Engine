@@ -13,8 +13,10 @@ set(RUNTIME_OUTPUT_DIRECTORY_DEBUG "${RUNTIME_OUTPUT_DIRECTORY}/debug")
 set(RUNTIME_OUTPUT_DIRECTORY_RELEASE "${RUNTIME_OUTPUT_DIRECTORY}/release")
 
 IF (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_definitions(-DDEBUG)
     set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY_DEBUG})
 elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
+    add_definitions(-DRELEASE)
     set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 ENDIF ()
 
@@ -23,7 +25,7 @@ set(SOURCE_FILES
         src/json.hpp 
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
-        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h src/Math/Matrix.cpp src/Math/Matrix.h src/Math/TMatrix.h src/Math/Matrix3.cpp src/Math/Matrix3.h src/Math/Matrix2.cpp src/Math/Matrix2.h)
+        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h src/Math/Matrix.cpp src/Math/Matrix.h src/Math/TMatrix.h src/Math/Matrix3.cpp src/Math/Matrix3.h src/Math/Matrix2.cpp src/Math/Matrix2.h src/Shader/Shader.cpp src/Shader/Shader.h src/Shader/ShaderProgram.cpp src/Shader/ShaderProgram.h src/OpenGLUtils.h src/Tangram.cpp src/Tangram.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
         

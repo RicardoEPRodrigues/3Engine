@@ -3,10 +3,7 @@
 //
 
 #include <iostream>
-#include <cstdlib>
-#include "Engine.h"
-#include "Math/Matrix.h"
-#include "Debug.h"
+#include "Tangram.h"
 
 using namespace ThreeEngine;
 
@@ -18,8 +15,9 @@ using namespace ThreeEngine;
 int main(int argc, char* argv[]) {
     srand(static_cast <unsigned> (time(0)));
 
-    Engine engine;
-    engine.init(argc, argv);
-    engine.run();
+    Tangram engine;
+    engine.Init(argc, argv);
+    engine.Run();
+
     exit(EXIT_SUCCESS);
 }

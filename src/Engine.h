@@ -20,56 +20,62 @@ namespace ThreeEngine {
             unsigned int FrameCount = 0;
         protected:
 
-            void checkSystemInfo();
+            void CheckSystemInfo();
 
-            void setupConfig();
+            void SetupConfig();
 
-            void setupRuntimeConfig();
+            void SetupRuntimeConfig();
 
-            void setupGLUT(int argc, char* argv[]);
+            void SetupGLUT(int argc, char** argv);
 
-            void setupGLEW();
+            void SetupGLEW();
 
-            void setupOpenGL();
+            void SetupOpenGL();
 
-            void checkOpenGLInfo();
+            void CheckOpenGLInfo();
 
-            void setupCallbacks();
+            void SetupCallbacks();
 
-            static void cleanup();
+            static void Cleanup();
 
-            static void display();
+            static void Display();
 
-            static void idle();
+            static void Idle();
 
-            static void reshape(int w, int h);
+            static void Reshape(int w, int h);
 
-            static void timer(int value);
+            static void Timer(int value);
+
+            virtual void DrawScene() {}
+
+            virtual void OnInit() {}
+
+            virtual void OnCleanup() {}
 
         public:
             Engine();
 
             virtual ~Engine();
 
-            void init(int argc, char* argv[]);
+            void Init(int argc, char** argv);
 
-            void run();
+            void Run();
 
             nlohmann::json config = {
-                    {"window", {
-                                       {"x", 800},
-                                       {"y" , 600},
-                                       {"caption", "Hello World"}
-                               }},
-                    {"opengl", {
-                                       {"major", 4},
-                                       {"minor", 3}
-                               }},
+                    {"window",   {
+                                         {"x",          800},
+                                         {"y",          600},
+                                         {"caption",    "Hello World"}
+                                 }},
+                    {"opengl",   {
+                                         {"major",      4},
+                                         {"minor",      3}
+                                 }},
                     {"viewport", {
-                                       {"clearColor",{0.1f, 0.1f, 0.1f, 1.0f}},
-                                       {"depthRange",{0.0f, 1.0f}},
-                                       {"clearDepth", 1.0f}
-                               }}
+                                         {"clearColor", {0.1f, 0.1f, 0.1f, 1.0f}},
+                                         {"depthRange", {0.0f, 1.0f}},
+                                         {"clearDepth", 1.0f}
+                                 }}
             };
 
             nlohmann::json runtimeConfig;
