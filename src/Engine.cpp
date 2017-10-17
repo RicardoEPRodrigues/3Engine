@@ -112,19 +112,23 @@ namespace ThreeEngine {
             exit(EXIT_FAILURE);
         }
         CheckOpenGLError("Failed to setup GLEW.");
-        // You might get GL_INVALID_ENUM when loading GLEW.
     }
 
     void Engine::SetupOpenGL() {
         glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1], config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
+        // Z Test
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LEQUAL);
         glDepthMask(GL_TRUE);
         glDepthRange(config["viewport"]["depthRange"][0], config["viewport"]["depthRange"][1]);
         glClearDepth(config["viewport"]["clearDepth"]);
+        // Backface culling with front face detected using Counter Clockwise hand
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         glFrontFace(GL_CCW);
+        // Transparency
+        glEnable(GL_BLEND); 
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
 
     void Engine::CheckOpenGLInfo() {

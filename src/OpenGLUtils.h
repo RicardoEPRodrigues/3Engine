@@ -11,14 +11,29 @@
 
 namespace ThreeEngine {
 
+    inline void DebugBreakpoint() {
+#ifdef DEBUG
+#if OS_WIN
+        __debugbreak();
+#else
+        __builtin_trap();
+#endif
+#endif
+    }
+
     inline void CheckOpenGLError(const std::string& message = "") {
 #ifdef DEBUG
         bool isError = false;
+        unsigned int numberOfTries = 0;
         GLenum err_code;
         while ((err_code = glGetError()) != GL_NO_ERROR) {
             Debug::Error(message);
             Debug::GLError(err_code);
             isError = true;
+            if (++numberOfTries >= 50)
+            {
+                break;
+            }
         }
         if (isError) {
             exit(EXIT_FAILURE);

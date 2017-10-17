@@ -25,7 +25,7 @@ namespace ThreeEngine {
 
         bool operator==(const Shader& S) const;
 
-        static Shader LoadFile(GLenum inType, const GLchar* filepath);
+        static Shader* LoadFile(GLenum inType, const GLchar* filepath);
     };
 
 } /* namespace Divisaction */

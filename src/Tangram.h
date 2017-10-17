@@ -13,7 +13,7 @@ namespace ThreeEngine {
 
     class Tangram : public Engine {
         private:
-            ShaderProgram shaderProgram;
+            ShaderProgram* shaderProgram;
         public:
             Tangram();
 

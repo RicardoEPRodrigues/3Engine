@@ -49,12 +49,12 @@ namespace ThreeEngine {
         return id == S.id;
     }
 
-    Shader Shader::LoadFile(GLenum inType, const GLchar* filepath) {
+    Shader* Shader::LoadFile(GLenum inType, const GLchar* filepath) {
         std::ifstream in(filepath);
         if (in.good()) {
             std::string contents((std::istreambuf_iterator<char>(in)),
                                  std::istreambuf_iterator<char>());
-            return Shader(inType, contents.c_str());
+            return new Shader(inType, contents.c_str());
         } else {
             Debug::Error("Unable to load shader file.");
             exit(EXIT_FAILURE);

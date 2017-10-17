@@ -14,6 +14,8 @@
 GLuint VaoId, VboId[2];
 GLint UniformId;
 
+using json = nlohmann::json;
+
 namespace ThreeEngine {
 
 
@@ -27,19 +29,15 @@ namespace ThreeEngine {
     void destroyBufferObjects();
 
     void Tangram::OnInit() {
-        shaderProgram.Init();
-        shaderProgram.Add(Shader::LoadFile(GL_VERTEX_SHADER, "shaders/SimpleColor/vertex.glsl"));
-        shaderProgram.Add(Shader::LoadFile(GL_FRAGMENT_SHADER, "shaders/SimpleColor/fragment.glsl"));
-        shaderProgram.BindAttributeLocation(VERTICES, "in_Position");
-        shaderProgram.BindAttributeLocation(COLORS, "in_Color");
-        shaderProgram.Link();
-        UniformId = shaderProgram.GetUniformLocation("Matrix");
+        shaderProgram = ShaderProgram::LoadJsonFile("shaders/Tangram.json");
+        UniformId = shaderProgram->GetUniformLocation("Matrix");
 
         createBufferObjects();
     }
 
 
     void Tangram::OnCleanup() {
+        delete shaderProgram;
         destroyBufferObjects();
     }
 
@@ -102,7 +100,7 @@ namespace ThreeEngine {
 
     void Tangram::DrawScene() {
         glBindVertexArray(VaoId);
-        shaderProgram.Use();
+        shaderProgram->Use();
 
         number identityArray[16];
         Matrix::IdentityMatrix().ToArray(identityArray);
@@ -114,7 +112,7 @@ namespace ThreeEngine {
         glUniformMatrix4fv(UniformId, 1, GL_FALSE, translationArray);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, (GLvoid*) 0);
 
-        shaderProgram.Stop();
+        shaderProgram->Stop();
         glBindVertexArray(0);
 
         CheckOpenGLError("ERROR: Could not draw scene.");

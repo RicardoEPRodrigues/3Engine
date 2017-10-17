@@ -30,6 +30,10 @@
     <ClInclude Include="..\src\Math\Vector.h" />
     <ClInclude Include="..\src\Math\Vector2.h" />
     <ClInclude Include="..\src\Math\Vector4.h" />
+    <ClInclude Include="..\src\OpenGLUtils.h" />
+    <ClInclude Include="..\src\Shader\Shader.h" />
+    <ClInclude Include="..\src\Shader\ShaderProgram.h" />
+    <ClInclude Include="..\src\Tangram.h" />
     <ClInclude Include="..\src\Tests\catch.hpp" />
     <ClInclude Include="..\src\Tests\MatrixTests.h" />
     <ClInclude Include="..\src\Tests\VectorTests.h" />
@@ -43,6 +47,9 @@
     <ClCompile Include="..\src\Math\Vector.cpp" />
     <ClCompile Include="..\src\Math\Vector2.cpp" />
     <ClCompile Include="..\src\Math\Vector4.cpp" />
+    <ClCompile Include="..\src\Shader\Shader.cpp" />
+    <ClCompile Include="..\src\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\Tangram.cpp" />
     <ClCompile Include="..\src\Tests\tests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -141,7 +148,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;_CRT_NO_VA_START_VALIDATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -188,7 +195,7 @@ copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;_CRT_NO_VA_START_VALIDATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
