@@ -13,4 +13,8 @@ namespace ThreeEngine {
     number Maths::GetRandom(const number& lowLimit, const number& HighLimit) {
         return (static_cast <number> (rand()) / (static_cast <number> (RAND_MAX / HighLimit))) + lowLimit;
     }
+
+    number Maths::ToRadians(number degrees) {
+        return degrees * Maths::PI / 180.0f;
+    }
 }

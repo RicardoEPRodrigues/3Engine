@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "Tangram.h"
+#include "Tangram/Tangram.h"
 
 using namespace ThreeEngine;
 

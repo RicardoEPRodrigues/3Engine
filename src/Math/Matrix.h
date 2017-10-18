@@ -22,6 +22,8 @@ namespace ThreeEngine {
 
         explicit Matrix(number in);
 
+        explicit Matrix(Matrix2 m);
+
         explicit Matrix(Matrix3 m);
 
         Matrix(number in0, number in1, number in2, number in3,

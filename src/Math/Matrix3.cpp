@@ -60,21 +60,21 @@ namespace ThreeEngine {
             case Maths::Axis::X:
                 return {1, 0, 0,
                         0, cos(angleInRadian), -sin(angleInRadian),
-                        0, -sin(angleInRadian), cos(angleInRadian)};
+                        0, sin(angleInRadian), cos(angleInRadian)};
             case Maths::Axis::Y:
                 return {cos(angleInRadian), 0, -sin(angleInRadian),
                         0, 1, 0,
-                        -sin(angleInRadian), 0, cos(angleInRadian)};
+                        sin(angleInRadian), 0, cos(angleInRadian)};
             case Maths::Axis::Z:
             default:
                 return {cos(angleInRadian), -sin(angleInRadian), 0,
-                        -sin(angleInRadian), cos(angleInRadian), 0,
+                        sin(angleInRadian), cos(angleInRadian), 0,
                         0, 0, 1};
         }
     }
 
     Matrix3 Matrix3::RotationMatrix(const Vector& vector, const number& angle) {
-        number angleInRadian = angle * Maths::PI / 180.0f;
+        number angleInRadian = Maths::ToRadians(angle);
 
         // Rodrigues Formula
         Vector vNorm = vector;

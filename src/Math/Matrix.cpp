@@ -30,6 +30,11 @@ namespace ThreeEngine {
             in12, in13, in14, in15);
     }
 
+    Matrix::Matrix(Matrix2 m) : Matrix(m.M[0][0], m.M[0][1], 0, 0,
+                                       m.M[1][0], m.M[1][1], 0, 0,
+                                       0, 0, 0, 0,
+                                       0, 0, 0, 1) {}
+
     Matrix::Matrix(Matrix3 m) : Matrix(m.M[0][0], m.M[0][1], m.M[0][2], 0,
                                        m.M[1][0], m.M[1][1], m.M[1][2], 0,
                                        m.M[2][0], m.M[2][1], m.M[2][2], 0,

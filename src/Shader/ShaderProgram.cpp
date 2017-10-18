@@ -19,7 +19,6 @@ namespace ThreeEngine {
             CheckOpenGLError("Could not destroy shader program.");
             delete *it;
         }
-        shaders.clear();
         glDeleteProgram(id);
         CheckOpenGLError("Could not destroy shader program.");
         Debug::Log("Shader Program Destructor");

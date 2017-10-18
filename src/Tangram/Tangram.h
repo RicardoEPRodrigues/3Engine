@@ -6,18 +6,19 @@
 #ifndef THREEENGINE_TANGRAM_H
 #define THREEENGINE_TANGRAM_H
 
-#include "Engine.h"
-#include "Shader/ShaderProgram.h"
+#include "../Engine.h"
+#include "../Shader/ShaderProgram.h"
+#include "../IActor.h"
 
 namespace ThreeEngine {
 
     class Tangram : public Engine {
         private:
-            ShaderProgram* shaderProgram;
+            std::vector<IActor*> actors;
         public:
             Tangram();
 
-            virtual ~Tangram();
+            ~Tangram() override;
 
         protected:
             void DrawScene() override;

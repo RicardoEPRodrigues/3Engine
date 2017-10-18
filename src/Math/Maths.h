@@ -30,6 +30,8 @@ namespace ThreeEngine {
 
             static number GetRandom(const number& lowLimit, const number& HighLimit);
 
+            static number ToRadians(number degrees);
+
         private:
             Maths() = default;
     };

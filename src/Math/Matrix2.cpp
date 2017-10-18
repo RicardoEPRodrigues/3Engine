@@ -39,13 +39,15 @@ namespace ThreeEngine {
     }
 
     Matrix2 Matrix2::RotationMatrix(const number& angle) {
-        return Matrix2(cos(angle), sin(angle),
-                       -sin(angle), cos(angle));
+        number angleInRadian = Maths::ToRadians(angle);
+        return {cos(angleInRadian), -sin(angleInRadian),
+                sin(angleInRadian), cos(angleInRadian)};
     }
 
     Matrix2 Matrix2::RotationMatrixInverted(const number& angle) {
-        return Matrix2(cos(angle), -sin(angle),
-                       sin(angle), cos(angle));
+        number angleInRadian = Maths::ToRadians(angle);
+        return {cos(angleInRadian), sin(angleInRadian),
+                -sin(angleInRadian), cos(angleInRadian)};
     }
 
     Vector2 Matrix2::operator*(const Vector2& v) {
