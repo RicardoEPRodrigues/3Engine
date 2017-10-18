@@ -195,6 +195,24 @@
     <ClCompile Include="..\src\Math\Vector4.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Math\Matrix.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Matrix2.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Matrix3.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Vector.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Vector2.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Math\Vector4.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Math\Maths.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
@@ -222,10 +240,13 @@
     <ClCompile Include="..\src\Shader\ShaderProgram.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Engine.cpp">
+    <ClCompile Include="..\src\Tangram\Tangram.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram.cpp">
+    <ClCompile Include="..\src\Tangram\Triangle.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -521,6 +542,42 @@
     <ClInclude Include="..\src\Math\Vector4.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Math\Matrix.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Matrix2.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Matrix3.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\TMatrix.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Vector.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Vector2.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Math\Vector4.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IActor.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\json.hpp">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenGLUtils.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Math\Maths.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
@@ -551,19 +608,13 @@
     <ClInclude Include="..\src\Shader\ShaderProgram.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Tangram\Tangram.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tangram\Triangle.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Debug.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\json.hpp">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OpenGLUtils.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Tangram.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
   </ItemGroup>

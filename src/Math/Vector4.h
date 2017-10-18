@@ -390,6 +390,8 @@ namespace ThreeEngine {
          * @return Vector that resulted from the projection.
          */
         Vector4 ProjectOnTo(const Vector4& A) const;
+
+        Vector4 Dehomogenize();
     };
 
 } /* namespace Divisaction */

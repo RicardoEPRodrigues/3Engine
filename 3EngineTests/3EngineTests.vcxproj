@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="..\src\Debug.h" />
     <ClInclude Include="..\src\Engine.h" />
+    <ClInclude Include="..\src\IActor.h" />
     <ClInclude Include="..\src\json.hpp" />
     <ClInclude Include="..\src\Math\Maths.h" />
     <ClInclude Include="..\src\Math\Matrix.h" />
@@ -33,7 +34,8 @@
     <ClInclude Include="..\src\OpenGLUtils.h" />
     <ClInclude Include="..\src\Shader\Shader.h" />
     <ClInclude Include="..\src\Shader\ShaderProgram.h" />
-    <ClInclude Include="..\src\Tangram.h" />
+    <ClInclude Include="..\src\Tangram\Tangram.h" />
+    <ClInclude Include="..\src\Tangram\Triangle.h" />
     <ClInclude Include="..\src\Tests\catch.hpp" />
     <ClInclude Include="..\src\Tests\MatrixTests.h" />
     <ClInclude Include="..\src\Tests\VectorTests.h" />
@@ -49,7 +51,8 @@
     <ClCompile Include="..\src\Math\Vector4.cpp" />
     <ClCompile Include="..\src\Shader\Shader.cpp" />
     <ClCompile Include="..\src\Shader\ShaderProgram.cpp" />
-    <ClCompile Include="..\src\Tangram.cpp" />
+    <ClCompile Include="..\src\Tangram\Tangram.cpp" />
+    <ClCompile Include="..\src\Tangram\Triangle.cpp" />
     <ClCompile Include="..\src\Tests\tests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

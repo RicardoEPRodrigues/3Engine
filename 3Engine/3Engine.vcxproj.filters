@@ -54,7 +54,10 @@
     <ClCompile Include="..\src\Shader\ShaderProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram.cpp">
+    <ClCompile Include="..\src\Tangram\Tangram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tangram\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -115,7 +118,13 @@
     <ClInclude Include="..\src\Shader\ShaderProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram.h">
+    <ClInclude Include="..\src\IActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tangram\Tangram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tangram\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

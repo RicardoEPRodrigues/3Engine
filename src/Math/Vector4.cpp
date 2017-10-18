@@ -299,4 +299,12 @@ namespace ThreeEngine {
         return A * (((*this) | A) / (A | A));
     }
 
+    Vector4 Vector4::Dehomogenize() {
+        X /= W;
+        Y /= W;
+        Z /= W;
+        W = 1;
+        return *this;
+    }
+
 } /* namespace Divisaction */

@@ -11,12 +11,12 @@
 
 namespace ThreeEngine {
 
-    Triangle::Triangle() : Vertices({
+    Triangle::Triangle() : Vertices{
                                             {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
                                             {{0.3536f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
                                             {{0.0f, 0.3536f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
-                                    }),
-                           Indices({0, 1, 2}) {
+                                    },
+                           Indices{0, 1, 2} {
         shaderProgram = nullptr;
         transform.SetIdentity();
     }
