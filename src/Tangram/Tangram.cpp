@@ -22,13 +22,25 @@ using json = nlohmann::json;
 namespace ThreeEngine {
 
 
-    Tangram::Tangram() : Engine() {
-    }
+    Tangram::Tangram() : Engine(), shapeToShow(FISH) {}
 
     Tangram::~Tangram() = default;
 
     void Tangram::OnInit() {
-        Shapes();
+        switch (shapeToShow) {
+            case SAMPLE:
+                Shapes();
+                break;
+            case TANGRAM:
+                SimpleTangram();
+                break;
+            case HEART:
+                Heart();
+                break;
+            case FISH:
+                Fish();
+                break;
+        }
     }
 
     void Tangram::Shapes() {
@@ -49,7 +61,7 @@ namespace ThreeEngine {
         }
         { // Square
             auto* square = new Square();
-            square->transform =  Matrix::TranslationMatrix({-0.8f, 0, 0, 0});
+            square->transform = Matrix::TranslationMatrix({-0.8f, 0, 0, 0});
             actors.push_back((IActor*) square);
 
             square->shaderProgram = colorProgram;

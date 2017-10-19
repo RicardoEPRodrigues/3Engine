@@ -18,6 +18,19 @@ namespace ThreeEngine {
 
             ~Tangram() override;
 
+            enum ShapeType {
+                SAMPLE,
+                TANGRAM,
+                HEART,
+                FISH
+            };
+
+            ShapeType shapeToShow;
+
+        protected:
+
+            void OnInit() override;
+
             void Shapes();
 
             void SimpleTangram();
@@ -25,10 +38,6 @@ namespace ThreeEngine {
             void Heart();
 
             void Fish();
-
-        protected:
-
-            void OnInit() override;
     };
 
 } /* namespace Divisaction */
