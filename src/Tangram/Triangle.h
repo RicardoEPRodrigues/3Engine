@@ -27,9 +27,9 @@ namespace ThreeEngine {
 
             Triangle();
 
-            Triangle(Vertex vertices[3]);
+            explicit Triangle(GLfloat RGBA[3][4]);
 
-            virtual ~Triangle();
+            ~Triangle() override;
 
             void Init() override;
 

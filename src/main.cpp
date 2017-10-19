@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 
     {
         Tangram engine;
-        engine.shapeToShow = Tangram::ShapeType::HEART;
+        engine.shapeToShow = Tangram::ShapeType::FISH;
         engine.Init(argc, argv);
         engine.Run();
     }

@@ -27,9 +27,9 @@ namespace ThreeEngine {
 
             Parallelogram();
 
-            Parallelogram(Vertex vertices[6]);
+            explicit Parallelogram(GLfloat RGBA[6][4]);
 
-            virtual ~Parallelogram();
+            ~Parallelogram() override;
 
             void Init() override;
 

@@ -20,12 +20,9 @@ namespace ThreeEngine {
         transform.SetIdentity();
     }
 
-    Triangle::Triangle(Triangle::Vertex vertices[3]) {
-        shaderProgram = nullptr;
-        transform.SetIdentity();
-
+    Triangle::Triangle(GLfloat RGBA[3][4]) : Triangle() {
         for (int i = 0; i < 3; ++i) {
-            Vertices[i] = vertices[i];
+            std::copy(std::begin(RGBA[i]), std::end(RGBA[i]), Vertices[i].RGBA);
         }
     }
 
@@ -50,7 +47,7 @@ namespace ThreeEngine {
         glGenVertexArrays(1, &vaoId);
         glBindVertexArray(vaoId);
         {
-            glGenBuffers(1, vboId);
+            glGenBuffers(2, vboId);
 
             glBindBuffer(GL_ARRAY_BUFFER, vboId[0]);
             glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);

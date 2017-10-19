@@ -23,12 +23,9 @@ namespace ThreeEngine {
         transform.SetIdentity();
     }
 
-    Parallelogram::Parallelogram(Parallelogram::Vertex vertices[3]) {
-        shaderProgram = nullptr;
-        transform.SetIdentity();
-
-        for (int i = 0; i < 3; ++i) {
-            Vertices[i] = vertices[i];
+    Parallelogram::Parallelogram(GLfloat RGBA[6][4]) : Parallelogram() {
+        for (int i = 0; i < 6; ++i) {
+            std::copy(std::begin(RGBA[i]), std::end(RGBA[i]), Vertices[i].RGBA);
         }
     }
 

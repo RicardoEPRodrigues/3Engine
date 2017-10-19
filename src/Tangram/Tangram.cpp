@@ -60,7 +60,15 @@ namespace ThreeEngine {
             triangle->shaderProgram = wireframeProgram;
         }
         { // Square
-            auto* square = new Square();
+            GLfloat RGBA[6][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.3f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
+            };
+            auto* square = new Square(RGBA);
             square->transform = Matrix::TranslationMatrix({-0.8f, 0, 0, 0});
             actors.push_back((IActor*) square);
 
@@ -97,12 +105,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = wireframeProgram;
         }
         { // Big triangle to the Top
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {1.0f, 1.0f, 0.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {1.0f, 1.0f, 0.0f, 1.0f},
+                    {1.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(45) * Matrix2::ScaleMatrix(2, 2);
             triangle->transform = viewM *
@@ -113,12 +121,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Small triangle at the center
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 1.0f, 1.0f},
+                    {0.0f, 1.0f, 1.0f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-135);
             triangle->transform = viewM * Matrix(transform2D);
             actors.push_back((IActor*) triangle);
@@ -147,7 +155,15 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Square
-            auto* square = new Square();
+            GLfloat RGBA[6][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.3f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
+            };
+            auto* square = new Square(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform = viewM * Matrix(transform2D);
@@ -220,12 +236,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Small triangle at the center
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 1.0f, 1.0f},
+                    {0.0f, 1.0f, 1.0f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(135);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0, -.5f, 0, 0}) * Matrix(transform2D);
@@ -234,12 +250,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Big triangle to the Top
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {1.0f, 1.0f, 0.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {1.0f, 1.0f, 0.0f, 1.0f},
+                    {1.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(45) * Matrix2::ScaleMatrix(2, 2);
             triangle->transform =
@@ -249,7 +265,15 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Square
-            auto* square = new Square();
+            GLfloat RGBA[6][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.3f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
+            };
+            auto* square = new Square(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform =
@@ -296,12 +320,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = wireframeProgram;
         }
         { // Big triangle to the Top
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {1.0f, 1.0f, 0.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {1.0f, 1.0f, 0.0f, 1.0f},
+                    {1.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::ScaleMatrix(2, 2);
             triangle->transform =
@@ -312,14 +336,22 @@ namespace ThreeEngine {
             triangle->shaderProgram = colorProgram;
         }
         { // Square
-            auto* square = new Square();
+            GLfloat RGBA[6][4] = {
+                    {1.0f, 0.0f, 0.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f},
+                    {0.5f, 0.1f, 0.8f, 1.0f},
+                    {0.3f, 0.1f, 0.8f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
+            };
+            auto* square = new Square(RGBA);
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform =
                     viewM * Matrix::TranslationMatrix({-0.8f, 0.0f, 0, 0}) * Matrix(transform2D);
             actors.push_back((IActor*) square);
 
-            square->shaderProgram = wireframeProgram;
+            square->shaderProgram = colorProgram;
         }
         { // Parallelogram
             auto* parallelogram = new Parallelogram();
@@ -342,12 +374,12 @@ namespace ThreeEngine {
             triangle->shaderProgram = wireframeProgram;
         }
         { // Small triangle at the center
-            Triangle::Vertex vertices[3] = {
-                    {{0.0f,    0.0f,    0.0f, 1.0f}, {1.0f, 0.0f, 1.0f, 1.0f}},
-                    {{0.7071f, 0.0f,    0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
-                    {{0.0f,    0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+            GLfloat RGBA[3][4] = {
+                    {1.0f, 0.0f, 1.0f, 1.0f},
+                    {0.0f, 1.0f, 1.0f, 1.0f},
+                    {0.0f, 0.0f, 1.0f, 1.0f}
             };
-            auto* triangle = new Triangle(vertices);
+            auto* triangle = new Triangle(RGBA);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.7071f + .2f, -.7071f, 0, 0});
             actors.push_back((IActor*) triangle);

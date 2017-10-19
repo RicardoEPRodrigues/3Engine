@@ -27,9 +27,9 @@ namespace ThreeEngine {
 
             Square();
 
-            Square(Vertex vertices[6]);
+            explicit Square(GLfloat RGBA[6][4]);
 
-            virtual ~Square();
+            ~Square() override;
 
             void Init() override;
 

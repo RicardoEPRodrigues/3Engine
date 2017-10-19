@@ -23,12 +23,9 @@ namespace ThreeEngine {
         transform.SetIdentity();
     }
 
-    Square::Square(Square::Vertex vertices[3]) {
-        shaderProgram = nullptr;
-        transform.SetIdentity();
-
-        for (int i = 0; i < 3; ++i) {
-            Vertices[i] = vertices[i];
+    Square::Square(GLfloat RGBA[6][4]) : Square() {
+        for (int i = 0; i < 6; ++i) {
+            std::copy(std::begin(RGBA[i]), std::end(RGBA[i]), Vertices[i].RGBA);
         }
     }
 
