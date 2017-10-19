@@ -1,11 +1,17 @@
 {
-    "vertex": "shaders/SimpleColor/vertex.glsl",
-    "fragment": "shaders/SimpleColor/fragment.glsl",
-    "attributes": [
-        [ 0, "in_Position" ],
-        [ 1, "in_Color" ]
+  "vertex": "shaders/SimpleColor/vertex.glsl",
+  "fragment": "shaders/SimpleColor/fragment.glsl",
+  "attributes": [
+    [
+      0,
+      "in_Position"
     ],
-    "uniforms": [
-        "Matrix"
+    [
+      1,
+      "in_Color"
     ]
+  ],
+  "uniforms": {
+    "Matrix": 0
+  }
 }

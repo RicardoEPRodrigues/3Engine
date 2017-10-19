@@ -1,10 +1,10 @@
 /*
- * File Triangle.h in project ThreeEngine
+ * File Parallelogram.h in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_TRIANGLE_H
-#define THREEENGINE_TRIANGLE_H
+#ifndef THREEENGINE_PARALLELOGRAM_H
+#define THREEENGINE_PARALLELOGRAM_H
 
 #include <GL/glew.h>
 #include "../IActor.h"
@@ -13,7 +13,7 @@
 
 namespace ThreeEngine {
 
-    class Triangle : public IActor {
+    class Parallelogram : public IActor {
 
         public:
 
@@ -25,11 +25,11 @@ namespace ThreeEngine {
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 
-            Triangle();
+            Parallelogram();
 
-            Triangle(Vertex vertices[3]);
+            Parallelogram(Vertex vertices[6]);
 
-            virtual ~Triangle();
+            virtual ~Parallelogram();
 
             void Init() override;
 
@@ -37,11 +37,11 @@ namespace ThreeEngine {
 
         private:
 
-            GLuint vaoId, vboId[2];
+            GLuint vaoId, vboId[1];
 
-            Vertex Vertices[3];
+            Vertex Vertices[6];
     };
 
 } /* namespace Divisaction */
 
-#endif //THREEENGINE_TRIANGLE_H
+#endif //THREEENGINE_PARALLELOGRAM_H

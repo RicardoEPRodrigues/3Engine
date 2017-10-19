@@ -9,6 +9,12 @@
 #include <GL/glew.h>
 #include "Debug.h"
 
+#if defined DEBUG && defined OS_LINUX
+
+#include <csignal>
+
+#endif
+
 namespace ThreeEngine {
 
     inline void DebugBreakpoint() {
@@ -16,7 +22,7 @@ namespace ThreeEngine {
 #if OS_WIN
         __debugbreak();
 #else
-        __builtin_trap();
+        std::raise(SIGINT);
 #endif
 #endif
     }
@@ -30,8 +36,7 @@ namespace ThreeEngine {
             Debug::Error(message);
             Debug::GLError(err_code);
             isError = true;
-            if (++numberOfTries >= 50)
-            {
+            if (++numberOfTries >= 50) {
                 break;
             }
         }

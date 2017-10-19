@@ -1,9 +1,9 @@
 /*
- * File Triangle.cpp in project ThreeEngine
+ * File Parallelogram.cpp in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "Triangle.h"
+#include "Parallelogram.h"
 #include "../OpenGLUtils.h"
 
 #define VERTICES 0
@@ -11,16 +11,19 @@
 
 namespace ThreeEngine {
 
-    Triangle::Triangle() : Vertices{
-                                            {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-                                            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-                                            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
-                                    } {
+    Parallelogram::Parallelogram() : Vertices{
+            {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
+            {{1.0f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+            {{0.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}},
+            {{1.0f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+            {{1.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
+            {{0.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+    } {
         shaderProgram = nullptr;
         transform.SetIdentity();
     }
 
-    Triangle::Triangle(Triangle::Vertex vertices[3]) {
+    Parallelogram::Parallelogram(Parallelogram::Vertex vertices[3]) {
         shaderProgram = nullptr;
         transform.SetIdentity();
 
@@ -29,11 +32,11 @@ namespace ThreeEngine {
         }
     }
 
-    Triangle::~Triangle() {
+    Parallelogram::~Parallelogram() {
         glBindVertexArray(vaoId);
         glDisableVertexAttribArray(VERTICES);
         glDisableVertexAttribArray(COLORS);
-        glDeleteBuffers(2, vboId);
+        glDeleteBuffers(1, vboId);
         glDeleteVertexArrays(1, &vaoId);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -41,7 +44,7 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
 
-    void Triangle::Init() {
+    void Parallelogram::Init() {
         if (!shaderProgram) {
             shaderProgram = std::make_shared<ShaderProgram> ("shaders/Tangram.json");
         }
@@ -67,14 +70,14 @@ namespace ThreeEngine {
 
     }
 
-    void Triangle::Draw() {
+    void Parallelogram::Draw() {
         glBindVertexArray(vaoId);
         shaderProgram->Bind();
 
         number matrixArray[16];
         transform.ToArray(matrixArray);
         glUniformMatrix4fv(shaderProgram->GetUniformLocationId("Matrix"), 1, GL_FALSE, matrixArray);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         shaderProgram->Unbind();
         glBindVertexArray(0);

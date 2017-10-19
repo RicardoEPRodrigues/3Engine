@@ -11,22 +11,74 @@ using json = nlohmann::json;
 
 namespace ThreeEngine {
 
-    ShaderProgram::ShaderProgram() = default;
+    ShaderProgram::ShaderProgram() : id(0), shaders(), info() {}
+
+    ShaderProgram::ShaderProgram(nlohmann::json j) : ShaderProgram() {
+        LoadJson(j);
+    }
+
+    ShaderProgram::ShaderProgram(const GLchar* filepath) : ShaderProgram() {
+        LoadJsonFile(filepath);
+    }
 
     ShaderProgram::~ShaderProgram() {
-        for (auto it = shaders.begin(); it != shaders.end(); ++it) {
-            glDetachShader(id, (*it)->id);
+        for (auto& shader : shaders) {
+            glDetachShader(id, shader->id);
             CheckOpenGLError("Could not destroy shader program.");
-            delete *it;
+            delete shader;
         }
         glDeleteProgram(id);
         CheckOpenGLError("Could not destroy shader program.");
         Debug::Log("Shader Program Destructor");
     }
 
+    void ShaderProgram::LoadJson(nlohmann::json j) {
+        info = std::move(j);
+    }
+
+    void ShaderProgram::LoadJsonFile(const GLchar* filepath) {
+        std::ifstream in(filepath);
+        if (in.good()) {
+            json jsonProgram;
+            in >> jsonProgram;
+
+            return LoadJson(jsonProgram);
+        } else {
+            Debug::Error("Unable to load shader program file.");
+            exit(EXIT_FAILURE);
+        }
+    }
+
     void ShaderProgram::Init() {
+        if (info.is_null()) {
+            Debug::Warn("No shader program information was found.");
+            DebugBreakpoint();
+        }
+        if (id > 0) {
+            // The program has already been initialized.
+            return;
+        }
+
         id = glCreateProgram();
         CheckOpenGLError("Could not create shader program.");
+        if (!info["vertex"].is_null()) {
+            std::string path = info["vertex"];
+            Add(Shader::LoadFile(GL_VERTEX_SHADER, path.c_str()));
+        }
+        if (!info["fragment"].is_null()) {
+            std::string path = info["fragment"];
+            Add(Shader::LoadFile(GL_FRAGMENT_SHADER, path.c_str()));
+        }
+        for (auto& it : info["attributes"]) {
+            json attribute = it;
+            std::string name = attribute[1];
+            BindAttributeLocation(attribute[0], name.c_str());
+        }
+        Link();
+        for (json::iterator it = info["uniforms"].begin(); it != info["uniforms"].end(); ++it) {
+            std::string name = it.key();
+            (*it) = GetUniformLocation(name.c_str());
+        }
     }
 
     void ShaderProgram::Add(Shader* shader) {
@@ -34,15 +86,6 @@ namespace ThreeEngine {
         shader->programId = id;
         glAttachShader(id, shader->id);
         CheckOpenGLError("Could not attach shader to program.");
-    }
-
-    void ShaderProgram::Remove(Shader* shader) {
-        for (auto it = shaders.begin(); it != shaders.end(); ++it) {
-            if ((*it) == shader) {
-                shaders.erase(it);
-                break;
-            }
-        }
     }
 
     void ShaderProgram::BindAttributeLocation(GLuint index, const GLchar* name) {
@@ -61,47 +104,19 @@ namespace ThreeEngine {
         return uid;
     }
 
-    void ShaderProgram::Use() {
+    void ShaderProgram::Bind() {
         glUseProgram(id);
     }
 
-    void ShaderProgram::Stop() {
+    void ShaderProgram::Unbind() {
         glUseProgram(0);
     }
 
-    ShaderProgram* ShaderProgram::LoadJson(nlohmann::json j) {
-        ShaderProgram* program = new ShaderProgram();
-        program->Init();
-        if (!j["vertex"].is_null())
-        {
-            std::string path = j["vertex"];
-            program->Add(Shader::LoadFile(GL_VERTEX_SHADER, path.c_str()));
+    GLint ShaderProgram::GetUniformLocationId(const GLchar* name) {
+        if (info["uniforms"][name].is_null()) {
+            Debug::Warn("Unable to find uniform location id");
+            return -1;
         }
-        if (!j["fragment"].is_null())
-        {
-            std::string path = j["fragment"];
-            program->Add(Shader::LoadFile(GL_FRAGMENT_SHADER, path.c_str()));
-        }
-        for (json::iterator it = j["attributes"].begin(); it != j["attributes"].end(); ++it) {
-            json attribute = (*it);
-            std::string name = attribute[1];
-            program->BindAttributeLocation(attribute[0], name.c_str());
-        }
-        program->Link();
-        return program;
-    }
-
-    ShaderProgram* ShaderProgram::LoadJsonFile(const GLchar* filepath) {
-        std::ifstream in(filepath);
-        if (in.good()) {
-            json jsonProgram;
-            in >> jsonProgram;
-
-            return LoadJson(jsonProgram);
-        }
-        else {
-            Debug::Error("Unable to load shader program file.");
-            exit(EXIT_FAILURE);
-        }
+        return info["uniforms"][name];
     }
 } /* namespace Divisaction */

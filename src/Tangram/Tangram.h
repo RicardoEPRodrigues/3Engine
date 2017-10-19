@@ -26,6 +26,8 @@ namespace ThreeEngine {
             void OnInit() override;
 
             void OnCleanup() override;
+
+            void SimpleTangram();
     };
 
 } /* namespace Divisaction */

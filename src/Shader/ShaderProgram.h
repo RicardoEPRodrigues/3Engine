@@ -14,19 +14,11 @@ namespace ThreeEngine {
 
     class ShaderProgram {
         private:
-            std::vector<Shader*> shaders;
-        public:
             GLuint id;
-
-            ShaderProgram();
-
-            virtual ~ShaderProgram();
-
-            void Init();
+            std::vector<Shader*> shaders;
+            nlohmann::json info;
 
             void Add(Shader* shader);
-
-            void Remove(Shader* shader);
 
             void BindAttributeLocation(GLuint index, const GLchar* name);
 
@@ -34,13 +26,38 @@ namespace ThreeEngine {
 
             GLint GetUniformLocation(const GLchar* name);
 
-            void Use();
+        public:
 
-            void Stop();
+            ShaderProgram();
 
-            static ShaderProgram* LoadJson(nlohmann::json j);
+            explicit ShaderProgram(nlohmann::json j);
 
-            static ShaderProgram* LoadJsonFile(const GLchar* filepath);
+            explicit ShaderProgram(const GLchar* filepath);
+
+            virtual ~ShaderProgram();
+
+            void LoadJson(nlohmann::json j);
+
+            void LoadJsonFile(const GLchar* filepath);
+
+            void Init();
+
+            GLint GetUniformLocationId(const GLchar* name);
+
+            void Bind();
+
+            void Unbind();
+
+            friend std::ostream& operator<<(std::ostream& os, const ShaderProgram& shaderProgram) {
+                os << "Shader Program " << shaderProgram.id << std::endl
+                   << shaderProgram.info.dump(2) << std::endl;
+                return os;
+            };
+
+            operator std::string() const {
+                return "Shader Program " + std::to_string(id) + "\n" + info.dump(2) + "\n";
+            }
+
     };
 
 } /* namespace Divisaction */
