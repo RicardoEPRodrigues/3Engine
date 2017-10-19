@@ -34,6 +34,8 @@
     <ClInclude Include="..\src\OpenGLUtils.h" />
     <ClInclude Include="..\src\Shader\Shader.h" />
     <ClInclude Include="..\src\Shader\ShaderProgram.h" />
+    <ClInclude Include="..\src\Tangram\Parallelogram.h" />
+    <ClInclude Include="..\src\Tangram\Square.h" />
     <ClInclude Include="..\src\Tangram\Tangram.h" />
     <ClInclude Include="..\src\Tangram\Triangle.h" />
     <ClInclude Include="..\src\Tests\catch.hpp" />
@@ -51,6 +53,8 @@
     <ClCompile Include="..\src\Math\Vector4.cpp" />
     <ClCompile Include="..\src\Shader\Shader.cpp" />
     <ClCompile Include="..\src\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\Tangram\Parallelogram.cpp" />
+    <ClCompile Include="..\src\Tangram\Square.cpp" />
     <ClCompile Include="..\src\Tangram\Tangram.cpp" />
     <ClCompile Include="..\src\Tangram\Triangle.cpp" />
     <ClCompile Include="..\src\Tests\tests.cpp" />

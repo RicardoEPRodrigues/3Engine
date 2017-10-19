@@ -249,6 +249,12 @@
     <ClCompile Include="..\src\Engine.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Tangram\Parallelogram.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tangram\Square.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine.h">
@@ -615,6 +621,12 @@
       <Filter>3Engine Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Debug.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tangram\Parallelogram.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tangram\Square.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
   </ItemGroup>
