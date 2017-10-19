@@ -29,7 +29,6 @@ namespace ThreeEngine {
         }
         glDeleteProgram(id);
         CheckOpenGLError("Could not destroy shader program.");
-        Debug::Log("Shader Program Destructor");
     }
 
     void ShaderProgram::LoadJson(nlohmann::json j) {

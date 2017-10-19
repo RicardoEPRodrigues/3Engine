@@ -8,6 +8,7 @@
 
 #include <string>
 #include "json.hpp"
+#include "IActor.h"
 
 namespace ThreeEngine {
 
@@ -19,6 +20,7 @@ namespace ThreeEngine {
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
         protected:
+            std::vector<IActor*> actors;
 
             void CheckSystemInfo();
 
@@ -46,10 +48,25 @@ namespace ThreeEngine {
 
             static void Timer(int value);
 
-            virtual void DrawScene() {}
+            /**
+             * Called when a new frame is to be drawn, before Actors are drawn.
+             */
+            virtual void PreDraw() {}
 
+            /**
+             * Called when a new frame is to be drawn, after Actors are drawn.
+             */
+            virtual void PostDraw() {}
+
+            /**
+             * Called when OpenGL has been prepared, yet before the initialization of the Actors
+             */
             virtual void OnInit() {}
 
+            /**
+             * Called when cleaning OpenGL. Any OpenGL related cleaning needs to be done here.
+             * This is called before deleting Actors
+             */
             virtual void OnCleanup() {}
 
         public:

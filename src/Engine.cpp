@@ -35,6 +35,9 @@ namespace ThreeEngine {
         CheckOpenGLInfo();
         SetupOpenGL();
         OnInit();
+        for (auto it = actors.begin(); it != actors.end(); ++it) {
+            (*it)->Init();
+        }
         SetupCallbacks();
     }
 
@@ -159,12 +162,19 @@ namespace ThreeEngine {
         glUseProgram(0);
         glBindVertexArray(0);
         instance->OnCleanup();
+        for (auto& actor : instance->actors) {
+            delete actor;
+        }
     }
 
     void Engine::Display() {
         ++instance->FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        instance->DrawScene();
+        instance->PreDraw();
+        for (auto& actor : instance->actors) {
+            actor->Draw();
+        }
+        instance->PostDraw();
         glutSwapBuffers();
     }
 

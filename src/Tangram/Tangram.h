@@ -13,21 +13,22 @@
 namespace ThreeEngine {
 
     class Tangram : public Engine {
-        private:
-            std::vector<IActor*> actors;
         public:
             Tangram();
 
             ~Tangram() override;
 
-        protected:
-            void DrawScene() override;
-
-            void OnInit() override;
-
-            void OnCleanup() override;
+            void Shapes();
 
             void SimpleTangram();
+
+            void Heart();
+
+            void Fish();
+
+        protected:
+
+            void OnInit() override;
     };
 
 } /* namespace Divisaction */
