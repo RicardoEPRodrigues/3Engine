@@ -83,7 +83,7 @@ namespace ThreeEngine {
         Debug::Log(*colorProgram);
         Debug::Log(*wireframeProgram);
 
-        Matrix viewM = Matrix(Matrix2::ScaleMatrix(.5f, .5f));
+        Matrix viewM = Matrix::IdentityMatrix();
 
         { // Big triangle to the Left
             auto* triangle = new Triangle();
@@ -271,7 +271,7 @@ namespace ThreeEngine {
         Debug::Log(*colorProgram);
         Debug::Log(*wireframeProgram);
 
-        Matrix viewM = Matrix(Matrix2::ScaleMatrix(.5f, .5f));
+        Matrix viewM = Matrix(Matrix2::ScaleMatrix(.6f, .6f));
 
         { // Medium triangle
             auto* triangle = new Triangle();
