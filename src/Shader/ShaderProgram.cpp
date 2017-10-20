@@ -95,6 +95,27 @@ namespace ThreeEngine {
     void ShaderProgram::Link() {
         glLinkProgram(id);
         CheckOpenGLError("Could not link program.");
+
+        GLint isLinked = 0;
+        glGetProgramiv(id, GL_LINK_STATUS, &isLinked);
+        if (isLinked == GL_FALSE)
+        {
+            GLint maxLength = 0;
+            glGetProgramiv(id, GL_INFO_LOG_LENGTH, &maxLength);
+
+            // The maxLength includes the NULL character
+            std::vector<GLchar> errorLog(static_cast<unsigned long>(maxLength));
+            glGetProgramInfoLog(id, maxLength, &maxLength, &errorLog[0]);
+
+            char* message = &errorLog[0];
+            Debug::Error("Failed to compile shader");
+            Debug::Error(message);
+
+            // Provide the infolog in whatever manor you deem best.
+            // Exit with failure.
+            glDeleteProgram(id); // Don't leak the shader.
+            exit(EXIT_FAILURE);
+        } 
     }
 
     GLint ShaderProgram::GetUniformLocation(const GLchar* name) {

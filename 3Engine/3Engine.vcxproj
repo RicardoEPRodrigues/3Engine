@@ -40,6 +40,8 @@
     <None Include="..\config\SetupConfig.json" />
     <None Include="..\shaders\SimpleColor\fragment.glsl" />
     <None Include="..\shaders\SimpleColor\vertex.glsl" />
+    <None Include="..\shaders\Tangram.json" />
+    <None Include="..\shaders\Wireframe.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Debug.h" />

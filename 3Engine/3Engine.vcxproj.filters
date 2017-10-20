@@ -80,6 +80,12 @@
     <None Include="..\shaders\SimpleColor\vertex.glsl">
       <Filter>Shaders\SimpleColor</Filter>
     </None>
+    <None Include="..\shaders\Tangram.json">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="..\shaders\Wireframe.json">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Debug.h">
