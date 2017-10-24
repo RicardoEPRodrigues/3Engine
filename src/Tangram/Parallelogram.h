@@ -9,19 +9,13 @@
 #include <GL/glew.h>
 #include "../IActor.h"
 #include "../Shader/ShaderProgram.h"
-#include "../Math/Matrix.h"
+#include "../OpenGLUtils.h"
 
 namespace ThreeEngine {
 
     class Parallelogram : public IActor {
 
         public:
-
-            typedef struct {
-                GLfloat XYZW[4];
-                GLfloat RGBA[4];
-            } Vertex;
-            Matrix transform;
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 

@@ -78,6 +78,11 @@ namespace ThreeEngine {
             std::string name = it.key();
             (*it) = GetUniformLocation(name.c_str());
         }
+        for (json::iterator it = info["uniformBlocks"].begin(); it != info["uniformBlocks"].end(); ++it) {
+            std::string name = it.key();
+            (*it)[0] = GetUniformBlockIndex(name.c_str());
+            UniformBlockBinding((*it)[0], (*it)[1]);
+        }
     }
 
     void ShaderProgram::Add(Shader* shader) {
@@ -98,8 +103,7 @@ namespace ThreeEngine {
 
         GLint isLinked = 0;
         glGetProgramiv(id, GL_LINK_STATUS, &isLinked);
-        if (isLinked == GL_FALSE)
-        {
+        if (isLinked == GL_FALSE) {
             GLint maxLength = 0;
             glGetProgramiv(id, GL_INFO_LOG_LENGTH, &maxLength);
 
@@ -115,13 +119,24 @@ namespace ThreeEngine {
             // Exit with failure.
             glDeleteProgram(id); // Don't leak the shader.
             exit(EXIT_FAILURE);
-        } 
+        }
     }
 
     GLint ShaderProgram::GetUniformLocation(const GLchar* name) {
         GLint uid = glGetUniformLocation(id, name);
         CheckOpenGLWarn("Could not get uniform location.");
         return uid;
+    }
+
+    GLint ShaderProgram::GetUniformBlockIndex(const GLchar* name) {
+        GLint uid = glGetUniformBlockIndex(id, name);
+        CheckOpenGLWarn("Could not get uniform block index.");
+        return uid;
+    }
+
+    void ShaderProgram::UniformBlockBinding(GLuint ubi, GLuint blockBinding) {
+        glUniformBlockBinding(id, ubi, blockBinding);
+        CheckOpenGLWarn("Could not bind uniform block.");
     }
 
     void ShaderProgram::Bind() {
@@ -133,10 +148,26 @@ namespace ThreeEngine {
     }
 
     GLint ShaderProgram::GetUniformLocationId(const GLchar* name) {
-        if (info["uniforms"][name].is_null()) {
-            Debug::Warn("Unable to find uniform location id");
+        if (info["uniforms"].is_null() || info["uniforms"][name].is_null()) {
+            Debug::Warn("Unable to find uniform location id.");
             return -1;
         }
         return info["uniforms"][name];
+    }
+
+    GLint ShaderProgram::GetUniformBlockId(const GLchar* name) {
+        if (info["uniformBlocks"].is_null() || info["uniformBlocks"][name].is_null()) {
+            Debug::Warn("Unable to find uniform block.");
+            return -1;
+        }
+        return info["uniformBlocks"][name][0];
+    }
+
+    GLint ShaderProgram::GetUniformBlockBidingId(const GLchar* name) {
+        if (info["uniformBlocks"].is_null() || info["uniformBlocks"][name].is_null()) {
+            Debug::Warn("Unable to find uniform block.");
+            return -1;
+        }
+        return info["uniformBlocks"][name][1];
     }
 } /* namespace Divisaction */

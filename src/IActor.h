@@ -6,10 +6,13 @@
 #ifndef THREEENGINE_ACTOR_H
 #define THREEENGINE_ACTOR_H
 
+#include "Math/Matrix.h"
+
 namespace ThreeEngine {
 
     class IActor {
         public:
+            Matrix transform;
 
             virtual ~IActor() = default;
 

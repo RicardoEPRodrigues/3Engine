@@ -25,7 +25,22 @@ set(SOURCE_FILES
         src/json.hpp
         src/Math/Vector.cpp src/Math/Vector.h
         src/Math/Vector2.cpp src/Math/Vector2.h
-        src/Math/Maths.cpp src/Math/Maths.h src/Math/Vector4.cpp src/Math/Vector4.h src/Math/Matrix.cpp src/Math/Matrix.h src/Math/TMatrix.h src/Math/Matrix3.cpp src/Math/Matrix3.h src/Math/Matrix2.cpp src/Math/Matrix2.h src/Shader/Shader.cpp src/Shader/Shader.h src/Shader/ShaderProgram.cpp src/Shader/ShaderProgram.h src/OpenGLUtils.h src/Tangram/Tangram.cpp src/Tangram/Tangram.h src/IActor.h src/Tangram/Triangle.cpp src/Tangram/Triangle.h src/Tangram/Square.cpp src/Tangram/Square.h src/Tangram/Parallelogram.cpp src/Tangram/Parallelogram.h)
+        src/Math/Maths.cpp src/Math/Maths.h
+        src/Math/Vector4.cpp src/Math/Vector4.h
+        src/Math/Matrix.cpp src/Math/Matrix.h
+        src/Math/TMatrix.h
+        src/Math/Matrix3.cpp src/Math/Matrix3.h
+        src/Math/Matrix2.cpp src/Math/Matrix2.h
+        src/Shader/Shader.cpp src/Shader/Shader.h
+        src/Shader/ShaderProgram.cpp src/Shader/ShaderProgram.h
+        src/OpenGLUtils.h
+        src/Tangram/Tangram.cpp src/Tangram/Tangram.h
+        src/IActor.h
+        src/Tangram/Triangle.cpp src/Tangram/Triangle.h
+        src/Tangram/Square.cpp src/Tangram/Square.h
+        src/Tangram/Parallelogram.cpp src/Tangram/Parallelogram.h
+        src/Tangram3D/Cube.cpp src/Tangram3D/Cube.h
+        src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

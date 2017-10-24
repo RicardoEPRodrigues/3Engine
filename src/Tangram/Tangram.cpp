@@ -14,9 +14,6 @@
 #define VERTICES 0
 #define COLORS 1
 
-GLuint VaoId, VboId[2];
-GLint UniformId;
-
 using json = nlohmann::json;
 
 namespace ThreeEngine {
@@ -44,9 +41,9 @@ namespace ThreeEngine {
     }
 
     void Tangram::Shapes() {
-        auto colorProgram = std::make_shared<ShaderProgram>("shaders/Tangram.json");
+        auto colorProgram = std::make_shared<ShaderProgram>("shaders/SimpleColor/program.json");
         colorProgram->Init();
-        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe.json");
+        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe/program.json");
         wireframeProgram->Init();
 
         Debug::Log(*colorProgram);
@@ -84,9 +81,9 @@ namespace ThreeEngine {
     }
 
     void Tangram::SimpleTangram() {
-        auto colorProgram = std::make_shared<ShaderProgram>("shaders/Tangram.json");
+        auto colorProgram = std::make_shared<ShaderProgram>("shaders/SimpleColor/program.json");
         colorProgram->Init();
-        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe.json");
+        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe/program.json");
         wireframeProgram->Init();
         Debug::Log(*colorProgram);
         Debug::Log(*wireframeProgram);
@@ -184,9 +181,9 @@ namespace ThreeEngine {
         // Backface culling with front face detected using Counter Clockwise hand
         glDisable(GL_CULL_FACE);
 
-        auto colorProgram = std::make_shared<ShaderProgram>("shaders/Tangram.json");
+        auto colorProgram = std::make_shared<ShaderProgram>("shaders/SimpleColor/program.json");
         colorProgram->Init();
-        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe.json");
+        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe/program.json");
         wireframeProgram->Init();
         Debug::Log(*colorProgram);
         Debug::Log(*wireframeProgram);
@@ -288,9 +285,9 @@ namespace ThreeEngine {
         // Backface culling with front face detected using Counter Clockwise hand
         glDisable(GL_CULL_FACE);
 
-        auto colorProgram = std::make_shared<ShaderProgram>("shaders/Tangram.json");
+        auto colorProgram = std::make_shared<ShaderProgram>("shaders/SimpleColor/program.json");
         colorProgram->Init();
-        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe.json");
+        auto wireframeProgram = std::make_shared<ShaderProgram>("shaders/Wireframe/program.json");
         wireframeProgram->Init();
         Debug::Log(*colorProgram);
         Debug::Log(*wireframeProgram);

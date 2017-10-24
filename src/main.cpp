@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "Tangram/Tangram.h"
+#include "Tangram3D/Tangram3D.h"
 
 using namespace ThreeEngine;
 
@@ -16,8 +16,8 @@ int main(int argc, char* argv[]) {
     srand(static_cast <unsigned> (time(0)));
 
     {
-        Tangram engine;
-        engine.shapeToShow = Tangram::ShapeType::FISH;
+        Tangram3D engine;
+        engine.shapeToShow = Tangram3D::ShapeType3D::CUBE;
         engine.Init(argc, argv);
         engine.Run();
     }

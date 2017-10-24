@@ -17,6 +17,13 @@
 
 namespace ThreeEngine {
 
+    typedef struct {
+        GLfloat XYZW[4];
+        GLfloat RGBA[4];
+    } Vertex;
+
+    typedef GLfloat glMatrix[16];
+
     inline void DebugBreakpoint() {
 #ifdef DEBUG
 #if OS_WIN

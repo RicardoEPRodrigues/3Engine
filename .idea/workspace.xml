@@ -4,6 +4,7 @@
     <generated>
       <config projectName="ThreeEngine" targetName="ThreeEngine" />
       <config projectName="ThreeEngine" targetName="ThreeEngineTests" />
+      <config projectName="ThreeEngine" targetName="EngineExample" />
       <config projectName="ThreeEngine" targetName="CopyConfigFiles" />
     </generated>
   </component>
@@ -15,12 +16,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shaders/Color3D/fragment.glsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shaders/Color3D/program.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shaders/Color3D/vertex.glsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shaders/SimpleColor/program.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shaders/Wireframe/program.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tangram3D/Cube.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tangram3D/Cube.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tangram3D/Tangram3D.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tangram3D/Tangram3D.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shaders/Tangram.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/shaders/Wireframe.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ricardo.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ricardo.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.cpp" afterPath="$PROJECT_DIR$/src/Engine.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine.h" afterPath="$PROJECT_DIR$/src/Engine.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IActor.h" afterPath="$PROJECT_DIR$/src/IActor.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OpenGLUtils.h" afterPath="$PROJECT_DIR$/src/OpenGLUtils.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shader/ShaderProgram.cpp" afterPath="$PROJECT_DIR$/src/Shader/ShaderProgram.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shader/ShaderProgram.h" afterPath="$PROJECT_DIR$/src/Shader/ShaderProgram.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Parallelogram.cpp" afterPath="$PROJECT_DIR$/src/Tangram/Parallelogram.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Parallelogram.h" afterPath="$PROJECT_DIR$/src/Tangram/Parallelogram.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Square.cpp" afterPath="$PROJECT_DIR$/src/Tangram/Square.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Square.h" afterPath="$PROJECT_DIR$/src/Tangram/Square.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Tangram.cpp" afterPath="$PROJECT_DIR$/src/Tangram/Tangram.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Tangram.h" afterPath="$PROJECT_DIR$/src/Tangram/Tangram.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Triangle.cpp" afterPath="$PROJECT_DIR$/src/Tangram/Triangle.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tangram/Triangle.h" afterPath="$PROJECT_DIR$/src/Tangram/Triangle.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/bin/release/" />
@@ -40,200 +62,158 @@
     <favorites_list name="ThreeEngine" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48966113">
+    <splitter split-orientation="horizontal" split-proportion="0.6565017">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="OpenGLUtils.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/OpenGLUtils.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#111#128#0" expanded="true" />
-                    <element signature="e#330#345#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Engine.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="868">
-                  <caret line="132" column="28" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Engine.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Engine.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#177#194#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1640">
-                  <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Parallelogram.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-                  <folding>
-                    <element signature="e#122#148#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Parallelogram.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="620">
-                  <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-                  <folding>
-                    <element signature="e#193#213#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ShaderProgram.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="560">
-                  <caret line="30" column="62" lean-forward="false" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5098641">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file leaf-file-name="3-Hello3dWorld.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/3-Hello3dWorld.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="853">
+                      <caret line="297" column="64" lean-forward="false" selection-start-line="297" selection-start-column="64" selection-end-line="298" selection-end-column="36" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="820">
+                      <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="80">
+                      <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Tangram3D.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Tangram3D/Tangram3D.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="740">
+                      <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+                      <folding>
+                        <element signature="e#116#136#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Tangram3D.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Tangram3D/Tangram3D.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="600">
+                      <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="26" />
+                      <folding>
+                        <element signature="e#179#201#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Cube.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Tangram3D/Cube.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="620">
+                      <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+                      <folding>
+                        <element signature="e#166#186#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="ShaderProgram.h" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.h">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="240">
+                      <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ShaderProgram.cpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="2280">
+                      <caret line="151" column="59" lean-forward="false" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
+                      <folding>
+                        <element signature="e#2713#2932#0" expanded="false" />
+                        <element signature="e#2938#3122#0" expanded="false" />
+                        <element signature="e#3128#4008#0" expanded="false" />
+                        <element signature="e#4014#4213#0" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="json.hpp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/json.hpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="492">
+                      <caret line="824" column="0" lean-forward="false" selection-start-line="824" selection-start-column="0" selection-end-line="824" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Cube.cpp" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/Tangram3D/Cube.cpp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="724">
+                      <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Square.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Square.cpp">
+        <leaf>
+          <file leaf-file-name="vertex.glsl" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/shaders/Color3D/vertex.glsl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#115#134#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Square.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Square.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="44" selection-end-column="29" />
-                  <folding>
-                    <element signature="e#172#192#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Triangle.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Triangle.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="640">
-                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#178#198#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
-            <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-12">
-                  <caret line="368" column="30" lean-forward="false" selection-start-line="368" selection-start-column="30" selection-end-line="368" selection-end-column="30" />
+                <state relative-caret-position="150">
+                  <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ShaderProgram.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.h">
+          <file leaf-file-name="fragment.glsl" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/shaders/Color3D/fragment.glsl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
-                  <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Math/Vector.h">
+          <file leaf-file-name="program.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/shaders/Color3D/program.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="668">
-                  <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="315" selection-end-column="10" />
+                <state relative-caret-position="160">
+                  <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Tangram.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/shaders/Tangram.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Tangram.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1088">
-                  <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#116#136#0" expanded="true" />
-                    <element signature="e#5686#9953#0" expanded="false" />
-                    <element signature="e#9959#14150#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Tangram.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Triangle.cpp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Tangram/Triangle.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="960">
-                  <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
-                  <folding>
-                    <element signature="e#117#138#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -253,10 +233,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>inline</find>
-      <find>float</find>
-      <find>Z</find>
-      <find>3Engine</find>
       <find>cross</find>
       <find>operator^</find>
       <find>proje</find>
@@ -283,6 +259,10 @@
       <find>glPolygonMode</find>
       <find>GetUniformLocation</find>
       <find>[]</find>
+      <find>program.json</find>
+      <find>Tangram.json</find>
+      <find>Wireframe.json</find>
+      <find>UniformBlockBinding</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -290,6 +270,8 @@
       <replace>Vector2</replace>
       <replace>Matrix</replace>
       <replace>TMatrix</replace>
+      <replace>SimpleColor/program.json</replace>
+      <replace>Wireframe/program.json</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -298,35 +280,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h" />
-        <option value="$PROJECT_DIR$/src/Tests/VectorTests.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector2.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector.cpp" />
-        <option value="$PROJECT_DIR$/src/Math/Vector2.cpp" />
-        <option value="$PROJECT_DIR$/src/Math/Vector4.cpp" />
-        <option value="$PROJECT_DIR$/src/Math/TMatrix.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector4.h" />
-        <option value="$PROJECT_DIR$/src/Math/Vector.h" />
         <option value="$PROJECT_DIR$/src/Math/Matrix2.h" />
         <option value="$PROJECT_DIR$/src/Math/Matrix3.h" />
         <option value="$PROJECT_DIR$/src/Tests/MatrixTests.h" />
         <option value="$PROJECT_DIR$/src/Tangram.h" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/config/RuntimeConfig.json" />
         <option value="$PROJECT_DIR$/src/Debug.h" />
         <option value="$PROJECT_DIR$/src/Shader/Shader.h" />
         <option value="$PROJECT_DIR$/shaders/SimpleColor/vextex.glsl" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Shader/Shader.cpp" />
         <option value="$PROJECT_DIR$/shaders/SimpleColor/vertex.glsl" />
         <option value="$PROJECT_DIR$/src/Tangram.cpp" />
         <option value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
         <option value="$PROJECT_DIR$/src/Actor.cpp" />
         <option value="$PROJECT_DIR$/src/Actor.h" />
-        <option value="$PROJECT_DIR$/src/IActor.h" />
         <option value="$PROJECT_DIR$/src/Math/Matrix.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Matrix.h" />
-        <option value="$PROJECT_DIR$/src/Math/Maths.h" />
         <option value="$PROJECT_DIR$/src/Math/Maths.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Matrix2.cpp" />
         <option value="$PROJECT_DIR$/src/Math/Matrix3.cpp" />
@@ -334,21 +303,34 @@
         <option value="$PROJECT_DIR$/shaders/SimpleColor/fragment.glsl" />
         <option value="$PROJECT_DIR$/shaders/Wireframe/fragment.glsl" />
         <option value="$PROJECT_DIR$/shaders/Wireframe.json" />
-        <option value="$PROJECT_DIR$/src/Tangram/Triangle.h" />
-        <option value="$PROJECT_DIR$/src/OpenGLUtils.h" />
-        <option value="$PROJECT_DIR$/src/Tangram/Square.h" />
-        <option value="$PROJECT_DIR$/src/Tangram/Square.cpp" />
-        <option value="$PROJECT_DIR$/src/Tangram/Parallelogram.h" />
-        <option value="$PROJECT_DIR$/src/Tangram/Parallelogram.cpp" />
-        <option value="$PROJECT_DIR$/src/Shader/ShaderProgram.h" />
         <option value="$PROJECT_DIR$/shaders/Tangram.json" />
         <option value="$PROJECT_DIR$/src/Engine.cpp" />
         <option value="$PROJECT_DIR$/src/Engine.h" />
-        <option value="$PROJECT_DIR$/src/Shader/ShaderProgram.cpp" />
-        <option value="$PROJECT_DIR$/src/Tangram/Tangram.h" />
-        <option value="$PROJECT_DIR$/src/Tangram/Tangram.cpp" />
         <option value="$USER_HOME$/Downloads/2-Hello2dWorld.cpp" />
+        <option value="$PROJECT_DIR$/src/Tangram/Parallelogram.cpp" />
+        <option value="$PROJECT_DIR$/src/Tangram/Square.cpp" />
         <option value="$PROJECT_DIR$/src/Tangram/Triangle.cpp" />
+        <option value="$PROJECT_DIR$/shaders/SimpleColor/program.json" />
+        <option value="$PROJECT_DIR$/shaders/Wireframe/program.json" />
+        <option value="$PROJECT_DIR$/src/Shader/ShaderProgram.h" />
+        <option value="$PROJECT_DIR$/src/IActor.h" />
+        <option value="$PROJECT_DIR$/src/Math/Maths.h" />
+        <option value="$PROJECT_DIR$/src/OpenGLUtils.h" />
+        <option value="$PROJECT_DIR$/src/Tangram/Square.h" />
+        <option value="$PROJECT_DIR$/src/Tangram/Parallelogram.h" />
+        <option value="$PROJECT_DIR$/src/Tangram/Triangle.h" />
+        <option value="$PROJECT_DIR$/src/Tangram/Tangram.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/Tangram3D/Tangram3D.h" />
+        <option value="$PROJECT_DIR$/src/Tangram/Tangram.cpp" />
+        <option value="$PROJECT_DIR$/src/Tangram3D/Cube.h" />
+        <option value="$PROJECT_DIR$/shaders/Color3D/program.json" />
+        <option value="$PROJECT_DIR$/3-Hello3dWorld.cpp" />
+        <option value="$PROJECT_DIR$/src/Shader/ShaderProgram.cpp" />
+        <option value="$PROJECT_DIR$/shaders/Color3D/vertex.glsl" />
+        <option value="$PROJECT_DIR$/src/Tangram3D/Tangram3D.cpp" />
+        <option value="$PROJECT_DIR$/src/Tangram3D/Cube.cpp" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
       </list>
     </option>
   </component>
@@ -450,6 +432,12 @@
               <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
               <item name="shaders" type="462c0819:PsiDirectoryNode" />
+              <item name="Color3D" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="shaders" type="462c0819:PsiDirectoryNode" />
               <item name="SimpleColor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -463,6 +451,18 @@
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Tangram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Tangram3D" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -470,21 +470,25 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="vector&#9;FILE&#9;file:///home/ricardo/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;Vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;Matrix3&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix3.cpp&#10;Matrix&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix.h&#10;program&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;shader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/Shader.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;vector.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix2.h&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.cpp&#10;vector4.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4.c&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp" />
+    <property name="SearchEverywhereHistoryKey" value="Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp&#10;vector&#9;FILE&#9;file:///home/ricardo/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;Vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;Matrix3&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix3.cpp&#10;Matrix&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix.h&#10;program&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;shader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/Shader.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;vector.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix2.h&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.cpp&#10;vector4.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4.c&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Tangram" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Tangram3D" />
+      <recent name="$PROJECT_DIR$/shaders/Color3D" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/shaders" />
       <recent name="$PROJECT_DIR$/src/Tests" />
-      <recent name="$PROJECT_DIR$/src/Math" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shaders/Wireframe" />
+      <recent name="$PROJECT_DIR$/shaders/SimpleColor" />
+      <recent name="$PROJECT_DIR$/src/Tangram" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -500,6 +504,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ThreeEngine-Debug">
+    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
+      <envs />
+    </configuration>
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
@@ -509,16 +516,16 @@
     <configuration name="CopyConfigFiles-Release" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="CopyConfigFiles" CONFIG_NAME="Release">
       <envs />
     </configuration>
+    <configuration name="EngineExample" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="EngineExample" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="EngineExample">
+      <envs />
+    </configuration>
     <configuration name="ThreeEngine-Debug" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngine">
       <envs />
     </configuration>
     <configuration name="ThreeEngine-Release" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngine" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngine">
       <envs />
     </configuration>
-    <configuration name="ThreeEngineTests-Debug" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests">
-      <envs />
-    </configuration>
-    <configuration name="ThreeEngineTests-Release" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests">
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
     <list size="7">
@@ -527,8 +534,8 @@
       <item index="2" class="java.lang.String" itemvalue="Application.ThreeEngine-Release" />
       <item index="3" class="java.lang.String" itemvalue="Application.CopyConfigFiles-Debug" />
       <item index="4" class="java.lang.String" itemvalue="Application.CopyConfigFiles-Release" />
-      <item index="5" class="java.lang.String" itemvalue="Application.ThreeEngineTests-Debug" />
-      <item index="6" class="java.lang.String" itemvalue="Application.ThreeEngineTests-Release" />
+      <item index="5" class="java.lang.String" itemvalue="Catch Test.3Engine Tests" />
+      <item index="6" class="java.lang.String" itemvalue="Application.EngineExample" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -563,12 +570,21 @@
       <workItem from="1508177690547" duration="3801000" />
       <workItem from="1508276598383" duration="862000" />
       <workItem from="1508277917060" duration="8409000" />
-      <workItem from="1508403197145" duration="13460000" />
+      <workItem from="1508403197145" duration="19069000" />
+      <workItem from="1508794888127" duration="8033000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="3Engine_Tests - 2017.10.19 at 20h 12m 13s.xml">
+      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="3Engine_Tests - 2017.10.23 at 22h 42m 16s.xml">
+      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155118000" />
+    <option name="totallyTimeSpent" value="168760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,11 +606,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0823219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08284961" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14068241" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20892389" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3190694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -620,82 +636,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="23" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/6/cmath">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="206" column="2" lean-forward="false" selection-start-line="206" selection-start-column="2" selection-end-line="206" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/TMatrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8060">
-          <caret line="409" column="45" lean-forward="false" selection-start-line="409" selection-start-column="32" selection-end-line="409" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.inl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="271" column="23" lean-forward="false" selection-start-line="271" selection-start-column="4" selection-end-line="271" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/RotationMatrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="174" column="24" lean-forward="false" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="68" column="33" lean-forward="false" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Matrix2.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="73" lean-forward="false" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/MatrixTests.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="177" column="67" lean-forward="false" selection-start-line="177" selection-start-column="67" selection-end-line="177" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/GL/glew.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="310" column="20" lean-forward="false" selection-start-line="310" selection-start-column="20" selection-end-line="310" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Vector2.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/6/array">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
@@ -747,25 +692,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#59#78#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actor.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/IActor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Math/Matrix.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -778,14 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6152">
           <caret line="34" column="43" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Math/Maths.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -839,23 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Wireframe.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="3" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/json.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="648" column="0" lean-forward="false" selection-start-line="648" selection-start-column="0" selection-end-line="648" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,69 +766,22 @@
         <state relative-caret-position="640">
           <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
           <folding>
-            <element signature="e#115#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OpenGLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#111#128#0" expanded="true" />
-            <element signature="e#330#345#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Square.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="44" selection-end-column="29" />
-          <folding>
-            <element signature="e#172#192#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding>
-            <element signature="e#193#213#0" expanded="true" />
+            <element signature="e#115#133#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Math/Vector.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
-          <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="315" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="56" column="27" lean-forward="true" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Tangram.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="6220">
+          <caret line="311" column="0" lean-forward="false" selection-start-line="311" selection-start-column="0" selection-end-line="315" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="440">
           <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="e#177#194#0" expanded="true" />
@@ -936,45 +791,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="132" column="28" lean-forward="true" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
+        <state relative-caret-position="2640">
+          <caret line="132" column="28" lean-forward="false" selection-start-line="132" selection-start-column="28" selection-end-line="132" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="30" column="62" lean-forward="false" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Square.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#115#134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-          <folding>
-            <element signature="e#122#148#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,55 +801,260 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7360">
+          <caret line="368" column="30" lean-forward="false" selection-start-line="368" selection-start-column="30" selection-end-line="368" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/3-Hello3dWorld.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/Wireframe/program.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/Color3D/fragment.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/SimpleColor/program.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IActor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Math/Maths.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding>
+            <element signature="e#193#213#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Parallelogram.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="43" column="24" lean-forward="false" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Square.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Square.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Triangle.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="820">
+          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.cpp">
+    <entry file="file://$PROJECT_DIR$/src/OpenGLUtils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="92" column="41" lean-forward="true" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="41" />
+        <state relative-caret-position="140">
+          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
-            <element signature="e#116#136#0" expanded="true" />
-            <element signature="e#5686#9953#0" expanded="false" />
-            <element signature="e#9959#14150#0" expanded="false" />
+            <element signature="e#111#128#0" expanded="true" />
+            <element signature="e#387#520#0" expanded="false" />
+            <element signature="e#526#1023#0" expanded="false" />
+            <element signature="e#1029#1282#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="368" column="30" lean-forward="false" selection-start-line="368" selection-start-column="30" selection-end-line="368" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tangram/Triangle.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding>
-            <element signature="e#178#198#0" expanded="true" />
+            <element signature="e#175#197#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tangram/Triangle.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Tangram/Tangram.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+        <state relative-caret-position="280">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="e#117#138#0" expanded="true" />
+            <element signature="e#116#136#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram3D/Tangram3D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="e#179#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/Color3D/program.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram3D/Cube.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#166#186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Shader/ShaderProgram.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2280">
+          <caret line="151" column="59" lean-forward="false" selection-start-line="151" selection-start-column="59" selection-end-line="151" selection-end-column="59" />
+          <folding>
+            <element signature="e#2713#2932#0" expanded="false" />
+            <element signature="e#2938#3122#0" expanded="false" />
+            <element signature="e#3128#4008#0" expanded="false" />
+            <element signature="e#4014#4213#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/Color3D/vertex.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-Hello3dWorld.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="297" column="64" lean-forward="false" selection-start-line="297" selection-start-column="64" selection-end-line="298" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/json.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="824" column="0" lean-forward="false" selection-start-line="824" selection-start-column="0" selection-end-line="824" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram3D/Tangram3D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="e#116#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tangram3D/Cube.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

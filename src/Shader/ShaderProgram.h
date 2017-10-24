@@ -26,6 +26,10 @@ namespace ThreeEngine {
 
             GLint GetUniformLocation(const GLchar* name);
 
+            GLint GetUniformBlockIndex(const GLchar* name);
+
+            void UniformBlockBinding(GLuint ubi, GLuint blockBinding);
+
         public:
 
             ShaderProgram();
@@ -43,6 +47,10 @@ namespace ThreeEngine {
             void Init();
 
             GLint GetUniformLocationId(const GLchar* name);
+
+            GLint GetUniformBlockId(const GLchar* name);
+
+            GLint GetUniformBlockBidingId(const GLchar* name);
 
             void Bind();
 

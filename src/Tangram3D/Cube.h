@@ -1,10 +1,10 @@
 /*
- * File Square.h in project ThreeEngine
+ * File Cube.h in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_SQUARE_H
-#define THREEENGINE_SQUARE_H
+#ifndef THREEENGINE_CUBE_H
+#define THREEENGINE_CUBE_H
 
 #include <GL/glew.h>
 #include "../IActor.h"
@@ -13,17 +13,15 @@
 
 namespace ThreeEngine {
 
-    class Square : public IActor {
+    class Cube : public IActor {
 
         public:
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 
-            Square();
+            Cube();
 
-            explicit Square(GLfloat RGBA[6][4]);
-
-            ~Square() override;
+            ~Cube() override;
 
             void Init() override;
 
@@ -31,11 +29,11 @@ namespace ThreeEngine {
 
         private:
 
-            GLuint vaoId, vboId[1];
+            GLuint vaoId, vboId[2];
 
-            Vertex Vertices[6];
+            Vertex Vertices[6 * 6];
     };
 
 } /* namespace Divisaction */
 
-#endif //THREEENGINE_SQUARE_H
+#endif //THREEENGINE_CUBE_H

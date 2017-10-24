@@ -43,7 +43,7 @@ namespace ThreeEngine {
 
     void Square::Init() {
         if (!shaderProgram) {
-            shaderProgram = std::make_shared<ShaderProgram> ("shaders/Tangram.json");
+            shaderProgram = std::make_shared<ShaderProgram> ("shaders/SimpleColor/program.json");
         }
         shaderProgram->Init();
 
