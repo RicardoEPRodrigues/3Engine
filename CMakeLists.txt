@@ -72,7 +72,7 @@ endif ()
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
-add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES})
+add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES} src/Camera.cpp src/Camera.h)
 target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(ThreeEngineTests ${SOURCE_FILES} ${TESTS_SOURCE_FILES})

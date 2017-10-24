@@ -29,9 +29,9 @@ namespace ThreeEngine {
 
         private:
 
-            GLuint vaoId, vboId[2];
-
             Vertex Vertices[6 * 6];
+
+            GLuint vaoId, vboId;
     };
 
 } /* namespace Divisaction */

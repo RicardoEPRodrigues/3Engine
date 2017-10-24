@@ -65,10 +65,9 @@ namespace ThreeEngine {
         glBindVertexArray(vaoId);
         glDisableVertexAttribArray(VERTICES);
         glDisableVertexAttribArray(COLORS);
-        glDeleteBuffers(2, vboId);
+        glDeleteBuffers(1, &vboId);
         glDeleteVertexArrays(1, &vaoId);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
         glBindVertexArray(0);
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
@@ -82,83 +81,23 @@ namespace ThreeEngine {
         glGenVertexArrays(1, &vaoId);
         glBindVertexArray(vaoId);
         {
-            glGenBuffers(2, vboId);
+            glGenBuffers(1, &vboId);
 
-            glBindBuffer(GL_ARRAY_BUFFER, vboId[0]);
+            glBindBuffer(GL_ARRAY_BUFFER, vboId);
             glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
             glEnableVertexAttribArray(VERTICES);
             glVertexAttribPointer(VERTICES, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
             glEnableVertexAttribArray(COLORS);
             glVertexAttribPointer(COLORS, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                                   (GLvoid*) sizeof(Vertices[0].XYZW));
-
-            glBindBuffer(GL_UNIFORM_BUFFER, vboId[1]);
-            glBufferData(GL_UNIFORM_BUFFER, sizeof(glMatrix) * 2, 0, GL_STREAM_DRAW);
-            glBindBufferBase(GL_UNIFORM_BUFFER,
-                             (GLuint) shaderProgram->GetUniformBlockBidingId("SharedMatrices"),
-                             vboId[1]);
         }
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
         CheckOpenGLError("Could not create VAOs and VBOs.");
 
     }
 
-
-    const glMatrix I = {
-            1.0f, 0.0f, 0.0f, 0.0f,
-            0.0f, 1.0f, 0.0f, 0.0f,
-            0.0f, 0.0f, 1.0f, 0.0f,
-            0.0f, 0.0f, 0.0f, 1.0f
-    };
-
-    const glMatrix ModelMatrix = {
-            1.0f, 0.0f, 0.0f, 0.0f,
-            0.0f, 1.0f, 0.0f, 0.0f,
-            0.0f, 0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f, 1.0f
-    }; // Column Major
-
-// Eye(5,5,5) Center(0,0,0) Up(0,1,0)
-    const glMatrix ViewMatrix1 = {
-            0.70f, -0.41f, 0.58f, 0.00f,
-            0.00f, 0.82f, 0.58f, 0.00f,
-            -0.70f, -0.41f, 0.58f, 0.00f,
-            0.00f, 0.00f, -8.70f, 1.00f
-    }; // Column Major
-
-// Eye(-5,-5,-5) Center(0,0,0) Up(0,1,0)
-    const glMatrix ViewMatrix2 = {
-            -0.70f, -0.41f, -0.58f, 0.00f,
-            0.00f, 0.82f, -0.58f, 0.00f,
-            0.70f, -0.41f, -0.58f, 0.00f,
-            0.00f, 0.00f, -8.70f, 1.00f
-    }; // Column Major
-
-// Orthographic LeftRight(-2,2) TopBottom(-2,2) NearFar(1,10)
-    const glMatrix ProjectionMatrix1 = {
-            0.50f, 0.00f, 0.00f, 0.00f,
-            0.00f, 0.50f, 0.00f, 0.00f,
-            0.00f, 0.00f, -0.22f, 0.00f,
-            0.00f, 0.00f, -1.22f, 1.00f
-    }; // Column Major
-
-// Perspective Fovy(30) Aspect(640/480) NearZ(1) FarZ(10)
-    const glMatrix ProjectionMatrix2 = {
-            2.79f, 0.00f, 0.00f, 0.00f,
-            0.00f, 3.73f, 0.00f, 0.00f,
-            0.00f, 0.00f, -1.22f, -1.00f,
-            0.00f, 0.00f, -2.22f, 0.00f
-    }; // Column Major
-
     void Cube::Draw() {
-        // TODO implement view and projection in object
-        glBindBuffer(GL_UNIFORM_BUFFER, vboId[1]);
-        glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(Matrix), ViewMatrix1);
-        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(Matrix), sizeof(Matrix), ProjectionMatrix2);
-        glBindBuffer(GL_UNIFORM_BUFFER, 0);
-
         glBindVertexArray(vaoId);
         shaderProgram->Bind();
 
