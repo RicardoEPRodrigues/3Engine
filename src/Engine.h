@@ -9,6 +9,8 @@
 #include <string>
 #include "json.hpp"
 #include "IActor.h"
+#include "Camera/Camera.h"
+#include "Input.h"
 
 namespace ThreeEngine {
 
@@ -19,7 +21,31 @@ namespace ThreeEngine {
 
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
+
+            static void Cleanup();
+
+            static void Display();
+
+            static void Idle();
+
+            static void Reshape(int w, int h);
+
+            static void Timer(int value);
+
+            static void NormalKeysDown(unsigned char key, int x, int y);
+
+            static void NormalKeysUp(unsigned char key, int x, int y);
+
+            static void SpecialKeysDown(int key, int x, int y);
+
+            static void SpecialKeysUp(int key, int x, int y);
+
+            static void MouseClick(int button, int state, int x, int y);
+
+            static void MouseMove(int x, int y);
+
         protected:
+
             std::vector<IActor*> actors;
 
             void CheckSystemInfo();
@@ -38,45 +64,52 @@ namespace ThreeEngine {
 
             void SetupCallbacks();
 
-            static void Cleanup();
-
-            static void Display();
-
-            static void Idle();
-
-            static void Reshape(int w, int h);
-
-            static void Timer(int value);
-
             /**
              * Called when a new frame is to be drawn, before Actors are drawn.
              */
-            virtual void PreDraw() {}
+            virtual void PreDraw() { }
 
             /**
              * Called when a new frame is to be drawn, after Actors are drawn.
              */
-            virtual void PostDraw() {}
+            virtual void PostDraw() { }
 
             /**
              * Called when OpenGL has been prepared, yet before the initialization of the Actors
              */
-            virtual void OnInit() {}
+            virtual void OnInit() { }
 
             /**
              * Called when cleaning OpenGL. Any OpenGL related cleaning needs to be done here.
              * This is called before deleting Actors
              */
-            virtual void OnCleanup() {}
+            virtual void OnCleanup() { }
+
+            /**
+             * Called when the window changes size.
+             *
+             * @param w window width
+             * @param h window height
+             */
+            virtual void OnReshape(int, int) { }
 
         public:
+
+            Camera* camera;
+
+            Input input;
+
             Engine();
 
             virtual ~Engine();
 
+            static Engine* Instance();
+
             void Init(int argc, char** argv);
 
             void Run();
+
+            void Exit();
 
             nlohmann::json config = {
                     {"window",   {

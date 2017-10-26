@@ -20,6 +20,14 @@ namespace ThreeEngine {
         Reset(in);
     }
 
+    Matrix::Matrix(const number array[16]) {
+        for (int i = 0; i < 16; ++i) {
+            // (i / 4) returns the line from 0 to 3
+            // (i % 4) returns the column from 0 to 3
+            M[i % 4][i / 4] = array[i];
+        }
+    }
+
     Matrix::Matrix(number in0, number in1, number in2, number in3,
                    number in4, number in5, number in6, number in7,
                    number in8, number in9, number in10, number in11,

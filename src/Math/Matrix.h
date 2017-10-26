@@ -26,6 +26,8 @@ namespace ThreeEngine {
 
         explicit Matrix(Matrix3 m);
 
+        explicit Matrix(const number array[16]);
+
         Matrix(number in0, number in1, number in2, number in3,
                number in4, number in5, number in6, number in7,
                number in8, number in9, number in10, number in11,

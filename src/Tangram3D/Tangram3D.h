@@ -9,6 +9,7 @@
 #include "../Engine.h"
 #include "../Shader/ShaderProgram.h"
 #include "../IActor.h"
+#include "CameraController.h"
 
 namespace ThreeEngine {
 
@@ -24,11 +25,17 @@ namespace ThreeEngine {
 
             ShapeType3D shapeToShow;
 
+            CameraController controller;
+
         protected:
 
             void OnInit() override;
 
             void CubeScene();
+
+            void OnReshape(int w, int h) override;
+
+            void PreDraw() override;
     };
 
 } /* namespace Divisaction */

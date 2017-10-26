@@ -12,7 +12,7 @@ namespace ThreeEngine {
 
     class IActor {
         public:
-            Matrix transform;
+            Matrix transform = Matrix::IdentityMatrix();
 
             virtual ~IActor() = default;
 

@@ -40,7 +40,11 @@ set(SOURCE_FILES
         src/Tangram/Square.cpp src/Tangram/Square.h
         src/Tangram/Parallelogram.cpp src/Tangram/Parallelogram.h
         src/Tangram3D/Cube.cpp src/Tangram3D/Cube.h
-        src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h)
+        src/Camera/Camera.cpp src/Camera/Camera.h
+        src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h
+        src/Tangram3D/CameraController.cpp src/Tangram3D/CameraController.h
+        src/Input.cpp src/Input.h
+        src/Camera/LookAt.cpp src/Camera/LookAt.h src/Camera/Perspective.cpp src/Camera/Perspective.h src/Camera/Ortho.cpp src/Camera/Ortho.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 
@@ -72,7 +76,7 @@ endif ()
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
-add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES} src/Camera.cpp src/Camera.h)
+add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES})
 target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(ThreeEngineTests ${SOURCE_FILES} ${TESTS_SOURCE_FILES})

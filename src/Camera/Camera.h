@@ -7,7 +7,7 @@
 #define THREEENGINE_CAMERA_H
 
 #include <GL/glew.h>
-#include "IActor.h"
+#include "../IActor.h"
 
 namespace ThreeEngine {
 
@@ -17,9 +17,15 @@ namespace ThreeEngine {
         public:
             GLuint uniformBlockBidingID;
 
+            Matrix* projection, * view;
+
             Camera();
 
-            virtual ~Camera();
+            explicit Camera(GLuint uniformBlockBidingID);
+
+            Camera(GLuint uniformBlockBidingID, Matrix* projection, Matrix* view);
+
+            ~Camera() override;
 
             void Init() override;
 

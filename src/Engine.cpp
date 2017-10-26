@@ -19,11 +19,15 @@ namespace ThreeEngine {
 
     Engine* Engine::instance = nullptr;
 
-    Engine::Engine() {
+    Engine::Engine() : camera(new Camera()) {
         instance = this;
     }
 
     Engine::~Engine() = default;
+
+    Engine* Engine::Instance() {
+        return instance;
+    }
 
     /////////////////////////////////////////////////////////////////////// SETUP
 
@@ -35,8 +39,11 @@ namespace ThreeEngine {
         CheckOpenGLInfo();
         SetupOpenGL();
         OnInit();
-        for (auto it = actors.begin(); it != actors.end(); ++it) {
-            (*it)->Init();
+        {
+            actors.push_back(reinterpret_cast<IActor*>(camera));
+        }
+        for (auto& actor : actors) {
+            actor->Init();
         }
         SetupCallbacks();
     }
@@ -150,10 +157,25 @@ namespace ThreeEngine {
         glutIdleFunc(Idle);
         glutReshapeFunc(Reshape);
         glutTimerFunc(0, Timer, 0);
+
+        // Keyboard Input
+        glutKeyboardFunc(NormalKeysDown);
+        glutKeyboardUpFunc(NormalKeysUp);
+        glutSpecialFunc(SpecialKeysDown);
+        glutSpecialUpFunc(SpecialKeysUp);
+
+        // Mouse Input
+        glutMouseFunc(MouseClick);
+        glutMotionFunc(MouseMove);
+        glutPassiveMotionFunc(MouseMove);
     }
 
     void Engine::Run() {
         glutMainLoop();
+    }
+
+    void Engine::Exit() {
+        glutLeaveMainLoop();
     }
 
     /////////////////////////////////////////////////////////////////////// CALLBACKS
@@ -175,6 +197,7 @@ namespace ThreeEngine {
             actor->Draw();
         }
         instance->PostDraw();
+        instance->input.Update();
         glutSwapBuffers();
     }
 
@@ -186,6 +209,7 @@ namespace ThreeEngine {
         instance->config["window"]["x"] = w;
         instance->config["window"]["y"] = h;
         glViewport(0, 0, instance->config["window"]["x"], instance->config["window"]["y"]);
+        instance->OnReshape(w, h);
     }
 
     void Engine::Timer(int) {
@@ -202,6 +226,30 @@ namespace ThreeEngine {
         glutSetWindowTitle(s.c_str());
         instance->FrameCount = 0;
         glutTimerFunc(1000, Timer, 0);
+    }
+
+    void Engine::NormalKeysDown(unsigned char key, int x, int y) {
+        instance->input.NormalKeysDown(key, x, y);
+    }
+
+    void Engine::NormalKeysUp(unsigned char key, int x, int y) {
+        instance->input.NormalKeysUp(key, x, y);
+    }
+
+    void Engine::SpecialKeysDown(int key, int x, int y) {
+        instance->input.SpecialKeysDown(key, x, y);
+    }
+
+    void Engine::SpecialKeysUp(int key, int x, int y) {
+        instance->input.SpecialKeysUp(key, x, y);
+    }
+
+    void Engine::MouseClick(int button, int state, int x, int y) {
+        instance->input.MouseClick(button, state, x, y);
+    }
+
+    void Engine::MouseMove(int x, int y) {
+        instance->input.MouseMove(x,y);
     }
 
 } /* namespace Divisaction */
