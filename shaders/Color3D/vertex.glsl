@@ -16,13 +16,7 @@ void main(void)
 {
     gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * in_Position;
 
-    float mixer = (ModelMatrix * in_Position).z;
-    if (mixer > 1) {
-        mixer = 1;
-    } else {
-        if (mixer < 0.3) {
-            mixer = 0.3;
-        }
-    }
-    ex_Color = vec4(ModelColor.x * mixer, ModelColor.y * mixer, ModelColor.z * mixer, ModelColor.w);
+    float zMixer = clamp((in_Position).z, 0.3, 1.0);
+    float xMixer = clamp((in_Position).x, 0.3, 0.5);
+    ex_Color = vec4(ModelColor.x * zMixer + xMixer, ModelColor.y * zMixer + xMixer, ModelColor.z * zMixer + xMixer, ModelColor.w);
 }
