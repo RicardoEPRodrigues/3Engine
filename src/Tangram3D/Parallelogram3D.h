@@ -1,10 +1,10 @@
 /*
- * File Cube.h in project ThreeEngine
+ * File Parallelogram.h in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_CUBE_H
-#define THREEENGINE_CUBE_H
+#ifndef THREEENGINE_PARALLELOGRAM3D_H
+#define THREEENGINE_PARALLELOGRAM3D_H
 
 #include <GL/glew.h>
 #include "../IActor.h"
@@ -13,7 +13,7 @@
 
 namespace ThreeEngine {
 
-    class Cube : public IActor {
+    class Parallelogram3D : public IActor {
 
         public:
 
@@ -21,9 +21,11 @@ namespace ThreeEngine {
 
             GLfloat color[4];
 
-            Cube();
+            Parallelogram3D();
 
-            ~Cube() override;
+            explicit Parallelogram3D(GLfloat RGBA[6][4]);
+
+            ~Parallelogram3D() override;
 
             void Init() override;
 
@@ -31,11 +33,11 @@ namespace ThreeEngine {
 
         private:
 
-            Vertex Vertices[6 * 6];
-
             GLuint vaoId, vboId;
+
+            Vertex Vertices[36];
     };
 
 } /* namespace Divisaction */
 
-#endif //THREEENGINE_CUBE_H
+#endif //THREEENGINE_PARALLELOGRAM3D_H

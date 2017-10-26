@@ -7,6 +7,8 @@
 #include "Cube.h"
 #include "../Camera/Perspective.h"
 #include "../Camera/LookAt.h"
+#include "Triangle3D.h"
+#include "Parallelogram3D.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -35,9 +37,7 @@ namespace ThreeEngine {
         Debug::Log(*colorProgram);
 
         { // Camera handling
-            if (camera) {
-                delete camera;
-            }
+            delete camera;
 
             number width = config["window"]["x"];
             number height = config["window"]["y"];
@@ -45,14 +45,88 @@ namespace ThreeEngine {
             camera = new Camera(
                     static_cast<GLuint>(colorProgram->GetUniformBlockBidingId("SharedMatrices")),
                     new Perspective(30, aspect, 1, 100),
-                    new LookAt({5, 5, 5}, {0, 0, 0}, {0, 1, 0}));
+                    new LookAt({0, 0, 10}, {0, 0, 0}, {0, 1, 0})
+//                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
+            );
         }
 
-        {
-            auto* cube = new Cube();
-            actors.push_back((IActor*) cube);
+        float triangleSize = 0.7071f;
 
-            cube->shaderProgram = colorProgram;
+        { // Big triangle to the Left
+            auto* triangle = new Triangle3D();
+            Matrix2 transform2D =
+                    (TMatrix<2, 2>) Matrix2::RotationMatrix(135) *
+                    Matrix2::ScaleMatrix(triangleSize * 2, triangleSize * 2);
+            triangle->transform =
+                    Matrix::TranslationMatrix({0.0f, 0.0f, 0, 0}) *
+                    Matrix(transform2D);
+            actors.push_back((IActor*) triangle);
+
+            triangle->shaderProgram = colorProgram;
+            triangle->color[0] = .5f;
+        }
+        { // Big triangle to the Top
+            auto* triangle = new Triangle3D();
+            Matrix2 transform2D =
+                    (TMatrix<2, 2>) Matrix2::RotationMatrix(45) *
+                    Matrix2::ScaleMatrix(triangleSize * 2, triangleSize * 2);
+            triangle->transform = Matrix::TranslationMatrix({0.0f, 0.0f, 0, 0}) *
+                                  Matrix(transform2D);
+            actors.push_back((IActor*) triangle);
+
+            triangle->shaderProgram = colorProgram;
+            triangle->color[1] = .5f;
+        }
+        { // Small triangle at the center
+            auto* triangle = new Triangle3D();
+            Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-135) *
+                                  Matrix2::ScaleMatrix(triangleSize, triangleSize);
+            triangle->transform = Matrix(transform2D);
+            actors.push_back((IActor*) triangle);
+
+            triangle->shaderProgram = colorProgram;
+        }
+        { // Small triangle at the top right
+            auto* triangle = new Triangle3D();
+            Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-45) *
+                                  Matrix2::ScaleMatrix(triangleSize, triangleSize);
+            triangle->transform =
+                    Matrix::TranslationMatrix({0.5f, 0.5f, 0, 0}) *
+                    Matrix(transform2D);
+            actors.push_back((IActor*) triangle);
+
+            triangle->shaderProgram = colorProgram;
+            triangle->color[0] = .5f;
+            triangle->color[1] = .5f;
+        }
+        { // Medium triangle to the bottom right
+            auto* triangle = new Triangle3D();
+            Matrix2 transform2D =
+                    (TMatrix<2, 2>) Matrix2::RotationMatrix(90);
+            triangle->transform =
+                    Matrix::TranslationMatrix({1.0f, -1.0f, 0, 0}) * Matrix(transform2D);
+            actors.push_back((IActor*) triangle);
+
+            triangle->shaderProgram = colorProgram;
+            triangle->color[0] = .2f;
+            triangle->color[1] = .7f;
+        }
+        { // Square
+            auto* square = new Cube();
+            Matrix2 transform2D =
+                    (TMatrix<2, 2>) Matrix2::RotationMatrix(-45) *
+                    Matrix2::ScaleMatrix(triangleSize, triangleSize);
+            square->transform = Matrix(transform2D);
+            actors.push_back((IActor*) square);
+
+            square->shaderProgram = colorProgram;
+        }
+        { // Parallelogram
+            auto* parallelogram = new Parallelogram3D();
+            parallelogram->transform = Matrix::TranslationMatrix(Vector({-1, -1, 0}));
+            actors.push_back((IActor*) parallelogram);
+
+            parallelogram->shaderProgram = colorProgram;
         }
 
     }

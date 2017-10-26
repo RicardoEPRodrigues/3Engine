@@ -40,7 +40,7 @@ namespace ThreeEngine {
 
     Matrix::Matrix(Matrix2 m) : Matrix(m.M[0][0], m.M[0][1], 0, 0,
                                        m.M[1][0], m.M[1][1], 0, 0,
-                                       0, 0, 0, 0,
+                                       0, 0, 1, 0,
                                        0, 0, 0, 1) {}
 
     Matrix::Matrix(Matrix3 m) : Matrix(m.M[0][0], m.M[0][1], m.M[0][2], 0,

@@ -1,10 +1,10 @@
 /*
- * File Cube.h in project ThreeEngine
+ * File Triangle.h in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_CUBE_H
-#define THREEENGINE_CUBE_H
+#ifndef THREEENGINE_TRIANGLE3D_H
+#define THREEENGINE_TRIANGLE3D_H
 
 #include <GL/glew.h>
 #include "../IActor.h"
@@ -13,7 +13,7 @@
 
 namespace ThreeEngine {
 
-    class Cube : public IActor {
+    class Triangle3D : public IActor {
 
         public:
 
@@ -21,9 +21,11 @@ namespace ThreeEngine {
 
             GLfloat color[4];
 
-            Cube();
+            Triangle3D();
 
-            ~Cube() override;
+            explicit Triangle3D(GLfloat RGBA[3][4]);
+
+            ~Triangle3D() override;
 
             void Init() override;
 
@@ -31,11 +33,11 @@ namespace ThreeEngine {
 
         private:
 
-            Vertex Vertices[6 * 6];
-
             GLuint vaoId, vboId;
+
+            Vertex Vertices[24];
     };
 
 } /* namespace Divisaction */
 
-#endif //THREEENGINE_CUBE_H
+#endif //THREEENGINE_TRIANGLE3D_H

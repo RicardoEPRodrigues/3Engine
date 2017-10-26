@@ -44,7 +44,11 @@ set(SOURCE_FILES
         src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h
         src/Tangram3D/CameraController.cpp src/Tangram3D/CameraController.h
         src/Input.cpp src/Input.h
-        src/Camera/LookAt.cpp src/Camera/LookAt.h src/Camera/Perspective.cpp src/Camera/Perspective.h src/Camera/Ortho.cpp src/Camera/Ortho.h)
+        src/Camera/LookAt.cpp src/Camera/LookAt.h
+        src/Camera/Perspective.cpp src/Camera/Perspective.h
+        src/Camera/Ortho.cpp src/Camera/Ortho.h
+        src/Tangram3D/Triangle3D.cpp src/Tangram3D/Triangle3D.h
+        src/Tangram3D/Parallelogram3D.h src/Tangram3D/Parallelogram3D.cpp)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

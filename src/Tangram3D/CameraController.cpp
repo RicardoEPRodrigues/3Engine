@@ -81,7 +81,7 @@ namespace ThreeEngine {
 
             if (engine->input['e']) {
 //                translation = Matrix::TranslationMatrix({0, 0.1f, 0, 0}) * translation;
-                Vector delta = lookAt->u * 0.5f;
+                Vector delta = lookAt->u * 0.05f;
                 lookAt->eye += delta;
                 lookAt->center += delta;
             }
