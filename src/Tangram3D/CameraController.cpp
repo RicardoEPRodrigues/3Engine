@@ -107,7 +107,7 @@ namespace ThreeEngine {
                           Matrix::TranslationMatrix(-lookAt->eye)) * Vector4(lookAt->center);
 
             }
-            lookAt->Set(lookAt->eye, lookAt->center, lookAt->u);
+            lookAt->Set(lookAt->eye, lookAt->center, lookAt->up);
 
             previousMouseLocation = mouse;
         }

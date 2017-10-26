@@ -18,5 +18,8 @@ void main(void)
 
     float zMixer = clamp((in_Position).z, 0.3, 1.0);
     float xMixer = clamp((in_Position).x, 0.3, 0.5);
-    ex_Color = vec4(ModelColor.x * zMixer + xMixer, ModelColor.y * zMixer + xMixer, ModelColor.z * zMixer + xMixer, ModelColor.w);
+    ex_Color = vec4(ModelColor.x * zMixer + xMixer,
+                    ModelColor.y * zMixer + xMixer,
+                    ModelColor.z * zMixer + xMixer,
+                    ModelColor.w);
 }
