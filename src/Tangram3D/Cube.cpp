@@ -107,6 +107,7 @@ namespace ThreeEngine {
                            matrixArray);
         glUniform4f(shaderProgram->GetUniformLocationId("ModelColor"), color[0], color[1], color[2],
                     color[3]);
+        //glUniform4fv(shaderProgram->GetUniformLocationId("ModelColor"), 4, color);
         glDrawArrays(GL_TRIANGLES, 0, 36);
 
         shaderProgram->Unbind();

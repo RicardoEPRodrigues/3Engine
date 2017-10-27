@@ -49,7 +49,7 @@ namespace ThreeEngine {
                                        0, 0, 0, 1) {}
 
     Matrix::Matrix(const Matrix& other) {
-        operator=(other);
+        operator=(other); 
     }
 
     Matrix& Matrix::operator=(const Matrix& other) {

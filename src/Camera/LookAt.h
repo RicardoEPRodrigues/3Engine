@@ -15,8 +15,10 @@ namespace ThreeEngine {
             Vector eye, center, up, view, v, side, s, u;
 
             LookAt(Vector eye, Vector center, Vector up);
+            LookAt(Matrix other);
 
             void Set(Vector eye, Vector center, Vector up);
+            void SetM(Vector eye, Vector v, Vector s, Vector u);
     };
 
 } /* namespace Divisaction */
