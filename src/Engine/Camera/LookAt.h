@@ -10,14 +10,16 @@
 
 namespace ThreeEngine {
 
-    class LookAt : public Matrix{
+    class LookAt : public Matrix {
         public:
             Vector eye, center, up, view, v, side, s, u;
 
             LookAt(Vector eye, Vector center, Vector up);
-            LookAt(Matrix other);
+
+            explicit LookAt(Matrix other);
 
             void Set(Vector eye, Vector center, Vector up);
+
             void SetM(Vector eye, Vector v, Vector s, Vector u);
     };
 

@@ -4,9 +4,9 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "CameraController.h"
-#include "../Camera/Ortho.h"
-#include "../Camera/Perspective.h"
-#include "../Camera/LookAt.h"
+#include "../../Engine/Camera/Ortho.h"
+#include "../../Engine/Camera/Perspective.h"
+#include "../../Engine/Camera/LookAt.h"
 
 namespace ThreeEngine {
 

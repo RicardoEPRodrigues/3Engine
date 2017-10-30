@@ -3,7 +3,8 @@
 //
 
 #include <iostream>
-#include "Tangram3D/Tangram3D.h"
+#include "Examples/Tangram3D/Tangram3D.h"
+#include "Engine/Math/Quat.h"
 
 using namespace ThreeEngine;
 
@@ -16,11 +17,17 @@ int main(int argc, char* argv[]) {
     srand(static_cast <unsigned> (time(0)));
 
     {
+        Quat q = Quat::FromAngleAxis(90, Vector(0, 0, 1));
+        Quat qi = q.Inverse();
+        Vector4 v = {1, 0, 0, 0};
+        Quat r = q * Quat(v) * qi;
+        Debug::Log(r);
+
         Tangram3D engine;
         engine.shapeToShow = Tangram3D::ShapeType3D::CUBE;
         engine.Init(argc, argv);
         engine.Run();
     }
-    
+
     exit(EXIT_SUCCESS);
 }

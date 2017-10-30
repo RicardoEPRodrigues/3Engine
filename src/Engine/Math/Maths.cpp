@@ -17,4 +17,8 @@ namespace ThreeEngine {
     number Maths::ToRadians(number degrees) {
         return degrees * Maths::PI / 180.0f;
     }
+
+    number Maths::ToDegrees(number radians) {
+        return radians * 180.0f / Maths::PI;
+    }
 }

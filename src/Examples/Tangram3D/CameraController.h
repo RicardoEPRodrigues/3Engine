@@ -6,7 +6,7 @@
 #ifndef THREEENGINE_CAMERACONTROLLER_H
 #define THREEENGINE_CAMERACONTROLLER_H
 
-#include "../Engine.h"
+#include "../../Engine/Engine.h"
 
 namespace ThreeEngine {
 

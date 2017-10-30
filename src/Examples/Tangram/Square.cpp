@@ -1,35 +1,35 @@
 /*
- * File Parallelogram.cpp in project ThreeEngine
+ * File Square.cpp in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "Parallelogram.h"
-#include "../OpenGLUtils.h"
+#include "Square.h"
+#include "../../Engine/OpenGLUtils.h"
 
 #define VERTICES 0
 #define COLORS 1
 
 namespace ThreeEngine {
 
-    Parallelogram::Parallelogram() : Vertices{
+    Square::Square() : Vertices{
             {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-            {{1.0f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-            {{0.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}},
-            {{1.0f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-            {{1.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
-            {{0.5f, 0.5f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}},
+            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+            {{0.7071f, 0.7071f, 0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
+            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
     } {
         shaderProgram = nullptr;
         transform.SetIdentity();
     }
 
-    Parallelogram::Parallelogram(GLfloat RGBA[6][4]) : Parallelogram() {
+    Square::Square(GLfloat RGBA[6][4]) : Square() {
         for (int i = 0; i < 6; ++i) {
             std::copy(std::begin(RGBA[i]), std::end(RGBA[i]), Vertices[i].RGBA);
         }
     }
 
-    Parallelogram::~Parallelogram() {
+    Square::~Square() {
         glBindVertexArray(vaoId);
         glDisableVertexAttribArray(VERTICES);
         glDisableVertexAttribArray(COLORS);
@@ -41,7 +41,7 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
 
-    void Parallelogram::Init() {
+    void Square::Init() {
         if (!shaderProgram) {
             shaderProgram = std::make_shared<ShaderProgram> ("shaders/SimpleColor/program.json");
         }
@@ -67,7 +67,7 @@ namespace ThreeEngine {
 
     }
 
-    void Parallelogram::Draw() {
+    void Square::Draw() {
         glBindVertexArray(vaoId);
         shaderProgram->Bind();
 

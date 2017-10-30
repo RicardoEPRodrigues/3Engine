@@ -5,11 +5,11 @@
  */
 #include <GL/glew.h>
 #include "Tangram.h"
-#include "../Math/Matrix.h"
+#include "../../Engine/Math/Matrix.h"
 #include "Triangle.h"
 #include "Square.h"
 #include "Parallelogram.h"
-#include "../Debug.h"
+#include "../../Engine/Debug.h"
 
 #define VERTICES 0
 #define COLORS 1

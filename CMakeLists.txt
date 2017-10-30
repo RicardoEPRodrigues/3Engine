@@ -21,34 +21,34 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
 ENDIF ()
 
 set(SOURCE_FILES
-        src/Debug.h src/Engine.cpp src/Engine.h
-        src/json.hpp
-        src/Math/Vector.cpp src/Math/Vector.h
-        src/Math/Vector2.cpp src/Math/Vector2.h
-        src/Math/Maths.cpp src/Math/Maths.h
-        src/Math/Vector4.cpp src/Math/Vector4.h
-        src/Math/Matrix.cpp src/Math/Matrix.h
-        src/Math/TMatrix.h
-        src/Math/Matrix3.cpp src/Math/Matrix3.h
-        src/Math/Matrix2.cpp src/Math/Matrix2.h
-        src/Shader/Shader.cpp src/Shader/Shader.h
-        src/Shader/ShaderProgram.cpp src/Shader/ShaderProgram.h
-        src/OpenGLUtils.h
-        src/Tangram/Tangram.cpp src/Tangram/Tangram.h
-        src/IActor.h
-        src/Tangram/Triangle.cpp src/Tangram/Triangle.h
-        src/Tangram/Square.cpp src/Tangram/Square.h
-        src/Tangram/Parallelogram.cpp src/Tangram/Parallelogram.h
-        src/Tangram3D/Cube.cpp src/Tangram3D/Cube.h
-        src/Camera/Camera.cpp src/Camera/Camera.h
-        src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h
-        src/Tangram3D/CameraController.cpp src/Tangram3D/CameraController.h
-        src/Input.cpp src/Input.h
-        src/Camera/LookAt.cpp src/Camera/LookAt.h
-        src/Camera/Perspective.cpp src/Camera/Perspective.h
-        src/Camera/Ortho.cpp src/Camera/Ortho.h
-        src/Tangram3D/Triangle3D.cpp src/Tangram3D/Triangle3D.h
-        src/Tangram3D/Parallelogram3D.h src/Tangram3D/Parallelogram3D.cpp)
+        src/Engine/Debug.h src/Engine/Engine.cpp src/Engine/Engine.h
+        src/Engine/json.hpp
+        src/Engine/Math/Vector.cpp src/Engine/Math/Vector.h
+        src/Engine/Math/Vector2.cpp src/Engine/Math/Vector2.h
+        src/Engine/Math/Maths.cpp src/Engine/Math/Maths.h
+        src/Engine/Math/Vector4.cpp src/Engine/Math/Vector4.h
+        src/Engine/Math/Matrix.cpp src/Engine/Math/Matrix.h
+        src/Engine/Math/TMatrix.h
+        src/Engine/Math/Matrix3.cpp src/Engine/Math/Matrix3.h
+        src/Engine/Math/Matrix2.cpp src/Engine/Math/Matrix2.h
+        src/Engine/Shader/Shader.cpp src/Engine/Shader/Shader.h
+        src/Engine/Shader/ShaderProgram.cpp src/Engine/Shader/ShaderProgram.h
+        src/Engine/OpenGLUtils.h
+        src/Examples/Tangram/Tangram.cpp src/Examples/Tangram/Tangram.h
+        src/Engine/IActor.h
+        src/Examples/Tangram/Triangle.cpp src/Examples/Tangram/Triangle.h
+        src/Examples/Tangram/Square.cpp src/Examples/Tangram/Square.h
+        src/Examples/Tangram/Parallelogram.cpp src/Examples/Tangram/Parallelogram.h
+        src/Examples/Tangram3D/Cube.cpp src/Examples/Tangram3D/Cube.h
+        src/Engine/Camera/Camera.cpp src/Engine/Camera/Camera.h
+        src/Examples/Tangram3D/Tangram3D.cpp src/Examples/Tangram3D/Tangram3D.h
+        src/Examples/Tangram3D/CameraController.cpp src/Examples/Tangram3D/CameraController.h
+        src/Engine/Input.cpp src/Engine/Input.h
+        src/Engine/Camera/LookAt.cpp src/Engine/Camera/LookAt.h
+        src/Engine/Camera/Perspective.cpp src/Engine/Camera/Perspective.h
+        src/Engine/Camera/Ortho.cpp src/Engine/Camera/Ortho.h
+        src/Examples/Tangram3D/Triangle3D.cpp src/Examples/Tangram3D/Triangle3D.h
+        src/Examples/Tangram3D/Parallelogram3D.h src/Examples/Tangram3D/Parallelogram3D.cpp src/Engine/Math/Quat.cpp src/Engine/Math/Quat.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 
@@ -70,12 +70,11 @@ elseif (UNIX AND NOT APPLE)
 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wextra -pedantic -g3 -Og -Wuninitialized")
 
+    FIND_PACKAGE(OpenGL REQUIRED)
     find_package(GLUT REQUIRED)
     find_package(GLEW REQUIRED)
 
-    if (NOT (OpenGL_FOUND AND GLUT_FOUND AND GLEW_FOUND))
-        message(FATAL_ERROR "Some needed libraries were not found. Try running:\n\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
-    endif ()
+    message(STATUS "GLEW and FreeGlut need to be installed.\nRun:\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
 endif ()
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})

@@ -5,10 +5,10 @@
 #ifndef THREEENGINE_VECTORTESTS_H
 #define THREEENGINE_VECTORTESTS_H
 
-#include "../Math/Vector.h"
-#include "../Math/Vector2.h"
+#include "../Engine/Math/Vector.h"
+#include "../Engine/Math/Vector2.h"
+#include "../Engine/Math/Vector4.h"
 #include "catch.hpp"
-#include "../Math/Vector4.h"
 
 SCENARIO("vectors arithmetic testing", "[vector]") {
 

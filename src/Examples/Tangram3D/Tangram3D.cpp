@@ -5,8 +5,8 @@
  */
 #include "Tangram3D.h"
 #include "Cube.h"
-#include "../Camera/Perspective.h"
-#include "../Camera/LookAt.h"
+#include "../../Engine/Camera/Perspective.h"
+#include "../../Engine/Camera/LookAt.h"
 #include "Triangle3D.h"
 #include "Parallelogram3D.h"
 

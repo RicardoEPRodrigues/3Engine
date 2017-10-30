@@ -5,10 +5,10 @@
 #ifndef THREEENGINE_MATRIXTESTS_H
 #define THREEENGINE_MATRIXTESTS_H
 
-#include "../Math/Matrix.h"
-#include "../Math/TMatrix.h"
-#include "../Math/Matrix3.h"
-#include "../Math/Matrix2.h"
+#include "../Engine/Math/Matrix.h"
+#include "../Engine/Math/TMatrix.h"
+#include "../Engine/Math/Matrix3.h"
+#include "../Engine/Math/Matrix2.h"
 
 SCENARIO("matrix arithmetic testing", "[matrix]") {
 
@@ -245,14 +245,14 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
             THEN("vector +-*/ number") {
 
                 CHECK((m + 1.0f) == Matrix(2));
-                CHECK((m - 1.0f) == Matrix(0));
+                CHECK((m - 1.0f) == Matrix((const number) 0));
                 CHECK((m * 2.0f) == Matrix(2));
                 CHECK((m / 2.0f) == Matrix(.5f));
             }
 
             THEN("number +-*/ vector") {
                 CHECK((1.0f + m) == Matrix(2));
-                CHECK((1.0f - m) == Matrix(0));
+                CHECK((1.0f - m) == Matrix((const number) 0));
                 CHECK((2.0f * m) == Matrix(2));
                 CHECK((2.0f / m) == Matrix(2));
             }

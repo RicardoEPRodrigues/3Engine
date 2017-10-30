@@ -28,8 +28,8 @@ namespace ThreeEngine {
                 std::unique_ptr<char[]> formatted;
                 va_list ap;
                 while (1) {
-                    formatted.reset(
-                            new char[n]); /* Wrap the plain char array into the unique_ptr */
+                    /* Wrap the plain char array into the unique_ptr */
+                    formatted.reset(new char[n]);
 #if OS_WIN
                     strcpy_s(&formatted[0], n, fmt_str.c_str());
 #else

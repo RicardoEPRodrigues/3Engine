@@ -212,6 +212,12 @@ namespace ThreeEngine {
         return (std::abs(1.0f - DistSquared()) < Epsilon);
     }
 
+    Vector Vector::Normalize(Vector v) {
+        Vector vNorm = v;
+        vNorm.Normalize();
+        return vNorm;
+    }
+
     float& Vector::operator[](int Index) {
         switch (Index) {
             case 0:

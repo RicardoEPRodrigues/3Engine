@@ -1,39 +1,36 @@
 /*
- * File Square.cpp in project ThreeEngine
+ * File Triangle.cpp in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "Square.h"
-#include "../OpenGLUtils.h"
+#include "Triangle.h"
+#include "../../Engine/OpenGLUtils.h"
 
 #define VERTICES 0
 #define COLORS 1
 
 namespace ThreeEngine {
 
-    Square::Square() : Vertices{
-            {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
-            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}},
-            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
-            {{0.7071f, 0.7071f, 0.0f, 1.0f}, {0.0f, 1.0f, 1.0f, 1.0f}},
-            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
-    } {
+    Triangle::Triangle() : Vertices{
+                                            {{0.0f, 0.0f, 0.0f, 1.0f}, {1.0f, 0.0f, 0.0f, 1.0f}},
+                                            {{0.7071f, 0.0f, 0.0f, 1.0f}, {0.0f, 1.0f, 0.0f, 1.0f}},
+                                            {{0.0f, 0.7071f, 0.0f, 1.0f}, {0.0f, 0.0f, 1.0f, 1.0f}}
+                                    } {
         shaderProgram = nullptr;
         transform.SetIdentity();
     }
 
-    Square::Square(GLfloat RGBA[6][4]) : Square() {
-        for (int i = 0; i < 6; ++i) {
+    Triangle::Triangle(GLfloat RGBA[3][4]) : Triangle() {
+        for (int i = 0; i < 3; ++i) {
             std::copy(std::begin(RGBA[i]), std::end(RGBA[i]), Vertices[i].RGBA);
         }
     }
 
-    Square::~Square() {
+    Triangle::~Triangle() {
         glBindVertexArray(vaoId);
         glDisableVertexAttribArray(VERTICES);
         glDisableVertexAttribArray(COLORS);
-        glDeleteBuffers(1, vboId);
+        glDeleteBuffers(2, vboId);
         glDeleteVertexArrays(1, &vaoId);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -41,7 +38,7 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not destroy VAOs and VBOs.");
     }
 
-    void Square::Init() {
+    void Triangle::Init() {
         if (!shaderProgram) {
             shaderProgram = std::make_shared<ShaderProgram> ("shaders/SimpleColor/program.json");
         }
@@ -50,7 +47,7 @@ namespace ThreeEngine {
         glGenVertexArrays(1, &vaoId);
         glBindVertexArray(vaoId);
         {
-            glGenBuffers(1, vboId);
+            glGenBuffers(2, vboId);
 
             glBindBuffer(GL_ARRAY_BUFFER, vboId[0]);
             glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
@@ -67,14 +64,14 @@ namespace ThreeEngine {
 
     }
 
-    void Square::Draw() {
+    void Triangle::Draw() {
         glBindVertexArray(vaoId);
         shaderProgram->Bind();
 
         number matrixArray[16];
         transform.ToArray(matrixArray);
         glUniformMatrix4fv(shaderProgram->GetUniformLocationId("Matrix"), 1, GL_FALSE, matrixArray);
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         shaderProgram->Unbind();
         glBindVertexArray(0);

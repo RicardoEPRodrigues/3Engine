@@ -16,7 +16,7 @@ namespace ThreeEngine {
         Reset(0.0f);
     }
 
-    Matrix::Matrix(number in) {
+    Matrix::Matrix(const number& in) {
         Reset(in);
     }
 

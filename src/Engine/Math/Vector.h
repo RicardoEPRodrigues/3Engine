@@ -38,7 +38,7 @@ namespace ThreeEngine {
 
         Vector(number inX, number inY, number inZ);
 
-        Vector(const Vector2& other, number inZ = 0);
+        explicit Vector(const Vector2& other, number inZ = 0);
 
         Vector(const Vector& other);
 
@@ -291,6 +291,13 @@ namespace ThreeEngine {
          * @return true if Normalized, false otherwise.
          */
         bool IsNormalized() const;
+
+        /**
+         * Normalize this vector in-place if it is large enough.
+         *
+         * @return true if the vector was normalized correctly, false otherwise.
+         */
+        static Vector Normalize(Vector v);
 
         /**
          * Gets specific component of the vector.

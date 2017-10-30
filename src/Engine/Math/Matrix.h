@@ -20,7 +20,7 @@ namespace ThreeEngine {
 
         Matrix();
 
-        explicit Matrix(number in);
+        explicit Matrix(const number& in);
 
         explicit Matrix(Matrix2 m);
 
