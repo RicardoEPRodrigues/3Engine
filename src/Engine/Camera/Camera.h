@@ -14,10 +14,10 @@ namespace ThreeEngine {
     class Camera : public IActor {
         private:
             GLuint vaoId, vboId;
-        public:
-            GLuint uniformBlockBidingID;
 
             Matrix* projection, * view;
+        public:
+            GLuint uniformBlockBidingID;
 
             Camera();
 
@@ -30,6 +30,18 @@ namespace ThreeEngine {
             void Init() override;
 
             void Draw() override;
+
+            Matrix* getProjection() const;
+
+            void SetProjection(Matrix* projection);
+
+            void SetProjection(Matrix const& projection);
+
+            Matrix* GetView() const;
+
+            void SetView(Matrix* view);
+
+            void SetView(Matrix const& view);
     };
 
 } /* namespace Divisaction */

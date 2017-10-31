@@ -24,21 +24,20 @@ namespace ThreeEngine {
             Camera* camera = engine->camera;
 
             if (engine->input.Click('p')) {
-                delete camera->projection;
                 if (inPerspective) {
-                    camera->projection = new Ortho(-2, 2, -2, 2, 1, 100);
+                    camera->SetProjection(new Ortho(-2, 2, -2, 2, 1, 100));
                     inPerspective = false;
                 }
                 else {
                     number width = engine->config["window"]["x"];
                     number height = engine->config["window"]["y"];
                     number aspect = width / height;
-                    camera->projection = new Perspective(30, aspect, 1, 100);
+                    camera->SetProjection(new Perspective(30, aspect, 1, 100));
                     inPerspective = true;
                 }
             }
 
-            auto lookAt = static_cast<LookAt*>(camera->view);
+            auto lookAt = static_cast<LookAt*>(camera->GetView());
 
             if (engine->input['w'] || engine->input[SpecialKeys::UP_KEY]) {
                 //                translation = Matrix::TranslationMatrix({0, 0, 0.1f, 0}) * translation;

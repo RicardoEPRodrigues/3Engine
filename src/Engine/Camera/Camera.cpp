@@ -10,52 +10,6 @@
 
 namespace ThreeEngine {
 
-//    const glMatrix I = {
-//            1.0f, 0.0f, 0.0f, 0.0f,
-//            0.0f, 1.0f, 0.0f, 0.0f,
-//            0.0f, 0.0f, 1.0f, 0.0f,
-//            0.0f, 0.0f, 0.0f, 1.0f
-//    };
-//
-//    const glMatrix ModelMatrix = {
-//            1.0f, 0.0f, 0.0f, 0.0f,
-//            0.0f, 1.0f, 0.0f, 0.0f,
-//            0.0f, 0.0f, 1.0f, 0.0f,
-//            -0.5f, -0.5f, -0.5f, 1.0f
-//    }; // Column Major
-//
-// // Eye(5,5,5) Center(0,0,0) Up(0,1,0)
-//    const glMatrix ViewMatrix1 = {
-//            0.70f, -0.41f, 0.58f, 0.00f,
-//            0.00f, 0.82f, 0.58f, 0.00f,
-//            -0.70f, -0.41f, 0.58f, 0.00f,
-//            0.00f, 0.00f, -8.70f, 1.00f
-//    }; // Column Major
-//
-// // Eye(-5,-5,-5) Center(0,0,0) Up(0,1,0)
-//    const glMatrix ViewMatrix2 = {
-//            -0.70f, -0.41f, -0.58f, 0.00f,
-//            0.00f, 0.82f, -0.58f, 0.00f,
-//            0.70f, -0.41f, -0.58f, 0.00f,
-//            0.00f, 0.00f, -8.70f, 1.00f
-//    }; // Column Major
-//
-// // Orthographic LeftRight(-2,2) TopBottom(-2,2) NearFar(1,10)
-//    const glMatrix ProjectionMatrix1 = {
-//            0.50f, 0.00f, 0.00f, 0.00f,
-//            0.00f, 0.50f, 0.00f, 0.00f,
-//            0.00f, 0.00f, -0.22f, 0.00f,
-//            0.00f, 0.00f, -1.22f, 1.00f
-//    }; // Column Major
-//
-// // Perspective Fovy(30) Aspect(640/480) NearZ(1) FarZ(10)
-//    const glMatrix ProjectionMatrix2 = {
-//            2.79f, 0.00f, 0.00f, 0.00f,
-//            0.00f, 3.73f, 0.00f, 0.00f,
-//            0.00f, 0.00f, -1.22f, -1.00f,
-//            0.00f, 0.00f, -2.22f, 0.00f
-//    }; // Column Majors
-
     Camera::Camera() : Camera(0) { }
 
     Camera::Camera(GLuint uniformBlockBidingID) : Camera(uniformBlockBidingID,
@@ -65,7 +19,7 @@ namespace ThreeEngine {
                                                                     {0, 1, 0})) { }
 
     Camera::Camera(GLuint uniformBlockBidingID, Matrix* projection, Matrix* view)
-            : uniformBlockBidingID(uniformBlockBidingID), projection(projection), view(view) { }
+            : projection(projection), view(view), uniformBlockBidingID(uniformBlockBidingID) { }
 
     Camera::~Camera() {
         glDeleteBuffers(1, &vboId);
@@ -98,5 +52,43 @@ namespace ThreeEngine {
         glBufferSubData(GL_UNIFORM_BUFFER, sizeof(Matrix), sizeof(Matrix), projectionMatrix);
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
         CheckOpenGLError("Could not draw camera.");
+    }
+
+    Matrix* Camera::getProjection() const {
+        return projection;
+    }
+
+    void Camera::SetProjection(Matrix* projection) {
+        if (this->projection == projection) {
+            return;
+        }
+        delete this->projection;
+        this->projection = projection;
+    }
+
+    void Camera::SetProjection(Matrix const& projection) {
+        if (!this->projection) {
+            return;
+        }
+        *this->projection = projection;
+    }
+
+    Matrix* Camera::GetView() const {
+        return view;
+    }
+
+    void Camera::SetView(Matrix* view) {
+        if (this->view == view) {
+            return;
+        }
+        delete this->view;
+        this->view = view;
+    }
+
+    void Camera::SetView(Matrix const& view) {
+        if (!this->view) {
+            return;
+        }
+        *this->view = view;
     }
 } /* namespace Divisaction */

@@ -48,7 +48,9 @@ set(SOURCE_FILES
         src/Engine/Camera/Perspective.cpp src/Engine/Camera/Perspective.h
         src/Engine/Camera/Ortho.cpp src/Engine/Camera/Ortho.h
         src/Examples/Tangram3D/Triangle3D.cpp src/Examples/Tangram3D/Triangle3D.h
-        src/Examples/Tangram3D/Parallelogram3D.h src/Examples/Tangram3D/Parallelogram3D.cpp src/Engine/Math/Quat.cpp src/Engine/Math/Quat.h)
+        src/Examples/Tangram3D/Parallelogram3D.h src/Examples/Tangram3D/Parallelogram3D.cpp src/Engine/Math/Quat.cpp src/Engine/Math/Quat.h
+        src/Examples/Quaternion/CameraControllerRot.cpp src/Examples/Quaternion/CameraControllerRot.h
+        src/Examples/Quaternion/Quaternion.cpp src/Examples/Quaternion/Quaternion.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

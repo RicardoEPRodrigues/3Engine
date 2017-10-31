@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "Examples/Tangram3D/Tangram3D.h"
+#include "Examples/Quaternion/Quaternion.h"
 #include "Engine/Math/Quat.h"
 
 using namespace ThreeEngine;
@@ -23,8 +23,8 @@ int main(int argc, char* argv[]) {
         Quat r = q * Quat(v) * qi;
         Debug::Log(r);
 
-        Tangram3D engine;
-        engine.shapeToShow = Tangram3D::ShapeType3D::CUBE;
+        Quaternion engine;
+        engine.shapeToShow = Quaternion::ShapeType3D::CUBE;
         engine.Init(argc, argv);
         engine.Run();
     }
