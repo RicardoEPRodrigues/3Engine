@@ -19,12 +19,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Tests\catch.hpp" />
-    <ClInclude Include="..\src\Tests\MatrixTests.h" />
-    <ClInclude Include="..\src\Tests\VectorTests.h" />
+    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp" />
+    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Square.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Tests\tests.cpp" />
+    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h" />
+    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Square.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Tangram.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\3Engine\3Engine.vcxproj">
@@ -33,10 +52,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{47B432F2-09CA-4FDD-AF38-C504143827B8}</ProjectGuid>
-    <RootNamespace>3EngineTests</RootNamespace>
+    <ProjectGuid>{AF22C1F0-CBC5-4607-9EEB-6DC154CF86FF}</ProjectGuid>
+    <RootNamespace>3EngineExecutable</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
-    <ProjectName>3EngineTests</ProjectName>
+    <ProjectName>3EngineExecutable</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,14 +111,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
-    <TargetName>$(ProjectName)_dbg</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <TargetName>$(ProjectName)_rls</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
@@ -127,7 +148,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;_CRT_NO_VA_START_VALIDATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -144,8 +165,10 @@ echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
 mkdir config
-copy "$(SolutionDir)config\SetupConfig.json" "$(OutDir)config\"
-copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
+xcopy "$(SolutionDir)config" "$(OutDir)config\" /E
+if exist shaders rd /s /q shaders
+mkdir shaders
+xcopy "$(SolutionDir)shaders" "$(OutDir)shaders\" /E</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -174,7 +197,7 @@ copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_SCL_SECURE_NO_WARNINGS;_CRT_NO_VA_START_VALIDATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -193,8 +216,10 @@ echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
 mkdir config
-copy "$(SolutionDir)config\SetupConfig.json" "$(OutDir)config\"
-copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
+xcopy "$(SolutionDir)config" "$(OutDir)config\" /E
+if exist shaders rd /s /q shaders
+mkdir shaders
+xcopy "$(SolutionDir)shaders" "$(OutDir)shaders\" /E</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

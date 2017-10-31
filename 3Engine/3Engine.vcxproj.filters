@@ -14,9 +14,6 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{be732140-19c3-4645-890e-9f0a7e4b418d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Executable">
-      <UniqueIdentifier>{f0e75ec0-c3fc-44e6-b74b-11d6c04a0ea0}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\config\RuntimeConfig.json">
@@ -87,42 +84,6 @@
     <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Square.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\main.cpp">
-      <Filter>Executable</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Camera\Camera.h">
@@ -187,39 +148,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h">
       <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Square.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Tangram.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Triangle.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h">
-      <Filter>Executable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h">
-      <Filter>Executable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

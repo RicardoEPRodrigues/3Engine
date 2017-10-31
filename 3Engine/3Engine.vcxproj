@@ -43,18 +43,6 @@
     <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
     <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
     <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
-    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp" />
-    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Square.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Camera\Camera.h" />
@@ -78,17 +66,6 @@
     <ClInclude Include="..\src\Engine\OpenGLUtils.h" />
     <ClInclude Include="..\src\Engine\Shader\Shader.h" />
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h" />
-    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h" />
-    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Square.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Tangram.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Triangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -112,13 +89,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -151,14 +128,16 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
-    <TargetName>$(ProjectName)_dbg</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <TargetName>$(ProjectName)_rls</TargetName>
+    <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\bin\$(Platform)\</OutDir>
