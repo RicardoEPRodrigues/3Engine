@@ -19,33 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Camera\Camera.cpp" />
-    <ClCompile Include="..\src\Camera\LookAt.cpp" />
-    <ClCompile Include="..\src\Camera\Ortho.cpp" />
-    <ClCompile Include="..\src\Camera\Perspective.cpp" />
-    <ClCompile Include="..\src\Engine.cpp" />
-    <ClCompile Include="..\src\Input.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\Math\Maths.cpp" />
-    <ClCompile Include="..\src\Math\Matrix.cpp" />
-    <ClCompile Include="..\src\Math\Matrix2.cpp" />
-    <ClCompile Include="..\src\Math\Matrix3.cpp" />
-    <ClCompile Include="..\src\Math\Vector.cpp" />
-    <ClCompile Include="..\src\Math\Vector2.cpp" />
-    <ClCompile Include="..\src\Math\Vector4.cpp" />
-    <ClCompile Include="..\src\Shader\Shader.cpp" />
-    <ClCompile Include="..\src\Shader\ShaderProgram.cpp" />
-    <ClCompile Include="..\src\Tangram3D\CameraController.cpp" />
-    <ClCompile Include="..\src\Tangram3D\Cube.cpp" />
-    <ClCompile Include="..\src\Tangram3D\Parallelogram3D.cpp" />
-    <ClCompile Include="..\src\Tangram3D\Tangram3D.cpp" />
-    <ClCompile Include="..\src\Tangram3D\Triangle3D.cpp" />
-    <ClCompile Include="..\src\Tangram\Parallelogram.cpp" />
-    <ClCompile Include="..\src\Tangram\Square.cpp" />
-    <ClCompile Include="..\src\Tangram\Tangram.cpp" />
-    <ClCompile Include="..\src\Tangram\Triangle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\config\RuntimeConfig.json" />
     <None Include="..\config\SetupConfig.json" />
     <None Include="..\shaders\SimpleColor\fragment.glsl" />
@@ -54,35 +27,68 @@
     <None Include="..\shaders\Wireframe.json" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Camera\Camera.h" />
-    <ClInclude Include="..\src\Camera\LookAt.h" />
-    <ClInclude Include="..\src\Camera\Ortho.h" />
-    <ClInclude Include="..\src\Camera\Perspective.h" />
-    <ClInclude Include="..\src\Debug.h" />
-    <ClInclude Include="..\src\Engine.h" />
-    <ClInclude Include="..\src\IActor.h" />
-    <ClInclude Include="..\src\Input.h" />
-    <ClInclude Include="..\src\json.hpp" />
-    <ClInclude Include="..\src\Math\Maths.h" />
-    <ClInclude Include="..\src\Math\Matrix.h" />
-    <ClInclude Include="..\src\Math\Matrix2.h" />
-    <ClInclude Include="..\src\Math\Matrix3.h" />
-    <ClInclude Include="..\src\Math\TMatrix.h" />
-    <ClInclude Include="..\src\Math\Vector.h" />
-    <ClInclude Include="..\src\Math\Vector2.h" />
-    <ClInclude Include="..\src\Math\Vector4.h" />
-    <ClInclude Include="..\src\OpenGLUtils.h" />
-    <ClInclude Include="..\src\Shader\Shader.h" />
-    <ClInclude Include="..\src\Shader\ShaderProgram.h" />
-    <ClInclude Include="..\src\Tangram3D\CameraController.h" />
-    <ClInclude Include="..\src\Tangram3D\Cube.h" />
-    <ClInclude Include="..\src\Tangram3D\Parallelogram3D.h" />
-    <ClInclude Include="..\src\Tangram3D\Tangram3D.h" />
-    <ClInclude Include="..\src\Tangram3D\Triangle3D.h" />
-    <ClInclude Include="..\src\Tangram\Parallelogram.h" />
-    <ClInclude Include="..\src\Tangram\Square.h" />
-    <ClInclude Include="..\src\Tangram\Tangram.h" />
-    <ClInclude Include="..\src\Tangram\Triangle.h" />
+    <ClCompile Include="..\src\Engine\Camera\Camera.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\LookAt.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\Ortho.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\Perspective.cpp" />
+    <ClCompile Include="..\src\Engine\Engine.cpp" />
+    <ClCompile Include="..\src\Engine\Input.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Maths.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix2.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix3.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Quat.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector2.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp" />
+    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Square.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp" />
+    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Engine\Camera\Camera.h" />
+    <ClInclude Include="..\src\Engine\Camera\LookAt.h" />
+    <ClInclude Include="..\src\Engine\Camera\Ortho.h" />
+    <ClInclude Include="..\src\Engine\Camera\Perspective.h" />
+    <ClInclude Include="..\src\Engine\Debug.h" />
+    <ClInclude Include="..\src\Engine\Engine.h" />
+    <ClInclude Include="..\src\Engine\IActor.h" />
+    <ClInclude Include="..\src\Engine\Input.h" />
+    <ClInclude Include="..\src\Engine\json.hpp" />
+    <ClInclude Include="..\src\Engine\Math\Maths.h" />
+    <ClInclude Include="..\src\Engine\Math\Matrix.h" />
+    <ClInclude Include="..\src\Engine\Math\Matrix2.h" />
+    <ClInclude Include="..\src\Engine\Math\Matrix3.h" />
+    <ClInclude Include="..\src\Engine\Math\Quat.h" />
+    <ClInclude Include="..\src\Engine\Math\TMatrix.h" />
+    <ClInclude Include="..\src\Engine\Math\Vector.h" />
+    <ClInclude Include="..\src\Engine\Math\Vector2.h" />
+    <ClInclude Include="..\src\Engine\Math\Vector4.h" />
+    <ClInclude Include="..\src\Engine\OpenGLUtils.h" />
+    <ClInclude Include="..\src\Engine\Shader\Shader.h" />
+    <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h" />
+    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h" />
+    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Square.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Tangram.h" />
+    <ClInclude Include="..\src\Examples\Tangram\Triangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

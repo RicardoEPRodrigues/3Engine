@@ -213,9 +213,6 @@
     <ClCompile Include="..\src\Math\Vector4.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Math\Maths.cpp">
-      <Filter>3Engine Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Math\Matrix.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
@@ -234,25 +231,52 @@
     <ClCompile Include="..\src\Math\Vector4.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Shader\Shader.cpp">
+    <ClCompile Include="..\src\Engine\Camera\Camera.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Shader\ShaderProgram.cpp">
+    <ClCompile Include="..\src\Engine\Camera\LookAt.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram\Tangram.cpp">
+    <ClCompile Include="..\src\Engine\Camera\Ortho.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram\Triangle.cpp">
+    <ClCompile Include="..\src\Engine\Camera\Perspective.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Engine.cpp">
+    <ClCompile Include="..\src\Engine\Engine.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram\Parallelogram.cpp">
+    <ClCompile Include="..\src\Engine\Input.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tangram\Square.cpp">
+    <ClCompile Include="..\src\Engine\Math\Maths.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix2.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix3.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Quat.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector2.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector4.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shader\Shader.cpp">
+      <Filter>3Engine Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp">
       <Filter>3Engine Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -575,18 +599,6 @@
     <ClInclude Include="..\src\Engine.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\IActor.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\json.hpp">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OpenGLUtils.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\Maths.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Math\Matrix.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
@@ -608,25 +620,67 @@
     <ClInclude Include="..\src\Math\Vector4.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Shader\Shader.h">
+    <ClInclude Include="..\src\Engine\Camera\Camera.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Shader\ShaderProgram.h">
+    <ClInclude Include="..\src\Engine\Camera\LookAt.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Tangram.h">
+    <ClInclude Include="..\src\Engine\Camera\Ortho.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Triangle.h">
+    <ClInclude Include="..\src\Engine\Camera\Perspective.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Debug.h">
+    <ClInclude Include="..\src\Engine\Debug.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Parallelogram.h">
+    <ClInclude Include="..\src\Engine\Engine.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Square.h">
+    <ClInclude Include="..\src\Engine\IActor.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Input.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\json.hpp">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Maths.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Matrix.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Matrix2.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Matrix3.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Quat.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\TMatrix.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Vector.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Vector2.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Math\Vector4.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shader\Shader.h">
+      <Filter>3Engine Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
   </ItemGroup>

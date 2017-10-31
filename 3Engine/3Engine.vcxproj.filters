@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,83 +11,12 @@
     <Filter Include="Shaders\SimpleColor">
       <UniqueIdentifier>{ff81e1aa-6659-4321-a1b3-9f04a393d0e1}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Math\Maths.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Vector4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Engine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Shader\Shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Shader\ShaderProgram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram\Tangram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram\Triangle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram\Parallelogram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram\Square.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Camera\Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Camera\LookAt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Camera\Ortho.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Camera\Perspective.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram3D\Tangram3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram3D\Triangle3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram3D\CameraController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram3D\Cube.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tangram3D\Parallelogram3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{be732140-19c3-4645-890e-9f0a7e4b418d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Executable">
+      <UniqueIdentifier>{f0e75ec0-c3fc-44e6-b74b-11d6c04a0ea0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\config\RuntimeConfig.json">
@@ -118,92 +39,187 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Debug.h">
-      <Filter>Header Files</Filter>
+    <ClCompile Include="..\src\Engine\Camera\Camera.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Camera\LookAt.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Camera\Ortho.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Camera\Perspective.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Input.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Maths.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix2.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Matrix3.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Quat.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector2.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Math\Vector4.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shader\Shader.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram\Square.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Executable</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Engine\Camera\Camera.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Engine.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Camera\LookAt.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\json.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Camera\Ortho.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Maths.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Camera\Perspective.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Debug.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix2.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Engine.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix3.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\IActor.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\TMatrix.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Input.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Vector.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\json.hpp">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Vector2.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Maths.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Vector4.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Matrix.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\OpenGLUtils.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Matrix2.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Shader\Shader.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Matrix3.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Shader\ShaderProgram.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Quat.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\IActor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\TMatrix.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Tangram.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Vector.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Triangle.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Vector2.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Square.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Math\Vector4.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram\Parallelogram.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Camera\Perspective.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Shader\Shader.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Camera\Ortho.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h">
+      <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Camera\LookAt.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Camera\Camera.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Input.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram3D\Parallelogram3D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram\Square.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram3D\Tangram3D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram\Tangram.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram3D\Triangle3D.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram\Triangle.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram3D\Cube.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h">
+      <Filter>Executable</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tangram3D\CameraController.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h">
+      <Filter>Executable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h">
+      <Filter>Executable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h">
+      <Filter>Executable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h">
+      <Filter>Executable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
