@@ -42,6 +42,10 @@ namespace ThreeEngine {
         clickKeys[key].second = false;
     }
 
+    bool Input::Click(unsigned char key) {
+        return clickKeys[key].first && !clickKeys[key].second;
+    }
+
     void Input::SpecialKeysDown(int key, int, int) {
         specialKeys[key] = true;
         updateModifierKeys();
@@ -76,12 +80,16 @@ namespace ThreeEngine {
         mouseScreenLocation.Y = y;
     }
 
-    const Vector2& Input::GetMouseScreenLocation() {
+    const Vector2& Input::GetMouseScreenLocation() const {
         return mouseScreenLocation;
     }
 
-    bool Input::Click(unsigned char key) {
-        return clickKeys[key].first && !clickKeys[key].second;
+    void Input::SetMouseScreenLocation(int const & x, int const & y) {
+        glutWarpPointer(x, y);
+    }
+
+    void Input::SetMouseCursor(MouseCursor cursor) {
+        glutSetCursor(cursor);
     }
 
 } /* namespace Divisaction */

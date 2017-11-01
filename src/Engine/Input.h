@@ -49,6 +49,32 @@ namespace ThreeEngine {
         MIDDLE = GLUT_MIDDLE_BUTTON
     };
 
+    enum MouseCursor {
+        CURSOR_RIGHT_ARROW = GLUT_CURSOR_RIGHT_ARROW,
+        CURSOR_LEFT_ARROW = GLUT_CURSOR_LEFT_ARROW,
+        CURSOR_INFO = GLUT_CURSOR_INFO,
+        CURSOR_DESTROY = GLUT_CURSOR_DESTROY,
+        CURSOR_HELP = GLUT_CURSOR_HELP,
+        CURSOR_CYCLE = GLUT_CURSOR_CYCLE,
+        CURSOR_SPRAY = GLUT_CURSOR_SPRAY,
+        CURSOR_WAIT = GLUT_CURSOR_WAIT,
+        CURSOR_TEXT = GLUT_CURSOR_TEXT,
+        CURSOR_CROSSHAIR = GLUT_CURSOR_CROSSHAIR,
+        CURSOR_UP_DOWN = GLUT_CURSOR_UP_DOWN,
+        CURSOR_LEFT_RIGHT = GLUT_CURSOR_LEFT_RIGHT,
+        CURSOR_TOP_SIDE = GLUT_CURSOR_TOP_SIDE,
+        CURSOR_BOTTOM_SIDE = GLUT_CURSOR_BOTTOM_SIDE,
+        CURSOR_LEFT_SIDE = GLUT_CURSOR_LEFT_SIDE,
+        CURSOR_RIGHT_SIDE = GLUT_CURSOR_RIGHT_SIDE,
+        CURSOR_TOP_LEFT_CORNER = GLUT_CURSOR_TOP_LEFT_CORNER,
+        CURSOR_TOP_RIGHT_CORNER = GLUT_CURSOR_TOP_RIGHT_CORNER,
+        CURSOR_BOTTOM_RIGHT_CORNER = GLUT_CURSOR_BOTTOM_RIGHT_CORNER,
+        CURSOR_BOTTOM_LEFT_CORNER = GLUT_CURSOR_BOTTOM_LEFT_CORNER,
+        CURSOR_FULL_CROSSHAIR = GLUT_CURSOR_FULL_CROSSHAIR,
+        CURSOR_NONE = GLUT_CURSOR_NONE,
+        CURSOR_INHERIT = GLUT_CURSOR_INHERIT
+    };
+
     class Input {
         private:
             std::map<unsigned char, std::pair<bool, bool>> clickKeys;
@@ -90,7 +116,11 @@ namespace ThreeEngine {
 
             bool operator[](MouseKeys key);
 
-            const Vector2& GetMouseScreenLocation();
+            const Vector2& GetMouseScreenLocation() const;
+
+            void SetMouseScreenLocation(int const& x, int const& y);
+
+            void SetMouseCursor(MouseCursor cursor);
 
             /**
              * Checks if the key was clicked this cycle.

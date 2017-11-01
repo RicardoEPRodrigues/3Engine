@@ -3,17 +3,20 @@
  *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
+#include <Engine/OpenGLUtils.h>
 #include "SphereCameraController.h"
 #include "Engine/Camera/Ortho.h"
 #include "Engine/Camera/Perspective.h"
 
 namespace ThreeEngine {
 
-    SphereCameraController::SphereCameraController() : engine(Engine::Instance()), inPerspective(true),
-                                                 useQuat(false), previousMouseLocation(),
-                                                 yawPitch(), translation(Matrix::IdentityMatrix()),
-                                                 rotation(Matrix::IdentityMatrix()),
-                                                 quat({1, 0, 0, 0}) { }
+    SphereCameraController::SphereCameraController() : engine(Engine::Instance()),
+                                                       inPerspective(true),
+                                                       useQuat(true), previousMouseLocation(),
+                                                       yawPitch(),
+                                                       translation(Matrix::IdentityMatrix()),
+                                                       rotation(Matrix::IdentityMatrix()),
+                                                       quat({1, 0, 0, 0}) { }
 
     SphereCameraController::~SphereCameraController() = default;
 
@@ -40,8 +43,11 @@ namespace ThreeEngine {
                 useQuat = !useQuat;
             }
 
+            // Check if mouse was clicked
             if (engine->input[MouseKeys::LEFT] || engine->input[MouseKeys::RIGHT]) {
-                float sensitivity = 0.05f;
+                engine->input.SetMouseCursor(MouseCursor::CURSOR_NONE);
+
+                float sensitivity = Time::Delta() / 500.0f;
                 Vector2 delta = {(mouse.X - previousMouseLocation.X) * sensitivity,
                                  (previousMouseLocation.Y - mouse.Y) * sensitivity};
 
@@ -58,9 +64,37 @@ namespace ThreeEngine {
                                       Matrix(Matrix3::RotationMatrix(Maths::Axis::X, -delta.Y));
                     camera->SetView(*camera->GetView() * rotation);
                 }
+
+
+                // check if mouse is at window borders
+                bool mouseXUpdate =
+                        (mouse.X <= 0) || (mouse.X >= (int) engine->config["window"]["x"]);
+                bool mouseYUpdate =
+                        (mouse.Y <= 0) || (mouse.Y >= (int) engine->config["window"]["y"]);
+
+                if (mouseXUpdate || mouseYUpdate) {
+                    Vector2 newMouseLoc = mouse;
+
+                    if (mouseXUpdate) {
+                        newMouseLoc.X = (int) engine->config["window"]["x"] / 2;
+                        previousMouseLocation.X = newMouseLoc.X - delta.X;
+                    }
+
+                    if (mouseYUpdate) {
+                        newMouseLoc.Y = (int) engine->config["window"]["y"] / 2;
+                        previousMouseLocation.Y = newMouseLoc.Y - delta.Y;
+                    }
+
+                    engine->input.SetMouseScreenLocation(static_cast<int>(newMouseLoc.X),
+                                                         static_cast<int>(newMouseLoc.Y));
+                } else {
+                    previousMouseLocation = mouse;
+                }
+            } else {
+                engine->input.SetMouseCursor(MouseCursor::CURSOR_INHERIT);
+                previousMouseLocation = mouse;
             }
 
-            previousMouseLocation = mouse;
         }
 
     }

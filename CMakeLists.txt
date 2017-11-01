@@ -81,7 +81,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/Cube.cpp src/Engine/Shapes/Cube.h
         src/Engine/Shapes/Triangle3D.cpp src/Engine/Shapes/Triangle3D.h
         src/Engine/Shapes/Parallelogram3D.h src/Engine/Shapes/Parallelogram3D.cpp
-        )
+        src/Engine/Time/Time.cpp src/Engine/Time/Time.h src/Engine/Time/GlutTimeCalculator.cpp src/Engine/Time/GlutTimeCalculator.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
@@ -99,8 +99,8 @@ target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIB
 add_executable(ThreeEngineExecutable ${EXECUTABLE_SOURCE_FILES})
 target_link_libraries(ThreeEngineExecutable ThreeEngine)
 
-add_executable(ThreeEngineTests ${ENGINE_SOURCE_FILES} ${TESTS_SOURCE_FILES})
-target_link_libraries(ThreeEngineTests ${OPENGL_LIBRARIES})
+add_executable(ThreeEngineTests ${TESTS_SOURCE_FILES})
+target_link_libraries(ThreeEngineTests ThreeEngine)
 
 # Post build commands
 

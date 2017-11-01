@@ -5,6 +5,7 @@
  */
 #include <sstream>
 #include <fstream>
+#include "Engine/Time/GlutTimeCalculator.h"
 
 #include "GL/glew.h"
 #include "GL/freeglut.h"
@@ -38,6 +39,7 @@ namespace ThreeEngine {
         SetupGLEW();
         CheckOpenGLInfo();
         SetupOpenGL();
+        Time::SetTimeCalculator(new GlutTimeCalculator());
         OnInit();
         {
             actors.push_back(reinterpret_cast<IActor*>(camera));
@@ -192,6 +194,7 @@ namespace ThreeEngine {
     void Engine::Display() {
         ++instance->FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        Time::Update();
         instance->PreDraw();
         for (auto& actor : instance->actors) {
             actor->Draw();
