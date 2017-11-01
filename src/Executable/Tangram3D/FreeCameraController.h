@@ -6,11 +6,11 @@
 #ifndef THREEENGINE_CAMERACONTROLLER_H
 #define THREEENGINE_CAMERACONTROLLER_H
 
-#include "../../Engine/Engine.h"
+#include "Engine/Engine.h"
 
 namespace ThreeEngine {
 
-    class CameraController {
+    class FreeCameraController {
         private:
             Engine* engine;
 
@@ -22,9 +22,9 @@ namespace ThreeEngine {
 
         public:
 
-            CameraController();
+            FreeCameraController();
 
-            virtual ~CameraController();
+            virtual ~FreeCameraController();
 
             void Update();
     };

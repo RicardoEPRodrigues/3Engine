@@ -7,9 +7,9 @@
 #define THREEENGINE_PARALLELOGRAM3D_H
 
 #include <GL/glew.h>
-#include "../../Engine/IActor.h"
-#include "../../Engine/Shader/ShaderProgram.h"
-#include "../../Engine/OpenGLUtils.h"
+#include "../IActor.h"
+#include "../Shader/ShaderProgram.h"
+#include "../OpenGLUtils.h"
 
 namespace ThreeEngine {
 

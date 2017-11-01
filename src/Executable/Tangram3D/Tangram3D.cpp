@@ -3,12 +3,12 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "Quaternion.h"
-#include "../../Engine/Camera/Perspective.h"
-#include "../../Engine/Camera/LookAt.h"
-#include "../Tangram3D/Triangle3D.h"
-#include "../Tangram3D/Cube.h"
-#include "../Tangram3D/Parallelogram3D.h"
+#include "Tangram3D.h"
+#include "Engine/Shapes/Cube.h"
+#include "Engine/Camera/Perspective.h"
+#include "Engine/Camera/LookAt.h"
+#include "Engine/Shapes/Triangle3D.h"
+#include "Engine/Shapes/Parallelogram3D.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -18,11 +18,11 @@ using json = nlohmann::json;
 namespace ThreeEngine {
 
 
-    Quaternion::Quaternion() : Engine(), shapeToShow(CUBE), controller() { }
+    Tangram3D::Tangram3D() : Engine(), shapeToShow(CUBE), controller() { }
 
-    Quaternion::~Quaternion() = default;
+    Tangram3D::~Tangram3D() = default;
 
-    void Quaternion::OnInit() {
+    void Tangram3D::OnInit() {
         switch (shapeToShow) {
             case CUBE:
                 CubeScene();
@@ -30,7 +30,7 @@ namespace ThreeEngine {
         }
     }
 
-    void Quaternion::CubeScene() {
+    void Tangram3D::CubeScene() {
         auto colorProgram = std::make_shared<ShaderProgram>("shaders/Color3D/program.json");
         colorProgram->Init();
 
@@ -45,7 +45,7 @@ namespace ThreeEngine {
             camera = new Camera(
                     static_cast<GLuint>(colorProgram->GetUniformBlockBidingId("SharedMatrices")),
                     new Perspective(30, aspect, 1, 100),
-                    new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -10)))
+                    new LookAt({0, 0, 10}, {0, 0, 0}, {0, 1, 0})
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
             );
         }
@@ -134,14 +134,14 @@ namespace ThreeEngine {
 
     }
 
-    void Quaternion::OnReshape(int, int) {
+    void Tangram3D::OnReshape(int, int) {
 //        number aspect = (number) w / (number) h,
 //                angle = Maths::ToRadians(30.0f / 2.0f),
 //                d = 1.0f / tanf(angle);
 //        camera->projection.M[0][0] = d / aspect;
     }
 
-    void Quaternion::PreDraw() {
+    void Tangram3D::PreDraw() {
         if (input.Click(27)) {
             Exit();
         }

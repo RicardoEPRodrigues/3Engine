@@ -3,21 +3,21 @@
  *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "CameraControllerRot.h"
-#include "../../Engine/Camera/Ortho.h"
-#include "../../Engine/Camera/Perspective.h"
+#include "SphereCameraController.h"
+#include "Engine/Camera/Ortho.h"
+#include "Engine/Camera/Perspective.h"
 
 namespace ThreeEngine {
 
-    CameraControllerRot::CameraControllerRot() : engine(Engine::Instance()), inPerspective(true),
+    SphereCameraController::SphereCameraController() : engine(Engine::Instance()), inPerspective(true),
                                                  useQuat(false), previousMouseLocation(),
                                                  yawPitch(), translation(Matrix::IdentityMatrix()),
                                                  rotation(Matrix::IdentityMatrix()),
                                                  quat({1, 0, 0, 0}) { }
 
-    CameraControllerRot::~CameraControllerRot() = default;
+    SphereCameraController::~SphereCameraController() = default;
 
-    void CameraControllerRot::Update() {
+    void SphereCameraController::Update() {
         if (engine) {
             const Vector2 mouse = engine->input.GetMouseScreenLocation();
             Camera* camera = engine->camera;

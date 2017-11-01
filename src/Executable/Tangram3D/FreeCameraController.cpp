@@ -3,22 +3,22 @@
  *
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include "CameraController.h"
-#include "../../Engine/Camera/Ortho.h"
-#include "../../Engine/Camera/Perspective.h"
-#include "../../Engine/Camera/LookAt.h"
+#include "FreeCameraController.h"
+#include "Engine/Camera/Ortho.h"
+#include "Engine/Camera/Perspective.h"
+#include "Engine/Camera/LookAt.h"
 
 namespace ThreeEngine {
 
-    CameraController::CameraController() : inPerspective(true), previousMouseLocation(), yawPitch(),
+    FreeCameraController::FreeCameraController() : inPerspective(true), previousMouseLocation(), yawPitch(),
         translation(Matrix::IdentityMatrix()),
         rotation(Matrix::IdentityMatrix()) {
         engine = Engine::Instance();
     }
 
-    CameraController::~CameraController() = default;
+    FreeCameraController::~FreeCameraController() = default;
 
-    void CameraController::Update() {
+    void FreeCameraController::Update() {
         if (engine) {
             const Vector2 mouse = engine->input.GetMouseScreenLocation();
             Camera* camera = engine->camera;

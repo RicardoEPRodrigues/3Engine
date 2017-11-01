@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 project(ThreeEngine)
 
+# Compiler configuration
+
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -20,40 +22,7 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
     set(EXECUTABLE_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 ENDIF ()
 
-set(SOURCE_FILES
-        src/Engine/Debug.h src/Engine/Engine.cpp src/Engine/Engine.h
-        src/Engine/json.hpp
-        src/Engine/Math/Vector.cpp src/Engine/Math/Vector.h
-        src/Engine/Math/Vector2.cpp src/Engine/Math/Vector2.h
-        src/Engine/Math/Maths.cpp src/Engine/Math/Maths.h
-        src/Engine/Math/Vector4.cpp src/Engine/Math/Vector4.h
-        src/Engine/Math/Matrix.cpp src/Engine/Math/Matrix.h
-        src/Engine/Math/TMatrix.h
-        src/Engine/Math/Matrix3.cpp src/Engine/Math/Matrix3.h
-        src/Engine/Math/Matrix2.cpp src/Engine/Math/Matrix2.h
-        src/Engine/Shader/Shader.cpp src/Engine/Shader/Shader.h
-        src/Engine/Shader/ShaderProgram.cpp src/Engine/Shader/ShaderProgram.h
-        src/Engine/OpenGLUtils.h
-        src/Examples/Tangram/Tangram.cpp src/Examples/Tangram/Tangram.h
-        src/Engine/IActor.h
-        src/Examples/Tangram/Triangle.cpp src/Examples/Tangram/Triangle.h
-        src/Examples/Tangram/Square.cpp src/Examples/Tangram/Square.h
-        src/Examples/Tangram/Parallelogram.cpp src/Examples/Tangram/Parallelogram.h
-        src/Examples/Tangram3D/Cube.cpp src/Examples/Tangram3D/Cube.h
-        src/Engine/Camera/Camera.cpp src/Engine/Camera/Camera.h
-        src/Examples/Tangram3D/Tangram3D.cpp src/Examples/Tangram3D/Tangram3D.h
-        src/Examples/Tangram3D/CameraController.cpp src/Examples/Tangram3D/CameraController.h
-        src/Engine/Input.cpp src/Engine/Input.h
-        src/Engine/Camera/LookAt.cpp src/Engine/Camera/LookAt.h
-        src/Engine/Camera/Perspective.cpp src/Engine/Camera/Perspective.h
-        src/Engine/Camera/Ortho.cpp src/Engine/Camera/Ortho.h
-        src/Examples/Tangram3D/Triangle3D.cpp src/Examples/Tangram3D/Triangle3D.h
-        src/Examples/Tangram3D/Parallelogram3D.h src/Examples/Tangram3D/Parallelogram3D.cpp src/Engine/Math/Quat.cpp src/Engine/Math/Quat.h
-        src/Examples/Quaternion/CameraControllerRot.cpp src/Examples/Quaternion/CameraControllerRot.h
-        src/Examples/Quaternion/Quaternion.cpp src/Examples/Quaternion/Quaternion.h)
-
-set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
-
+# External Libraries configuration
 
 find_package(OpenGL REQUIRED)
 
@@ -72,7 +41,6 @@ elseif (UNIX AND NOT APPLE)
 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wextra -pedantic -g3 -Og -Wuninitialized")
 
-    FIND_PACKAGE(OpenGL REQUIRED)
     find_package(GLUT REQUIRED)
     find_package(GLEW REQUIRED)
 
@@ -81,12 +49,60 @@ endif ()
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
-add_executable(ThreeEngine src/main.cpp ${SOURCE_FILES})
+# Project files and executables/libraries
+
+include_directories(src)
+
+set(ENGINE_SOURCE_FILES
+        src/Engine/json.hpp
+        src/Engine/Debug.h
+        src/Engine/Engine.cpp src/Engine/Engine.h
+        src/Engine/Math/Vector.cpp src/Engine/Math/Vector.h
+        src/Engine/Math/Vector2.cpp src/Engine/Math/Vector2.h
+        src/Engine/Math/Maths.cpp src/Engine/Math/Maths.h
+        src/Engine/Math/Vector4.cpp src/Engine/Math/Vector4.h
+        src/Engine/Math/Matrix.cpp src/Engine/Math/Matrix.h
+        src/Engine/Math/TMatrix.h
+        src/Engine/Math/Matrix3.cpp src/Engine/Math/Matrix3.h
+        src/Engine/Math/Matrix2.cpp src/Engine/Math/Matrix2.h
+        src/Engine/Shader/Shader.cpp src/Engine/Shader/Shader.h
+        src/Engine/Shader/ShaderProgram.cpp src/Engine/Shader/ShaderProgram.h
+        src/Engine/OpenGLUtils.h
+        src/Engine/IActor.h
+        src/Engine/Camera/Camera.cpp src/Engine/Camera/Camera.h
+        src/Engine/Input.cpp src/Engine/Input.h
+        src/Engine/Camera/LookAt.cpp src/Engine/Camera/LookAt.h
+        src/Engine/Camera/Perspective.cpp src/Engine/Camera/Perspective.h
+        src/Engine/Camera/Ortho.cpp src/Engine/Camera/Ortho.h
+        src/Engine/Math/Quat.cpp src/Engine/Math/Quat.h
+        src/Engine/Shapes/Triangle.cpp src/Engine/Shapes/Triangle.h
+        src/Engine/Shapes/Square.cpp src/Engine/Shapes/Square.h
+        src/Engine/Shapes/Parallelogram.cpp src/Engine/Shapes/Parallelogram.h
+        src/Engine/Shapes/Cube.cpp src/Engine/Shapes/Cube.h
+        src/Engine/Shapes/Triangle3D.cpp src/Engine/Shapes/Triangle3D.h
+        src/Engine/Shapes/Parallelogram3D.h src/Engine/Shapes/Parallelogram3D.cpp
+        )
+
+set(EXECUTABLE_SOURCE_FILES
+        src/Executable/main.cpp
+        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
+        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
+        src/Executable/Tangram3D/FreeCameraController.cpp src/Executable/Tangram3D/FreeCameraController.h
+        src/Executable/Quaternion/SphereCameraController.cpp src/Executable/Quaternion/SphereCameraController.h
+        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h)
+
+set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
+
+add_library(ThreeEngine SHARED ${ENGINE_SOURCE_FILES})
 target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
-add_executable(ThreeEngineTests ${SOURCE_FILES} ${TESTS_SOURCE_FILES})
-target_link_libraries(ThreeEngineTests ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+add_executable(ThreeEngineExecutable ${EXECUTABLE_SOURCE_FILES})
+target_link_libraries(ThreeEngineExecutable ThreeEngine)
 
+add_executable(ThreeEngineTests ${ENGINE_SOURCE_FILES} ${TESTS_SOURCE_FILES})
+target_link_libraries(ThreeEngineTests ${OPENGL_LIBRARIES})
+
+# Post build commands
 
 if (WIN32) # WINDOWS post build
 
@@ -98,25 +114,9 @@ if (WIN32) # WINDOWS post build
             COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             )
-
-    add_custom_command(TARGET ThreeEngineTests POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E echo Copying Libraries
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
-            )
 endif ()
 
 add_custom_command(TARGET ThreeEngine POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
-        )
-add_custom_command(TARGET ThreeEngineTests POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
-        )
-add_custom_target(CopyConfigFiles
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/

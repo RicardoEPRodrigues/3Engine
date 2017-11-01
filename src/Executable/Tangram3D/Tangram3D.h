@@ -3,21 +3,21 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_QUATERNION_H
-#define THREEENGINE_QUATERNION_H
+#ifndef THREEENGINE_TANGRAM3D_H
+#define THREEENGINE_TANGRAM3D_H
 
-#include "../../Engine/Engine.h"
-#include "../../Engine/Shader/ShaderProgram.h"
-#include "../../Engine/IActor.h"
-#include "CameraControllerRot.h"
+#include "Engine/Engine.h"
+#include "Engine/Shader/ShaderProgram.h"
+#include "Engine/IActor.h"
+#include "FreeCameraController.h"
 
 namespace ThreeEngine {
 
-    class Quaternion : public Engine {
+    class Tangram3D : public Engine {
         public:
-            Quaternion();
+            Tangram3D();
 
-            ~Quaternion() override;
+            ~Tangram3D() override;
 
             enum ShapeType3D {
                 CUBE
@@ -25,7 +25,7 @@ namespace ThreeEngine {
 
             ShapeType3D shapeToShow;
 
-            CameraControllerRot controller;
+            FreeCameraController controller;
 
         protected:
 
@@ -40,4 +40,4 @@ namespace ThreeEngine {
 
 } /* namespace Divisaction */
 
-#endif //THREEENGINE_QUATERNION_H
+#endif //THREEENGINE_TANGRAM3D_H

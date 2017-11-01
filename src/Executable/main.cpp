@@ -3,8 +3,7 @@
 //
 
 #include <iostream>
-#include "Examples/Quaternion/Quaternion.h"
-#include "Engine/Math/Quat.h"
+#include "Quaternion/Quaternion.h"
 
 using namespace ThreeEngine;
 
@@ -17,12 +16,6 @@ int main(int argc, char* argv[]) {
     srand(static_cast <unsigned> (time(0)));
 
     {
-        Quat q = Quat::FromAngleAxis(90, Vector(0, 0, 1));
-        Quat qi = q.Inverse();
-        Vector4 v = {1, 0, 0, 0};
-        Quat r = q * Quat(v) * qi;
-        Debug::Log(r);
-
         Quaternion engine;
         engine.shapeToShow = Quaternion::ShapeType3D::CUBE;
         engine.Init(argc, argv);
