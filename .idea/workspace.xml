@@ -15,31 +15,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Quaternion/CameraControllerRot.cpp" afterPath="$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Quaternion/CameraControllerRot.h" afterPath="$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Quaternion/Quaternion.cpp" afterPath="$PROJECT_DIR$/src/Executable/Quaternion/Quaternion.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Quaternion/Quaternion.h" afterPath="$PROJECT_DIR$/src/Executable/Quaternion/Quaternion.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Parallelogram.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Parallelogram.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Square.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Square.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Square.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Square.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Tangram.cpp" afterPath="$PROJECT_DIR$/src/Executable/Tangram/Tangram.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Tangram.h" afterPath="$PROJECT_DIR$/src/Executable/Tangram/Tangram.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Triangle.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Triangle.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram/Triangle.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Triangle.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/CameraController.cpp" afterPath="$PROJECT_DIR$/src/Executable/Tangram3D/FreeCameraController.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/CameraController.h" afterPath="$PROJECT_DIR$/src/Executable/Tangram3D/FreeCameraController.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Cube.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Cube.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Cube.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Cube.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Parallelogram3D.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram3D.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Parallelogram3D.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram3D.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Tangram3D.cpp" afterPath="$PROJECT_DIR$/src/Executable/Tangram3D/Tangram3D.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Tangram3D.h" afterPath="$PROJECT_DIR$/src/Executable/Tangram3D/Tangram3D.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Triangle3D.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Examples/Tangram3D/Triangle3D.h" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main.cpp" afterPath="$PROJECT_DIR$/src/Executable/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/Engine.cpp" afterPath="$PROJECT_DIR$/src/Engine/Engine.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/Shapes/Square.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Square.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Engine/Shapes/Triangle.cpp" afterPath="$PROJECT_DIR$/src/Engine/Shapes/Triangle.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Executable/Quaternion/Quaternion.cpp" afterPath="$PROJECT_DIR$/src/Executable/Quaternion/Quaternion.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Executable/Tangram/Tangram.cpp" afterPath="$PROJECT_DIR$/src/Executable/Tangram/Tangram.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/bin/release/" />
@@ -59,30 +41,7 @@
     <favorites_list name="ThreeEngine" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FreeCameraController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Executable/Tangram3D/FreeCameraController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SphereCameraController.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-              <folding>
-                <element signature="e#208#234#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,8 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>4</find>
-      <find>column</find>
       <find>operator[]</find>
       <find>check(</find>
       <find>check</find>
@@ -125,6 +82,8 @@
       <find>ThreeEngine</find>
       <find>threeengine</find>
       <find>Engine</find>
+      <find>glutInit</find>
+      <find>glut</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -149,16 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Tangram/Tangram.h" />
-        <option value="$PROJECT_DIR$/src/Tangram3D/Tangram3D.cpp" />
-        <option value="$PROJECT_DIR$/src/Tangram3D/CameraController.cpp" />
-        <option value="$PROJECT_DIR$/src/Engine/Camera/Perspective.h" />
-        <option value="$PROJECT_DIR$/src/Engine/Camera/Ortho.h" />
-        <option value="$PROJECT_DIR$/src/Tangram3D/Parallelogram3D.h" />
-        <option value="$PROJECT_DIR$/src/Tangram3D/Triangle3D.h" />
-        <option value="$PROJECT_DIR$/src/Tangram/Tangram.cpp" />
-        <option value="$PROJECT_DIR$/src/Tests/tests.cpp" />
-        <option value="$PROJECT_DIR$/src/Tests/VectorTests.h" />
         <option value="$PROJECT_DIR$/src/Engine/Math/Matrix.h" />
         <option value="$PROJECT_DIR$/src/Engine/Math/Matrix.cpp" />
         <option value="$PROJECT_DIR$/src/Tests/MatrixTests.h" />
@@ -174,7 +123,6 @@
         <option value="$PROJECT_DIR$/src/Engine/Camera/Camera.h" />
         <option value="$PROJECT_DIR$/src/Examples/Quaternion/CameraControllerRot.h" />
         <option value="$PROJECT_DIR$/src/Examples/Quaternion/CameraControllerRot.cpp" />
-        <option value="$PROJECT_DIR$/src/Engine/Debug.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/src/Executable/main.cpp" />
         <option value="$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.h" />
@@ -186,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.h" />
         <option value="$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.cpp" />
         <option value="$PROJECT_DIR$/src/Engine/Shapes/Cube.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Executable/Tangram3D/Tangram3D.cpp" />
         <option value="$PROJECT_DIR$/src/Executable/Tangram3D/Tangram3D.h" />
         <option value="$PROJECT_DIR$/src/Executable/Tangram3D/CameraController.cpp" />
@@ -199,7 +146,19 @@
         <option value="$PROJECT_DIR$/src/Executable/Tangram3D/SphereCameraController.h" />
         <option value="$PROJECT_DIR$/src/Executable/Tangram3D/FreeCameraController.h" />
         <option value="$PROJECT_DIR$/src/Executable/Quaternion/CameraControllerRot.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/Engine/Time/Time.h" />
+        <option value="$PROJECT_DIR$/src/Engine/Time/GlutTimeCalculator.h" />
+        <option value="$PROJECT_DIR$/src/Engine/Time/Time.cpp" />
+        <option value="$PROJECT_DIR$/src/Engine/Engine.cpp" />
+        <option value="$PROJECT_DIR$/src/Engine/Engine.h" />
+        <option value="$PROJECT_DIR$/src/Engine/Input.h" />
+        <option value="$PROJECT_DIR$/src/Engine/Input.cpp" />
+        <option value="$PROJECT_DIR$/src/Engine/Time/GlutTimeCalculator.cpp" />
+        <option value="$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.cpp" />
         <option value="$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.h" />
+        <option value="$PROJECT_DIR$/src/Engine/OpenGLUtils.h" />
+        <option value="$PROJECT_DIR$/src/Engine/Debug.h" />
       </list>
     </option>
   </component>
@@ -325,15 +284,7 @@
               <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Executable" type="462c0819:PsiDirectoryNode" />
-              <item name="Tangram" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Executable" type="462c0819:PsiDirectoryNode" />
-              <item name="Tangram3D" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -347,7 +298,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp&#10;Camera&#9;null&#9;null&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;Vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;Matrix3&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix3.cpp&#10;Matrix&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix.h&#10;program&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;shader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/Shader.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;vector.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix2.h&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.cpp&#10;vector4.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4.c&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp" />
+    <property name="SearchEverywhereHistoryKey" value="engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;debug&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Debug.h&#10;Time.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/Time.h&#10;gluttim&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/GlutTimeCalculator.cpp&#10;input&#9;null&#9;null&#10;Engine.cp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.cpp&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/main.cpp&#10;Camera&#9;null&#9;null&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;Vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;Matrix3&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix3.cpp&#10;Matrix&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix.h&#10;program&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;shader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/Shader.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.cpp&#10;vector.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector.h&#10;Vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;Matrix2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Matrix2.h&#10;vector2&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector2.cpp&#10;vector4.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.h&#10;vector4.c&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Vector4.cpp" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
   </component>
   <component name="RecentsManager">
@@ -442,7 +393,8 @@
       <workItem from="1509223769436" duration="691000" />
       <workItem from="1509291445797" duration="13174000" />
       <workItem from="1509445360459" duration="5509000" />
-      <workItem from="1509562617346" duration="4558000" />
+      <workItem from="1509562617346" duration="12664000" />
+      <workItem from="1509575294398" duration="861000" />
     </task>
     <servers />
   </component>
@@ -456,9 +408,12 @@
     <history-entry file="3Engine_Tests - 2017.10.30 at 00h 05m 54s.xml">
       <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="3Engine_Tests - 2017.11.01 at 22h 41m 29s.xml">
+      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192692000" />
+    <option name="totallyTimeSpent" value="201659000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,7 +426,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="33" width="1922" height="2048" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16535433" sideWeight="0.57824594" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25406826" sideWeight="0.4217541" order="7" side_tool="false" content_ui="tabs" />
@@ -480,11 +434,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1736111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17574786" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20787401" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20787401" sideWeight="0.42519346" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3190694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -511,92 +465,15 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="30" />
+      <option name="time" value="34" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="mouse" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3-Hello3dWorld.cpp" />
-    <entry file="file://$USER_HOME$/Programs/Programs1TB/UnrealEngine/Engine/Source/Runtime/Core/Public/Math/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1020">
-          <caret line="368" column="30" lean-forward="false" selection-start-line="368" selection-start-column="30" selection-end-line="368" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Maths.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" column="35" lean-forward="false" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Maths.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="21" column="43" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Vector4.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="337" column="0" lean-forward="false" selection-start-line="337" selection-start-column="0" selection-end-line="338" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Vector.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="214" column="19" lean-forward="false" selection-start-line="214" selection-start-column="19" selection-end-line="214" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4988">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Engine.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="56" column="49" lean-forward="false" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Camera/Ortho.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Camera/Perspective.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7/bits/unique_ptr.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="585" column="8" lean-forward="false" selection-start-line="585" selection-start-column="8" selection-end-line="585" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/tests.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tests/VectorTests.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -611,18 +488,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/4-Quaternions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6960">
-          <caret line="348" column="11" lean-forward="false" selection-start-line="348" selection-start-column="11" selection-end-line="348" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/4-Quaternions.cpp" />
     <entry file="file://$PROJECT_DIR$/src/Engine/Camera/LookAt.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -658,14 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Engine.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Math/Matrix.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -678,6 +541,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -693,14 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Debug.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -801,14 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="73" column="59" lean-forward="false" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Executable/Tangram3D/Tangram3D.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -842,14 +690,6 @@
           <folding>
             <element signature="e#59#78#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,12 +741,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="73" column="48" lean-forward="false" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Time/Time.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Engine.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="106" column="20" lean-forward="false" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+          <folding>
+            <element signature="e#119#137#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Math/Vector2.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Time/GlutTimeCalculator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Time/GlutTimeCalculator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+          <folding>
+            <element signature="e#127#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Time/Time.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Input.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Input.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2440">
+          <caret line="122" column="52" lean-forward="false" selection-start-line="122" selection-start-column="52" selection-end-line="122" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="111" column="71" lean-forward="false" selection-start-line="111" selection-start-column="71" selection-end-line="111" selection-end-column="71" />
+          <folding>
+            <element signature="e#124#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Executable/Quaternion/SphereCameraController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        <state relative-caret-position="560">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/OpenGLUtils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1062">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#208#234#0" expanded="true" />
+            <element signature="e#111#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Debug.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+          <folding>
+            <element signature="e#169#188#0" expanded="true" />
+            <element signature="e#491#506#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Shader/ShaderProgram.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#121#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Shader/ShaderProgram.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#193#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#213#233#0" expanded="true" />
+            <element signature="e#383#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Engine/Engine.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+          <folding>
+            <element signature="e#177#194#0" expanded="true" />
           </folding>
         </state>
       </provider>

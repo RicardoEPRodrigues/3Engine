@@ -4,7 +4,6 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Triangle.h"
-#include "../OpenGLUtils.h"
 
 #define VERTICES 0
 #define COLORS 1

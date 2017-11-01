@@ -11,7 +11,6 @@
 #include "GL/freeglut.h"
 
 #include "Engine.h"
-#include "Debug.h"
 #include "OpenGLUtils.h"
 
 using json = nlohmann::json;
