@@ -23,6 +23,11 @@ namespace ThreeEngine {
 
             Quat quat;
 
+
+            Vector2 LockMouse();
+
+            void UnlockMouse();
+
         public:
 
             SphereCameraController();
