@@ -42,9 +42,9 @@ namespace ThreeEngine {
             case GL_INVALID_FRAMEBUFFER_OPERATION:
                 message += "Invalid Framebuffer Operation \" + errorCode + \" : Attempt to read from or write/render to a framebuffer that is not complete.";
                 break;
-            case GL_CONTEXT_LOST:
-                message += "Context Lost: OpenGL context has been lost due to a graphics card reset.";
-                break;
+//            case GL_CONTEXT_LOST:
+//                message += "Context Lost: OpenGL context has been lost due to a graphics card reset.";
+//                break;
             default:
                 message += "Unknown: Error Code " + errorCode;
                 break;
