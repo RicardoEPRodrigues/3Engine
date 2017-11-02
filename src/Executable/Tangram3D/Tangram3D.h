@@ -6,9 +6,9 @@
 #ifndef THREEENGINE_TANGRAM3D_H
 #define THREEENGINE_TANGRAM3D_H
 
-#include "Engine/Engine.h"
-#include "Engine/Shader/ShaderProgram.h"
-#include "Engine/IActor.h"
+#include "../../Engine/Engine.h"
+#include "../../Engine/Shader/ShaderProgram.h"
+#include "../../Engine/IActor.h"
 #include "FreeCameraController.h"
 
 namespace ThreeEngine {

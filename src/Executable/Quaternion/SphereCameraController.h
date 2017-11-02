@@ -6,8 +6,8 @@
 #ifndef THREEENGINE_CAMERACONTROLLERROT_H
 #define THREEENGINE_CAMERACONTROLLERROT_H
 
-#include "Engine/Engine.h"
-#include "Engine/Math/Quat.h"
+#include "../../Engine/Engine.h"
+#include "../../Engine/Math/Quat.h"
 
 namespace ThreeEngine {
 

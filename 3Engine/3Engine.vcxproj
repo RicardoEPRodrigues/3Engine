@@ -43,6 +43,14 @@
     <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
     <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
     <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Cube.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram3D.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Square.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Triangle.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Triangle3D.cpp" />
+    <ClCompile Include="..\src\Engine\Time\GlutTimeCalculator.cpp" />
+    <ClCompile Include="..\src\Engine\Time\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Camera\Camera.h" />
@@ -66,6 +74,14 @@
     <ClInclude Include="..\src\Engine\OpenGLUtils.h" />
     <ClInclude Include="..\src\Engine\Shader\Shader.h" />
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Cube.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Parallelogram.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Parallelogram3D.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Square.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Triangle.h" />
+    <ClInclude Include="..\src\Engine\Shapes\Triangle3D.h" />
+    <ClInclude Include="..\src\Engine\Time\GlutTimeCalculator.h" />
+    <ClInclude Include="..\src\Engine\Time\Time.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -129,14 +145,14 @@
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>$(ProjectName)</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

@@ -11,7 +11,7 @@
 #include "IActor.h"
 #include "Camera/Camera.h"
 #include "Input.h"
-#include "Engine/Time/Time.h"
+#include "Time/Time.h"
 
 namespace ThreeEngine {
 

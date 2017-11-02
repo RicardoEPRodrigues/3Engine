@@ -4,10 +4,10 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Quaternion.h"
-#include "Engine/Camera/Perspective.h"
-#include "Engine/Shapes/Triangle3D.h"
-#include "Engine/Shapes/Cube.h"
-#include "Engine/Shapes/Parallelogram3D.h"
+#include "../../Engine/Camera/Perspective.h"
+#include "../../Engine/Shapes/Triangle3D.h"
+#include "../../Engine/Shapes/Cube.h"
+#include "../../Engine/Shapes/Parallelogram3D.h"
 
 #define VERTICES 0
 #define COLORS 1

@@ -5,12 +5,12 @@
  */
 #include <sstream>
 #include <fstream>
-#include "Engine/Time/GlutTimeCalculator.h"
 
 #include "GL/glew.h"
 #include "GL/freeglut.h"
 
 #include "Engine.h"
+#include "Time/GlutTimeCalculator.h"
 #include "OpenGLUtils.h"
 
 using json = nlohmann::json;

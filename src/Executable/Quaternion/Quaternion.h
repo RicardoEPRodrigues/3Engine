@@ -6,9 +6,9 @@
 #ifndef THREEENGINE_QUATERNION_H
 #define THREEENGINE_QUATERNION_H
 
-#include "Engine/Engine.h"
-#include "Engine/Shader/ShaderProgram.h"
-#include "Engine/IActor.h"
+#include "../../Engine/Engine.h"
+#include "../../Engine/Shader/ShaderProgram.h"
+#include "../../Engine/IActor.h"
 #include "SphereCameraController.h"
 
 namespace ThreeEngine {

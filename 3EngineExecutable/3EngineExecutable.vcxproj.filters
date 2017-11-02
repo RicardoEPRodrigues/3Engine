@@ -10,75 +10,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp">
+    <ClCompile Include="..\src\Executable\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp">
+    <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp">
+    <ClCompile Include="..\src\Executable\Quaternion\SphereCameraController.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Square.cpp">
+    <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp">
+    <ClCompile Include="..\src\Executable\Tangram3D\FreeCameraController.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\main.cpp">
+    <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h">
+    <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h">
+    <ClInclude Include="..\src\Executable\Quaternion\SphereCameraController.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h">
+    <ClInclude Include="..\src\Executable\Tangram\Tangram.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Square.h">
+    <ClInclude Include="..\src\Executable\Tangram3D\FreeCameraController.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Tangram.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram\Triangle.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h">
+    <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

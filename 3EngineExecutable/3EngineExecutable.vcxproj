@@ -19,36 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Examples\Quaternion\CameraControllerRot.cpp" />
-    <ClCompile Include="..\src\Examples\Quaternion\Quaternion.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\CameraController.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Cube.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Parallelogram3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Tangram3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram3D\Triangle3D.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Parallelogram.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Square.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Tangram.cpp" />
-    <ClCompile Include="..\src\Examples\Tangram\Triangle.cpp" />
-    <ClCompile Include="..\src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\Examples\Quaternion\CameraControllerRot.h" />
-    <ClInclude Include="..\src\Examples\Quaternion\Quaternion.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\CameraController.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Cube.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Parallelogram3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Tangram3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram3D\Triangle3D.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Parallelogram.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Square.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Tangram.h" />
-    <ClInclude Include="..\src\Examples\Tangram\Triangle.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\3Engine\3Engine.vcxproj">
       <Project>{d9085c74-190e-4e3c-80ea-3405e00c8a19}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Executable\main.cpp" />
+    <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp" />
+    <ClCompile Include="..\src\Executable\Quaternion\SphereCameraController.cpp" />
+    <ClCompile Include="..\src\Executable\Tangram3D\FreeCameraController.cpp" />
+    <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp" />
+    <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h" />
+    <ClInclude Include="..\src\Executable\Quaternion\SphereCameraController.h" />
+    <ClInclude Include="..\src\Executable\Tangram3D\FreeCameraController.h" />
+    <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h" />
+    <ClInclude Include="..\src\Executable\Tangram\Tangram.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -112,14 +100,14 @@
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>$(ProjectName)</TargetName>
-    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

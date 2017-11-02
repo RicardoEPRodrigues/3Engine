@@ -8,13 +8,13 @@
 
 namespace ThreeEngine {
 
-    GlutTimeCalculator::GlutTimeCalculator() : _startTime(glutGet(GLUT_ELAPSED_TIME)),
-                                               nowTime(glutGet(GLUT_ELAPSED_TIME)), deltaTime(0) { }
+    GlutTimeCalculator::GlutTimeCalculator() : _startTime((milliseconds)glutGet(GLUT_ELAPSED_TIME)),
+                                               nowTime((milliseconds)glutGet(GLUT_ELAPSED_TIME)), deltaTime(0) { }
 
     GlutTimeCalculator::~GlutTimeCalculator() = default;
 
     void GlutTimeCalculator::update() {
-        milliseconds nowT = glutGet(GLUT_ELAPSED_TIME);
+        milliseconds nowT = (milliseconds) glutGet(GLUT_ELAPSED_TIME);
         deltaTime = nowT - nowTime;
         nowTime = nowT;
     }

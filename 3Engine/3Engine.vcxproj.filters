@@ -48,12 +48,6 @@
     <ClCompile Include="..\src\Engine\Camera\Perspective.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Engine\Engine.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Engine\Input.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Engine\Math\Maths.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -84,6 +78,36 @@
     <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Cube.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram3D.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Square.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Triangle.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Triangle3D.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Time\GlutTimeCalculator.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Time\Time.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Input.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Camera\Camera.h">
@@ -96,21 +120,6 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Camera\Perspective.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\Debug.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\Engine.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\IActor.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\Input.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\json.hpp">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Math\Maths.h">
@@ -140,13 +149,52 @@
     <ClInclude Include="..\src\Engine\Math\Vector4.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Engine\Shader\Shader.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Cube.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Parallelogram.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Parallelogram3D.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Square.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Triangle.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Triangle3D.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Time\GlutTimeCalculator.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Time\Time.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Debug.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\IActor.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Input.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\json.hpp">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
