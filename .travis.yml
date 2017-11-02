@@ -1,0 +1,23 @@
+language: cpp
+os: linux
+dist: trusty
+sudo: false
+script: mkdir -p intermediate && cd intermediate && cmake .. -DCMAKE_BUILD_TYPE=Debug && make
+compiler: gcc
+# install: apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
+  apt:
+    packages:
+    - freeglut3-dev
+    - libglew-dev
+    - libxmu-dev
+    - libxi-dev
+env:
+  - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+before_install:
+    - eval "${MATRIX_EVAL}"
