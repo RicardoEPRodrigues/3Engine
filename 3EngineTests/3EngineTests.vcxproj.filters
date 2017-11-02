@@ -24,31 +24,13 @@
     <ClCompile Include="..\src\Tests\tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Math\Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Tests\tests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Matrix3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Math\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Math\Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Math\Vector4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Tests\tests.cpp">
@@ -194,37 +176,16 @@
     <ClInclude Include="..\src\Tests\VectorTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Vector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\Vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Tests\MatrixTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Tests\VectorTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\Matrix3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\TMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Math\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Math\Vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Math\Vector4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Tests\MatrixTests.h">
@@ -417,9 +378,6 @@
       <Filter>3Engine Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Math\Vector4.h">
-      <Filter>3Engine Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine.h">
       <Filter>3Engine Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Math\Matrix.h">
