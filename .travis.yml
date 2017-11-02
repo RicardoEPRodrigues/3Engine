@@ -4,19 +4,8 @@ dist: trusty
 sudo: required
 compiler:
   - gcc
-  - clang
 script: mkdir -p intermediate; cd intermediate; cmake .. -DCMAKE_BUILD_TYPE=Debug; make
 # install: apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev
-addons:
-  apt:
-    packages:
-    - freeglut3-dev
-    - libglew-dev
-    - libxmu-dev
-    - libxi-dev
-    - cmake
-    - gcc
-    - g++
 matrix:
   include:
     # works on Precise and Trusty
@@ -27,6 +16,11 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
+            - freeglut3-dev
+            - libglew-dev
+            - libxmu-dev
+            - libxi-dev
+            - cmake
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
