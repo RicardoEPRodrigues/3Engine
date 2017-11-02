@@ -1,5 +1,7 @@
 # [3Engine](https://ricardoeprodrigues.github.io/3Engine/)
 
+[![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine)
+
 Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for Games*.
 
 Fun feature: uses JSON files for configuration with realtime change detection.
