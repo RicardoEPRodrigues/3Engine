@@ -76,8 +76,8 @@ namespace ThreeEngine {
     }
 
     void Input::MouseMove(int x, int y) {
-        mouseScreenLocation.X = x;
-        mouseScreenLocation.Y = y;
+        mouseScreenLocation.X = (number) x;
+        mouseScreenLocation.Y = (number) y;
     }
 
     const Vector2& Input::GetMouseScreenLocation() const {

@@ -89,12 +89,12 @@ namespace ThreeEngine {
             Vector2 newMouseLoc = mouse;
 
             if (mouseXUpdate) {
-                newMouseLoc.X = (int) engine->config["window"]["x"] / 2;
+                newMouseLoc.X = (number) engine->config["window"]["x"] / 2;
                 previousMouseLocation.X = newMouseLoc.X - delta.X;
             }
 
             if (mouseYUpdate) {
-                newMouseLoc.Y = (int) engine->config["window"]["y"] / 2;
+                newMouseLoc.Y = (number) engine->config["window"]["y"] / 2;
                 previousMouseLocation.Y = newMouseLoc.Y - delta.Y;
             }
 
