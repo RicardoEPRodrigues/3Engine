@@ -2,21 +2,10 @@ version: 1.0.{build}
 configuration: Debug
 platform: x64
 image:
-- Visual Studio 2015
 - Visual Studio 2017
 install:
-  - ps: md dependencies
+  - ps: New-Item -ItemType Directory -Force -Path dependencies
   - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
   - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
-  - ps: >-
-      function Expand-ZIPFile($file, $destination)
-      {
-        $shell = new-object -com shell.application
-        $zip = $shell.NameSpace($file)
-        foreach($item in $zip.items())
-        {
-          $shell.Namespace($destination).copyhere($item)
-        }
-      }
-  - ps: Expand-ZIPFile –File .\glew-msvc.zip –Destination .\dependencies
-  - ps: Expand-ZIPFile –File .\freeglut-msvc.zip –Destination .\dependencies
+  - ps: Expand-Archive .\glew-msvc.zip –DestinationPath .\dependencies
+  - ps: Expand-Archive .\freeglut-msvc.zip –DestinationPath .\dependencies
