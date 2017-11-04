@@ -1,0 +1,11 @@
+version: 1.0.{build}
+configuration: Debug
+platform: x64
+image:
+- Visual Studio 2017
+install:
+  - ps: New-Item -ItemType Directory -Force -Path dependencies
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip' -FileName 'freeglut-msvc.zip'
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip' -FileName 'glew-msvc.zip'
+  - ps: Expand-Archive -Path glew-msvc.zip –DestinationPath dependencies
+  - ps: Expand-Archive -Path freeglut-msvc.zip –DestinationPath dependencies
