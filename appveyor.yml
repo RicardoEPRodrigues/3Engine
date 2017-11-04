@@ -5,6 +5,9 @@ image:
 - Visual Studio 2015
 - Visual Studio 2017
 install:
+  - ps: md dependencies
+  - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
+  - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
   - ps: >-
       function Expand-ZIPFile($file, $destination)
       {
@@ -15,8 +18,5 @@ install:
           $shell.Namespace($destination).copyhere($item)
         }
       }
-      md dependencies
-      (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
-      Expand-ZIPFile –File .\glew-msvc.zip –Destination .\dependencies
-      (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
-      Expand-ZIPFile –File .\freeglut-msvc.zip –Destination .\dependencies
+  - ps: Expand-ZIPFile –File .\glew-msvc.zip –Destination .\dependencies
+  - ps: Expand-ZIPFile –File .\freeglut-msvc.zip –Destination .\dependencies
