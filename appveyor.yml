@@ -6,7 +6,17 @@ image:
 - Visual Studio 2017
 install:
   - ps: >-
+      function Expand-ZIPFile($file, $destination)
+      {
+        $shell = new-object -com shell.application
+        $zip = $shell.NameSpace($file)
+        foreach($item in $zip.items())
+        {
+          $shell.Namespace($destination).copyhere($item)
+        }
+      }
+      New-Item -ItemType Directory -Force -Path dependencies
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
-      Expand-Archive .\glew-msvc.zip -DestinationPath .\dependencies
+      Expand-ZIPFile –File .\glew-msvc.zip –Destination .\dependencies
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
-      Expand-Archive .\freeglut-msvc.zip -DestinationPath .\dependencies
+      Expand-ZIPFile –File .\freeglut-msvc.zip –Destination .\dependencies
