@@ -5,8 +5,8 @@ image:
 - Visual Studio 2017
 install:
   - ps: New-Item -ItemType Directory -Force -Path dependencies
-  - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
-  - ps: (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip' -FileName 'glew-msvc.zip'
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip' -FileName 'glew-msvc.zip'
   - cmd: dir
   - ps: Expand-Archive -Path glew-msvc.zip –DestinationPath dependencies
   - ps: Expand-Archive -Path freeglut-msvc.zip –DestinationPath dependencies
