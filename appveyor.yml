@@ -6,6 +6,7 @@ image:
 - Visual Studio 2017
 install:
   - ps: >-
+      Add-Type -AssemblyName System.IO.Compression.FileSystem
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
       [System.IO.Compression.ZipFile]::ExtractToDirectory(".\glew-msvc.zip", ".\dependencies")
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
