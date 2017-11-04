@@ -15,7 +15,7 @@ install:
           $shell.Namespace($destination).copyhere($item)
         }
       }
-      New-Item -ItemType Directory -Force -Path dependencies
+      md dependencies
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip', 'glew-msvc.zip')
       Expand-ZIPFile –File .\glew-msvc.zip –Destination .\dependencies
       (new-object net.webclient).DownloadFile('https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip', 'freeglut-msvc.zip')
