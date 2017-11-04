@@ -21,9 +21,9 @@ This project depends on OpenGL, GLEW and FreeGLUT. While the first is normally i
 The inclusion of the said libraries are needed, yet dependencies are ignored to reduce the size of the project. To get the project to run follow the steps.
 
 1. Download precompiled builds for MSVC (or compile it yourself) 
-    
-    * [FreeGLUT](http://www.transmissionzero.co.uk/software/freeglut-devel/)
-    * [GLEW](http://glew.sourceforge.net/)
+        
+    * [FreeGLUT](https://github.com/RicardoEPRodrigues/Dependencies/raw/master/freeglut-msvc.zip)
+    * [GLEW](https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip)
 
 1. Create a folder named `dependencies` and place inside the libraries. Rename them as shown:
 
