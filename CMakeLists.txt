@@ -79,7 +79,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shader/Shader.cpp src/Engine/Shader/Shader.h
         src/Engine/Shader/ShaderProgram.cpp src/Engine/Shader/ShaderProgram.h
         src/Engine/OpenGLUtils.h
-        src/Engine/IActor.h
+        src/Engine/IDrawable.h
         src/Engine/Camera/Camera.cpp src/Engine/Camera/Camera.h
         src/Engine/Input.cpp src/Engine/Input.h
         src/Engine/Camera/LookAt.cpp src/Engine/Camera/LookAt.h
@@ -92,15 +92,19 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/Cube.cpp src/Engine/Shapes/Cube.h
         src/Engine/Shapes/Triangle3D.cpp src/Engine/Shapes/Triangle3D.h
         src/Engine/Shapes/Parallelogram3D.h src/Engine/Shapes/Parallelogram3D.cpp
-        src/Engine/Time/Time.cpp src/Engine/Time/Time.h src/Engine/Time/GlutTimeCalculator.cpp src/Engine/Time/GlutTimeCalculator.h)
+        src/Engine/Time/Time.cpp src/Engine/Time/Time.h
+        src/Engine/Time/GlutTimeCalculator.cpp src/Engine/Time/GlutTimeCalculator.h
+        src/Engine/Controllers/FreeCameraController.cpp src/Engine/Controllers/FreeCameraController.h
+        src/Engine/Controllers/SphereCameraController.cpp src/Engine/Controllers/SphereCameraController.h
+        src/Engine/Shapes/Mesh.cpp src/Engine/Shapes/Mesh.h
+        )
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
         src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
         src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
-        src/Executable/Tangram3D/FreeCameraController.cpp src/Executable/Tangram3D/FreeCameraController.h
-        src/Executable/Quaternion/SphereCameraController.cpp src/Executable/Quaternion/SphereCameraController.h
-        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h)
+        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
+        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

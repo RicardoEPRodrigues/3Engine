@@ -2,14 +2,12 @@
 #[[#ifndef]]# ${INCLUDE_GUARD}
 #[[#define]]# ${INCLUDE_GUARD}
 
-namespace ThreeEngine {
-
+namespace ${PROJECT_NAME} {
     class ${NAME} {
         public:
             ${NAME}();
             virtual ~${NAME}();
     };
-
-} /* namespace Divisaction */
+} // namespace ${PROJECT_NAME}
 
 #[[#endif]]# //${INCLUDE_GUARD}

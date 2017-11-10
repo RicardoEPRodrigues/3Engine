@@ -7,11 +7,11 @@
 #define THREEENGINE_CAMERA_H
 
 #include <GL/glew.h>
-#include "../IActor.h"
+#include "Engine/IDrawable.h"
 
 namespace ThreeEngine {
 
-    class Camera : public IActor {
+    class Camera : public IDrawable {
         private:
             GLuint vaoId, vboId;
 

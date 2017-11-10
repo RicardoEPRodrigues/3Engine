@@ -62,11 +62,11 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not create shader program.");
         if (!info["vertex"].is_null()) {
             std::string path = info["vertex"];
-            Add(Shader::LoadFile(GL_VERTEX_SHADER, path.c_str()));
+            Add(Shader::LoadFile(GL_VERTEX_SHADER, path));
         }
         if (!info["fragment"].is_null()) {
             std::string path = info["fragment"];
-            Add(Shader::LoadFile(GL_FRAGMENT_SHADER, path.c_str()));
+            Add(Shader::LoadFile(GL_FRAGMENT_SHADER, path));
         }
         for (auto& it : info["attributes"]) {
             json attribute = it;

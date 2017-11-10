@@ -50,7 +50,7 @@ namespace ThreeEngine {
         { // Small triangle at the top right
             auto* triangle = new Triangle();
             triangle->transform = Matrix::TranslationMatrix({0.2f, 0.2f, 0, 0});
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -65,14 +65,14 @@ namespace ThreeEngine {
             };
             auto* square = new Square(RGBA);
             square->transform = Matrix::TranslationMatrix({-0.8f, 0, 0, 0});
-            actors.push_back((IActor*) square);
+            actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;
         }
         { // Parallelogram
             auto* parallelogram = new Parallelogram();
             parallelogram->transform = Matrix::TranslationMatrix(Vector({-1, -1, 0}));
-            actors.push_back((IActor*) parallelogram);
+            actors.push_back((IDrawable*) parallelogram);
 
             parallelogram->shaderProgram = colorProgram;
         }
@@ -95,7 +95,7 @@ namespace ThreeEngine {
             triangle->transform = viewM *
                                   Matrix::TranslationMatrix({0.0f, 0.0f, 0, 0}) *
                                   Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -111,7 +111,7 @@ namespace ThreeEngine {
             triangle->transform = viewM *
                                   Matrix::TranslationMatrix({0.0f, 0.0f, 0, 0}) *
                                   Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -124,7 +124,7 @@ namespace ThreeEngine {
             auto* triangle = new Triangle(RGBA);
             Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-135);
             triangle->transform = viewM * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -134,7 +134,7 @@ namespace ThreeEngine {
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.5f, 0.5f, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -145,7 +145,7 @@ namespace ThreeEngine {
                     Matrix2::ScaleMatrix(1.414f, 1.414f);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({1.0f, -1.0f, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -162,14 +162,14 @@ namespace ThreeEngine {
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform = viewM * Matrix(transform2D);
-            actors.push_back((IActor*) square);
+            actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;
         }
         { // Parallelogram
             auto* parallelogram = new Parallelogram();
             parallelogram->transform = viewM * Matrix::TranslationMatrix(Vector({-1, -1, 0}));
-            actors.push_back((IActor*) parallelogram);
+            actors.push_back((IDrawable*) parallelogram);
 
             parallelogram->shaderProgram = colorProgram;
         }
@@ -195,7 +195,7 @@ namespace ThreeEngine {
             triangle->transform = viewM *
                                   Matrix::TranslationMatrix({-.5f, 1.0f, 0, 0}) *
                                   Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -205,7 +205,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::ScaleMatrix(-1, 1);
             parallelogram->transform =
                     viewM * Matrix::TranslationMatrix(Vector({1.5, 0, 0})) * Matrix(transform2D);
-            actors.push_back((IActor*) parallelogram);
+            actors.push_back((IDrawable*) parallelogram);
 
             parallelogram->shaderProgram = colorProgram;
         }
@@ -215,7 +215,7 @@ namespace ThreeEngine {
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.5f, 1, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -226,7 +226,7 @@ namespace ThreeEngine {
                     Matrix2::ScaleMatrix(1.414f, 1.414f);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({-0.5f, 0, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -240,7 +240,7 @@ namespace ThreeEngine {
             Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(135);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0, -.5f, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -255,7 +255,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(45) * Matrix2::ScaleMatrix(2, 2);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.5f, -1.0f, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -273,7 +273,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform =
                     viewM * Matrix::TranslationMatrix({-0.5f, -1.0f, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) square);
+            actors.push_back((IDrawable*) square);
 
             square->shaderProgram = wireframeProgram;
         }
@@ -299,7 +299,7 @@ namespace ThreeEngine {
                     Matrix2::ScaleMatrix(1.414f, 1.414f);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({-1.5f, 0, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -310,7 +310,7 @@ namespace ThreeEngine {
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({-.8f, .7071f * 2, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -326,7 +326,7 @@ namespace ThreeEngine {
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({-.8f, -.7071f * 2, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -344,7 +344,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45);
             square->transform =
                     viewM * Matrix::TranslationMatrix({-0.8f, 0.0f, 0, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) square);
+            actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;
         }
@@ -354,7 +354,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-135) * Matrix2::ScaleMatrix(-1, 1);
             parallelogram->transform =
                     viewM * Matrix::TranslationMatrix(Vector({.2f, 0, 0})) * Matrix(transform2D);
-            actors.push_back((IActor*) parallelogram);
+            actors.push_back((IDrawable*) parallelogram);
 
             parallelogram->shaderProgram = colorProgram;
         }
@@ -364,7 +364,7 @@ namespace ThreeEngine {
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.7071f + .2f, 0, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = wireframeProgram;
         }
@@ -377,7 +377,7 @@ namespace ThreeEngine {
             auto* triangle = new Triangle(RGBA);
             triangle->transform =
                     viewM * Matrix::TranslationMatrix({0.7071f + .2f, -.7071f, 0, 0});
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }

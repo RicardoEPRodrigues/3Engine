@@ -41,7 +41,7 @@ namespace ThreeEngine {
         Time::SetTimeCalculator(new GlutTimeCalculator());
         OnInit();
         {
-            actors.push_back(reinterpret_cast<IActor*>(camera));
+            actors.push_back(reinterpret_cast<IDrawable*>(camera));
         }
         for (auto& actor : actors) {
             actor->Init();

@@ -8,7 +8,7 @@
 
 #include <string>
 #include "json.hpp"
-#include "IActor.h"
+#include "IDrawable.h"
 #include "Camera/Camera.h"
 #include "Input.h"
 #include "Time/Time.h"
@@ -47,7 +47,7 @@ namespace ThreeEngine {
 
         protected:
 
-            std::vector<IActor*> actors;
+            std::vector<IDrawable*> actors;
 
             void CheckSystemInfo();
 

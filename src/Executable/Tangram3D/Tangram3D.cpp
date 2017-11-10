@@ -60,7 +60,7 @@ namespace ThreeEngine {
             triangle->transform =
                     Matrix::TranslationMatrix({0.0f, 0.0f, 0, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
             triangle->color[0] = .5f;
@@ -72,7 +72,7 @@ namespace ThreeEngine {
                     Matrix2::ScaleMatrix(triangleSize * 2, triangleSize * 2);
             triangle->transform = Matrix::TranslationMatrix({0.0f, 0.0f, .5f, 0}) *
                                   Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
             triangle->color[1] = .5f;
@@ -83,7 +83,7 @@ namespace ThreeEngine {
                                   Matrix2::ScaleMatrix(triangleSize, triangleSize);
             triangle->transform =
                     Matrix::TranslationMatrix({0.0f, 0.0f, -.5f, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
         }
@@ -94,7 +94,7 @@ namespace ThreeEngine {
             triangle->transform =
                     Matrix::TranslationMatrix({0.5f, 0.5f, 0.2f, 0}) *
                     Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
             triangle->color[0] = .5f;
@@ -106,7 +106,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(90);
             triangle->transform =
                     Matrix::TranslationMatrix({1.0f, -1.0f, -0.2f, 0}) * Matrix(transform2D);
-            actors.push_back((IActor*) triangle);
+            actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
             triangle->color[0] = .2f;
@@ -118,7 +118,7 @@ namespace ThreeEngine {
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(-45) *
                     Matrix2::ScaleMatrix(triangleSize, triangleSize);
             square->transform = Matrix(transform2D);
-            actors.push_back((IActor*) square);
+            actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;
         }
@@ -127,7 +127,7 @@ namespace ThreeEngine {
             parallelogram->transform =
                     Matrix::TranslationMatrix({0.0f, 0.0f, -1, 0}) *
                     Matrix::TranslationMatrix(Vector({-1, -1, 0}));
-            actors.push_back((IActor*) parallelogram);
+            actors.push_back((IDrawable*) parallelogram);
 
             parallelogram->shaderProgram = colorProgram;
         }

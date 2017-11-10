@@ -49,7 +49,7 @@ namespace ThreeEngine {
         return id == S.id;
     }
 
-    Shader* Shader::LoadFile(GLenum inType, const GLchar* filepath) {
+    Shader* Shader::LoadFile(GLenum inType, const std::string & filepath) {
         std::ifstream in(filepath);
         if (in.good()) {
             std::string contents((std::istreambuf_iterator<char>(in)),

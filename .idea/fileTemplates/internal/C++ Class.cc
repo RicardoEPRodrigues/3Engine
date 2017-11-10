@@ -1,10 +1,10 @@
 #parse("SimpleCopyrightFileHeader.h")
 #[[#include]]# "${HEADER_FILENAME}"
 
-namespace ThreeEngine {
+namespace ${PROJECT_NAME} {
 
-    ${NAME}::${NAME}() { }
+    ${NAME}::${NAME}() = default;
     
-    ${NAME}::~${NAME}() { }
+    ${NAME}::~${NAME}() = default;
 
-} /* namespace Divisaction */
+} // namespace ${PROJECT_NAME}

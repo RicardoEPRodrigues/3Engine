@@ -8,7 +8,7 @@
 
 #include "../../Engine/Engine.h"
 #include "../../Engine/Shader/ShaderProgram.h"
-#include "../../Engine/IActor.h"
+#include "Engine/IDrawable.h"
 
 namespace ThreeEngine {
 

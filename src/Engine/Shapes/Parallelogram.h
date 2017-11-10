@@ -7,13 +7,13 @@
 #define THREEENGINE_PARALLELOGRAM_H
 
 #include <GL/glew.h>
-#include "../IActor.h"
+#include "Engine/IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
 
 namespace ThreeEngine {
 
-    class Parallelogram : public IActor {
+    class Parallelogram : public IDrawable {
 
         public:
 

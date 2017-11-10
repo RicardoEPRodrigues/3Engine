@@ -4,9 +4,9 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "SphereCameraController.h"
-#include "../../Engine/OpenGLUtils.h"
-#include "../../Engine/Camera/Ortho.h"
-#include "../../Engine/Camera/Perspective.h"
+#include "Engine/OpenGLUtils.h"
+#include "Engine/Camera/Ortho.h"
+#include "Engine/Camera/Perspective.h"
 
 namespace ThreeEngine {
 

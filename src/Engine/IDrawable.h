@@ -10,15 +10,15 @@
 
 namespace ThreeEngine {
 
-    class IActor {
+    class IDrawable {
         public:
             Matrix transform = Matrix::IdentityMatrix();
 
-            virtual ~IActor() = default;
+            virtual ~IDrawable() = default;
 
             virtual void Init() = 0;
 
-            virtual void Draw() =0;
+            virtual void Draw() = 0;
     };
 
 } /* namespace Divisaction */

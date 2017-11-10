@@ -7,13 +7,13 @@
 #define THREEENGINE_SQUARE_H
 
 #include <GL/glew.h>
-#include "../IActor.h"
+#include "Engine/IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
 
 namespace ThreeEngine {
 
-    class Square : public IActor {
+    class Square : public IDrawable {
 
         public:
 

@@ -8,6 +8,8 @@
 
 #include <GL/glew.h>
 
+#include <string>
+
 namespace ThreeEngine {
 
     struct Shader {
@@ -25,7 +27,7 @@ namespace ThreeEngine {
 
         bool operator==(const Shader& S) const;
 
-        static Shader* LoadFile(GLenum inType, const GLchar* filepath);
+        static Shader* LoadFile(GLenum inType, const std::string & filepath);
     };
 
 } /* namespace Divisaction */

@@ -3,27 +3,21 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_QUATERNION_H
-#define THREEENGINE_QUATERNION_H
+#ifndef THREEENGINE_LOADERANDSCENE_H
+#define THREEENGINE_LOADERANDSCENE_H
 
 #include "../../Engine/Engine.h"
+#include "../../Engine/Controllers/SphereCameraController.h"
 #include "../../Engine/Shader/ShaderProgram.h"
-#include "Engine/IDrawable.h"
-#include "Engine/Controllers/SphereCameraController.h"
+#include "../../Engine/IDrawable.h"
 
 namespace ThreeEngine {
 
-    class Quaternion : public Engine {
+    class LoaderAndScene : public Engine {
         public:
-            Quaternion();
+            LoaderAndScene();
 
-            ~Quaternion() override;
-
-            enum ShapeType3D {
-                CUBE
-            };
-
-            ShapeType3D shapeToShow;
+            ~LoaderAndScene() override;
 
             SphereCameraController controller;
 
@@ -31,7 +25,7 @@ namespace ThreeEngine {
 
             void OnInit() override;
 
-            void CubeScene();
+            void scene();
 
             void OnReshape(int w, int h) override;
 

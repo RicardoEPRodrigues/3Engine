@@ -22,7 +22,8 @@ namespace ThreeEngine {
 
     typedef GLfloat glMatrix[16];
 
-    static std::string getGLErrorMessage(GLenum errorCode) {// Taken from https://www.khronos.org/opengl/wiki/OpenGL_Error
+    static std::string getGLErrorMessage(GLenum errorCode) {
+        // Taken from https://www.khronos.org/opengl/wiki/OpenGL_Error
         std::string message;
         switch (errorCode) {
             case GL_INVALID_ENUM:

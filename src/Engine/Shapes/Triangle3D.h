@@ -7,13 +7,13 @@
 #define THREEENGINE_TRIANGLE3D_H
 
 #include <GL/glew.h>
-#include "../IActor.h"
+#include "Engine/IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
 
 namespace ThreeEngine {
 
-    class Triangle3D : public IActor {
+    class Triangle3D : public IDrawable {
 
         public:
 

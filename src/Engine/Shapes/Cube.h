@@ -7,15 +7,18 @@
 #define THREEENGINE_CUBE_H
 
 #include <GL/glew.h>
-#include "../IActor.h"
+#include "../IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
+#include "Mesh.h"
 
 namespace ThreeEngine {
 
-    class Cube : public IActor {
+    class Cube : public IDrawable {
 
         public:
+
+            Mesh mesh;
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 
@@ -28,12 +31,6 @@ namespace ThreeEngine {
             void Init() override;
 
             void Draw() override;
-
-        private:
-
-            Vertex Vertices[6 * 6];
-
-            GLuint vaoId, vboId;
     };
 
 } /* namespace Divisaction */
