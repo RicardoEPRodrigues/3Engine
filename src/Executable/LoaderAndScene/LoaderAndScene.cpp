@@ -6,6 +6,7 @@
 #include "LoaderAndScene.h"
 #include "../../Engine/Actor.h"
 #include "../../Engine/Shapes/MeshLoader.h"
+#include "../../Engine/Shapes/Cube.h"
 #include "../../Engine/Camera/Perspective.h"
 
 #define VERTICES 0
@@ -47,13 +48,13 @@ namespace ThreeEngine {
             );
         }
 
-        {
-            auto* treeStump = new Actor();
-            treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
-                    "assets/Cube-vtn.obj");
+        //{
+        //    auto* treeStump = new Actor();
+        //    treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
+        //            "assets/Cube-vtn.obj");
 
-            actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
-        }
+        //    actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
+        //}
 
         //{
         //    auto* treeStump = new Actor();
@@ -63,13 +64,19 @@ namespace ThreeEngine {
         //    actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
         //}
 
-//        { // Square
-//            auto* square = new Cube();
-//            square->shaderProgram = colorProgram;
-//            square->transform = Matrix::TranslationMatrix(Vector(-0.5f));
-//            actors.push_back((IDrawable*) square);
-//
-//        }
+        { // Square
+            auto* square = new Cube();
+            square->color[0] = 1;
+            square->color[1] = 0;
+            square->color[2] = 1;
+            square->color[3] = 1;
+            square->shaderProgram = colorProgram;
+            //square->transform.translation = Vector(-0.5f);
+            //square->transform.scale = Vector(2);
+            square->transform.rotation =
+                Quat::FromAngleAxis(-45, Vector(0, 0, 1));
+            actors.push_back((IDrawable*)square);
+        }
 
     }
 

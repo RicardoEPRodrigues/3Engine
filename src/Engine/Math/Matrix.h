@@ -319,7 +319,10 @@ namespace ThreeEngine {
         static Matrix IdentityMatrix();
 
         static Matrix
-        ScaleMatrix(const number& inX, const number& inY, const number& inZ, const number& inW);
+        ScaleMatrix(const number& inX, const number& inY, const number& inZ, 
+                    const number& inW);
+        static Matrix ScaleMatrix(Vector const& v);
+        static Matrix ScaleMatrix(Vector4 const& v);
 
         static Matrix ScaleMatrixInverted(const number& inX, const number& inY, const number& inZ,
                                            const number& inW);

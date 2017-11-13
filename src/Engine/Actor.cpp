@@ -9,7 +9,8 @@
 
 namespace ThreeEngine {
 
-    Actor::Actor() : IDrawable(), mesh(), shaderProgram(nullptr) { }
+    Actor::Actor() : IDrawable(), mesh(), shaderProgram(nullptr),
+                    transform({Vector(0), Quat(), Vector(1)}) { }
 
     Actor::~Actor() = default;
 
@@ -27,11 +28,19 @@ namespace ThreeEngine {
         shaderProgram->Bind();
 
         number matrixArray[16];
-        transform.ToArray(matrixArray);
+        (Matrix::TranslationMatrix(transform.translation) *
+            transform.rotation.ToMatrix() *
+            Matrix::ScaleMatrix(transform.scale)).ToArray(matrixArray);
         glUniformMatrix4fv(shaderProgram->GetUniformLocationId("ModelMatrix"),
                            1, GL_FALSE,
                            matrixArray);
+        if (preDraw) {
+            preDraw();
+        }
         mesh.Draw();
+        if (postDraw) {
+            postDraw();
+        }
 
         shaderProgram->Unbind();
         mesh.Unbind();

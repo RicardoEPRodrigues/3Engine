@@ -387,12 +387,26 @@ namespace ThreeEngine {
                 0, 0, 0, 1};
     }
 
-    Matrix Matrix::ScaleMatrix(const number& inX, const number& inY, const number& inZ,
-                               const number& inW) {
-        return {inX, 0, 0, 0,
+    Matrix Matrix::ScaleMatrix(const number& inX, const number& inY,
+        const number& inZ, const number& inW) {
+        return { inX, 0, 0, 0,
                 0, inY, 0, 0,
                 0, 0, inZ, 0,
-                0, 0, 0, inW};
+                0, 0, 0, inW };
+    }
+
+    Matrix Matrix::ScaleMatrix(Vector4 const& v) {
+        return { v.X, 0, 0, 0,
+                0, v.Y, 0, 0,
+                0, 0, v.Z, 0,
+                0, 0, 0, v.W };
+    }
+
+    Matrix Matrix::ScaleMatrix(Vector const& v) {
+        return { v.X, 0, 0, 0,
+                0, v.Y, 0, 0,
+                0, 0, v.Z, 0,
+                0, 0, 0, 1 };
     }
 
     Matrix Matrix::ScaleMatrixInverted(const number& inX, const number& inY, const number& inZ,

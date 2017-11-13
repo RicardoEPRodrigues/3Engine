@@ -16,6 +16,7 @@ namespace ThreeEngine {
     class Triangle3D : public IDrawable {
 
         public:
+            Matrix transform = Matrix::IdentityMatrix();
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 

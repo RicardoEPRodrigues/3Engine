@@ -44,47 +44,53 @@ namespace ThreeEngine {
         glBindVertexArray(VaoId);
         {
             // Vertices
-            glGenBuffers(1, &VboVertices);
-            glBindBuffer(GL_ARRAY_BUFFER, VboVertices);
-            glBufferData(GL_ARRAY_BUFFER, Vertices.size() * sizeof(Vector),
-                         &Vertices[0], GL_STATIC_DRAW);
-            glEnableVertexAttribArray(VERTICES);
-            glVertexAttribPointer(VERTICES, 3, GL_FLOAT, GL_FALSE,
-                                  sizeof(Vector), 0);
+            if (Vertices.empty()) {
+                Debug::Warn("No Vertices were found");
+            } else {
+                glGenBuffers(1, &VboVertices);
+                glBindBuffer(GL_ARRAY_BUFFER, VboVertices);
+                glBufferData(GL_ARRAY_BUFFER, Vertices.size() * sizeof(Vector),
+                    &Vertices[0], GL_STATIC_DRAW);
+                glEnableVertexAttribArray(VERTICES);
+                glVertexAttribPointer(VERTICES, 3, GL_FLOAT, GL_FALSE,
+                    sizeof(Vector), 0);
+            }
 
             //Colors
             if (Colors.empty()) {
-                Colors = std::vector<Vector4>(Vertices.size(), {0, 0, 0, 1});
+                size_t size = Vertices.empty() ? 1 : Vertices.size();
+                Colors = std::vector<Vector4>(size, { 0, 0, 0, 1 });
             }
             glGenBuffers(1, &VboColors);
             glBindBuffer(GL_ARRAY_BUFFER, VboColors);
             glBufferData(GL_ARRAY_BUFFER, Colors.size() * sizeof(Vector4),
-                         &Colors[0], GL_STREAM_DRAW);
+                &Colors[0], GL_STREAM_DRAW);
             glEnableVertexAttribArray(COLORS);
             glVertexAttribPointer(COLORS, 4, GL_FLOAT, GL_FALSE,
-                                  sizeof(Vector4), 0);
+                sizeof(Vector4), 0);
 
             // Texture Coordinates
             if (!TexCoords.empty()) {
                 glGenBuffers(1, &VboTexcoords);
                 glBindBuffer(GL_ARRAY_BUFFER, VboTexcoords);
                 glBufferData(GL_ARRAY_BUFFER,
-                             TexCoords.size() * sizeof(Vector2), &TexCoords[0],
-                             GL_STATIC_DRAW);
+                    TexCoords.size() * sizeof(Vector2), &TexCoords[0],
+                    GL_STATIC_DRAW);
                 glEnableVertexAttribArray(TEXCOORDS);
                 glVertexAttribPointer(TEXCOORDS, 2, GL_FLOAT, GL_FALSE,
-                                      sizeof(Vector2), 0);
+                    sizeof(Vector2), 0);
             }
 
             // Normals
             if (!Normals.empty()) {
                 glGenBuffers(1, &VboNormals);
                 glBindBuffer(GL_ARRAY_BUFFER, VboNormals);
-                glBufferData(GL_ARRAY_BUFFER, Normals.size() * sizeof(Vector),
-                             &Normals[0], GL_STATIC_DRAW);
+                glBufferData(GL_ARRAY_BUFFER,
+                    Normals.size() * sizeof(Vector),
+                    &Normals[0], GL_STATIC_DRAW);
                 glEnableVertexAttribArray(NORMALS);
                 glVertexAttribPointer(NORMALS, 3, GL_FLOAT, GL_FALSE,
-                                      sizeof(Vector), 0);
+                    sizeof(Vector), 0);
             }
         }
         glBindVertexArray(0);

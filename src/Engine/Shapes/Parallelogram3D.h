@@ -16,6 +16,7 @@ namespace ThreeEngine {
     class Parallelogram3D : public IDrawable {
 
         public:
+            Matrix transform = Matrix::IdentityMatrix();
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 

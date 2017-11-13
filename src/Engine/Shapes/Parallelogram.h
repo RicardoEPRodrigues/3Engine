@@ -17,6 +17,7 @@ namespace ThreeEngine {
     class Parallelogram : public IDrawable {
 
         public:
+            Matrix transform = Matrix::IdentityMatrix();
 
             Mesh mesh;
 

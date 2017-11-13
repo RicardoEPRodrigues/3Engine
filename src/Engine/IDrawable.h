@@ -12,8 +12,6 @@ namespace ThreeEngine {
 
     class IDrawable {
         public:
-            Matrix transform = Matrix::IdentityMatrix();
-
             virtual ~IDrawable() = default;
 
             virtual void Init() = 0;

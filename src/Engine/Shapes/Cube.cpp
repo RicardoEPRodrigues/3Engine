@@ -10,7 +10,7 @@
 
 namespace ThreeEngine {
 
-    Cube::Cube() : IDrawable(), mesh(), shaderProgram(nullptr), color{.1f, .5f, .1f, 1.0f} {
+    Cube::Cube() : Actor(), color{.5f, .5f, .5f, 1.0f} {
         mesh.Vertices = std::vector<Vector>({
                                                {0.0f, 0.0f, 1.0f}, // 0 - FRONT
                                                {1.0f, 0.0f, 1.0f}, // 1
@@ -54,38 +54,18 @@ namespace ThreeEngine {
                                                {1.0f, 0.0f, 1.0f}, // 1
                                                {0.0f, 0.0f, 1.0f}  // 0
                                        });
+        for (Vector & v : mesh.Vertices) {
+            v -= 0.5f;
+        }
+        preDraw = std::bind(&Cube::ColorUpdate, this);
     }
 
     Cube::~Cube() = default;
 
-    void Cube::Init() {
-        if (!shaderProgram) {
-            shaderProgram = std::make_shared<ShaderProgram>(
-                    "shaders/Color3D/program.json");
-        }
-        shaderProgram->Init();
-        mesh.Init();
-    }
-
-    void Cube::Draw() {
-        mesh.Bind();
-        shaderProgram->Bind();
-
-        number matrixArray[16];
-        transform.ToArray(matrixArray);
-        glUniformMatrix4fv(shaderProgram->GetUniformLocationId("ModelMatrix"),
-                           1, GL_FALSE,
-                           matrixArray);
+    void Cube::ColorUpdate() {
         glUniform4f(shaderProgram->GetUniformLocationId("ModelColor"), color[0],
-                    color[1], color[2],
-                    color[3]);
-        //glUniform4fv(shaderProgram->GetUniformLocationId("ModelColor"), 4, color);
-        mesh.Draw();
-
-        shaderProgram->Unbind();
-        mesh.Unbind();
-
-        CheckOpenGLError("Could not draw Actor.");
+            color[1], color[2],
+            color[3]);
     }
 
 } /* namespace Divisaction */

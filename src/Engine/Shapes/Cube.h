@@ -7,30 +7,24 @@
 #define THREEENGINE_CUBE_H
 
 #include <GL/glew.h>
-#include "../IDrawable.h"
+#include "../Actor.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
 #include "Mesh.h"
 
 namespace ThreeEngine {
 
-    class Cube : public IDrawable {
+    class Cube : public Actor {
+        private:
+            void ColorUpdate();
 
         public:
-
-            Mesh mesh;
-
-            std::shared_ptr<ShaderProgram> shaderProgram;
 
             GLfloat color[4];
 
             Cube();
 
             ~Cube() override;
-
-            void Init() override;
-
-            void Draw() override;
     };
 
 } /* namespace Divisaction */

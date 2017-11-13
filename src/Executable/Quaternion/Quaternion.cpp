@@ -113,10 +113,9 @@ namespace ThreeEngine {
         }
         { // Square
             auto* square = new Cube();
-            Matrix2 transform2D =
-                    (TMatrix<2, 2>) Matrix2::RotationMatrix(-45) *
-                    Matrix2::ScaleMatrix(triangleSize, triangleSize);
-            square->transform = Matrix(transform2D);
+            square->transform.scale = Vector(triangleSize);
+            square->transform.rotation =
+                Quat::FromAngleAxis(-45, Vector(0, 0, 1));
             actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;

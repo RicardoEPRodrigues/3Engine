@@ -6,13 +6,24 @@
 #ifndef THREEENGINE_ACTOR_H
 #define THREEENGINE_ACTOR_H
 
+#include "IDrawable.h"
+#include "Math/Quat.h"
 #include "Shapes/Mesh.h"
 #include "Shader/ShaderProgram.h"
-#include "IDrawable.h"
 
 namespace ThreeEngine {
     class Actor : public IDrawable {
         public:
+            struct Transform {
+                Vector translation;
+                Quat rotation;
+                Vector scale;
+            };
+
+            Transform transform;
+
+            std::function<void()> preDraw, postDraw;
+
             Mesh mesh;
 
             std::shared_ptr<ShaderProgram> shaderProgram;
