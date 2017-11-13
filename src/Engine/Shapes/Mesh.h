@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <GL/glew.h>
 
 #include "../IDrawable.h"
 #include "../Math/Vector.h"
@@ -18,14 +19,14 @@ namespace ThreeEngine {
 
     class Mesh : public IDrawable {
         private:
-            GLuint VaoId, VboVertices, VboColors, VboTexcoords, VboNormals;
+            bool isInitiated;
 
-            bool ColorsLoaded, TexcoordsLoaded, NormalsLoaded;
+            GLuint VaoId, VboVertices, VboColors, VboTexcoords, VboNormals;
 
         public:
             std::vector <Vector> Vertices;
             std::vector <Vector4> Colors;
-            std::vector <Vector2> Texcoords;
+            std::vector <Vector2> TexCoords;
             std::vector <Vector> Normals;
 
             Mesh();
@@ -38,9 +39,7 @@ namespace ThreeEngine {
 
             void Draw() override;
 
-            void Unbid();
-
-            static std::vector<Mesh*> LoadMeshes(const std::string& filepath);
+            void Unbind();
     };
 
 } /* namespace Divisaction */

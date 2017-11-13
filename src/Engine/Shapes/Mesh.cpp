@@ -14,9 +14,13 @@
 
 namespace ThreeEngine {
 
-    Mesh::Mesh() { }
+    Mesh::Mesh() : isInitiated(false), Vertices(), Colors(), TexCoords(),
+                   Normals() { }
 
     Mesh::~Mesh() {
+        if (!isInitiated) {
+            return;
+        }
         glBindVertexArray(VaoId);
         glDisableVertexAttribArray(VERTICES);
         glDisableVertexAttribArray(COLORS);
@@ -34,6 +38,8 @@ namespace ThreeEngine {
     }
 
     void Mesh::Init() {
+        isInitiated = true;
+
         glGenVertexArrays(1, &VaoId);
         glBindVertexArray(VaoId);
         {
@@ -47,7 +53,7 @@ namespace ThreeEngine {
                                   sizeof(Vector), 0);
 
             //Colors
-            if (!ColorsLoaded) {
+            if (!Colors.empty()) {
                 Colors = std::vector<Vector4>(Vertices.size(), {0, 0, 0, 1});
             }
             glGenBuffers(1, &VboColors);
@@ -59,11 +65,11 @@ namespace ThreeEngine {
                                   sizeof(Vector4), 0);
 
             // Texture Coordinates
-            if (TexcoordsLoaded) {
+            if (!TexCoords.empty()) {
                 glGenBuffers(1, &VboTexcoords);
                 glBindBuffer(GL_ARRAY_BUFFER, VboTexcoords);
                 glBufferData(GL_ARRAY_BUFFER,
-                             Texcoords.size() * sizeof(Vector2), &Texcoords[0],
+                             TexCoords.size() * sizeof(Vector2), &TexCoords[0],
                              GL_STATIC_DRAW);
                 glEnableVertexAttribArray(TEXCOORDS);
                 glVertexAttribPointer(TEXCOORDS, 2, GL_FLOAT, GL_FALSE,
@@ -71,7 +77,7 @@ namespace ThreeEngine {
             }
 
             // Normals
-            if (NormalsLoaded) {
+            if (!Normals.empty()) {
                 glGenBuffers(1, &VboNormals);
                 glBindBuffer(GL_ARRAY_BUFFER, VboNormals);
                 glBufferData(GL_ARRAY_BUFFER, Normals.size() * sizeof(Vector),
@@ -103,13 +109,9 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not Draw Mesh.");
     }
 
-    void Mesh::Unbid() {
+    void Mesh::Unbind() {
         glBindVertexArray(0);
         CheckOpenGLError("Could not Unbind Mesh.");
-    }
-
-    std::vector<Mesh*> Mesh::LoadMeshes(const std::string& filepath) {
-        return std::vector<Mesh*>();
     }
 
 } /* namespace Divisaction */

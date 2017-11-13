@@ -7,6 +7,7 @@
 #define THREEENGINE_VECTOR_H
 
 #include <string>
+#include <sstream>
 #include <iostream>
 #include "Maths.h"
 #include "Vector2.h"
@@ -317,19 +318,22 @@ namespace ThreeEngine {
 
         void Set(const number& inX, const number& inY, const number& inZ);
 
-        friend std::ostream& operator<<(std::ostream& os, const Vector& vector) {
-            os << "{ " << vector.X << ", " << vector.Y << ", " << vector.Z << " }" << std::endl;
+        friend std::ostream&
+        operator<<(std::ostream& os, const Vector& vector) {
+            os << "{ " << vector.X << ", " << vector.Y << ", " << vector.Z
+               << " }" << std::endl;
             return os;
         };
 
-        friend std::istream& operator>>(std::istream& is, const Vector&) {
-            // TODO Implement in stream
+        friend std::istream& operator>>(std::istream& is, Vector& vector) {
+            is >> vector.X >> vector.Y >> vector.Z;
             return is;
         };
 
         operator std::string() const {
-            return std::string("{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
-                               std::to_string(Z) + " }");
+            return std::string(
+                    "{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
+                    std::to_string(Z) + " }");
         }
 
         operator Vector2() const {

@@ -10,12 +10,15 @@
 #include "Engine/IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
+#include "Mesh.h"
 
 namespace ThreeEngine {
 
     class Parallelogram : public IDrawable {
 
         public:
+
+            Mesh mesh;
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 
@@ -28,12 +31,6 @@ namespace ThreeEngine {
             void Init() override;
 
             void Draw() override;
-
-        private:
-
-            GLuint vaoId, vboId[1];
-
-            Vertex Vertices[6];
     };
 
 } /* namespace Divisaction */

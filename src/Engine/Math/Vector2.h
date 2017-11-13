@@ -7,6 +7,7 @@
 #define THREEENGINE_VECTOR2_H
 
 #include <string>
+#include <sstream>
 #include <iostream>
 #include "Maths.h"
 
@@ -292,9 +293,9 @@ namespace ThreeEngine {
             return os;
         };
 
-        friend std::istream& operator>>(std::istream& is, const Vector2&) {
-            // TODO Implement in stream
-            return is;
+        friend std::istream& operator>>(std::istream& is, Vector2& vector) {
+                is >> vector.X >> vector.Y;
+                return is;
         };
 
         operator std::string() const {

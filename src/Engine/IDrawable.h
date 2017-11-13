@@ -3,8 +3,8 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_ACTOR_H
-#define THREEENGINE_ACTOR_H
+#ifndef THREEENGINE_IDRAWABLE_H
+#define THREEENGINE_IDRAWABLE_H
 
 #include "Math/Matrix.h"
 
@@ -21,6 +21,6 @@ namespace ThreeEngine {
             virtual void Draw() = 0;
     };
 
-} /* namespace Divisaction */
+} /* namespace ThreeEngine */
 
-#endif //THREEENGINE_ACTOR_H
+#endif //THREEENGINE_IDRAWABLE_H

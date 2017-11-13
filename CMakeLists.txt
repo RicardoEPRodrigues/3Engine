@@ -65,7 +65,8 @@ include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_D
 include_directories(src)
 
 set(ENGINE_SOURCE_FILES
-        src/Engine/json.hpp
+        src/Engine/Utilities/json.hpp
+        src/Engine/Utilities/singleton.h
         src/Engine/Debug.h
         src/Engine/Engine.cpp src/Engine/Engine.h
         src/Engine/Math/Vector.cpp src/Engine/Math/Vector.h
@@ -97,7 +98,8 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Controllers/FreeCameraController.cpp src/Engine/Controllers/FreeCameraController.h
         src/Engine/Controllers/SphereCameraController.cpp src/Engine/Controllers/SphereCameraController.h
         src/Engine/Shapes/Mesh.cpp src/Engine/Shapes/Mesh.h
-        )
+        src/Engine/Shapes/MeshLoader.cpp src/Engine/Shapes/MeshLoader.h
+        src/Engine/Actor.cpp src/Engine/Actor.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
@@ -141,4 +143,5 @@ add_custom_command(TARGET ThreeEngine POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${EXECUTABLE_OUTPUT_PATH}/assets/
         )

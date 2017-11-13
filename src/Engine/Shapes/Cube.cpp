@@ -68,9 +68,8 @@ namespace ThreeEngine {
     }
 
     void Cube::Draw() {
-
-        shaderProgram->Bind();
         mesh.Bind();
+        shaderProgram->Bind();
 
         number matrixArray[16];
         transform.ToArray(matrixArray);
@@ -84,7 +83,7 @@ namespace ThreeEngine {
         mesh.Draw();
 
         shaderProgram->Unbind();
-        mesh.Unbid();
+        mesh.Unbind();
 
         CheckOpenGLError("Could not draw Actor.");
     }

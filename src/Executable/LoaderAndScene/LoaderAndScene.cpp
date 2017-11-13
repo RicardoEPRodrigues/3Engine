@@ -3,11 +3,10 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
+#include <Engine/Actor.h>
+#include <Engine/Shapes/MeshLoader.h>
 #include "LoaderAndScene.h"
 #include "../../Engine/Camera/Perspective.h"
-#include "../../Engine/Shapes/Triangle3D.h"
-#include "../../Engine/Shapes/Cube.h"
-#include "../../Engine/Shapes/Parallelogram3D.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -48,13 +47,29 @@ namespace ThreeEngine {
             );
         }
 
-        { // Square
-            auto* square = new Cube();
-            square->transform = Matrix::TranslationMatrix(Vector(-0.5f));
-            actors.push_back((IDrawable*) square);
+//        {
+//            auto* treeStump = new Actor();
+//            treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
+//                    "assets/Cube-vtn.obj");
+//
+//            actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
+//        }
 
-            square->shaderProgram = colorProgram;
+        {
+            auto* treeStump = new Actor();
+            treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
+                    "assets/treestump.obj");
+
+            actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
         }
+
+//        { // Square
+//            auto* square = new Cube();
+//            square->shaderProgram = colorProgram;
+//            square->transform = Matrix::TranslationMatrix(Vector(-0.5f));
+//            actors.push_back((IDrawable*) square);
+//
+//        }
 
     }
 

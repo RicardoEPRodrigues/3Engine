@@ -36,7 +36,8 @@ namespace ThreeEngine {
 
         Vector4(number inX, number inY, number inZ, number inW = 1.0f);
 
-        explicit Vector4(const Vector2& other, number inZ = 0, number inW = 1.0f);
+        explicit Vector4(const Vector2& other, number inZ = 0,
+                         number inW = 1.0f);
 
         explicit Vector4(const Vector& other, number inW = 1.0f);
 
@@ -334,22 +335,26 @@ namespace ThreeEngine {
          * @param inZ Z coordinate
          * @param inW W coordinate
          */
-        void Set(const number& inX, const number& inY, const number& inZ, const number& inW);
+        void Set(const number& inX, const number& inY, const number& inZ,
+                 const number& inW);
 
-        friend std::ostream& operator<<(std::ostream& os, const Vector4& vector) {
-            os << "{ " << vector.X << ", " << vector.Y << ", " << vector.Z << ", " << vector.W
+        friend std::ostream&
+        operator<<(std::ostream& os, const Vector4& vector) {
+            os << "{ " << vector.X << ", " << vector.Y << ", " << vector.Z
+               << ", " << vector.W
                << " }" << std::endl;
             return os;
         };
 
-        friend std::istream& operator>>(std::istream& is, const Vector4&) {
-            // TODO Implement in stream
+        friend std::istream& operator>>(std::istream& is, Vector4& vector) {
+            is >> vector.X >> vector.Y >> vector.Z >> vector.W;
             return is;
         };
 
         operator std::string() const {
-            return std::string("{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
-                               std::to_string(Z) + ", " + std::to_string(W) + " }");
+            return std::string(
+                    "{ " + std::to_string(X) + ", " + std::to_string(Y) + ", " +
+                    std::to_string(Z) + ", " + std::to_string(W) + " }");
         }
 
         operator Vector() const {
