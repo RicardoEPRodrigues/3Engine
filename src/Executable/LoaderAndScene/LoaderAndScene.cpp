@@ -3,9 +3,9 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include <Engine/Actor.h>
-#include <Engine/Shapes/MeshLoader.h>
 #include "LoaderAndScene.h"
+#include "../../Engine/Actor.h"
+#include "../../Engine/Shapes/MeshLoader.h"
 #include "../../Engine/Camera/Perspective.h"
 
 #define VERTICES 0
@@ -47,21 +47,21 @@ namespace ThreeEngine {
             );
         }
 
-//        {
-//            auto* treeStump = new Actor();
-//            treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
-//                    "assets/Cube-vtn.obj");
-//
-//            actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
-//        }
-
         {
             auto* treeStump = new Actor();
             treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
-                    "assets/treestump.obj");
+                    "assets/Cube-vtn.obj");
 
             actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
         }
+
+        //{
+        //    auto* treeStump = new Actor();
+        //    treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
+        //            "assets/treestump.obj");
+
+        //    actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
+        //}
 
 //        { // Square
 //            auto* square = new Cube();

@@ -6,7 +6,7 @@
 #ifndef THREEENGINE_MESHLOADER_H
 #define THREEENGINE_MESHLOADER_H
 
-#include <Engine/Utilities/singleton.h>
+#include "../Utilities/singleton.h"
 #include "Mesh.h"
 
 namespace ThreeEngine {

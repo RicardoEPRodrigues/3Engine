@@ -7,7 +7,7 @@
 #define THREEENGINE_CAMERA_H
 
 #include <GL/glew.h>
-#include "Engine/IDrawable.h"
+#include "../IDrawable.h"
 
 namespace ThreeEngine {
 

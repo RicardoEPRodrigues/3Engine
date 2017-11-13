@@ -10,19 +10,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Executable\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Executable\Quaternion\SphereCameraController.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\Tangram3D\FreeCameraController.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp">
@@ -30,16 +27,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h">
+      <Filter>Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Executable\Quaternion\SphereCameraController.h">
-      <Filter>Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Executable\Tangram\Tangram.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Executable\Tangram3D\FreeCameraController.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h">

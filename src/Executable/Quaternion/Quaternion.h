@@ -8,8 +8,7 @@
 
 #include "../../Engine/Engine.h"
 #include "../../Engine/Shader/ShaderProgram.h"
-#include "Engine/IDrawable.h"
-#include "Engine/Controllers/SphereCameraController.h"
+#include "../../Engine/Controllers/SphereCameraController.h"
 
 namespace ThreeEngine {
 

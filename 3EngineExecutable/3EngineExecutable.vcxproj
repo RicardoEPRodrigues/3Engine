@@ -24,17 +24,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp" />
     <ClCompile Include="..\src\Executable\main.cpp" />
     <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp" />
-    <ClCompile Include="..\src\Executable\Quaternion\SphereCameraController.cpp" />
-    <ClCompile Include="..\src\Executable\Tangram3D\FreeCameraController.cpp" />
     <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp" />
     <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h" />
     <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h" />
-    <ClInclude Include="..\src\Executable\Quaternion\SphereCameraController.h" />
-    <ClInclude Include="..\src\Executable\Tangram3D\FreeCameraController.h" />
     <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h" />
     <ClInclude Include="..\src\Executable\Tangram\Tangram.h" />
   </ItemGroup>

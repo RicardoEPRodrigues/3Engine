@@ -4,19 +4,19 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "SphereCameraController.h"
-#include "Engine/OpenGLUtils.h"
-#include "Engine/Camera/Ortho.h"
-#include "Engine/Camera/Perspective.h"
+#include "../Camera/Ortho.h"
+#include "../Camera/Perspective.h"
 
 namespace ThreeEngine {
 
-    SphereCameraController::SphereCameraController() : engine(Engine::Instance()),
-                                                       inPerspective(true),
-                                                       useQuat(true), previousMouseLocation(),
-                                                       yawPitch(),
-                                                       translation(Matrix::IdentityMatrix()),
-                                                       rotation(Matrix::IdentityMatrix()),
-                                                       quat({1, 0, 0, 0}) { }
+    SphereCameraController::SphereCameraController() :
+            engine(Engine::Instance()),
+            inPerspective(true),
+            useQuat(true), previousMouseLocation(),
+            yawPitch(),
+            translation(Matrix::IdentityMatrix()),
+            rotation(Matrix::IdentityMatrix()),
+            quat({1, 0, 0, 0}) { }
 
     SphereCameraController::~SphereCameraController() = default;
 
@@ -56,14 +56,18 @@ namespace ThreeEngine {
             // Always calculate the updated quaternion to even if it is not being used
             // otherwise it will break the toggling.
             quat = (Quat::FromAngleAxis(delta.X, Vector(0, 1, 0)) *
-                    Quat::FromAngleAxis(-delta.Y, Vector(1, 0, 0))).Normalize() * quat;
+                    Quat::FromAngleAxis(-delta.Y,
+                                        Vector(1, 0, 0))).Normalize() * quat;
 
             if (useQuat) {
-                camera->SetView(Matrix::TranslationMatrix(Vector(0, 0, -10)) * quat.ToMatrix());
+                camera->SetView(Matrix::TranslationMatrix(Vector(0, 0, -10)) *
+                                quat.ToMatrix());
             } else {
 
-                Matrix rotation = Matrix(Matrix3::RotationMatrix(Maths::Axis::Y, -delta.X)) *
-                                  Matrix(Matrix3::RotationMatrix(Maths::Axis::X, -delta.Y));
+                Matrix rotation = Matrix(Matrix3::RotationMatrix(Maths::Axis::Y,
+                                                                 -delta.X)) *
+                                  Matrix(Matrix3::RotationMatrix(Maths::Axis::X,
+                                                                 -delta.Y));
                 camera->SetView(*camera->GetView() * rotation);
             }
         } else {
@@ -81,9 +85,11 @@ namespace ThreeEngine {
 
         // check if mouse is at window borders
         bool mouseXUpdate =
-                (mouse.X <= 0) || (mouse.X >= (int) engine->config["window"]["x"]);
+                (mouse.X <= 0) ||
+                (mouse.X >= (int) engine->config["window"]["x"]);
         bool mouseYUpdate =
-                (mouse.Y <= 0) || (mouse.Y >= (int) engine->config["window"]["y"]);
+                (mouse.Y <= 0) ||
+                (mouse.Y >= (int) engine->config["window"]["y"]);
 
         if (mouseXUpdate || mouseYUpdate) {
             Vector2 newMouseLoc = mouse;
@@ -98,8 +104,9 @@ namespace ThreeEngine {
                 previousMouseLocation.Y = newMouseLoc.Y - delta.Y;
             }
 
-            engine->input.SetMouseScreenLocation(static_cast<int>(newMouseLoc.X),
-                                                 static_cast<int>(newMouseLoc.Y));
+            engine->input.SetMouseScreenLocation(
+                    static_cast<int>(newMouseLoc.X),
+                    static_cast<int>(newMouseLoc.Y));
         } else {
             previousMouseLocation = mouse;
         }

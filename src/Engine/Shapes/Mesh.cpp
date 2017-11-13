@@ -4,7 +4,7 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include <GL/glew.h>
-#include <Engine/OpenGLUtils.h>
+#include "../OpenGLUtils.h"
 #include "Mesh.h"
 
 #define VERTICES 0
@@ -53,7 +53,7 @@ namespace ThreeEngine {
                                   sizeof(Vector), 0);
 
             //Colors
-            if (!Colors.empty()) {
+            if (Colors.empty()) {
                 Colors = std::vector<Vector4>(Vertices.size(), {0, 0, 0, 1});
             }
             glGenBuffers(1, &VboColors);
@@ -104,7 +104,7 @@ namespace ThreeEngine {
         glBufferSubData(GL_ARRAY_BUFFER, 0, Colors.size() * sizeof(Vector4),
                         &Colors[0]);
 
-        glDrawArrays(GL_TRIANGLES, 0, Vertices.size());
+        glDrawArrays(GL_TRIANGLES, 0, static_cast<GLsizei>(Vertices.size()));
 
         CheckOpenGLError("Could not Draw Mesh.");
     }

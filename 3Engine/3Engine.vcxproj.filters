@@ -36,6 +36,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Engine\Actor.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Engine\Camera\Camera.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -46,6 +49,18 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Engine\Camera\Perspective.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Controllers\FreeCameraController.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Controllers\SphereCameraController.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Input.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Engine\Math\Maths.cpp">
@@ -81,6 +96,12 @@
     <ClCompile Include="..\src\Engine\Shapes\Cube.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\Mesh.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Engine\Shapes\MeshLoader.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Engine\Shapes\Parallelogram.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -102,14 +123,11 @@
     <ClCompile Include="..\src\Engine\Time\Time.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Engine\Engine.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Engine\Input.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Engine\Actor.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Engine\Camera\Camera.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -120,6 +138,24 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Camera\Perspective.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Controllers\FreeCameraController.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Controllers\SphereCameraController.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Debug.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\IDrawable.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Input.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Math\Maths.h">
@@ -149,6 +185,9 @@
     <ClInclude Include="..\src\Engine\Math\Vector4.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Engine\Shader\Shader.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -156,6 +195,12 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Shapes\Cube.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\Mesh.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Shapes\MeshLoader.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Shapes\Parallelogram.h">
@@ -179,22 +224,10 @@
     <ClInclude Include="..\src\Engine\Time\Time.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Engine\Debug.h">
+    <ClInclude Include="..\src\Engine\Utilities\json.hpp">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Engine\Engine.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\IActor.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\Input.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\json.hpp">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Engine\OpenGLUtils.h">
+    <ClInclude Include="..\src\Engine\Utilities\singleton.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

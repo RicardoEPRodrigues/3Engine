@@ -7,7 +7,7 @@
 #define THREEENGINE_PARALLELOGRAM_H
 
 #include <GL/glew.h>
-#include "Engine/IDrawable.h"
+#include "../IDrawable.h"
 #include "../Shader/ShaderProgram.h"
 #include "../OpenGLUtils.h"
 #include "Mesh.h"
