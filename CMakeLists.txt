@@ -100,7 +100,8 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/Mesh.cpp src/Engine/Shapes/Mesh.h
         src/Engine/Shapes/MeshLoader.cpp src/Engine/Shapes/MeshLoader.h
         src/Engine/Actor.cpp src/Engine/Actor.h
-        src/Engine/SceneManagement/SceneGraph.cpp src/Engine/SceneManagement/SceneGraph.h)
+        src/Engine/SceneManagement/SceneGraph.cpp src/Engine/SceneManagement/SceneGraph.h
+        src/Engine/Utilities/Manager.h src/Engine/Utilities/Managers.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp

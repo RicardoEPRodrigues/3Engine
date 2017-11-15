@@ -11,7 +11,8 @@
 namespace ThreeEngine {
 
     Cube::Cube() : Actor(), color{.5f, .5f, .5f, 1.0f} {
-        mesh.Vertices = std::vector<Vector>({
+        mesh = std::make_shared<Mesh>();
+        mesh->Vertices = std::vector<Vector>({
                                                {0.0f, 0.0f, 1.0f}, // 0 - FRONT
                                                {1.0f, 0.0f, 1.0f}, // 1
                                                {1.0f, 1.0f, 1.0f}, // 2
@@ -54,7 +55,7 @@ namespace ThreeEngine {
                                                {1.0f, 0.0f, 1.0f}, // 1
                                                {0.0f, 0.0f, 1.0f}  // 0
                                        });
-        for (Vector & v : mesh.Vertices) {
+        for (Vector & v : mesh->Vertices) {
             v -= 0.5f;
         }
         preDraw = std::bind(&Cube::ColorUpdate, this);

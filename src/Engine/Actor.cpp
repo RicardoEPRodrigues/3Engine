@@ -10,7 +10,7 @@
 namespace ThreeEngine {
 
     Actor::Actor()
-            : IDrawable(), isInitiated(false), transform(), mesh(),
+            : IDrawable(), isInitiated(false), transform(), mesh(nullptr),
               shaderProgram(nullptr), parent(nullptr) { }
 
     Actor::~Actor() {
@@ -29,15 +29,17 @@ namespace ThreeEngine {
                     "shaders/Default/program.json");
         }
         GetShaderProgram()->Init();
-        mesh.Init();
+        if (mesh) {
+            mesh->Init();
+        }
         for (auto&& child : children) {
             child->Init();
         }
     }
 
     void Actor::Draw() {
-        { // Actor Mesh
-            mesh.Bind();
+        if (mesh) { // Actor Mesh
+            mesh->Bind();
             GetShaderProgram()->Bind();
 
             number matrixArray[16];
@@ -49,20 +51,19 @@ namespace ThreeEngine {
             if (preDraw) {
                 preDraw();
             }
-            mesh.Draw();
+            mesh->Draw();
             if (postDraw) {
                 postDraw();
             }
 
             GetShaderProgram()->Unbind();
-            mesh.Unbind();
+            mesh->Unbind();
 
             CheckOpenGLError("Could not draw Actor.");
         }
-        { // Children
-            for (auto&& child : children) {
-                child->Draw();
-            }
+        // Children
+        for (auto&& child : children) {
+            child->Draw();
         }
     }
 

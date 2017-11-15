@@ -76,8 +76,8 @@ namespace ThreeEngine {
         return meshData;
     }
 
-    Mesh MeshLoader::OBJ_ProcessMeshData(MeshLoader::MeshData& meshData) {
-        Mesh mesh = Mesh();
+    std::shared_ptr<Mesh> MeshLoader::OBJ_ProcessMeshData(MeshLoader::MeshData& meshData) {
+        auto mesh = std::make_shared<Mesh>();
         for (unsigned int i = 0; i < meshData.vertexIdx.size(); i++) {
             unsigned int vi = meshData.vertexIdx[i];
             if ((vi - 1) >= meshData.vertices.size()) {
@@ -85,22 +85,22 @@ namespace ThreeEngine {
                 continue;
             }
             Vector v = meshData.vertices[vi - 1];
-            mesh.Vertices.push_back(v);
+            mesh->Vertices.push_back(v);
             if (!meshData.texCoords.empty()) {
                 unsigned int ti = meshData.texCoordIdx[i];
                 Vector2 t = meshData.texCoords[ti - 1];
-                mesh.TexCoords.push_back(t);
+                mesh->TexCoords.push_back(t);
             }
             if (!meshData.normals.empty()) {
                 unsigned int ni = meshData.normalIdx[i];
                 Vector n = meshData.normals[ni - 1];
-                mesh.Normals.push_back(n);
+                mesh->Normals.push_back(n);
             }
         }
         return mesh;
     }
 
-    Mesh MeshLoader::LoadFileOBJ(std::string const& filepath) {
+    std::shared_ptr<Mesh> MeshLoader::LoadFileOBJ(std::string const& filepath) {
         MeshData meshData = OBJ_LoadMeshData(filepath);
         return OBJ_ProcessMeshData(meshData);
     }

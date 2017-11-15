@@ -8,6 +8,7 @@
 #include "../../Engine/Shapes/Cube.h"
 #include "../../Engine/Shapes/MeshLoader.h"
 #include "../../Engine/Camera/Perspective.h"
+#include "../../Engine/Utilities/Managers.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -27,12 +28,19 @@ namespace ThreeEngine {
     }
 
     void LoaderAndScene::scene() {
-        auto defaultProgram = std::make_shared<ShaderProgram>(
-                "shaders/Default/program.json");
-        defaultProgram->Init();
-        auto colorProgram = std::make_shared<ShaderProgram>(
-                "shaders/Color3D/program.json");
-        colorProgram->Init();
+        { // Shaders
+            auto defaultProgram = std::make_shared<ShaderProgram>(
+                    "shaders/Default/program.json");
+            defaultProgram->Init();
+            ShaderProgramManager::instance()->Add("default", defaultProgram);
+            auto colorProgram = std::make_shared<ShaderProgram>(
+                    "shaders/Color3D/program.json");
+            colorProgram->Init();
+            ShaderProgramManager::instance()->Add("color3d", colorProgram);
+        }
+
+        MeshManager::instance()->Add("Cube", 
+            MeshLoader::instance()->LoadFileOBJ("assets/Cube-vtn.obj"));
 
         actors.push_back(reinterpret_cast<IDrawable*&&>(sceneGraph));
 
@@ -41,8 +49,9 @@ namespace ThreeEngine {
             number height = config["window"]["y"];
             number aspect = width / height;
             Camera* camera = new Camera(
-                    static_cast<GLuint>(colorProgram->GetUniformBlockBidingId(
-                            "SharedMatrices")),
+                    static_cast<GLuint>(
+                        ShaderProgramManager::instance()->Get("default")
+                        ->GetUniformBlockBidingId("SharedMatrices")),
                     new Perspective(30, aspect, 1, 100),
                     new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -15)))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
@@ -51,42 +60,50 @@ namespace ThreeEngine {
             controller.camera = camera;
         }
 
-//        {
-//            auto* cube = new Actor();
-//            cube->mesh = MeshLoader::instance()->LoadFileOBJ(
-//                    "assets/Cube-vtn.obj");
-//
-//            sceneGraph->SetRoot(cube);
-//
-//            auto* cube2 = new Actor();
-//            cube2->mesh = cube->mesh;
-//            cube2->transform.translation += Vector(0, 2, 0);
-//            cube2->SetParent(cube);
-//        }
+        //{
+        //    auto* cube = new Actor();
+        //    cube->mesh = MeshManager::instance()->Get("Cube");
+
+        //    sceneGraph->SetRoot(cube);
+
+        //    auto* cube2 = new Actor();
+        //    cube2->mesh = cube->mesh;
+        //    cube2->transform.translation += Vector(0, 2, 0);
+        //    cube2->SetParent(cube);
+        //}
 
         { // Square
-            auto* square = new Cube();
-            square->color[0] = 1;
-            square->color[1] = 0;
-            square->color[2] = 1;
-            square->color[3] = 1;
-            square->shaderProgram = colorProgram;
-            square->transform.scale = Vector(1.5f);
-            square->transform.rotation =
-                Quat::FromAngleAxis(-45, Vector(0, 0, 1));
-            sceneGraph->SetRoot(square);
+            auto root = new Actor();
+            root->shaderProgram =
+                ShaderProgramManager::instance()->Get("default");
+            sceneGraph->SetRoot(root);
 
-            auto* cube2 = new Actor();
-            cube2->mesh = MeshLoader::instance()->LoadFileOBJ(
-                    "assets/Cube-vtn.obj");
-            cube2->transform.translation += Vector(0, 2, 0);
-            cube2->shaderProgram = defaultProgram;
-            cube2->SetParent(square);
+            {
+                auto square = new Cube();
+                square->color[0] = 1;
+                square->color[1] = 0;
+                square->color[2] = 1;
+                square->color[3] = 1;
+                square->shaderProgram = ShaderProgramManager::instance()->Get("color3d");
+                square->transform.scale = Vector(.5f);
+                square->transform.rotation =
+                    Quat::FromAngleAxis(45, Vector(0, 0, -1));
+                square->SetParent(root);
+
+                auto* cube2 = new Actor();
+                cube2->mesh = MeshManager::instance()->Get("Cube");
+                cube2->transform.translation += Vector(0, 2, 0);
+                cube2->SetParent(square);
+            }
+
+            auto* cube3 = new Actor();
+            cube3->mesh = MeshManager::instance()->Get("Cube");
+            cube3->transform.translation += Vector(0, 2, 0);
+            cube3->SetParent(root);
         }
 
-        for (auto& actor : actors) {
-            actor->Init();
-        }
+        // Initializes all the actors in it.
+        sceneGraph->Init();
     }
 
     void LoaderAndScene::OnReshape(int, int) {

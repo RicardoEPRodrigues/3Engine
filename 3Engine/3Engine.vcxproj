@@ -95,6 +95,8 @@
     <ClInclude Include="..\src\Engine\Utilities\json.hpp" />
     <ClInclude Include="..\src\Engine\Utilities\singleton.h" />
     <ClInclude Include="..\src\Engine\SceneManagement\SceneGraph.h" />
+    <ClInclude Include="..\src\Engine\Utilities\Manager.h" />
+    <ClInclude Include="..\src\Engine\Utilities\Managers.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -195,6 +197,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -247,6 +250,7 @@ xcopy "$(SolutionDir)assets" "$(OutDir)assets\" /E</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

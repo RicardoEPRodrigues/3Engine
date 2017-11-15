@@ -32,7 +32,7 @@ namespace ThreeEngine {
 
             std::function<void()> preDraw, postDraw;
 
-            Mesh mesh;
+            std::shared_ptr<Mesh> mesh;
 
             std::shared_ptr<ShaderProgram> shaderProgram;
 

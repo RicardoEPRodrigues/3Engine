@@ -6,6 +6,7 @@
 #ifndef THREEENGINE_MESHLOADER_H
 #define THREEENGINE_MESHLOADER_H
 
+#include <memory>
 #include "../Utilities/singleton.h"
 #include "Mesh.h"
 
@@ -32,10 +33,10 @@ namespace ThreeEngine {
 
             MeshData OBJ_LoadMeshData(std::string const& filename);
 
-            Mesh OBJ_ProcessMeshData(MeshData& meshData);
+            std::shared_ptr<Mesh> OBJ_ProcessMeshData(MeshData& meshData);
 
         public:
-            Mesh LoadFileOBJ(std::string const& filepath);
+            std::shared_ptr<Mesh> LoadFileOBJ(std::string const& filepath);
     };
 } // namespace ThreeEngine
 

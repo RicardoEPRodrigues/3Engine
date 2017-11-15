@@ -123,6 +123,9 @@
     <ClCompile Include="..\src\Engine\Time\Time.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Engine\SceneManagement\SceneGraph.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Actor.h">
@@ -228,6 +231,15 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Engine\Utilities\singleton.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Utilities\Managers.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\Utilities\Manager.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Engine\SceneManagement\SceneGraph.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,8 @@
 #include <iostream>
 #include "LoaderAndScene/LoaderAndScene.h"
 
+#include "../Engine/Utilities/Manager.h"
+
 using namespace ThreeEngine;
 
 // NVIDIA Dedicated Graphics
