@@ -5,8 +5,8 @@
  */
 #include "LoaderAndScene.h"
 #include "../../Engine/Actor.h"
-#include "../../Engine/Shapes/MeshLoader.h"
 #include "../../Engine/Shapes/Cube.h"
+#include "../../Engine/Shapes/MeshLoader.h"
 #include "../../Engine/Camera/Perspective.h"
 
 #define VERTICES 0
@@ -18,7 +18,7 @@ namespace ThreeEngine {
 
 
     LoaderAndScene::LoaderAndScene()
-            : Engine(), controller() { }
+            : Engine(), sceneGraph(new SceneGraph()), controller() { }
 
     LoaderAndScene::~LoaderAndScene() = default;
 
@@ -27,42 +27,42 @@ namespace ThreeEngine {
     }
 
     void LoaderAndScene::scene() {
+        auto defaultProgram = std::make_shared<ShaderProgram>(
+                "shaders/Default/program.json");
+        defaultProgram->Init();
         auto colorProgram = std::make_shared<ShaderProgram>(
                 "shaders/Color3D/program.json");
         colorProgram->Init();
 
-        Debug::Log(*colorProgram);
+        actors.push_back(reinterpret_cast<IDrawable*&&>(sceneGraph));
 
         { // Camera handling
-            delete camera;
-
             number width = config["window"]["x"];
             number height = config["window"]["y"];
             number aspect = width / height;
-            camera = new Camera(
+            Camera* camera = new Camera(
                     static_cast<GLuint>(colorProgram->GetUniformBlockBidingId(
                             "SharedMatrices")),
                     new Perspective(30, aspect, 1, 100),
-                    new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -10)))
+                    new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -15)))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
             );
+            sceneGraph->SetCamera(camera);
+            controller.camera = camera;
         }
 
-        //{
-        //    auto* treeStump = new Actor();
-        //    treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
-        //            "assets/Cube-vtn.obj");
-
-        //    actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
-        //}
-
-        //{
-        //    auto* treeStump = new Actor();
-        //    treeStump->mesh = MeshLoader::instance()->LoadFileOBJ(
-        //            "assets/treestump.obj");
-
-        //    actors.push_back(reinterpret_cast<IDrawable*&&>(treeStump));
-        //}
+//        {
+//            auto* cube = new Actor();
+//            cube->mesh = MeshLoader::instance()->LoadFileOBJ(
+//                    "assets/Cube-vtn.obj");
+//
+//            sceneGraph->SetRoot(cube);
+//
+//            auto* cube2 = new Actor();
+//            cube2->mesh = cube->mesh;
+//            cube2->transform.translation += Vector(0, 2, 0);
+//            cube2->SetParent(cube);
+//        }
 
         { // Square
             auto* square = new Cube();
@@ -71,13 +71,22 @@ namespace ThreeEngine {
             square->color[2] = 1;
             square->color[3] = 1;
             square->shaderProgram = colorProgram;
-            //square->transform.translation = Vector(-0.5f);
-            //square->transform.scale = Vector(2);
+            square->transform.scale = Vector(1.5f);
             square->transform.rotation =
                 Quat::FromAngleAxis(-45, Vector(0, 0, 1));
-            actors.push_back((IDrawable*)square);
+            sceneGraph->SetRoot(square);
+
+            auto* cube2 = new Actor();
+            cube2->mesh = MeshLoader::instance()->LoadFileOBJ(
+                    "assets/Cube-vtn.obj");
+            cube2->transform.translation += Vector(0, 2, 0);
+            cube2->shaderProgram = defaultProgram;
+            cube2->SetParent(square);
         }
 
+        for (auto& actor : actors) {
+            actor->Init();
+        }
     }
 
     void LoaderAndScene::OnReshape(int, int) {

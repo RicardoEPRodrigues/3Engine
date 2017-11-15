@@ -8,6 +8,7 @@
 
 #include "../Engine.h"
 #include "../Math/Quat.h"
+#include "../Camera/Camera.h"
 
 namespace ThreeEngine {
 
@@ -29,6 +30,8 @@ namespace ThreeEngine {
             void UnlockMouse();
 
         public:
+
+            Camera* camera;
 
             SphereCameraController();
 

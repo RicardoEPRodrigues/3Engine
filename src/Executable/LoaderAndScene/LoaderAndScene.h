@@ -10,6 +10,7 @@
 #include "../../Engine/Controllers/SphereCameraController.h"
 #include "../../Engine/Shader/ShaderProgram.h"
 #include "../../Engine/IDrawable.h"
+#include "../../Engine/SceneManagement/SceneGraph.h"
 
 namespace ThreeEngine {
 
@@ -18,6 +19,8 @@ namespace ThreeEngine {
             LoaderAndScene();
 
             ~LoaderAndScene() override;
+
+            SceneGraph* sceneGraph;
 
             SphereCameraController controller;
 

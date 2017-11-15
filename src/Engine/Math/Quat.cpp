@@ -9,7 +9,7 @@ using namespace std;
 
 namespace ThreeEngine {
 
-    Quat::Quat() = default;
+    Quat::Quat() : T(1), X(0), Y(0), Z(0) {}
 
     Quat::~Quat() = default;
 

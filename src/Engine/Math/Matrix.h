@@ -286,7 +286,7 @@ namespace ThreeEngine {
         };
 
         friend std::istream& operator>>(std::istream& is, const Matrix&) {
-            // TODO Implement in stream
+            // TODO Implement in stream (needs to much values)
             return is;
         };
 

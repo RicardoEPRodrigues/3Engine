@@ -85,6 +85,7 @@ namespace ThreeEngine {
             }
         }
         if (isError) {
+            DebugBreakpoint();
             exit(EXIT_FAILURE);
         }
 #endif

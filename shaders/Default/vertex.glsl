@@ -7,7 +7,6 @@ in vec3 in_Normal;
 out vec4 ex_Color;
 
 uniform mat4 ModelMatrix;
-uniform vec4 ModelColor = vec4(0.5, 0.5, 0.5, 1.0);
 
 uniform SharedMatrices {
     mat4 ViewMatrix;
@@ -16,12 +15,15 @@ uniform SharedMatrices {
 
 void main(void)
 {
+    vec4 ModelColor = vec4(0.9, 0.5, 0.5, 1.0);
+
     gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * in_Position;
 
-    float zMixer = clamp((ModelMatrix * in_Position).z, 0.3, 1.0);
-    float xMixer = clamp((ModelMatrix * in_Position).x, 0.3, 0.5);
-    ex_Color = vec4(ModelColor.x * zMixer + xMixer,
-                    ModelColor.y * zMixer + xMixer,
-                    ModelColor.z * zMixer + xMixer,
-                    ModelColor.w);
+//    float zMixer = clamp((ModelMatrix * in_Position).z, 0.3, 1.0);
+//    float xMixer = clamp((ModelMatrix * in_Position).x, 0.3, 0.5);
+//    ex_Color = vec4(ModelColor.x * zMixer + xMixer,
+//                    ModelColor.y * zMixer + xMixer,
+//                    ModelColor.z * zMixer + xMixer,
+//                    ModelColor.w);
+    ex_Color = ModelColor;
 }

@@ -18,6 +18,8 @@ namespace ThreeEngine {
 
             ~Tangram3D() override;
 
+            Camera* camera;
+
             enum ShapeType3D {
                 CUBE
             };

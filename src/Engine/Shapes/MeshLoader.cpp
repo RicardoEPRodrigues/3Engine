@@ -80,6 +80,10 @@ namespace ThreeEngine {
         Mesh mesh = Mesh();
         for (unsigned int i = 0; i < meshData.vertexIdx.size(); i++) {
             unsigned int vi = meshData.vertexIdx[i];
+            if ((vi - 1) >= meshData.vertices.size()) {
+                DebugBreakpoint();
+                continue;
+            }
             Vector v = meshData.vertices[vi - 1];
             mesh.Vertices.push_back(v);
             if (!meshData.texCoords.empty()) {

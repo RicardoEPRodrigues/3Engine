@@ -18,6 +18,8 @@ namespace ThreeEngine {
 
             ~Quaternion() override;
 
+            Camera* camera;
+
             enum ShapeType3D {
                 CUBE
             };

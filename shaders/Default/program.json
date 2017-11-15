@@ -1,6 +1,6 @@
 {
-    "vertex": "shaders/Color3D/vertex.glsl",
-    "fragment": "shaders/Color3D/fragment.glsl",
+    "vertex": "shaders/Default/vertex.glsl",
+    "fragment": "shaders/Default/fragment.glsl",
     "attributes": [
         [0, "in_Position"],
         [1, "in_Color"],
@@ -8,8 +8,7 @@
         [3, "in_Normal"]
     ],
     "uniforms": {
-        "ModelMatrix": 0,
-        "ModelColor": 0
+        "ModelMatrix": 0
     },
     "uniformBlocks": {
         "SharedMatrices": [0, 0]

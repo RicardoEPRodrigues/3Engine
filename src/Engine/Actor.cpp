@@ -9,43 +9,95 @@
 
 namespace ThreeEngine {
 
-    Actor::Actor() : IDrawable(), mesh(), shaderProgram(nullptr),
-                    transform({Vector(0), Quat(), Vector(1)}) { }
+    Actor::Actor()
+            : IDrawable(), isInitiated(false), transform(), mesh(),
+              shaderProgram(nullptr), parent(nullptr) { }
 
-    Actor::~Actor() = default;
+    Actor::~Actor() {
+        for (auto&& child : children) {
+            delete child;
+        }
+    }
 
     void Actor::Init() {
-        if (!shaderProgram) {
+        if (isInitiated) {
+            return;
+        }
+        isInitiated = true;
+        if (!GetShaderProgram()) {
             shaderProgram = std::make_shared<ShaderProgram>(
                     "shaders/Default/program.json");
         }
-        shaderProgram->Init();
+        GetShaderProgram()->Init();
         mesh.Init();
+        for (auto&& child : children) {
+            child->Init();
+        }
     }
 
     void Actor::Draw() {
-        mesh.Bind();
-        shaderProgram->Bind();
+        { // Actor Mesh
+            mesh.Bind();
+            GetShaderProgram()->Bind();
 
-        number matrixArray[16];
-        (Matrix::TranslationMatrix(transform.translation) *
-            transform.rotation.ToMatrix() *
-            Matrix::ScaleMatrix(transform.scale)).ToArray(matrixArray);
-        glUniformMatrix4fv(shaderProgram->GetUniformLocationId("ModelMatrix"),
-                           1, GL_FALSE,
-                           matrixArray);
-        if (preDraw) {
-            preDraw();
+            number matrixArray[16];
+            GetModelMatrix().ToArray(matrixArray);
+            glUniformMatrix4fv(
+                    GetShaderProgram()->GetUniformLocationId("ModelMatrix"),
+                    1, GL_FALSE,
+                    matrixArray);
+            if (preDraw) {
+                preDraw();
+            }
+            mesh.Draw();
+            if (postDraw) {
+                postDraw();
+            }
+
+            GetShaderProgram()->Unbind();
+            mesh.Unbind();
+
+            CheckOpenGLError("Could not draw Actor.");
         }
-        mesh.Draw();
-        if (postDraw) {
-            postDraw();
+        { // Children
+            for (auto&& child : children) {
+                child->Draw();
+            }
         }
+    }
 
-        shaderProgram->Unbind();
-        mesh.Unbind();
+    Matrix Actor::GetModelMatrix() {
+        return GetParentModelMatrix() * GetLocalModelMatrix();
+    }
 
-        CheckOpenGLError("Could not draw Actor.");
+    Matrix Actor::GetLocalModelMatrix() {
+        return Matrix::TranslationMatrix(transform.translation) *
+               transform.rotation.ToMatrix() *
+               Matrix::ScaleMatrix(transform.scale);
+    }
+
+    Matrix Actor::GetParentModelMatrix() {
+        if (!parent) {
+            return Matrix::IdentityMatrix();
+        }
+        return parent->GetParentModelMatrix() * parent->GetModelMatrix();
+    }
+
+    std::shared_ptr<ShaderProgram> Actor::GetShaderProgram() {
+        if (shaderProgram) {
+            return shaderProgram;
+        }
+        if (parent) {
+            return parent->GetShaderProgram();
+        }
+        return nullptr;
+    }
+
+    void Actor::SetParent(Actor* parent) {
+        Actor::parent = parent;
+        if (Actor::parent) {
+            Actor::parent->children.push_back(this);
+        }
     }
 
 } // namespace ThreeEngine

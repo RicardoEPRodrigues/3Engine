@@ -19,7 +19,7 @@ namespace ThreeEngine {
 
     Engine* Engine::instance = nullptr;
 
-    Engine::Engine() : camera(new Camera()) {
+    Engine::Engine() {
         instance = this;
     }
 
@@ -40,12 +40,6 @@ namespace ThreeEngine {
         SetupOpenGL();
         Time::SetTimeCalculator(new GlutTimeCalculator());
         OnInit();
-        {
-            actors.push_back(reinterpret_cast<IDrawable*>(camera));
-        }
-        for (auto& actor : actors) {
-            actor->Init();
-        }
         SetupCallbacks();
     }
 
@@ -199,11 +193,12 @@ namespace ThreeEngine {
             actor->Draw();
         }
         instance->PostDraw();
-        instance->input.Update();
         glutSwapBuffers();
     }
 
     void Engine::Idle() {
+        // TODO Insert Updates here
+        instance->input.Update();
         glutPostRedisplay();
     }
 

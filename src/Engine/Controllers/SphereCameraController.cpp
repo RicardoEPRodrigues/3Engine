@@ -16,16 +16,14 @@ namespace ThreeEngine {
             yawPitch(),
             translation(Matrix::IdentityMatrix()),
             rotation(Matrix::IdentityMatrix()),
-            quat({1, 0, 0, 0}) { }
+            quat(), camera(nullptr) { }
 
     SphereCameraController::~SphereCameraController() = default;
 
     void SphereCameraController::Update() {
-        if (!engine) {
+        if (!engine || !camera) {
             return;
         }
-
-        Camera* camera = engine->camera;
 
         // Toggle between Ortho and Perspective
         if (engine->input.Click('p')) {
@@ -60,7 +58,7 @@ namespace ThreeEngine {
                                         Vector(1, 0, 0))).Normalize() * quat;
 
             if (useQuat) {
-                camera->SetView(Matrix::TranslationMatrix(Vector(0, 0, -10)) *
+                camera->SetView(Matrix::TranslationMatrix(Vector(0, 0, -15)) *
                                 quat.ToMatrix());
             } else {
 

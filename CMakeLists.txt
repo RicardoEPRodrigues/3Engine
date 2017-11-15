@@ -99,14 +99,16 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Controllers/SphereCameraController.cpp src/Engine/Controllers/SphereCameraController.h
         src/Engine/Shapes/Mesh.cpp src/Engine/Shapes/Mesh.h
         src/Engine/Shapes/MeshLoader.cpp src/Engine/Shapes/MeshLoader.h
-        src/Engine/Actor.cpp src/Engine/Actor.h)
+        src/Engine/Actor.cpp src/Engine/Actor.h
+        src/Engine/SceneManagement/SceneGraph.cpp src/Engine/SceneManagement/SceneGraph.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
-        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
-        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
-        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
-        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h)
+#        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
+#        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
+#        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
+        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
+        )
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

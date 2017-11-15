@@ -9,7 +9,6 @@
 #include <string>
 #include "Utilities/json.hpp"
 #include "IDrawable.h"
-#include "Camera/Camera.h"
 #include "Input.h"
 #include "Time/Time.h"
 
@@ -96,7 +95,6 @@ namespace ThreeEngine {
 
         public:
 
-            Camera* camera;
 
             Input input;
 

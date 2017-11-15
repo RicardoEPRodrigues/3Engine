@@ -8,6 +8,7 @@
 
 #include <map>
 #include "Debug.h"
+#include <GL/glew.h>
 #include <GL/freeglut.h>
 #include "Math/Vector2.h"
 

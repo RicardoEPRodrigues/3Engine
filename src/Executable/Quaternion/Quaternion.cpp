@@ -17,7 +17,8 @@ using json = nlohmann::json;
 namespace ThreeEngine {
 
 
-    Quaternion::Quaternion() : Engine(), shapeToShow(CUBE), controller() { }
+    Quaternion::Quaternion()
+            : Engine(), camera(nullptr), shapeToShow(CUBE), controller() { }
 
     Quaternion::~Quaternion() = default;
 
@@ -30,23 +31,25 @@ namespace ThreeEngine {
     }
 
     void Quaternion::CubeScene() {
-        auto colorProgram = std::make_shared<ShaderProgram>("shaders/Color3D/program.json");
+        auto colorProgram = std::make_shared<ShaderProgram>(
+                "shaders/Color3D/program.json");
         colorProgram->Init();
 
         Debug::Log(*colorProgram);
 
         { // Camera handling
-            delete camera;
-
             number width = config["window"]["x"];
             number height = config["window"]["y"];
             number aspect = width / height;
             camera = new Camera(
-                    static_cast<GLuint>(colorProgram->GetUniformBlockBidingId("SharedMatrices")),
+                    static_cast<GLuint>(colorProgram->GetUniformBlockBidingId(
+                            "SharedMatrices")),
                     new Perspective(30, aspect, 1, 100),
                     new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -10)))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
             );
+            controller.camera = camera;
+            actors.push_back(reinterpret_cast<IDrawable*&&>(camera));
         }
 
         float triangleSize = 0.7071f;
@@ -69,8 +72,9 @@ namespace ThreeEngine {
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(45) *
                     Matrix2::ScaleMatrix(triangleSize * 2, triangleSize * 2);
-            triangle->transform = Matrix::TranslationMatrix({0.0f, 0.0f, .5f, 0}) *
-                                  Matrix(transform2D);
+            triangle->transform =
+                    Matrix::TranslationMatrix({0.0f, 0.0f, .5f, 0}) *
+                    Matrix(transform2D);
             actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
@@ -78,10 +82,12 @@ namespace ThreeEngine {
         }
         { // Small triangle at the center
             auto* triangle = new Triangle3D();
-            Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-135) *
-                                  Matrix2::ScaleMatrix(triangleSize, triangleSize);
+            Matrix2 transform2D =
+                    (TMatrix<2, 2>) Matrix2::RotationMatrix(-135) *
+                    Matrix2::ScaleMatrix(triangleSize, triangleSize);
             triangle->transform =
-                    Matrix::TranslationMatrix({0.0f, 0.0f, -.5f, 0}) * Matrix(transform2D);
+                    Matrix::TranslationMatrix({0.0f, 0.0f, -.5f, 0}) *
+                    Matrix(transform2D);
             actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
@@ -89,7 +95,8 @@ namespace ThreeEngine {
         { // Small triangle at the top right
             auto* triangle = new Triangle3D();
             Matrix2 transform2D = (TMatrix<2, 2>) Matrix2::RotationMatrix(-45) *
-                                  Matrix2::ScaleMatrix(triangleSize, triangleSize);
+                                  Matrix2::ScaleMatrix(triangleSize,
+                                                       triangleSize);
             triangle->transform =
                     Matrix::TranslationMatrix({0.5f, 0.5f, 0.2f, 0}) *
                     Matrix(transform2D);
@@ -104,7 +111,8 @@ namespace ThreeEngine {
             Matrix2 transform2D =
                     (TMatrix<2, 2>) Matrix2::RotationMatrix(90);
             triangle->transform =
-                    Matrix::TranslationMatrix({1.0f, -1.0f, -0.2f, 0}) * Matrix(transform2D);
+                    Matrix::TranslationMatrix({1.0f, -1.0f, -0.2f, 0}) *
+                    Matrix(transform2D);
             actors.push_back((IDrawable*) triangle);
 
             triangle->shaderProgram = colorProgram;
@@ -115,7 +123,7 @@ namespace ThreeEngine {
             auto* square = new Cube();
             square->transform.scale = Vector(triangleSize);
             square->transform.rotation =
-                Quat::FromAngleAxis(-45, Vector(0, 0, 1));
+                    Quat::FromAngleAxis(-45, Vector(0, 0, 1));
             actors.push_back((IDrawable*) square);
 
             square->shaderProgram = colorProgram;
@@ -130,6 +138,9 @@ namespace ThreeEngine {
             parallelogram->shaderProgram = colorProgram;
         }
 
+        for (auto&& actor : actors) {
+            actor->Init();
+        }
     }
 
     void Quaternion::OnReshape(int, int) {

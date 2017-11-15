@@ -38,6 +38,9 @@ namespace ThreeEngine {
     }
 
     void Mesh::Init() {
+        if (isInitiated) {
+            return;
+        }
         isInitiated = true;
 
         glGenVertexArrays(1, &VaoId);
@@ -50,24 +53,24 @@ namespace ThreeEngine {
                 glGenBuffers(1, &VboVertices);
                 glBindBuffer(GL_ARRAY_BUFFER, VboVertices);
                 glBufferData(GL_ARRAY_BUFFER, Vertices.size() * sizeof(Vector),
-                    &Vertices[0], GL_STATIC_DRAW);
+                             &Vertices[0], GL_STATIC_DRAW);
                 glEnableVertexAttribArray(VERTICES);
                 glVertexAttribPointer(VERTICES, 3, GL_FLOAT, GL_FALSE,
-                    sizeof(Vector), 0);
-            }
+                                      sizeof(Vector), 0);
 
-            //Colors
-            if (Colors.empty()) {
-                size_t size = Vertices.empty() ? 1 : Vertices.size();
-                Colors = std::vector<Vector4>(size, { 0, 0, 0, 1 });
+                //Colors
+                if (Colors.empty()) {
+                    size_t size = Vertices.empty() ? 1 : Vertices.size();
+                    Colors = std::vector<Vector4>(size, { 0, 0, 0, 1 });
+                }
+                glGenBuffers(1, &VboColors);
+                glBindBuffer(GL_ARRAY_BUFFER, VboColors);
+                glBufferData(GL_ARRAY_BUFFER, Colors.size() * sizeof(Vector4),
+                             &Colors[0], GL_STREAM_DRAW);
+                glEnableVertexAttribArray(COLORS);
+                glVertexAttribPointer(COLORS, 4, GL_FLOAT, GL_FALSE,
+                                      sizeof(Vector4), 0);
             }
-            glGenBuffers(1, &VboColors);
-            glBindBuffer(GL_ARRAY_BUFFER, VboColors);
-            glBufferData(GL_ARRAY_BUFFER, Colors.size() * sizeof(Vector4),
-                &Colors[0], GL_STREAM_DRAW);
-            glEnableVertexAttribArray(COLORS);
-            glVertexAttribPointer(COLORS, 4, GL_FLOAT, GL_FALSE,
-                sizeof(Vector4), 0);
 
             // Texture Coordinates
             if (!TexCoords.empty()) {
@@ -106,9 +109,11 @@ namespace ThreeEngine {
 
     void Mesh::Draw() {
 
-        glBindBuffer(GL_ARRAY_BUFFER, VboColors);
-        glBufferSubData(GL_ARRAY_BUFFER, 0, Colors.size() * sizeof(Vector4),
-                        &Colors[0]);
+        if (!Colors.empty()) {
+            glBindBuffer(GL_ARRAY_BUFFER, VboColors);
+            glBufferSubData(GL_ARRAY_BUFFER, 0, Colors.size() * sizeof(Vector4),
+                            &Colors[0]);
+        }
 
         glDrawArrays(GL_TRIANGLES, 0, static_cast<GLsizei>(Vertices.size()));
 

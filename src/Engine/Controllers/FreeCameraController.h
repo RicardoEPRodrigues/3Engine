@@ -6,6 +6,7 @@
 #ifndef THREEENGINE_CAMERACONTROLLER_H
 #define THREEENGINE_CAMERACONTROLLER_H
 
+#include "../Camera/Camera.h"
 #include "../Engine.h"
 
 namespace ThreeEngine {
@@ -21,6 +22,8 @@ namespace ThreeEngine {
             Matrix translation, rotation;
 
         public:
+
+            Camera* camera;
 
             FreeCameraController();
 
