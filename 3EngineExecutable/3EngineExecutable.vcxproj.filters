@@ -10,33 +10,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\ColoredActor.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\MoveController.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\TangramAnimation.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Executable\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Executable\LoaderAndScene\ColoredActor.h">
+      <Filter>Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h">
+    <ClInclude Include="..\src\Executable\LoaderAndScene\MoveController.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Executable\Tangram\Tangram.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h">
+    <ClInclude Include="..\src\Executable\LoaderAndScene\TangramAnimation.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

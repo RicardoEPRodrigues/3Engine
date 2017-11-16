@@ -44,6 +44,7 @@
     <ClCompile Include="..\src\Engine\Math\Vector.cpp" />
     <ClCompile Include="..\src\Engine\Math\Vector2.cpp" />
     <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
+    <ClCompile Include="..\src\Engine\SceneManagement\SceneGraph.cpp" />
     <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
     <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
     <ClCompile Include="..\src\Engine\Shapes\Cube.cpp" />
@@ -56,7 +57,7 @@
     <ClCompile Include="..\src\Engine\Shapes\Triangle3D.cpp" />
     <ClCompile Include="..\src\Engine\Time\GlutTimeCalculator.cpp" />
     <ClCompile Include="..\src\Engine\Time\Time.cpp" />
-    <ClCompile Include="..\src\Engine\SceneManagement\SceneGraph.cpp" />
+    <ClCompile Include="..\src\Engine\Utilities\Simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Actor.h" />
@@ -80,6 +81,7 @@
     <ClInclude Include="..\src\Engine\Math\Vector2.h" />
     <ClInclude Include="..\src\Engine\Math\Vector4.h" />
     <ClInclude Include="..\src\Engine\OpenGLUtils.h" />
+    <ClInclude Include="..\src\Engine\SceneManagement\SceneGraph.h" />
     <ClInclude Include="..\src\Engine\Shader\Shader.h" />
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h" />
     <ClInclude Include="..\src\Engine\Shapes\Cube.h" />
@@ -93,10 +95,10 @@
     <ClInclude Include="..\src\Engine\Time\GlutTimeCalculator.h" />
     <ClInclude Include="..\src\Engine\Time\Time.h" />
     <ClInclude Include="..\src\Engine\Utilities\json.hpp" />
-    <ClInclude Include="..\src\Engine\Utilities\singleton.h" />
-    <ClInclude Include="..\src\Engine\SceneManagement\SceneGraph.h" />
     <ClInclude Include="..\src\Engine\Utilities\Manager.h" />
     <ClInclude Include="..\src\Engine\Utilities\Managers.h" />
+    <ClInclude Include="..\src\Engine\Utilities\Simulation.h" />
+    <ClInclude Include="..\src\Engine\Utilities\singleton.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

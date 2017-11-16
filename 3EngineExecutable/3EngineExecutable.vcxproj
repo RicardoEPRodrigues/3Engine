@@ -24,17 +24,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Executable\LoaderAndScene\ColoredActor.cpp" />
     <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp" />
+    <ClCompile Include="..\src\Executable\LoaderAndScene\MoveController.cpp" />
+    <ClCompile Include="..\src\Executable\LoaderAndScene\TangramAnimation.cpp" />
     <ClCompile Include="..\src\Executable\main.cpp" />
-    <ClCompile Include="..\src\Executable\Quaternion\Quaternion.cpp" />
-    <ClCompile Include="..\src\Executable\Tangram3D\Tangram3D.cpp" />
-    <ClCompile Include="..\src\Executable\Tangram\Tangram.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Executable\LoaderAndScene\ColoredActor.h" />
     <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h" />
-    <ClInclude Include="..\src\Executable\Quaternion\Quaternion.h" />
-    <ClInclude Include="..\src\Executable\Tangram3D\Tangram3D.h" />
-    <ClInclude Include="..\src\Executable\Tangram\Tangram.h" />
+    <ClInclude Include="..\src\Executable\LoaderAndScene\MoveController.h" />
+    <ClInclude Include="..\src\Executable\LoaderAndScene\TangramAnimation.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
