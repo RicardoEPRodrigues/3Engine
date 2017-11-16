@@ -12,6 +12,7 @@
 #include "../../Engine/Utilities/Simulation.h"
 #include "ColoredActor.h"
 #include "MoveController.h"
+#include "TangramAnimation.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -93,6 +94,9 @@ namespace ThreeEngine {
         const number side = sqrt(16.0f);
         const number hypotenuse = sqrt(side * side * 2);
 
+        auto tangram = new Actor();
+        tangram->SetParent(root);
+
         {
             { // Big Top Triangle
                 auto* pyramid = new ColoredActor();
@@ -101,7 +105,7 @@ namespace ThreeEngine {
                 pyramid->transform.scale = Vector(2);
                 pyramid->color = Vector4(.8f, .8f, .5f, 1);
                 pyramid->mesh = MeshManager::instance()->Get("Pyramid");
-                pyramid->SetParent(root);
+                pyramid->SetParent(tangram);
             }
             { // Big Left Triangle
                 auto* pyramid = new ColoredActor();
@@ -110,7 +114,7 @@ namespace ThreeEngine {
                 pyramid->transform.scale = Vector(2);
                 pyramid->color = Vector4(.8f, .5f, .5f, 1);
                 pyramid->mesh = MeshManager::instance()->Get("Pyramid");
-                pyramid->SetParent(root);
+                pyramid->SetParent(tangram);
             }
             { // Small Top Right Triangle
                 auto* pyramid = new ColoredActor();
@@ -120,7 +124,7 @@ namespace ThreeEngine {
                                                         -hypotenuse * .25f);
                 pyramid->color = Vector4(.8f, .5f, .5f, 1);
                 pyramid->mesh = MeshManager::instance()->Get("Pyramid");
-                pyramid->SetParent(root);
+                pyramid->SetParent(tangram);
             }
             { // Square
                 auto* cube = new ColoredActor();
@@ -128,7 +132,7 @@ namespace ThreeEngine {
                         Quat::FromAngleAxis(-45, Vector(0, 1, 0));
                 cube->color = Vector4(.2f, .8f, .5f, 1);
                 cube->mesh = MeshManager::instance()->Get("Cube");
-                cube->SetParent(root);
+                cube->SetParent(tangram);
             }
             { // Small Center Triangle
                 auto* pyramid = new ColoredActor();
@@ -136,11 +140,12 @@ namespace ThreeEngine {
                         Quat::FromAngleAxis(-45 - 90, Vector(0, 1, 0));
                 pyramid->color = Vector4(.6f, .5f, .4f, 1);
                 pyramid->mesh = MeshManager::instance()->Get("Pyramid");
-                pyramid->SetParent(root);
+                pyramid->SetParent(tangram);
             }
             { // Parallelogram
                 auto* parallelogram = new ColoredActor();
-                parallelogram->transform.scale *= Vector(hypotenuse * .25f, hypotenuse * .25f, 1);
+                parallelogram->transform.scale *= Vector(hypotenuse * .25f,
+                                                         hypotenuse * .25f, 1);
                 parallelogram->transform.rotation =
                         Quat::FromAngleAxis(-90, Vector(1, 0, 0));
                 parallelogram->transform.translation =
@@ -148,7 +153,7 @@ namespace ThreeEngine {
                 parallelogram->color = Vector4(.2f, .5f, .8f, 1);
                 parallelogram->mesh = MeshManager::instance()->Get(
                         "Parallelogram");
-                parallelogram->SetParent(root);
+                parallelogram->SetParent(tangram);
             }
             { // Medium Triangle
                 auto* pyramid = new ColoredActor();
@@ -157,9 +162,9 @@ namespace ThreeEngine {
                         Quat::FromAngleAxis(90, Vector(0, 1, 0));
                 pyramid->transform.translation =
                         Vector(hypotenuse * .5f, 0, hypotenuse * .5f);
-                pyramid->color = Vector4(.6f, .5f, .4f, 1);
+                pyramid->color = Vector4(.6f, .9f, .4f, 1);
                 pyramid->mesh = MeshManager::instance()->Get("Pyramid");
-                pyramid->SetParent(root);
+                pyramid->SetParent(tangram);
             }
         }
 
@@ -169,6 +174,55 @@ namespace ThreeEngine {
         auto moveController = new MoveController();
         moveController->actor = root;
         Simulation::instance()->Add(moveController);
+
+        auto animation = new TangramAnimation();
+        animation->actors = tangram->children;
+        animation->Init();
+        // FISH
+        { // Big Top Triangle
+            animation->finalTransform[0].translation = Vector(2, 10, 0);
+            animation->finalTransform[0].rotation =
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(180, Vector(0, 1, 0));
+        }
+        { // Big Left Triangle
+            animation->finalTransform[1].translation = Vector(2, 2, 0);
+            animation->finalTransform[1].rotation =
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(90, Vector(0, 1, 0));
+        }
+        { // Small Top Right Triangle
+            animation->finalTransform[2].translation = Vector(-3, 6, 0);
+            animation->finalTransform[2].rotation =
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(-90, Vector(0, 1, 0));
+        }
+        { // Square
+            animation->finalTransform[3].translation = Vector(2, 6, 0);
+            animation->finalTransform[3].rotation =
+                    Quat::FromAngleAxis(180, Vector(0, 1, 0)) *
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(-45, Vector(0, 1, 0));
+        }
+        { // Small Center Triangle
+            animation->finalTransform[4].translation = Vector(-3, 4, 0);
+            animation->finalTransform[4].rotation =
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(90, Vector(0, 1, 0));
+        }
+        { // Parallelogram
+            animation->finalTransform[5].translation = Vector(-1, 6, 0);
+            animation->finalTransform[5].rotation =
+                    Quat::FromAngleAxis(90 + 45, Vector(0, 0, 1));
+        }
+        { // Medium Triangle
+            animation->finalTransform[6].translation =
+                    Vector(2 + side/2.0f, 6, 0);
+            animation->finalTransform[6].rotation =
+                    Quat::FromAngleAxis(90, Vector(1, 0, 0)) *
+                    Quat::FromAngleAxis(-180 - 45, Vector(0, 1, 0));
+        }
+        Simulation::instance()->Add(animation);
     }
 
     void LoaderAndScene::OnReshape(int, int) {

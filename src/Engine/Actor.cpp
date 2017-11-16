@@ -68,7 +68,9 @@ namespace ThreeEngine {
     }
 
     Matrix Actor::GetModelMatrix() {
-        return GetParentModelMatrix() * GetLocalModelMatrix();
+        auto local = GetLocalModelMatrix();
+        auto parent = GetParentModelMatrix();
+        return parent * local;
     }
 
     Matrix Actor::GetLocalModelMatrix() {
@@ -81,7 +83,7 @@ namespace ThreeEngine {
         if (!parent) {
             return Matrix::IdentityMatrix();
         }
-        return parent->GetParentModelMatrix() * parent->GetModelMatrix();
+        return parent->GetModelMatrix();
     }
 
     void Actor::setShaderProgram(

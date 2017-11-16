@@ -263,4 +263,9 @@ namespace ThreeEngine {
     Vector Vector::ProjectOnTo(const Vector& A) const {
         return A * (((*this) | A) / (A | A));
     }
+
+
+    Vector Vector::Lerp(const Vector& v0, const Vector& v1, number time) {
+        return ((1 - time) * v0) + (time * v1);
+    }
 } /* namespace Divisaction */

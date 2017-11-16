@@ -359,6 +359,7 @@ namespace ThreeEngine {
          */
         Vector ProjectOnTo(const Vector& A) const;
 
+        static Vector Lerp(const Vector& v0, const Vector& v1, number time);
     };
 
 } /* namespace Divisaction */

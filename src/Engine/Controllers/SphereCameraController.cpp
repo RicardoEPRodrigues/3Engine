@@ -28,7 +28,7 @@ namespace ThreeEngine {
         // Toggle between Ortho and Perspective
         if (engine->input.Click('p')) {
             if (inPerspective) {
-                camera->SetProjection(new Ortho(-2, 2, -2, 2, 1, 100));
+                camera->SetProjection(new Ortho(-10, 10, -10, 10, 1, 100));
                 inPerspective = false;
             } else {
                 number width = engine->config["window"]["x"];
