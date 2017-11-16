@@ -101,7 +101,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/MeshLoader.cpp src/Engine/Shapes/MeshLoader.h
         src/Engine/Actor.cpp src/Engine/Actor.h
         src/Engine/SceneManagement/SceneGraph.cpp src/Engine/SceneManagement/SceneGraph.h
-        src/Engine/Utilities/Manager.h src/Engine/Utilities/Managers.h)
+        src/Engine/Utilities/Manager.h src/Engine/Utilities/Managers.h src/Engine/Utilities/Simulation.cpp src/Engine/Utilities/Simulation.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
@@ -109,7 +109,7 @@ set(EXECUTABLE_SOURCE_FILES
 #        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
 #        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
         src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
-        )
+        src/Executable/LoaderAndScene/ColoredActor.cpp src/Executable/LoaderAndScene/ColoredActor.h src/Executable/LoaderAndScene/MoveController.cpp src/Executable/LoaderAndScene/MoveController.h)
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 
@@ -142,7 +142,7 @@ if (WIN32) # WINDOWS post build
             )
 endif ()
 
-add_custom_command(TARGET ThreeEngine POST_BUILD
+add_custom_command(TARGET ThreeEngineExecutable POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/

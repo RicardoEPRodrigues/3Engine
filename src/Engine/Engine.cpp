@@ -187,7 +187,6 @@ namespace ThreeEngine {
     void Engine::Display() {
         ++instance->FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        Time::Update();
         instance->PreDraw();
         for (auto& actor : instance->actors) {
             actor->Draw();
@@ -197,7 +196,8 @@ namespace ThreeEngine {
     }
 
     void Engine::Idle() {
-        // TODO Insert Updates here
+        Time::Update();
+        instance->Update();
         instance->input.Update();
         glutPostRedisplay();
     }

@@ -34,4 +34,4 @@
     CLASSNAME* CLASSNAME::_instance = nullptr;
     
 
-#endif THREEENGINE_SINGLETON_H
+#endif // THREEENGINE_SINGLETON_H

@@ -14,13 +14,20 @@
 namespace ThreeEngine {
     class Actor : public IDrawable {
         private:
+
+            std::shared_ptr<ShaderProgram> shaderProgram;
+
+        protected:
             bool isInitiated;
 
             Matrix GetModelMatrix();
+
             Matrix GetLocalModelMatrix();
+
             Matrix GetParentModelMatrix();
 
             std::shared_ptr<ShaderProgram> GetShaderProgram();
+
         public:
             struct Transform {
                 Vector translation{0};
@@ -33,8 +40,6 @@ namespace ThreeEngine {
             std::function<void()> preDraw, postDraw;
 
             std::shared_ptr<Mesh> mesh;
-
-            std::shared_ptr<ShaderProgram> shaderProgram;
 
             Actor* parent;
 
@@ -49,6 +54,9 @@ namespace ThreeEngine {
             void Draw() override;
 
             void SetParent(Actor* parent);
+
+            void setShaderProgram(
+                    const std::shared_ptr<ShaderProgram>& shaderProgram);
     };
 } // namespace ThreeEngine
 

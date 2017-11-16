@@ -10,8 +10,8 @@
 namespace ThreeEngine {
 
     Actor::Actor()
-            : IDrawable(), isInitiated(false), transform(), mesh(nullptr),
-              shaderProgram(nullptr), parent(nullptr) { }
+            : IDrawable(), shaderProgram(nullptr), isInitiated(false),
+              transform(), mesh(nullptr), parent(nullptr) { }
 
     Actor::~Actor() {
         for (auto&& child : children) {
@@ -82,6 +82,11 @@ namespace ThreeEngine {
             return Matrix::IdentityMatrix();
         }
         return parent->GetParentModelMatrix() * parent->GetModelMatrix();
+    }
+
+    void Actor::setShaderProgram(
+            const std::shared_ptr<ShaderProgram>& shaderProgram) {
+        Actor::shaderProgram = shaderProgram;
     }
 
     std::shared_ptr<ShaderProgram> Actor::GetShaderProgram() {

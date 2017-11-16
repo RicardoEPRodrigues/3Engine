@@ -64,7 +64,7 @@ namespace ThreeEngine {
     Cube::~Cube() = default;
 
     void Cube::ColorUpdate() {
-        glUniform4f(shaderProgram->GetUniformLocationId("ModelColor"), color[0],
+        glUniform4f(GetShaderProgram()->GetUniformLocationId("ModelColor"), color[0],
             color[1], color[2],
             color[3]);
     }

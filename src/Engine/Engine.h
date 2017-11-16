@@ -80,6 +80,11 @@ namespace ThreeEngine {
             virtual void OnInit() { }
 
             /**
+             * Called when before when no rendering is being done.
+             */
+            virtual void Update() { }
+
+            /**
              * Called when cleaning OpenGL. Any OpenGL related cleaning needs to be done here.
              * This is called before deleting Actors
              */

@@ -33,6 +33,14 @@ namespace ThreeEngine {
             void OnReshape(int w, int h) override;
 
             void PreDraw() override;
+
+            void Update() override;
+
+            void setupShaders();
+
+            void setupMeshes();
+
+            void OnCleanup() override;
     };
 
 } /* namespace Divisaction */

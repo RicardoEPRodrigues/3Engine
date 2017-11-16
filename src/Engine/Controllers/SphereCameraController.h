@@ -16,7 +16,7 @@ namespace ThreeEngine {
         private:
             Engine* engine;
 
-            bool inPerspective, useQuat;
+            bool inPerspective;
 
             Vector2 previousMouseLocation, yawPitch;
 
