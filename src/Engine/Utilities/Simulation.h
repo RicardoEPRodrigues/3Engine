@@ -15,6 +15,8 @@ namespace ThreeEngine {
 
     class IUpdatable {
         public:
+            virtual ~IUpdatable() = default;
+
             virtual void Update(milliseconds delta) = 0;
     };
 

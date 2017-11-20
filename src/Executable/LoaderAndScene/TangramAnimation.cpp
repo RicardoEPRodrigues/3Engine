@@ -8,7 +8,8 @@
 
 namespace ThreeEngine {
 
-    TangramAnimation::TangramAnimation() = default;
+    TangramAnimation::TangramAnimation()
+            : initialTransform(), actors(), finalTransform() { }
 
     TangramAnimation::~TangramAnimation() = default;
 

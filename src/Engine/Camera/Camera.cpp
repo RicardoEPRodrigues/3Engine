@@ -29,15 +29,11 @@ namespace ThreeEngine {
     }
 
     void Camera::Init() {
-        glGenVertexArrays(1, &vaoId);
-        glBindVertexArray(vaoId);
-        {
-            glGenBuffers(1, &vboId);
-            glBindBuffer(GL_UNIFORM_BUFFER, vboId);
-            glBufferData(GL_UNIFORM_BUFFER, sizeof(glMatrix) * 2, 0, GL_STREAM_DRAW);
-            glBindBufferBase(GL_UNIFORM_BUFFER, uniformBlockBidingID, vboId);
-        }
         glBindVertexArray(0);
+        glGenBuffers(1, &vboId);
+        glBindBuffer(GL_UNIFORM_BUFFER, vboId);
+        glBufferData(GL_UNIFORM_BUFFER, sizeof(glMatrix) * 2, 0, GL_STREAM_DRAW);
+        glBindBufferBase(GL_UNIFORM_BUFFER, uniformBlockBidingID, vboId);
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
         CheckOpenGLError("Could not create VAOs and VBOs.");
     }

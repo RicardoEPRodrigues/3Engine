@@ -13,7 +13,7 @@ namespace ThreeEngine {
 
     class Camera : public IDrawable {
         private:
-            GLuint vaoId, vboId;
+            GLuint vboId;
 
             Matrix* projection, * view;
         public:

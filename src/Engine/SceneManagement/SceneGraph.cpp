@@ -16,11 +16,15 @@ namespace ThreeEngine {
     }
 
     void SceneGraph::Init() {
-        if (!root) {
-            Debug::Log("No root found in Scene Graph");
-            return;
+        if (!camera) {
+            Debug::Log("No Camera found in Scene Graph. Using default Camera.");
+            camera = new Camera();
         }
         camera->Init();
+        if (!root) {
+            Debug::Log("No root found in Scene Graph. Using default actor.");
+            root = new Actor();
+        }
         root->Init();
     }
 
