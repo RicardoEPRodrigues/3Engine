@@ -3,9 +3,7 @@
 //
 
 #include <iostream>
-#include "LoaderAndScene/LoaderAndScene.h"
-
-#include "../Engine/Utilities/Manager.h"
+#include "LightScene/LightScene.h"
 
 using namespace ThreeEngine;
 
@@ -18,7 +16,7 @@ int main(int argc, char* argv[]) {
     srand(static_cast <unsigned> (time(0)));
 
     {
-        LoaderAndScene engine;
+        LightScene engine;
 //        engine.shapeToShow = Quaternion::ShapeType3D::CUBE;
         engine.Init(argc, argv);
         engine.Run();

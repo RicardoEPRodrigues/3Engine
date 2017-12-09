@@ -20,9 +20,9 @@ namespace ThreeEngine {
 
             Vector2 previousMouseLocation, yawPitch;
 
-            Matrix translation, rotation;
-
             Quat quat;
+
+            Vector translation;
 
 
             Vector2 LockMouse();

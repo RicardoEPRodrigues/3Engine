@@ -47,7 +47,9 @@ namespace ThreeEngine {
     enum MouseKeys {
         LEFT = GLUT_LEFT_BUTTON,
         RIGHT = GLUT_RIGHT_BUTTON,
-        MIDDLE = GLUT_MIDDLE_BUTTON
+        MIDDLE = GLUT_MIDDLE_BUTTON,
+        SCROLL_UP = 0x0003,
+        SCROLL_DOWN = 0x0004
     };
 
     enum MouseCursor {

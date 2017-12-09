@@ -30,6 +30,8 @@ namespace ThreeEngine {
                 clickKey.second.second = true;
             }
         }
+        mouseKeys[SCROLL_UP] = false;
+        mouseKeys[SCROLL_DOWN] = false;
     }
 
     void Input::NormalKeysDown(unsigned char key, int, int) {
@@ -72,6 +74,10 @@ namespace ThreeEngine {
     }
 
     void Input::MouseClick(int button, int state, int, int) {
+        if (button == SCROLL_UP || button == SCROLL_DOWN) {
+            if (state == GLUT_UP) return;
+        }
+
         mouseKeys[button] = state == GLUT_DOWN;
     }
 

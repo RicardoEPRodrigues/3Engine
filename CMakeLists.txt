@@ -108,8 +108,10 @@ set(EXECUTABLE_SOURCE_FILES
 #        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
 #        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
 #        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
-        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
-        src/Executable/LoaderAndScene/ColoredActor.cpp src/Executable/LoaderAndScene/ColoredActor.h src/Executable/LoaderAndScene/MoveController.cpp src/Executable/LoaderAndScene/MoveController.h src/Executable/LoaderAndScene/TangramAnimation.cpp src/Executable/LoaderAndScene/TangramAnimation.h)
+#        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
+#        src/Executable/LoaderAndScene/ColoredActor.cpp src/Executable/LoaderAndScene/ColoredActor.h src/Executable/LoaderAndScene/MoveController.cpp src/Executable/LoaderAndScene/MoveController.h src/Executable/LoaderAndScene/TangramAnimation.cpp src/Executable/LoaderAndScene/TangramAnimation.h
+        src/Executable/LightScene/LightScene.h src/Executable/LightScene/LightScene.cpp
+        )
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 

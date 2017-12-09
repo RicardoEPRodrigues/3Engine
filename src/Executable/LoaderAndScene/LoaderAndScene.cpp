@@ -56,6 +56,9 @@ namespace ThreeEngine {
         MeshManager::instance()->Add("Parallelogram",
                                      MeshLoader::instance()->LoadFileOBJ(
                                              "assets/Parallelogram-vtn.obj"));
+        MeshManager::instance()->Add("Horse",
+                                     MeshLoader::instance()->LoadFileOBJ(
+                                             "assets/horse.obj"));
     }
 
     void LoaderAndScene::scene() {

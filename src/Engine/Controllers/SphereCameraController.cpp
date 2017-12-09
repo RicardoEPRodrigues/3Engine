@@ -14,9 +14,9 @@ namespace ThreeEngine {
             inPerspective(true),
             previousMouseLocation(),
             yawPitch(),
-            translation(Matrix::IdentityMatrix()),
-            rotation(Matrix::IdentityMatrix()),
-            quat(), camera(nullptr) { }
+            quat(),
+            translation(0, 0, -100),
+            camera(nullptr) { }
 
     SphereCameraController::~SphereCameraController() = default;
 
@@ -39,26 +39,39 @@ namespace ThreeEngine {
             }
         }
 
+        bool updateCamera = false;
+
         // Check if mouse was clicked
         if (engine->input[MouseKeys::LEFT] || engine->input[MouseKeys::RIGHT]) {
             Vector2 delta = LockMouse();
 
             float sensitivity = Time::Delta() / 500.0f;
             delta *= sensitivity;
-            delta.Y = -delta.Y;
 
             // Always calculate the updated quaternion to even if it is not being used
             // otherwise it will break the toggling.
             quat = (Quat::FromAngleAxis(delta.X, Vector(0, 1, 0)) *
-                    Quat::FromAngleAxis(-delta.Y,
+                    Quat::FromAngleAxis(delta.Y,
                                         Vector(1, 0, 0))).Normalize() * quat;
 
-            camera->SetView(Matrix::TranslationMatrix(Vector(0, 0, -30)) *
-                            quat.ToMatrix());
+            updateCamera = true;
         } else {
             UnlockMouse();
         }
 
+        if (engine->input[MouseKeys::SCROLL_UP]) {
+            translation.Z += Time::Delta();
+            updateCamera = true;
+        }
+        if (engine->input[MouseKeys::SCROLL_DOWN]) {
+            translation.Z -= Time::Delta();
+            updateCamera = true;
+        }
+
+        if (updateCamera) {
+            camera->SetView(Matrix::TranslationMatrix(translation) *
+                            quat.ToMatrix());
+        }
     }
 
     Vector2 SphereCameraController::LockMouse() {
