@@ -10,16 +10,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Executable\LoaderAndScene\ColoredActor.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\LoaderAndScene\MoveController.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Executable\LoaderAndScene\TangramAnimation.cpp">
+    <ClCompile Include="..\src\Executable\LightScene\LightScene.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Executable\main.cpp">
@@ -27,16 +18,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Executable\LoaderAndScene\ColoredActor.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Executable\LoaderAndScene\MoveController.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Executable\LoaderAndScene\TangramAnimation.h">
+    <ClInclude Include="..\src\Executable\LightScene\LightScene.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

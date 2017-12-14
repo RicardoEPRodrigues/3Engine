@@ -24,17 +24,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Executable\LoaderAndScene\ColoredActor.cpp" />
-    <ClCompile Include="..\src\Executable\LoaderAndScene\LoaderAndScene.cpp" />
-    <ClCompile Include="..\src\Executable\LoaderAndScene\MoveController.cpp" />
-    <ClCompile Include="..\src\Executable\LoaderAndScene\TangramAnimation.cpp" />
+    <ClCompile Include="..\src\Executable\LightScene\LightScene.cpp" />
     <ClCompile Include="..\src\Executable\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Executable\LoaderAndScene\ColoredActor.h" />
-    <ClInclude Include="..\src\Executable\LoaderAndScene\LoaderAndScene.h" />
-    <ClInclude Include="..\src\Executable\LoaderAndScene\MoveController.h" />
-    <ClInclude Include="..\src\Executable\LoaderAndScene\TangramAnimation.h" />
+    <ClInclude Include="..\src\Executable\LightScene\LightScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -135,7 +129,8 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\freeglut-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -185,7 +180,8 @@ xcopy "$(SolutionDir)shaders" "$(OutDir)shaders\" /E</Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
