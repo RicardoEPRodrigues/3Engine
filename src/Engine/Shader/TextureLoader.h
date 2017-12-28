@@ -9,13 +9,25 @@
 #include <memory>
 #include "../Utilities/singleton.h"
 #include "Texture.h"
+#include "Cubemap.h"
 
 namespace ThreeEngine {
 
     class TextureLoader {
-            SINGLETON_HEADER(TextureLoader)
+        SINGLETON_HEADER(TextureLoader)
+
         public:
-            std::shared_ptr<Texture> LoadImage(std::string const& filepath);
+            void
+            LoadImageData(std::string const& filepath, ImageData& imageData);
+
+            std::shared_ptr<Texture> LoadTexture(std::string const& filepath);
+
+            std::shared_ptr<Cubemap> LoadCubemap(std::string const& front,
+                                                 std::string const& back,
+                                                 std::string const& top,
+                                                 std::string const& bottom,
+                                                 std::string const& left,
+                                                 std::string const& right);
     };
 
 } /* namespace ThreeEngine */

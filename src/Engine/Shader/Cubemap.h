@@ -1,27 +1,28 @@
 /*
- * File Texture.h in project ThreeEngine
+ * File CubemapTexture.h in project ThreeEngine
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#ifndef THREEENGINE_TEXTURE_H
-#define THREEENGINE_TEXTURE_H
+#ifndef THREEENGINE_CUBEMAPTEXTURE_H
+#define THREEENGINE_CUBEMAPTEXTURE_H
 
 #include <GL/glew.h>
-#include <vector>
 #include "ITexture.h"
 
 namespace ThreeEngine {
 
-    class Texture : public ITexture {
+    class Cubemap : public ITexture {
         private:
             GLuint id;
+
+            void LoadMapSide(GLenum sideTarget, const ImageData& imageData) const;
         public:
             GLenum texUnit = GL_TEXTURE0;
-            ImageData imageData{};
+            ImageData imagesData[6]{{}};
 
-            Texture();
+            Cubemap();
 
-            virtual ~Texture();
+            virtual ~Cubemap();
 
             void Init() override;
 
@@ -34,4 +35,4 @@ namespace ThreeEngine {
 
 } /* namespace ThreeEngine */
 
-#endif //THREEENGINE_TEXTURE_H
+#endif //THREEENGINE_CUBEMAPTEXTURE_H

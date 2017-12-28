@@ -42,7 +42,7 @@ namespace ThreeEngine {
 
             std::shared_ptr<Mesh> mesh;
 
-            std::vector<std::shared_ptr<Texture>> textures;
+            std::vector<std::shared_ptr<ITexture>> textures;
 
             Actor* parent;
 

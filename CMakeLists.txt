@@ -107,7 +107,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Utilities/Simulation.cpp src/Engine/Utilities/Simulation.h
         src/Engine/Shader/Texture.cpp src/Engine/Shader/Texture.h
         src/Engine/Shader/TextureLoader.cpp src/Engine/Shader/TextureLoader.h
-        )
+        src/Engine/Shader/Cubemap.cpp src/Engine/Shader/Cubemap.h src/Engine/Shader/ITexture.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp

@@ -4,6 +4,7 @@ in vec4 in_Position;
 in vec4 in_Color;
 in vec2 in_TexCoord;
 in vec3 in_Normal;
+
 out vec4 ex_Color;
 out vec2 ex_TexCoord;
 out vec3 ex_Normal;
@@ -21,15 +22,9 @@ void main(void)
 
     gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * in_Position;
 
-    mat3 normalMatrix = transpose(inverse(mat3(ViewMatrix) * mat3(ModelMatrix)));
+    mat3 normalMatrix = transpose(inverse(mat3(ViewMatrix * ModelMatrix)));
+//    mat3 normalMatrix = transpose(inverse(mat3(ModelMatrix)));
     ex_Normal = normalMatrix * in_Normal;
-
-//    float zMixer = clamp((ModelMatrix * in_Position).z, 0.3, 1.0);
-//    float xMixer = clamp((ModelMatrix * in_Position).x, 0.3, 0.5);
-//    ex_Color = vec4(ModelColor.x * zMixer + xMixer,
-//                    ModelColor.y * zMixer + xMixer,
-//                    ModelColor.z * zMixer + xMixer,
-//                    ModelColor.w);
     ex_Color = ModelColor;
     ex_TexCoord = in_TexCoord;
 }
