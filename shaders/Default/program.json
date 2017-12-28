@@ -12,5 +12,8 @@
     },
     "uniformBlocks": {
         "SharedMatrices": [0, 0]
+    },
+    "textures": {
+        "tex": 0
     }
 }

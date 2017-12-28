@@ -83,6 +83,13 @@ namespace ThreeEngine {
             (*it)[0] = GetUniformBlockIndex(name.c_str());
             UniformBlockBinding((*it)[0], (*it)[1]);
         }
+        Bind();
+        for (json::iterator it = info["textures"].begin(); it != info["textures"].end(); ++it) {
+            std::string name = it.key();
+            GLint number = *it;
+            SetTextureUnits(name, number);
+        }
+        Unbind();
     }
 
     void ShaderProgram::Add(Shader* shader) {
@@ -169,5 +176,10 @@ namespace ThreeEngine {
             return -1;
         }
         return info["uniformBlocks"][name][1];
+    }
+
+    void ShaderProgram::SetTextureUnits(std::string name, GLint number) {
+        glUniform1i(glGetUniformLocation(id, name.c_str()), number);
+        CheckOpenGLError("Could not set texture units.");
     }
 } /* namespace Divisaction */

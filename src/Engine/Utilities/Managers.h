@@ -10,10 +10,12 @@
 #include "Manager.h"
 #include "../Shader/ShaderProgram.h"
 #include "../Shapes/Mesh.h"
+#include "../Shader/Texture.h"
 
 namespace ThreeEngine {
     typedef Manager<std::shared_ptr<ShaderProgram>> ShaderProgramManager;
     typedef Manager<std::shared_ptr<Mesh>> MeshManager;
+    typedef Manager<std::shared_ptr<Texture>> TextureManager;
 }
 
 #endif //THREEENGINE_MANAGERS_H

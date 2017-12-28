@@ -52,6 +52,8 @@ namespace ThreeEngine {
 
             GLint GetUniformBlockBidingId(const GLchar* name);
 
+            void SetTextureUnits(std::string name, GLint number);
+
             void Bind();
 
             void Unbind();

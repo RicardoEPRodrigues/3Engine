@@ -40,6 +40,8 @@ namespace ThreeEngine {
 
             void setupMeshes();
 
+            void setupTextures();
+
             void OnCleanup() override;
     };
 

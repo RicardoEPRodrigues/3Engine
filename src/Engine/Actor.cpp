@@ -11,7 +11,8 @@ namespace ThreeEngine {
 
     Actor::Actor()
             : IDrawable(), shaderProgram(nullptr), isInitiated(false),
-              transform(), mesh(nullptr), parent(nullptr) { }
+              transform(), mesh(nullptr), textures(), parent(nullptr),
+              children() { }
 
     Actor::~Actor() {
         for (auto&& child : children) {
@@ -32,6 +33,9 @@ namespace ThreeEngine {
         if (mesh) {
             mesh->Init();
         }
+        for (auto&& texture : textures) {
+            texture->Init();
+        }
         for (auto&& child : children) {
             child->Init();
         }
@@ -48,6 +52,11 @@ namespace ThreeEngine {
                     GetShaderProgram()->GetUniformLocationId("ModelMatrix"),
                     1, GL_FALSE,
                     matrixArray);
+
+            for (auto&& texture : textures) {
+                texture->Draw();
+            }
+
             if (preDraw) {
                 preDraw();
             }
@@ -56,6 +65,9 @@ namespace ThreeEngine {
                 postDraw();
             }
 
+            for (auto&& texture : textures) {
+                texture->Unbind();
+            }
             GetShaderProgram()->Unbind();
             mesh->Unbind();
 

@@ -7,6 +7,7 @@
 #include "LightScene.h"
 
 #include "../../Engine/Shapes/MeshLoader.h"
+#include "../../Engine/Shader/TextureLoader.h"
 #include "../../Engine/Camera/Perspective.h"
 #include "../../Engine/Utilities/Managers.h"
 #include "../../Engine/Utilities/Simulation.h"
@@ -29,6 +30,7 @@ namespace ThreeEngine {
     void LightScene::OnInit() {
         setupShaders();
         setupMeshes();
+        setupTextures();
         scene();
     }
 
@@ -43,6 +45,15 @@ namespace ThreeEngine {
         MeshManager::instance()->Add("Horse",
                                      MeshLoader::instance()->LoadFileOBJ(
                                              "assets/Horse-vtn.obj"));
+        MeshManager::instance()->Add("Cube",
+                                     MeshLoader::instance()->LoadFileOBJ(
+                                             "assets/Cube-vtn.obj"));
+    }
+
+    void LightScene::setupTextures() {
+        TextureManager::instance()->Add("Stone",
+                                        TextureLoader::instance()->LoadImage(
+                                                "assets/Stone.jpg"));
     }
 
     void LightScene::scene() {
@@ -70,12 +81,24 @@ namespace ThreeEngine {
                 ShaderProgramManager::instance()->Get("default"));
         sceneGraph->SetRoot(root);
 
-        auto horse = new Actor();
-        horse->mesh = MeshManager::instance()->Get("Horse");
-        auto&& hTransform = horse->transform;
-        hTransform.scale = Vector(0.1f);
-        hTransform.translation.Y = -10;
-        horse->SetParent(root);
+//        {
+//            auto horse = new Actor();
+//            horse->mesh = MeshManager::instance()->Get("Horse");
+//            horse->textures.push_back(TextureManager::instance()->Get("Stone"));
+//            auto&& hTransform = horse->transform;
+//            hTransform.scale = Vector(0.1f);
+//            hTransform.translation.Y = -10;
+//            horse->SetParent(root);
+//        }
+        {
+            auto cube = new Actor();
+            cube->mesh = MeshManager::instance()->Get("Cube");
+            cube->textures.push_back(TextureManager::instance()->Get("Stone"));
+            auto&& hTransform = cube->transform;
+            hTransform.scale = Vector(10);
+            hTransform.translation = {-10, -10, 10};
+            cube->SetParent(root);
+        }
 
         // Initializes all the actors in it.
         sceneGraph->Init();

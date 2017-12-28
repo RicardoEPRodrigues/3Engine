@@ -37,7 +37,7 @@ if (WIN32) # WINDOWS specific properties
         set(GLUT_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-mingw/lib/x64/libfreeglut.a")
         set(GLEW_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/include")
         set(GLEW_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/lib/x64/libglew32.dll.a")
-    else()
+    else ()
         # Assuming MSVC
         set(GLUT_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/include")
         set(GLUT_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/lib/x64/freeglut.lib")
@@ -65,6 +65,8 @@ include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_D
 include_directories(src)
 
 set(ENGINE_SOURCE_FILES
+        # SOIL
+        src/Engine/SOIL/image_DXT.c src/Engine/SOIL/image_DXT.h src/Engine/SOIL/image_helper.c src/Engine/SOIL/image_helper.h src/Engine/SOIL/SOIL.c src/Engine/SOIL/SOIL.h src/Engine/SOIL/stb_image_aug.c src/Engine/SOIL/stb_image_aug.h src/Engine/SOIL/stbi_DDS_aug.h src/Engine/SOIL/stbi_DDS_aug_c.h
         src/Engine/Utilities/json.hpp
         src/Engine/Utilities/singleton.h
         src/Engine/Debug.h
@@ -101,15 +103,19 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/MeshLoader.cpp src/Engine/Shapes/MeshLoader.h
         src/Engine/Actor.cpp src/Engine/Actor.h
         src/Engine/SceneManagement/SceneGraph.cpp src/Engine/SceneManagement/SceneGraph.h
-        src/Engine/Utilities/Manager.h src/Engine/Utilities/Managers.h src/Engine/Utilities/Simulation.cpp src/Engine/Utilities/Simulation.h)
+        src/Engine/Utilities/Manager.h src/Engine/Utilities/Managers.h
+        src/Engine/Utilities/Simulation.cpp src/Engine/Utilities/Simulation.h
+        src/Engine/Shader/Texture.cpp src/Engine/Shader/Texture.h
+        src/Engine/Shader/TextureLoader.cpp src/Engine/Shader/TextureLoader.h
+        )
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
-#        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
-#        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
-#        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
-#        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
-#        src/Executable/LoaderAndScene/ColoredActor.cpp src/Executable/LoaderAndScene/ColoredActor.h src/Executable/LoaderAndScene/MoveController.cpp src/Executable/LoaderAndScene/MoveController.h src/Executable/LoaderAndScene/TangramAnimation.cpp src/Executable/LoaderAndScene/TangramAnimation.h
+        #        src/Executable/Tangram/Tangram.cpp src/Executable/Tangram/Tangram.h
+        #        src/Executable/Tangram3D/Tangram3D.cpp src/Executable/Tangram3D/Tangram3D.h
+        #        src/Executable/Quaternion/Quaternion.cpp src/Executable/Quaternion/Quaternion.h
+        #        src/Executable/LoaderAndScene/LoaderAndScene.cpp src/Executable/LoaderAndScene/LoaderAndScene.h
+        #        src/Executable/LoaderAndScene/ColoredActor.cpp src/Executable/LoaderAndScene/ColoredActor.h src/Executable/LoaderAndScene/MoveController.cpp src/Executable/LoaderAndScene/MoveController.h src/Executable/LoaderAndScene/TangramAnimation.cpp src/Executable/LoaderAndScene/TangramAnimation.h
         src/Executable/LightScene/LightScene.h src/Executable/LightScene/LightScene.cpp
         )
 
@@ -131,7 +137,7 @@ if (WIN32) # WINDOWS post build
     if (DEFINED MINGW)
         set(GLUT_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-mingw/bin/x64/freeglut.dll")
         set(GLEW_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/bin/x64/glew32.dll")
-    else()
+    else ()
         # Assuming MSVC
         set(GLUT_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/bin/x64/freeglut.dll")
         set(GLEW_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")

@@ -5,6 +5,7 @@ in vec4 in_Color;
 in vec2 in_TexCoord;
 in vec3 in_Normal;
 out vec4 ex_Color;
+out vec2 ex_TexCoord;
 
 uniform mat4 ModelMatrix;
 
@@ -26,4 +27,5 @@ void main(void)
 //                    ModelColor.z * zMixer + xMixer,
 //                    ModelColor.w);
     ex_Color = ModelColor;
+    ex_TexCoord = in_TexCoord;
 }
