@@ -11,6 +11,7 @@
 #include "../../Engine/Camera/Perspective.h"
 #include "../../Engine/Utilities/Managers.h"
 #include "../../Engine/Utilities/Simulation.h"
+#include "../../Engine/Actors/SkySphere.h"
 
 #define VERTICES 0
 #define COLORS 1
@@ -43,6 +44,10 @@ namespace ThreeEngine {
                 "shaders/SimpleCubemapping/program.json");
         cubemapProgram->Init();
         ShaderProgramManager::instance()->Add("cubemap", cubemapProgram);
+        auto skysphere = std::make_shared<ShaderProgram>(
+                "shaders/SkySphere/program.json");
+        skysphere->Init();
+        ShaderProgramManager::instance()->Add("skysphere", skysphere);
     }
 
     void LightScene::setupMeshes() {
@@ -52,6 +57,9 @@ namespace ThreeEngine {
         MeshManager::instance()->Add("Cube",
                                      MeshLoader::instance()->LoadFileOBJ(
                                              "assets/Cube-vtn.obj"));
+        MeshManager::instance()->Add("Sphere",
+                                     MeshLoader::instance()->LoadFileOBJ(
+                                             "assets/Sphere.obj"));
     }
 
     void LightScene::setupTextures() {
@@ -121,17 +129,39 @@ namespace ThreeEngine {
 //            hTransform.translation = {-10, -10, 10};
 //            cube->SetParent(root);
 //        }
+//        {
+//            auto horse = new Actor();
+//            horse->setShaderProgram(
+//                    ShaderProgramManager::instance()->Get("cubemap"));
+//            horse->mesh = MeshManager::instance()->Get("Horse");
+//            horse->textures.push_back(
+//                    TextureManager::instance()->Get("GGB3"));
+//            auto&& hTransform = horse->transform;
+//            hTransform.scale = Vector(0.1f);
+//            hTransform.translation.Y = -10;
+//            horse->SetParent(root);
+//        }
         {
-            auto horse = new Actor();
-            horse->setShaderProgram(
-                    ShaderProgramManager::instance()->Get("cubemap"));
-            horse->mesh = MeshManager::instance()->Get("Horse");
-            horse->textures.push_back(
+            auto skySphere = new SkySphere();
+            skySphere->setShaderProgram(
+                    ShaderProgramManager::instance()->Get("skysphere"));
+            skySphere->mesh = MeshManager::instance()->Get("Sphere");
+            skySphere->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
-            auto&& hTransform = horse->transform;
-            hTransform.scale = Vector(0.1f);
-            hTransform.translation.Y = -10;
-            horse->SetParent(root);
+            auto&& hTransform = skySphere->transform;
+            hTransform.scale = Vector(100);
+            skySphere->SetParent(root);
+        }
+        {
+            auto object = new Actor();
+            object->setShaderProgram(
+                    ShaderProgramManager::instance()->Get("cubemap"));
+            object->mesh = MeshManager::instance()->Get("Sphere");
+            object->textures.push_back(
+                    TextureManager::instance()->Get("GGB3"));
+            auto&& hTransform = object->transform;
+            hTransform.scale = Vector(10);
+            object->SetParent(root);
         }
 
         // Initializes all the actors in it.

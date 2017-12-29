@@ -6,7 +6,7 @@
 #include "Quaternion.h"
 #include "../../Engine/Camera/Perspective.h"
 #include "../../Engine/Shapes/Triangle3D.h"
-#include "../../Engine/Shapes/Cube.h"
+#include "Engine/Actors/Cube.h"
 #include "../../Engine/Shapes/Parallelogram3D.h"
 
 #define VERTICES 0

@@ -20,7 +20,7 @@ void main(void)
 {
     vec4 ModelColor = vec4(0.9, 0.5, 0.5, 1.0);
 
-    gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * in_Position;
+    gl_Position = (ProjectionMatrix * ViewMatrix * ModelMatrix * in_Position).xyww;
 
 //    mat3 normalMatrix = transpose(inverse(mat3(ViewMatrix * ModelMatrix)));
     mat3 normalMatrix = transpose(inverse(mat3(ModelMatrix)));

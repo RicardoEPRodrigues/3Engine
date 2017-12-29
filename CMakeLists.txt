@@ -92,7 +92,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Shapes/Triangle.cpp src/Engine/Shapes/Triangle.h
         src/Engine/Shapes/Square.cpp src/Engine/Shapes/Square.h
         src/Engine/Shapes/Parallelogram.cpp src/Engine/Shapes/Parallelogram.h
-        src/Engine/Shapes/Cube.cpp src/Engine/Shapes/Cube.h
+        src/Engine/Actors/Cube.cpp src/Engine/Actors/Cube.h
         src/Engine/Shapes/Triangle3D.cpp src/Engine/Shapes/Triangle3D.h
         src/Engine/Shapes/Parallelogram3D.h src/Engine/Shapes/Parallelogram3D.cpp
         src/Engine/Time/Time.cpp src/Engine/Time/Time.h
@@ -107,7 +107,7 @@ set(ENGINE_SOURCE_FILES
         src/Engine/Utilities/Simulation.cpp src/Engine/Utilities/Simulation.h
         src/Engine/Shader/Texture.cpp src/Engine/Shader/Texture.h
         src/Engine/Shader/TextureLoader.cpp src/Engine/Shader/TextureLoader.h
-        src/Engine/Shader/Cubemap.cpp src/Engine/Shader/Cubemap.h src/Engine/Shader/ITexture.h)
+        src/Engine/Shader/Cubemap.cpp src/Engine/Shader/Cubemap.h src/Engine/Shader/ITexture.h src/Engine/Actors/SkySphere.cpp src/Engine/Actors/SkySphere.h)
 
 set(EXECUTABLE_SOURCE_FILES
         src/Executable/main.cpp
