@@ -22,11 +22,12 @@ const float PI = 3.1415926535897932384626433832795;
 const float PI_2 = 1.57079632679489661923;
 const float PI_4 = 0.785398163397448309616;
 
-vec4 Lambert(vec3 l, vec3 v, vec4 color) {
+vec4 Lambert(vec4 color) {
     return vec4(color.xyz/PI, color.w);
 }
 
 vec3 SpecularIBL( vec3 SpecularColor, float roughness, vec3 N, vec3 V );
+vec3 DeffuseFresnel(vec3 diffuseColor, float roughness, vec3 N, vec3 V);
 
 void main(void)
 {
@@ -38,8 +39,8 @@ void main(void)
     vec3 l = normalize(vec3(-1, -1, -1));
 	vec3 h = normalize(l + e);
 
-	vec3 reflected = reflect(-e, n);
-	reflected = vec3(invV * vec4(reflected, 0.0));
+//	vec3 reflected = reflect(-e, n);
+//	reflected = vec3(invV * vec4(reflected, 0.0));
 //  vec4 reflection = texture(cube_tex, reflected);
 
 //	float ratio = 1.0 /1.3333;
@@ -49,16 +50,31 @@ void main(void)
 
     float roughness = Roughness;
 
-    vec4 diffuse = Lambert(e, reflected, BaseColor);
+    vec4 diffuse = Lambert(BaseColor);
+//    vec4 diffuse = vec4(DeffuseFresnel(BaseColor.xyz, roughness, n, e),
+//                        BaseColor.w);
 
     vec3 specularTint = mix(vec3(0.15,0.15,0.15), BaseColor.xyz, Metallic);
-    vec4 specular = vec4(SpecularIBL(specularTint, roughness, n, e), 1);
+    vec4 specular = vec4(SpecularIBL(specularTint, roughness, n, e),
+                        BaseColor.w);
 
-//    out_Color = diffuse + (reflection * specular);
     out_Color = (1 - Metallic) * diffuse + specular;
 }
 
-// Unreal Engine Implementation
+// Diffuse
+
+vec3 DeffuseFresnel(vec3 diffuseColor, float roughness, vec3 N, vec3 V) {
+    float VoN = dot(V, N);
+
+    float FD90 = 0.5 + 2 * pow(VoN,2) * roughness;
+
+    vec3 lambert = diffuseColor/PI;
+    float fresnel = pow((1 + (FD90 - 1) * pow( 1-VoN, 5) ), 2);
+
+    return lambert * fresnel;
+}
+
+// Specular
 
 float UG1(float NoV, float roughness) {
     float k = pow(roughness + 1 , 2) / 8;

@@ -233,6 +233,25 @@ namespace ThreeEngine {
                             0.6f, 0.1f, 0.1f, 1);
             };
         }
+        {
+            auto object = new Actor();
+            auto program = ShaderProgramManager::instance()->Get("cubemap");
+            object->setShaderProgram(program);
+            object->mesh = MeshManager::instance()->Get("Sphere");
+            object->textures.push_back(
+                    TextureManager::instance()->Get("GGB3"));
+            auto&& hTransform = object->transform;
+            hTransform.scale = Vector(10);
+            hTransform.translation = Vector(-20, 0, 0);
+            object->SetParent(root);
+
+            object->preDraw = [program]() {
+                glUniform1f(program->GetUniformLocationId("Roughness"), 0);
+                glUniform1f(program->GetUniformLocationId("Metallic"), 1);
+                glUniform4f(program->GetUniformLocationId("BaseColor"),
+                            1.000f, 0.766f, 0.336f, 1);
+            };
+        }
 
         // Initializes all the actors in it.
         sceneGraph->Init();
