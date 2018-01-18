@@ -22,6 +22,53 @@ using namespace std;
 
 namespace ThreeEngine {
 
+    class CycleNumber : public IUpdatable {
+        public:
+            float start{}, step{}, count{}, max{};
+
+            void Update(milliseconds delta) override {
+                count += step / delta;
+//                if (count > max) {
+//                    count = start;
+//                }
+                if (count > max || count < start) {
+                    step = -step;
+                }
+            }
+    };
+
+    class MetallicRoughnessControl : public IUpdatable {
+        public:
+            float metallic, roughness, step;
+
+            void Update(milliseconds delta) override {
+                if (Engine::Instance()->input['q']) {
+                    metallic -= step / delta;
+                    if (metallic < 0) {
+                        metallic = 0;
+                    }
+                }
+                if (Engine::Instance()->input['w']) {
+                    metallic += step / delta;
+                    if (metallic > 1) {
+                        metallic = 1;
+                    }
+                }
+                if (Engine::Instance()->input['e']) {
+                    roughness -= step / delta;
+                    if (roughness < 0) {
+                        roughness = 0;
+                    }
+                }
+                if (Engine::Instance()->input['r']) {
+                    roughness += step / delta;
+                    if (roughness > 1) {
+                        roughness = 1;
+                    }
+                }
+            }
+    };
+
 
     LightScene::LightScene()
             : Engine(), sceneGraph(new SceneGraph()), controller() { }
@@ -41,7 +88,7 @@ namespace ThreeEngine {
         defaultProgram->Init();
         ShaderProgramManager::instance()->Add("default", defaultProgram);
         auto cubemapProgram = std::make_shared<ShaderProgram>(
-                "shaders/SimpleCubemapping/program.json");
+                "shaders/BRDF/program.json");
         cubemapProgram->Init();
         ShaderProgramManager::instance()->Add("cubemap", cubemapProgram);
         auto skysphere = std::make_shared<ShaderProgram>(
@@ -154,14 +201,37 @@ namespace ThreeEngine {
         }
         {
             auto object = new Actor();
-            object->setShaderProgram(
-                    ShaderProgramManager::instance()->Get("cubemap"));
+            auto program = ShaderProgramManager::instance()->Get("cubemap");
+            object->setShaderProgram(program);
             object->mesh = MeshManager::instance()->Get("Sphere");
             object->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
             hTransform.scale = Vector(10);
             object->SetParent(root);
+
+            auto shaderController = new MetallicRoughnessControl();
+            shaderController->step = 0.1;
+            Simulation::instance()->Add(shaderController);
+
+//            auto cycleCount = new CycleNumber();
+//            cycleCount->step = 0.1;
+//            cycleCount->start = 0;
+//            cycleCount->max = 1;
+//            Simulation::instance()->Add(cycleCount);
+
+            object->preDraw = [program, shaderController]() {
+//                glUniform1f(program->GetUniformLocationId("Roughness"),
+//                            cycleCount->count);
+//                glUniform1f(program->GetUniformLocationId("Metallic"),
+//                            cycleCount->count);
+                glUniform1f(program->GetUniformLocationId("Roughness"),
+                            shaderController->roughness);
+                glUniform1f(program->GetUniformLocationId("Metallic"),
+                            shaderController->metallic);
+                glUniform4f(program->GetUniformLocationId("BaseColor"),
+                            0.6f, 0.1f, 0.1f, 1);
+            };
         }
 
         // Initializes all the actors in it.
