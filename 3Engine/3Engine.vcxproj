@@ -21,46 +21,11 @@
   <ItemGroup>
     <None Include="..\config\RuntimeConfig.json" />
     <None Include="..\config\SetupConfig.json" />
-    <None Include="..\shaders\SimpleColor\fragment.glsl" />
-    <None Include="..\shaders\SimpleColor\vertex.glsl" />
-    <None Include="..\shaders\Tangram.json" />
-    <None Include="..\shaders\Wireframe.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Engine\Actor.cpp" />
-    <ClCompile Include="..\src\Engine\Camera\Camera.cpp" />
-    <ClCompile Include="..\src\Engine\Camera\LookAt.cpp" />
-    <ClCompile Include="..\src\Engine\Camera\Ortho.cpp" />
-    <ClCompile Include="..\src\Engine\Camera\Perspective.cpp" />
-    <ClCompile Include="..\src\Engine\Controllers\FreeCameraController.cpp" />
-    <ClCompile Include="..\src\Engine\Controllers\SphereCameraController.cpp" />
-    <ClCompile Include="..\src\Engine\Engine.cpp" />
-    <ClCompile Include="..\src\Engine\Input.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Maths.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Matrix.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Matrix2.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Matrix3.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Quat.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Vector.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Vector2.cpp" />
-    <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
-    <ClCompile Include="..\src\Engine\SceneManagement\SceneGraph.cpp" />
-    <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
-    <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Cube.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Mesh.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\MeshLoader.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Parallelogram.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Parallelogram3D.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Square.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Triangle.cpp" />
-    <ClCompile Include="..\src\Engine\Shapes\Triangle3D.cpp" />
-    <ClCompile Include="..\src\Engine\Time\GlutTimeCalculator.cpp" />
-    <ClCompile Include="..\src\Engine\Time\Time.cpp" />
-    <ClCompile Include="..\src\Engine\Utilities\Simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Engine\Actor.h" />
+    <ClInclude Include="..\src\Engine\Actors\Cube.h" />
+    <ClInclude Include="..\src\Engine\Actors\SkySphere.h" />
     <ClInclude Include="..\src\Engine\Camera\Camera.h" />
     <ClInclude Include="..\src\Engine\Camera\LookAt.h" />
     <ClInclude Include="..\src\Engine\Camera\Ortho.h" />
@@ -82,9 +47,12 @@
     <ClInclude Include="..\src\Engine\Math\Vector4.h" />
     <ClInclude Include="..\src\Engine\OpenGLUtils.h" />
     <ClInclude Include="..\src\Engine\SceneManagement\SceneGraph.h" />
+    <ClInclude Include="..\src\Engine\Shader\Cubemap.h" />
+    <ClInclude Include="..\src\Engine\Shader\ITexture.h" />
     <ClInclude Include="..\src\Engine\Shader\Shader.h" />
     <ClInclude Include="..\src\Engine\Shader\ShaderProgram.h" />
-    <ClInclude Include="..\src\Engine\Shapes\Cube.h" />
+    <ClInclude Include="..\src\Engine\Shader\Texture.h" />
+    <ClInclude Include="..\src\Engine\Shader\TextureLoader.h" />
     <ClInclude Include="..\src\Engine\Shapes\Mesh.h" />
     <ClInclude Include="..\src\Engine\Shapes\MeshLoader.h" />
     <ClInclude Include="..\src\Engine\Shapes\Parallelogram.h" />
@@ -92,6 +60,12 @@
     <ClInclude Include="..\src\Engine\Shapes\Square.h" />
     <ClInclude Include="..\src\Engine\Shapes\Triangle.h" />
     <ClInclude Include="..\src\Engine\Shapes\Triangle3D.h" />
+    <ClInclude Include="..\src\Engine\SOIL\image_DXT.h" />
+    <ClInclude Include="..\src\Engine\SOIL\image_helper.h" />
+    <ClInclude Include="..\src\Engine\SOIL\SOIL.h" />
+    <ClInclude Include="..\src\Engine\SOIL\stbi_DDS_aug.h" />
+    <ClInclude Include="..\src\Engine\SOIL\stbi_DDS_aug_c.h" />
+    <ClInclude Include="..\src\Engine\SOIL\stb_image_aug.h" />
     <ClInclude Include="..\src\Engine\Time\GlutTimeCalculator.h" />
     <ClInclude Include="..\src\Engine\Time\Time.h" />
     <ClInclude Include="..\src\Engine\Utilities\json.hpp" />
@@ -99,6 +73,47 @@
     <ClInclude Include="..\src\Engine\Utilities\Managers.h" />
     <ClInclude Include="..\src\Engine\Utilities\Simulation.h" />
     <ClInclude Include="..\src\Engine\Utilities\singleton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Engine\Actor.cpp" />
+    <ClCompile Include="..\src\Engine\Actors\Cube.cpp" />
+    <ClCompile Include="..\src\Engine\Actors\SkySphere.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\Camera.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\LookAt.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\Ortho.cpp" />
+    <ClCompile Include="..\src\Engine\Camera\Perspective.cpp" />
+    <ClCompile Include="..\src\Engine\Controllers\FreeCameraController.cpp" />
+    <ClCompile Include="..\src\Engine\Controllers\SphereCameraController.cpp" />
+    <ClCompile Include="..\src\Engine\Engine.cpp" />
+    <ClCompile Include="..\src\Engine\Input.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Maths.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix2.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Matrix3.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Quat.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector2.cpp" />
+    <ClCompile Include="..\src\Engine\Math\Vector4.cpp" />
+    <ClCompile Include="..\src\Engine\SceneManagement\SceneGraph.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\Cubemap.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\Shader.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\Texture.cpp" />
+    <ClCompile Include="..\src\Engine\Shader\TextureLoader.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Mesh.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\MeshLoader.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Parallelogram3D.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Square.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Triangle.cpp" />
+    <ClCompile Include="..\src\Engine\Shapes\Triangle3D.cpp" />
+    <ClCompile Include="..\src\Engine\SOIL\image_DXT.c" />
+    <ClCompile Include="..\src\Engine\SOIL\image_helper.c" />
+    <ClCompile Include="..\src\Engine\SOIL\SOIL.c" />
+    <ClCompile Include="..\src\Engine\SOIL\stb_image_aug.c" />
+    <ClCompile Include="..\src\Engine\Time\GlutTimeCalculator.cpp" />
+    <ClCompile Include="..\src\Engine\Time\Time.cpp" />
+    <ClCompile Include="..\src\Engine\Utilities\Simulation.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -198,7 +213,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;_CRT_SECURE_NO_WARNINGS;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
@@ -252,7 +267,7 @@ xcopy "$(SolutionDir)assets" "$(OutDir)assets\" /E</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OS_WIN;_CRT_NO_VA_START_VALIDATION;_CRT_SECURE_NO_WARNINGS;RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>

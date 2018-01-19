@@ -10,7 +10,7 @@
 #include "Math/Quat.h"
 #include "Shapes/Mesh.h"
 #include "Shader/ShaderProgram.h"
-#include "Engine/Shader/Texture.h"
+#include "Shader/Texture.h"
 
 namespace ThreeEngine {
     class Actor : public IDrawable {

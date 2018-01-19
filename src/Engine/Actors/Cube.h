@@ -7,10 +7,10 @@
 #define THREEENGINE_CUBE_H
 
 #include <GL/glew.h>
-#include "Engine/Actor.h"
-#include "Engine/Shader/ShaderProgram.h"
-#include "Engine/OpenGLUtils.h"
-#include "Engine/Shapes/Mesh.h"
+#include "../Actor.h"
+#include "../Shader/ShaderProgram.h"
+#include "../OpenGLUtils.h"
+#include "../Shapes/Mesh.h"
 
 namespace ThreeEngine {
 
