@@ -50,9 +50,9 @@ void main(void)
 
     float roughness = Roughness;
 
-    vec4 diffuse = Lambert(BaseColor);
-//    vec4 diffuse = vec4(DeffuseFresnel(BaseColor.xyz, roughness, n, e),
-//                        BaseColor.w);
+//    vec4 diffuse = Lambert(BaseColor);
+    vec4 diffuse = vec4(DeffuseFresnel(BaseColor.xyz, roughness, n, e),
+                        BaseColor.w);
 
     vec3 specularTint = mix(vec3(0.15,0.15,0.15), BaseColor.xyz, Metallic);
     vec4 specular = vec4(SpecularIBL(specularTint, roughness, n, e),

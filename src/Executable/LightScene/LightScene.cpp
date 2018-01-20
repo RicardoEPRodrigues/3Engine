@@ -88,9 +88,13 @@ namespace ThreeEngine {
         defaultProgram->Init();
         ShaderProgramManager::instance()->Add("default", defaultProgram);
         auto cubemapProgram = std::make_shared<ShaderProgram>(
-                "shaders/BRDF/program.json");
+                "shaders/SimpleCubemapping/program.json");
         cubemapProgram->Init();
         ShaderProgramManager::instance()->Add("cubemap", cubemapProgram);
+        auto brdfProgram = std::make_shared<ShaderProgram>(
+                "shaders/BRDF/program.json");
+        brdfProgram->Init();
+        ShaderProgramManager::instance()->Add("BRDF", brdfProgram);
         auto skysphere = std::make_shared<ShaderProgram>(
                 "shaders/SkySphere/program.json");
         skysphere->Init();
@@ -107,6 +111,9 @@ namespace ThreeEngine {
         MeshManager::instance()->Add("Sphere",
                                      MeshLoader::instance()->LoadFileOBJ(
                                              "assets/Sphere.obj"));
+        MeshManager::instance()->Add("Dragon",
+                                     MeshLoader::instance()->LoadFileOBJ(
+                                             "assets/dragon_smooth.obj"));
     }
 
     void LightScene::setupTextures() {
@@ -177,16 +184,15 @@ namespace ThreeEngine {
 //            cube->SetParent(root);
 //        }
 //        {
-//            auto horse = new Actor();
-//            horse->setShaderProgram(
-//                    ShaderProgramManager::instance()->Get("cubemap"));
-//            horse->mesh = MeshManager::instance()->Get("Horse");
-//            horse->textures.push_back(
+//            auto object = new Actor();
+//            auto program = ShaderProgramManager::instance()->Get("cubemap");
+//            object->setShaderProgram(program);
+//            object->mesh = MeshManager::instance()->Get("Sphere");
+//            object->textures.push_back(
 //                    TextureManager::instance()->Get("GGB3"));
-//            auto&& hTransform = horse->transform;
-//            hTransform.scale = Vector(0.1f);
-//            hTransform.translation.Y = -10;
-//            horse->SetParent(root);
+//            auto&& hTransform = object->transform;
+//            hTransform.scale = Vector(10);
+//            object->SetParent(root);
 //        }
         {
             auto skySphere = new SkySphere();
@@ -199,15 +205,70 @@ namespace ThreeEngine {
             hTransform.scale = Vector(100);
             skySphere->SetParent(root);
         }
+//        {
+//            auto object = new Actor();
+//            auto program = ShaderProgramManager::instance()->Get("BRDF");
+//            object->setShaderProgram(program);
+//            object->mesh = MeshManager::instance()->Get("Dragon");
+//            object->textures.push_back(
+//                    TextureManager::instance()->Get("GGB3"));
+//            auto&& hTransform = object->transform;
+//            hTransform.scale = Vector(80.0f);
+//            hTransform.translation = Vector(0, 0, 0);
+//            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
+//            object->SetParent(root);
+//
+//            object->preDraw = [program]() {
+//                glUniform1f(program->GetUniformLocationId("Roughness"), 0.3f);
+//                glUniform1f(program->GetUniformLocationId("Metallic"), 0);
+//                glUniform4f(program->GetUniformLocationId("BaseColor"),
+//                            1.000f, 0.266f, 0.336f, 1);
+//            };
+//        }
+//        {
+//            auto object = new Actor();
+//            auto program = ShaderProgramManager::instance()->Get("BRDF");
+//            object->setShaderProgram(program);
+//            object->mesh = MeshManager::instance()->Get("Sphere");
+//            object->textures.push_back(
+//                    TextureManager::instance()->Get("GGB3"));
+//            auto&& hTransform = object->transform;
+//            hTransform.scale = Vector(10);
+//            object->SetParent(root);
+//
+//            auto shaderController = new MetallicRoughnessControl();
+//            shaderController->step = 0.1;
+//            Simulation::instance()->Add(shaderController);
+//
+////            auto cycleCount = new CycleNumber();
+////            cycleCount->step = 0.1;
+////            cycleCount->start = 0;
+////            cycleCount->max = 1;
+////            Simulation::instance()->Add(cycleCount);
+//
+//            object->preDraw = [program, shaderController]() {
+////                glUniform1f(program->GetUniformLocationId("Roughness"),
+////                            cycleCount->count);
+////                glUniform1f(program->GetUniformLocationId("Metallic"),
+////                            cycleCount->count);
+//                glUniform1f(program->GetUniformLocationId("Roughness"),
+//                            shaderController->roughness);
+//                glUniform1f(program->GetUniformLocationId("Metallic"),
+//                            shaderController->metallic);
+//                glUniform4f(program->GetUniformLocationId("BaseColor"),
+//                            0.6f, 0.1f, 0.1f, 1);
+//            };
+//        }
         {
             auto object = new Actor();
-            auto program = ShaderProgramManager::instance()->Get("cubemap");
+            auto program = ShaderProgramManager::instance()->Get("BRDF");
             object->setShaderProgram(program);
-            object->mesh = MeshManager::instance()->Get("Sphere");
+            object->mesh = MeshManager::instance()->Get("Dragon");
             object->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
             hTransform.scale = Vector(10);
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
             object->SetParent(root);
 
             auto shaderController = new MetallicRoughnessControl();
@@ -235,14 +296,15 @@ namespace ThreeEngine {
         }
         {
             auto object = new Actor();
-            auto program = ShaderProgramManager::instance()->Get("cubemap");
+            auto program = ShaderProgramManager::instance()->Get("BRDF");
             object->setShaderProgram(program);
-            object->mesh = MeshManager::instance()->Get("Sphere");
+            object->mesh = MeshManager::instance()->Get("Dragon");
             object->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
-            hTransform.scale = Vector(10);
+            hTransform.scale = Vector(10.0f);
             hTransform.translation = Vector(-20, 0, 0);
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
             object->SetParent(root);
 
             object->preDraw = [program]() {
@@ -250,6 +312,26 @@ namespace ThreeEngine {
                 glUniform1f(program->GetUniformLocationId("Metallic"), 1);
                 glUniform4f(program->GetUniformLocationId("BaseColor"),
                             1.000f, 0.766f, 0.336f, 1);
+            };
+        }
+        {
+            auto object = new Actor();
+            auto program = ShaderProgramManager::instance()->Get("BRDF");
+            object->setShaderProgram(program);
+            object->mesh = MeshManager::instance()->Get("Dragon");
+            object->textures.push_back(
+                    TextureManager::instance()->Get("GGB3"));
+            auto&& hTransform = object->transform;
+            hTransform.scale = Vector(10.0f);
+            hTransform.translation = Vector(20, 0, 0);
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
+            object->SetParent(root);
+
+            object->preDraw = [program]() {
+                glUniform1f(program->GetUniformLocationId("Roughness"), 0.3f);
+                glUniform1f(program->GetUniformLocationId("Metallic"), 0);
+                glUniform4f(program->GetUniformLocationId("BaseColor"),
+                            0.766f, 1.000f, 0.336f, 1);
             };
         }
 
