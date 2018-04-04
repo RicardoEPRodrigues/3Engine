@@ -121,14 +121,14 @@ set(EXECUTABLE_SOURCE_FILES
 
 set(TESTS_SOURCE_FILES src/Tests/catch.hpp src/Tests/tests.cpp src/Tests/VectorTests.h src/Tests/MatrixTests.h)
 
-add_library(ThreeEngine SHARED ${ENGINE_SOURCE_FILES})
-target_link_libraries(ThreeEngine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+add_library(3Engine SHARED ${ENGINE_SOURCE_FILES})
+target_link_libraries(3Engine ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
-add_executable(ThreeEngineExecutable ${EXECUTABLE_SOURCE_FILES})
-target_link_libraries(ThreeEngineExecutable ThreeEngine)
+add_executable(3EngineExecutable ${EXECUTABLE_SOURCE_FILES})
+target_link_libraries(3EngineExecutable 3Engine)
 
-add_executable(ThreeEngineTests ${TESTS_SOURCE_FILES})
-target_link_libraries(ThreeEngineTests ThreeEngine)
+add_executable(3EngineTests ${TESTS_SOURCE_FILES})
+target_link_libraries(3EngineTests 3Engine)
 
 # Post build commands
 
@@ -143,16 +143,24 @@ if (WIN32) # WINDOWS post build
         set(GLEW_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")
     endif ()
 
-    add_custom_command(TARGET ThreeEngine POST_BUILD
+    add_custom_command(TARGET 3Engine POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E echo Copying Libraries
             COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
             )
 endif ()
 
-add_custom_command(TARGET ThreeEngineExecutable POST_BUILD
+add_custom_command(TARGET 3EngineExecutable POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E echo Copying Config files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config/
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders/
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${EXECUTABLE_OUTPUT_PATH}/assets/
         )
+
+if (UNIX AND NOT APPLE)
+    add_custom_target(CreateAppImage
+            DEPENDS 3EngineExecutable
+            COMMAND /bin/sh "${CMAKE_CURRENT_SOURCE_DIR}/BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/BuildTools/AppImage/3Engine.AppDir" "${EXECUTABLE_OUTPUT_PATH}/../AppImage"
+#            COMMAND /bin/sh "${CMAKE_CURRENT_SOURCE_DIR}/BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/BuildTools/AppImage/3Engine.AppDir" "${EXECUTABLE_OUTPUT_PATH}/AppImage"
+            )
+endif ()

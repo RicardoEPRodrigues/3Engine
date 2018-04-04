@@ -2,9 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="ThreeEngine" targetName="ThreeEngine" />
-      <config projectName="ThreeEngine" targetName="ThreeEngineTests" />
-      <config projectName="ThreeEngine" targetName="ThreeEngineExecutable" />
+      <config projectName="ThreeEngine" targetName="3EngineExecutable" />
+      <config projectName="ThreeEngine" targetName="3EngineTests" />
+      <config projectName="ThreeEngine" targetName="CreateAppImage" />
+      <config projectName="ThreeEngine" targetName="3Engine" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,8 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp" afterPath="$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/bin/release/" />
@@ -37,59 +38,47 @@
     <favorites_list name="ThreeEngine" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5018528">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="LightScene.cpp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="760">
-                  <caret line="207" column="57" lean-forward="false" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
-                  <folding>
-                    <element signature="e#116#132#0" expanded="true" />
-                    <marker date="1516295069251" expanded="true" signature="1520:1561" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="program.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/shaders/BRDF/program.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="vertex.glsl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/shaders/BRDF/vertex.glsl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fragment.glsl" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/shaders/BRDF/fragment.glsl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LightScene.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3276">
+              <caret line="182" column="54" selection-start-line="182" selection-start-column="54" selection-end-line="182" selection-end-column="54" />
+              <folding>
+                <element signature="e#116#132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="844">
+              <caret line="163" column="98" selection-start-line="163" selection-start-column="98" selection-end-line="163" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3Engine.desktop" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,7 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>float</find>
       <find>vector</find>
       <find>Tangram3D</find>
       <find>Examples</find>
@@ -131,6 +119,7 @@
       <find>float3</find>
       <find>float2</find>
       <find>roughness</find>
+      <find>EXIT_FAILURE</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -153,6 +142,7 @@
       <replace>CubemapTexture</replace>
       <replace>vec3</replace>
       <replace>vec2</replace>
+      <replace>1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -161,10 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Executable/LoaderAndScene/MoveController.cpp" />
-        <option value="$PROJECT_DIR$/src/Engine/Math/Quat.cpp" />
-        <option value="$PROJECT_DIR$/src/Engine/Math/Vector.h" />
-        <option value="$PROJECT_DIR$/src/Engine/Math/Vector.cpp" />
         <option value="$PROJECT_DIR$/src/Executable/LoaderAndScene/TangramAnimation.h" />
         <option value="$PROJECT_DIR$/src/Engine/Controllers/FreeCameraController.cpp" />
         <option value="$PROJECT_DIR$/src/Engine/Utilities/Simulation.h" />
@@ -180,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/Engine/Input.h" />
         <option value="$PROJECT_DIR$/src/Engine/Input.cpp" />
         <option value="$PROJECT_DIR$/src/Engine/Controllers/SphereCameraController.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/shaders/Default/program.json" />
         <option value="$PROJECT_DIR$/src/Engine/Shader/ShaderProgram.h" />
         <option value="$PROJECT_DIR$/src/Engine/Shader/ShaderProgram.cpp" />
@@ -212,6 +197,11 @@
         <option value="$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.cpp" />
         <option value="$PROJECT_DIR$/shaders/BRDF/fragment.glsl" />
         <option value="$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp" />
+        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun" />
+        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop.desktop" />
+        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/BuildTools/AppImage/build.sh" />
       </list>
     </option>
   </component>
@@ -229,158 +219,60 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds">
     <option name="y" value="33" />
-    <option name="width" value="1920" />
-    <option name="height" value="2048" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>C/C++</id>
-          </State>
-          <State>
-            <id>GeneralC/C++</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>ClangTidyInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="width" value="1906" />
+    <option name="height" value="1536" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
-              <item name="BRDF" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
-              <item name="Color3D" type="462c0819:PsiDirectoryNode" />
+              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="shaders" type="462c0819:PsiDirectoryNode" />
-              <item name="SimpleCubemapping" type="462c0819:PsiDirectoryNode" />
+              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
+              <item name="AppImage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
               <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Actors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Camera" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Shapes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="SOIL" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Utilities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Executable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Executable" type="462c0819:PsiDirectoryNode" />
-              <item name="LightScene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ThreeEngine" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Executable" type="462c0819:PsiDirectoryNode" />
-              <item name="Quaternion" type="462c0819:PsiDirectoryNode" />
+              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
+              <item name="AppImage" type="462c0819:PsiDirectoryNode" />
+              <item name="3Engine.AppDir" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -389,14 +281,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Simple-OpenGL-Image-Library" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="SearchEverywhereHistoryKey" value="cmakeli&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/CMakeLists.txt&#10;cmake&#9;ACTION&#9;ActivateCMakeToolWindow&#10;light&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LightScene/LightScene.cpp&#10;engin&#9;null&#9;null&#10;cubem&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shader/Cubemap.cpp&#10;actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;free&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Controllers/FreeCameraController.cpp&#10;controller&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/MoveController.cpp&#10;Vector&#9;null&#9;null&#10;quat&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Quat.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.cpp&#10;MEsh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;act&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;debug&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Debug.h&#10;acto&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Loader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/LoaderAndScene.h&#10;mesh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/OpenGLUtils.h&#10;meshlo&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/MeshLoader.cpp&#10;Cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.h&#10;V&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector4.h&#10;vector2.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;program.json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;camera&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Camera/Camera.h&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/main.cpp&#10;shader&#9;null&#9;null&#10;input&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Input.h&#10;engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;Time.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/Time.h&#10;gluttim&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/GlutTimeCalculator.cpp&#10;Engine.cp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.cpp&#10;Camera&#9;null&#9;null&#10;Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h" />
-    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="yaml" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Simple-OpenGL-Image-Library" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -426,34 +318,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ThreeEngineExecutable">
-    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
-      <envs />
-    </configuration>
-    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
-      <envs />
-    </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineExecutable" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineExecutable">
-      <envs />
-    </configuration>
-    <configuration name="ThreeEngine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngine" CONFIG_NAME="Debug">
-      <envs />
-    </configuration>
-    <configuration name="ThreeEngineExecutable" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineExecutable" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineExecutable">
-      <envs />
-    </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Catch.3Engine Tests" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ThreeEngine" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ThreeEngineExecutable" />
+  <component name="RunManager" selected="Application.CreateAppImage">
+    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST" />
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST" />
+    <configuration name="3Engine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="3Engine" CONFIG_NAME="Debug" />
+    <configuration name="3EngineExecutable" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="3EngineExecutable" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="3EngineExecutable" />
+    <configuration name="3EngineTests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="3EngineTests" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ThreeEngine" RUN_TARGET_NAME="3EngineExecutable" EXPLICIT_BUILD_TARGET_NAME="all" />
+    <configuration name="CreateAppImage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ThreeEngine" TARGET_NAME="CreateAppImage" CONFIG_NAME="Debug" />
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.3Engine" />
+      <item itemvalue="Application.3EngineExecutable" />
+      <item itemvalue="Application.3EngineTests" />
+      <item itemvalue="Application.CreateAppImage" />
+      <item itemvalue="Catch.3Engine Tests" />
     </list>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -516,6 +399,8 @@
       <workItem from="1515679884412" duration="1358000" />
       <workItem from="1516202233374" duration="12000" />
       <workItem from="1516202255281" duration="22708000" />
+      <workItem from="1522793983423" duration="1225000" />
+      <workItem from="1522795218536" duration="6773000" />
     </task>
     <servers />
   </component>
@@ -534,7 +419,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337731000" />
+    <option name="totallyTimeSpent" value="345729000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,51 +431,51 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="33" width="1920" height="2048" extended-state="4" />
+    <frame x="0" y="33" width="1906" height="1536" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21439916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20787401" sideWeight="0.4667011" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.253212" sideWeight="0.66959214" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23715204" sideWeight="0.620031" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238247" sideWeight="0.37460977" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922912" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20770878" sideWeight="0.5332989" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24977416" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3190694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993036" visible="true" weight="0.16391698" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" visible="true" weight="0.25291544" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.23688047" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5045237" side_tool="true" weight="0.45189506" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49973586" weight="0.32961783" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32922912" />
+      <window_info id="Structure" order="1" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4954763" weight="0.33746356" />
+      <window_info id="Favorites" order="2" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5332989" weight="0.20770878" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20787401" sideWeight="0.4667011" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.253212" sideWeight="0.66959214" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23715204" sideWeight="0.620031" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.238247" sideWeight="0.37460977" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.49607587" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21439916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24977416" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296588" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922912" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20770878" sideWeight="0.5332989" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3190694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21439916" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32922912" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.23715204" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5332989" visible="true" weight="0.20770878" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49607587" weight="0.32958803" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.37460977" side_tool="true" weight="0.238247" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" weight="0.253212" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3298153" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +496,30 @@
       </breakpoints-dialog>
       <option name="time" value="79" />
     </breakpoint-manager>
-    <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
+        <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
+        <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+        <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
+        <item name="3Engine" type="462c0819:PsiDirectoryNode" />
+        <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
+        <item name="AppImage" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="ThreeEngine" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -628,143 +536,79 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shader/Texture.h">
+    <entry file="file://$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="3276">
+          <caret line="182" column="54" selection-start-line="182" selection-start-column="54" selection-end-line="182" selection-end-column="54" />
+          <folding>
+            <element signature="e#116#132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Default/vertex.glsl">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/BRDF/program.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="198">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/GoldenGateBridge3/negx.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="65" selection-start-line="4" selection-start-column="65" selection-end-line="4" selection-end-column="65" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Mesh.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1171">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/IDrawable.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Debug.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Shader/Cubemap.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/negx.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/negy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/negz.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/posx.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/posy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/FortPoint/posz.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Shader/Cubemap.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shaders/SimpleCubemapping/fragment.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Mesh.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Triangle.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Square.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Parallelogram3D.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Shapes/Parallelogram.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="700">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -778,21 +622,21 @@
     <entry file="file://$PROJECT_DIR$/src/Engine/Engine.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Actors/Cube.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1211">
-          <caret line="65" column="18" lean-forward="false" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Actors/Cube.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -806,54 +650,35 @@
     <entry file="file://$PROJECT_DIR$/shaders/SkySphere/program.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Camera/Camera.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/SkySphere/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shaders/SkySphere/vertex.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
-          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-          <folding />
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Actors/SkySphere.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Actors/SkySphere.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -861,7 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,47 +700,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shaders/SimpleCubemapping/program.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Color3D/program.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Color3D/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/Color3D/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/BRDF/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="19" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -925,15 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="107" column="38" lean-forward="true" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shaders/BRDF/program.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,23 +721,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="93" column="40" lean-forward="true" selection-start-line="93" selection-start-column="40" selection-end-line="95" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shaders/BRDF/fragment.glsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding />
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Actor.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-250">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -965,34 +742,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1053">
           <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Engine/Controllers/SphereCameraController.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Utilities/Simulation.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/BRDF/vertex.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="207" column="57" lean-forward="false" selection-start-line="207" selection-start-column="57" selection-end-line="207" selection-end-column="57" />
+        <state relative-caret-position="3276">
+          <caret line="182" column="54" selection-start-line="182" selection-start-column="54" selection-end-line="182" selection-end-column="54" />
           <folding>
             <element signature="e#116#132#0" expanded="true" />
-            <marker date="1516295069251" expanded="true" signature="1520:1561" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shaders/BRDF/program.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="844">
+          <caret line="163" column="98" selection-start-line="163" selection-start-column="98" selection-end-line="163" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>

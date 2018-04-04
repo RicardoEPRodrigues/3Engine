@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Get local path
+HERE="$(dirname "$(readlink -f "${0}")")"
+# Add folder with executables to the Path
+export PATH="${HERE}"/bin/:"${PATH}"
+# Add folder with libraries to the Library Path
+export LD_LIBRARY_PATH="${HERE}"/lib/:"${LD_LIBRARY_PATH}"
+# Get executable command from .desktop file
+EXEC=$(grep -e '^Exec=.*' "${HERE}"/*.desktop | head -n 1 | cut -d "=" -f 2 | cut -d " " -f 1)
+# Move into local path folder (this is needed if the program needs to access relative path directories
+cd ${HERE}
+# Execute program
+exec "${EXEC}"
