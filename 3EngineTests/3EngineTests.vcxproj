@@ -19,17 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Tests\catch.hpp" />
-    <ClInclude Include="..\src\Tests\MatrixTests.h" />
-    <ClInclude Include="..\src\Tests\VectorTests.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Tests\tests.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\3Engine\3Engine.vcxproj">
       <Project>{d9085c74-190e-4e3c-80ea-3405e00c8a19}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MatrixTests.h" />
+    <ClInclude Include="src\VectorTests.h" />
+    <ClInclude Include="src\catch.hpp" />
+    <ClCompile Include="src\tests.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

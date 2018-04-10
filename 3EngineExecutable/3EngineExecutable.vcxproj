@@ -24,11 +24,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Executable\LightScene\LightScene.cpp" />
-    <ClCompile Include="..\src\Executable\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\Executable\LightScene\LightScene.h" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\LightScene\LightScene.cpp" />
+    <ClInclude Include="src\LightScene\LightScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

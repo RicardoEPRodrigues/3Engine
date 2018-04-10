@@ -1,0 +1,16 @@
+{
+  "window": {
+    "x": 800,
+    "y": 800,
+    "caption": "3Engine: Hello World"
+  },
+  "opengl": {
+    "major": 4,
+    "minor": 3
+  },
+  "viewport": {
+    "clearColor": [0.0, 0.01, 0.1, 1.0],
+    "depthRange": [0.0, 1.0],
+    "clearDepth": 1.0
+  }
+}

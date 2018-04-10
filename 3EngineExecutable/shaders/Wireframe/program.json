@@ -1,0 +1,11 @@
+{
+    "vertex": "shaders/Wireframe/vertex.glsl",
+    "fragment": "shaders/Wireframe/fragment.glsl",
+    "attributes": [
+        [0, "in_Position"],
+        [1, "in_Color"]
+    ],
+    "uniforms": {
+        "Matrix": 0
+    }
+}
