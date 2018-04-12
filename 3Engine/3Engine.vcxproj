@@ -20,93 +20,95 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Actor.cpp" />
-    <ClInclude Include="src\Actor.h" />
-    <ClInclude Include="src\Debug.h" />
+    <ClCompile Include="src\Actors\Cube.cpp" />
+    <ClCompile Include="src\Actors\SkySphere.cpp" />
+    <ClCompile Include="src\Camera\Camera.cpp" />
+    <ClCompile Include="src\Camera\LookAt.cpp" />
+    <ClCompile Include="src\Camera\Ortho.cpp" />
+    <ClCompile Include="src\Camera\Perspective.cpp" />
+    <ClCompile Include="src\Controllers\FreeCameraController.cpp" />
+    <ClCompile Include="src\Controllers\SphereCameraController.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Input.cpp" />
+    <ClCompile Include="src\Math\Maths.cpp" />
+    <ClCompile Include="src\Math\Matrix.cpp" />
+    <ClCompile Include="src\Math\Matrix2.cpp" />
+    <ClCompile Include="src\Math\Matrix3.cpp" />
+    <ClCompile Include="src\Math\Quat.cpp" />
+    <ClCompile Include="src\Math\Vector.cpp" />
+    <ClCompile Include="src\Math\Vector2.cpp" />
+    <ClCompile Include="src\Math\Vector4.cpp" />
+    <ClCompile Include="src\SceneManagement\SceneGraph.cpp" />
+    <ClCompile Include="src\Shader\Cubemap.cpp" />
+    <ClCompile Include="src\Shader\Shader.cpp" />
+    <ClCompile Include="src\Shader\ShaderProgram.cpp" />
+    <ClCompile Include="src\Shader\Texture.cpp" />
+    <ClCompile Include="src\Shader\TextureLoader.cpp" />
+    <ClCompile Include="src\Shapes\Mesh.cpp" />
+    <ClCompile Include="src\Shapes\MeshLoader.cpp" />
+    <ClCompile Include="src\Shapes\Parallelogram.cpp" />
+    <ClCompile Include="src\Shapes\Parallelogram3D.cpp" />
+    <ClCompile Include="src\Shapes\Square.cpp" />
+    <ClCompile Include="src\Shapes\Triangle.cpp" />
+    <ClCompile Include="src\Shapes\Triangle3D.cpp" />
+    <ClCompile Include="src\SOIL\image_DXT.c" />
+    <ClCompile Include="src\SOIL\image_helper.c" />
+    <ClCompile Include="src\SOIL\SOIL.c" />
+    <ClCompile Include="src\SOIL\stb_image_aug.c" />
+    <ClCompile Include="src\Time\GlutTimeCalculator.cpp" />
+    <ClCompile Include="src\Time\Time.cpp" />
+    <ClCompile Include="src\Utilities\Simulation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Actor.h" />
+    <ClInclude Include="src\Actors\Cube.h" />
+    <ClInclude Include="src\Actors\SkySphere.h" />
+    <ClInclude Include="src\Camera\Camera.h" />
+    <ClInclude Include="src\Camera\LookAt.h" />
+    <ClInclude Include="src\Camera\Ortho.h" />
+    <ClInclude Include="src\Camera\Perspective.h" />
+    <ClInclude Include="src\Controllers\FreeCameraController.h" />
+    <ClInclude Include="src\Controllers\SphereCameraController.h" />
+    <ClInclude Include="src\Debug.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\IDrawable.h" />
-    <ClCompile Include="src\Input.cpp" />
     <ClInclude Include="src\Input.h" />
-    <ClInclude Include="src\OpenGLUtils.h" />
-    <ClCompile Include="src\Actors\Cube.cpp" />
-    <ClInclude Include="src\Actors\Cube.h" />
-    <ClCompile Include="src\Actors\SkySphere.cpp" />
-    <ClInclude Include="src\Actors\SkySphere.h" />
-    <ClCompile Include="src\Camera\Camera.cpp" />
-    <ClInclude Include="src\Camera\Camera.h" />
-    <ClCompile Include="src\Camera\LookAt.cpp" />
-    <ClInclude Include="src\Camera\LookAt.h" />
-    <ClCompile Include="src\Camera\Ortho.cpp" />
-    <ClInclude Include="src\Camera\Ortho.h" />
-    <ClCompile Include="src\Camera\Perspective.cpp" />
-    <ClInclude Include="src\Camera\Perspective.h" />
-    <ClCompile Include="src\Controllers\FreeCameraController.cpp" />
-    <ClInclude Include="src\Controllers\FreeCameraController.h" />
-    <ClCompile Include="src\Controllers\SphereCameraController.cpp" />
-    <ClInclude Include="src\Controllers\SphereCameraController.h" />
-    <ClCompile Include="src\Math\Maths.cpp" />
     <ClInclude Include="src\Math\Maths.h" />
-    <ClCompile Include="src\Math\Matrix.cpp" />
     <ClInclude Include="src\Math\Matrix.h" />
-    <ClCompile Include="src\Math\Matrix2.cpp" />
     <ClInclude Include="src\Math\Matrix2.h" />
-    <ClCompile Include="src\Math\Matrix3.cpp" />
     <ClInclude Include="src\Math\Matrix3.h" />
-    <ClCompile Include="src\Math\Quat.cpp" />
     <ClInclude Include="src\Math\Quat.h" />
     <ClInclude Include="src\Math\TMatrix.h" />
-    <ClCompile Include="src\Math\Vector.cpp" />
     <ClInclude Include="src\Math\Vector.h" />
-    <ClCompile Include="src\Math\Vector2.cpp" />
     <ClInclude Include="src\Math\Vector2.h" />
-    <ClCompile Include="src\Math\Vector4.cpp" />
     <ClInclude Include="src\Math\Vector4.h" />
-    <ClCompile Include="src\SOIL\SOIL.c" />
-    <ClInclude Include="src\SOIL\SOIL.h" />
-    <ClCompile Include="src\SOIL\image_DXT.c" />
-    <ClInclude Include="src\SOIL\image_DXT.h" />
-    <ClCompile Include="src\SOIL\image_helper.c" />
-    <ClInclude Include="src\SOIL\image_helper.h" />
-    <ClCompile Include="src\SOIL\stb_image_aug.c" />
-    <ClInclude Include="src\SOIL\stb_image_aug.h" />
-    <ClInclude Include="src\SOIL\stbi_DDS_aug.h" />
-    <ClInclude Include="src\SOIL\stbi_DDS_aug_c.h" />
-    <ClCompile Include="src\SceneManagement\SceneGraph.cpp" />
+    <ClInclude Include="src\OpenGLUtils.h" />
     <ClInclude Include="src\SceneManagement\SceneGraph.h" />
-    <ClCompile Include="src\Shader\Cubemap.cpp" />
     <ClInclude Include="src\Shader\Cubemap.h" />
     <ClInclude Include="src\Shader\ITexture.h" />
-    <ClCompile Include="src\Shader\Shader.cpp" />
     <ClInclude Include="src\Shader\Shader.h" />
-    <ClCompile Include="src\Shader\ShaderProgram.cpp" />
     <ClInclude Include="src\Shader\ShaderProgram.h" />
-    <ClCompile Include="src\Shader\Texture.cpp" />
     <ClInclude Include="src\Shader\Texture.h" />
-    <ClCompile Include="src\Shader\TextureLoader.cpp" />
     <ClInclude Include="src\Shader\TextureLoader.h" />
-    <ClCompile Include="src\Shapes\Mesh.cpp" />
     <ClInclude Include="src\Shapes\Mesh.h" />
-    <ClCompile Include="src\Shapes\MeshLoader.cpp" />
     <ClInclude Include="src\Shapes\MeshLoader.h" />
-    <ClCompile Include="src\Shapes\Parallelogram.cpp" />
     <ClInclude Include="src\Shapes\Parallelogram.h" />
-    <ClCompile Include="src\Shapes\Parallelogram3D.cpp" />
     <ClInclude Include="src\Shapes\Parallelogram3D.h" />
-    <ClCompile Include="src\Shapes\Square.cpp" />
     <ClInclude Include="src\Shapes\Square.h" />
-    <ClCompile Include="src\Shapes\Triangle.cpp" />
     <ClInclude Include="src\Shapes\Triangle.h" />
-    <ClCompile Include="src\Shapes\Triangle3D.cpp" />
     <ClInclude Include="src\Shapes\Triangle3D.h" />
-    <ClCompile Include="src\Time\GlutTimeCalculator.cpp" />
+    <ClInclude Include="src\SOIL\image_DXT.h" />
+    <ClInclude Include="src\SOIL\image_helper.h" />
+    <ClInclude Include="src\SOIL\SOIL.h" />
+    <ClInclude Include="src\SOIL\stbi_DDS_aug.h" />
+    <ClInclude Include="src\SOIL\stbi_DDS_aug_c.h" />
+    <ClInclude Include="src\SOIL\stb_image_aug.h" />
     <ClInclude Include="src\Time\GlutTimeCalculator.h" />
-    <ClCompile Include="src\Time\Time.cpp" />
     <ClInclude Include="src\Time\Time.h" />
+    <ClInclude Include="src\Utilities\json.hpp" />
     <ClInclude Include="src\Utilities\Manager.h" />
     <ClInclude Include="src\Utilities\Managers.h" />
-    <ClCompile Include="src\Utilities\Simulation.cpp" />
     <ClInclude Include="src\Utilities\Simulation.h" />
-    <ClInclude Include="src\Utilities\json.hpp" />
     <ClInclude Include="src\Utilities\singleton.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -226,13 +228,13 @@ echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
 mkdir config
-xcopy "$(SolutionDir)config" "$(OutDir)config\" /E
+xcopy "$(ProjectDir)config" "$(OutDir)config\" /E
 if exist shaders rd /s /q shaders
 mkdir shaders
-xcopy "$(SolutionDir)shaders" "$(OutDir)shaders\" /E
+xcopy "$(ProjectDir)shaders" "$(OutDir)shaders\" /E
 if exist assets rd /s /q assets
 mkdir assets
-xcopy "$(SolutionDir)assets" "$(OutDir)assets\" /E</Command>
+xcopy "$(ProjectDir)assets" "$(OutDir)assets\" /E</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

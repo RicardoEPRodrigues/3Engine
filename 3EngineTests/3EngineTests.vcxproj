@@ -144,8 +144,8 @@ echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
 mkdir config
-copy "$(SolutionDir)config\SetupConfig.json" "$(OutDir)config\"
-copy "$(SolutionDir)config\RuntimeConfig.json" "$(OutDir)config\"</Command>
+copy "$(SolutionDir)3Engine\config\SetupConfig.json" "$(OutDir)config\"
+copy "$(SolutionDir)3Engine\config\RuntimeConfig.json" "$(OutDir)config\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

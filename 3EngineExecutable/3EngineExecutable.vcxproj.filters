@@ -10,15 +10,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Executable\LightScene\LightScene.cpp">
+    <ClCompile Include="src\LightScene\LightScene.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Executable\main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Executable\LightScene\LightScene.h">
+    <ClInclude Include="src\LightScene\LightScene.h">
       <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>

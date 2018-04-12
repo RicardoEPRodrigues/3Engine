@@ -37,4 +37,4 @@ dependencies
 intermediate
 
 # accept all files from
-!assets/*
+!*/assets/*
