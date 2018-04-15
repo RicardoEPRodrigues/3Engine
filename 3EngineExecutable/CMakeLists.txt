@@ -39,20 +39,13 @@ endif ()
 
 # Project files and executables/libraries
 
-set(EXECUTABLE_SOURCE_FILES
-        src/main.cpp
-        #        src/Tangram/Tangram.cpp src/Tangram/Tangram.h
-        #        src/Tangram3D/Tangram3D.cpp src/Tangram3D/Tangram3D.h
-        #        src/Quaternion/Quaternion.cpp src/Quaternion/Quaternion.h
-        #        src/LoaderAndScene/LoaderAndScene.cpp src/LoaderAndScene/LoaderAndScene.h
-        #        src/LoaderAndScene/ColoredActor.cpp src/LoaderAndScene/ColoredActor.h src/LoaderAndScene/MoveController.cpp src/LoaderAndScene/MoveController.h src/LoaderAndScene/TangramAnimation.cpp src/LoaderAndScene/TangramAnimation.h
-        src/LightScene/LightScene.h src/LightScene/LightScene.cpp
-        )
-
 include_directories(${CMAKE_SOURCE_DIR}/3Engine/src)
 
-add_executable(${PROJECT_NAME} ${EXECUTABLE_SOURCE_FILES})
-target_link_libraries(${PROJECT_NAME} 3Engine)
+add_executable(LightScene src/main.cpp src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
+target_link_libraries(LightScene 3Engine)
+
+add_executable(TimeShaders src/TimeShaders/MyEngine.h src/TimeShaders/MyEngine.cpp)
+target_link_libraries(TimeShaders 3Engine)
 
 # Post build commands
 
@@ -67,13 +60,14 @@ add_custom_target(CopyFilesExe
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${EXECUTABLE_OUTPUT_PATH}/assets/
         )
 
-add_dependencies(${PROJECT_NAME} CopyFilesExe)
+add_dependencies(LightScene CopyFilesExe)
+add_dependencies(TimeShaders CopyFilesExe)
 
 # AppImage Support
 
 if (UNIX AND NOT APPLE)
     add_custom_target(AppImage
-            DEPENDS ${PROJECT_NAME}
+            DEPENDS ALL
             COMMAND ${CMAKE_COMMAND} -E echo Making AppImage from path ${EXECUTABLE_OUTPUT_PATH}
             COMMAND /bin/sh "${CMAKE_CURRENT_SOURCE_DIR}/../BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/../BuildTools/AppImage/3Engine.AppDir" "${EXECUTABLE_OUTPUT_PATH}/../AppImage"
             )

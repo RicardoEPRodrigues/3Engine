@@ -1,0 +1,18 @@
+{
+    "vertex": "shaders/TimeMovingTexture/vertex.glsl",
+    "fragment": "shaders/TimeMovingTexture/fragment.glsl",
+    "attributes": [
+        [0, "in_Position"],
+        [2, "in_TexCoord"]
+    ],
+    "uniforms": {
+        "ModelMatrix": 0,
+        "Time": 0
+    },
+    "uniformBlocks": {
+        "SharedMatrices": [0, 0]
+    },
+    "textures": {
+        "tex": 0
+    }
+}
