@@ -7,14 +7,8 @@
         [2, "in_TexCoord"],
         [3, "in_Normal"]
     ],
-    "uniforms": {
-        "ModelMatrix": 0,
-        "BaseColor": 0,
-        "Metallic": 0,
-        "Roughness": 0
-    },
     "uniformBlocks": {
-        "SharedMatrices": [0, 0]
+        "SharedMatrices": [0]
     },
     "textures": {
         "cube_tex": 0

@@ -13,9 +13,6 @@
 #include "../../../3Engine/src/Utilities/Simulation.h"
 #include "../../../3Engine/src/Actors/SkySphere.h"
 
-#define VERTICES 0
-#define COLORS 1
-
 using json = nlohmann::json;
 
 using namespace std;

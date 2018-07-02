@@ -13,12 +13,21 @@
 #include "../../../3Engine/src/Utilities/Simulation.h"
 #include "../../../3Engine/src/Actors/SkySphere.h"
 
-#define VERTICES 0
-#define COLORS 1
-
 using json = nlohmann::json;
 
 using namespace std;
+
+int main(int argc, char* argv[]) {
+    srand(static_cast <unsigned> (time(0)));
+
+    {
+        ThreeEngine::LightScene engine;
+        engine.Init(argc, argv);
+        engine.Run();
+    }
+
+    exit(EXIT_SUCCESS);
+}
 
 namespace ThreeEngine {
 

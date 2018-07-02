@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast")
 
 set(RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
@@ -41,7 +41,7 @@ endif ()
 
 include_directories(${CMAKE_SOURCE_DIR}/3Engine/src)
 
-add_executable(LightScene src/main.cpp src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
+add_executable(LightScene src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
 target_link_libraries(LightScene 3Engine)
 
 add_executable(TimeShaders src/TimeShaders/MyEngine.h src/TimeShaders/MyEngine.cpp)

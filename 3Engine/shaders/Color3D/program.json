@@ -5,11 +5,7 @@
         [0, "in_Position"],
         [1, "in_Color"]
     ],
-    "uniforms": {
-        "ModelMatrix": 0,
-        "ModelColor": 0
-    },
     "uniformBlocks": {
-        "SharedMatrices": [0, 0]
+        "SharedMatrices": [0]
     }
 }

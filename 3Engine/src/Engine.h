@@ -12,6 +12,13 @@
 #include "Input.h"
 #include "Time/Time.h"
 
+// NVIDIA Dedicated Graphics (Optimus)
+#if OS_WIN
+extern "C" {
+	_declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+}
+#endif
+
 namespace ThreeEngine {
 
     class Engine {

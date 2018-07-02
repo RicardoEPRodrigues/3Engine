@@ -24,6 +24,12 @@ namespace ThreeEngine {
 
             void Link();
 
+            const std::string GetTypeString(GLenum type);
+
+            std::string GetResourceName(int program, int type, int id, unsigned long nameLength);
+
+            void ExtractUniform(int id, std::vector<std::pair<int, std::string>>& uniforms);
+
             GLint GetUniformLocation(const GLchar* name);
 
             GLint GetUniformBlockIndex(const GLchar* name);

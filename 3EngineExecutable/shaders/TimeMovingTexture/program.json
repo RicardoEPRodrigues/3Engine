@@ -5,12 +5,8 @@
         [0, "in_Position"],
         [2, "in_TexCoord"]
     ],
-    "uniforms": {
-        "ModelMatrix": 0,
-        "Time": 0
-    },
     "uniformBlocks": {
-        "SharedMatrices": [0, 0]
+        "SharedMatrices": [0]
     },
     "textures": {
         "tex": 0
