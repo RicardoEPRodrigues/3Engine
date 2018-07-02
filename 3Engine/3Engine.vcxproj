@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Actor.cpp" />
-    <ClCompile Include="src\Actors\Cube.cpp" />
     <ClCompile Include="src\Actors\SkySphere.cpp" />
     <ClCompile Include="src\Camera\Camera.cpp" />
     <ClCompile Include="src\Camera\LookAt.cpp" />
@@ -44,13 +43,9 @@
     <ClCompile Include="src\Shader\ShaderProgram.cpp" />
     <ClCompile Include="src\Shader\Texture.cpp" />
     <ClCompile Include="src\Shader\TextureLoader.cpp" />
+    <ClCompile Include="src\Shapes\BasicShapes.cpp" />
     <ClCompile Include="src\Shapes\Mesh.cpp" />
     <ClCompile Include="src\Shapes\MeshLoader.cpp" />
-    <ClCompile Include="src\Shapes\Parallelogram.cpp" />
-    <ClCompile Include="src\Shapes\Parallelogram3D.cpp" />
-    <ClCompile Include="src\Shapes\Square.cpp" />
-    <ClCompile Include="src\Shapes\Triangle.cpp" />
-    <ClCompile Include="src\Shapes\Triangle3D.cpp" />
     <ClCompile Include="src\SOIL\image_DXT.c" />
     <ClCompile Include="src\SOIL\image_helper.c" />
     <ClCompile Include="src\SOIL\SOIL.c" />
@@ -61,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Actor.h" />
-    <ClInclude Include="src\Actors\Cube.h" />
     <ClInclude Include="src\Actors\SkySphere.h" />
     <ClInclude Include="src\Camera\Camera.h" />
     <ClInclude Include="src\Camera\LookAt.h" />
@@ -90,13 +84,9 @@
     <ClInclude Include="src\Shader\ShaderProgram.h" />
     <ClInclude Include="src\Shader\Texture.h" />
     <ClInclude Include="src\Shader\TextureLoader.h" />
+    <ClInclude Include="src\Shapes\BasicShapes.h" />
     <ClInclude Include="src\Shapes\Mesh.h" />
     <ClInclude Include="src\Shapes\MeshLoader.h" />
-    <ClInclude Include="src\Shapes\Parallelogram.h" />
-    <ClInclude Include="src\Shapes\Parallelogram3D.h" />
-    <ClInclude Include="src\Shapes\Square.h" />
-    <ClInclude Include="src\Shapes\Triangle.h" />
-    <ClInclude Include="src\Shapes\Triangle3D.h" />
     <ClInclude Include="src\SOIL\image_DXT.h" />
     <ClInclude Include="src\SOIL\image_helper.h" />
     <ClInclude Include="src\SOIL\SOIL.h" />

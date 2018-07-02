@@ -24,7 +24,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\LightScene\LightScene.cpp" />
     <ClInclude Include="src\LightScene\LightScene.h" />
   </ItemGroup>

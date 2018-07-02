@@ -13,10 +13,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Input.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Actors\Cube.cpp">
+    <ClCompile Include="src\Actor.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Actors\SkySphere.cpp">
@@ -38,6 +35,12 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Controllers\SphereCameraController.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Math\Maths.cpp">
@@ -82,25 +85,13 @@
     <ClCompile Include="src\Shader\TextureLoader.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Shapes\BasicShapes.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
     <ClCompile Include="src\Shapes\Mesh.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Shapes\MeshLoader.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shapes\Parallelogram.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shapes\Parallelogram3D.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shapes\Square.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shapes\Triangle.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Shapes\Triangle3D.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\SOIL\image_DXT.c">
@@ -124,21 +115,9 @@
     <ClCompile Include="src\Utilities\Simulation.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\Actor.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Input.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OpenGLUtils.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Actors\Cube.h">
+    <ClInclude Include="src\Actor.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Actors\SkySphere.h">
@@ -160,6 +139,18 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Controllers\SphereCameraController.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Debug.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDrawable.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Math\Maths.h">
@@ -189,6 +180,9 @@
     <ClInclude Include="src\Math\Vector4.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OpenGLUtils.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="src\SceneManagement\SceneGraph.h">
       <Filter>Engine</Filter>
     </ClInclude>
@@ -210,25 +204,13 @@
     <ClInclude Include="src\Shader\TextureLoader.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Shapes\BasicShapes.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="src\Shapes\Mesh.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Shapes\MeshLoader.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shapes\Parallelogram.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shapes\Parallelogram3D.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shapes\Square.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shapes\Triangle.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Shapes\Triangle3D.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\SOIL\image_DXT.h">
@@ -268,18 +250,6 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\singleton.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Actor.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Debug.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Engine.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\IDrawable.h">
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
