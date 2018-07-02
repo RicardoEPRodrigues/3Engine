@@ -27,7 +27,6 @@ namespace ThreeEngine {
 
             Matrix GetParentModelMatrix();
 
-            std::shared_ptr<ShaderProgram> GetShaderProgram();
 
         public:
             struct Transform {
@@ -60,6 +59,8 @@ namespace ThreeEngine {
 
             void setShaderProgram(
                     const std::shared_ptr<ShaderProgram>& shaderProgram);
+
+            std::shared_ptr<ShaderProgram> GetShaderProgram();
     };
 } // namespace ThreeEngine
 

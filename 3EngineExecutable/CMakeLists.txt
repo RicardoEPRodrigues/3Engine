@@ -47,6 +47,9 @@ target_link_libraries(LightScene 3Engine)
 add_executable(TimeShaders src/TimeShaders/MyEngine.h src/TimeShaders/MyEngine.cpp)
 target_link_libraries(TimeShaders 3Engine)
 
+add_executable(Tangram3D src/Tangram3D/Tangram3D.h src/Tangram3D/Tangram3D.cpp)
+target_link_libraries(Tangram3D 3Engine)
+
 # Post build commands
 
 add_custom_target(CopyFilesExe
@@ -62,6 +65,7 @@ add_custom_target(CopyFilesExe
 
 add_dependencies(LightScene CopyFilesExe)
 add_dependencies(TimeShaders CopyFilesExe)
+add_dependencies(Tangram3D CopyFilesExe)
 
 # AppImage Support
 

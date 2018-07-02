@@ -87,12 +87,6 @@ set(ENGINE_SOURCE_FILES
         src/Camera/Perspective.cpp src/Camera/Perspective.h
         src/Camera/Ortho.cpp src/Camera/Ortho.h
         src/Math/Quat.cpp src/Math/Quat.h
-        src/Shapes/Triangle.cpp src/Shapes/Triangle.h
-        src/Shapes/Square.cpp src/Shapes/Square.h
-        src/Shapes/Parallelogram.cpp src/Shapes/Parallelogram.h
-        src/Actors/Cube.cpp src/Actors/Cube.h
-        src/Shapes/Triangle3D.cpp src/Shapes/Triangle3D.h
-        src/Shapes/Parallelogram3D.h src/Shapes/Parallelogram3D.cpp
         src/Time/Time.cpp src/Time/Time.h
         src/Time/GlutTimeCalculator.cpp src/Time/GlutTimeCalculator.h
         src/Controllers/FreeCameraController.cpp src/Controllers/FreeCameraController.h
@@ -105,7 +99,11 @@ set(ENGINE_SOURCE_FILES
         src/Utilities/Simulation.cpp src/Utilities/Simulation.h
         src/Shader/Texture.cpp src/Shader/Texture.h
         src/Shader/TextureLoader.cpp src/Shader/TextureLoader.h
-        src/Shader/Cubemap.cpp src/Shader/Cubemap.h src/Shader/ITexture.h src/Actors/SkySphere.cpp src/Actors/SkySphere.h)
+        src/Shader/Cubemap.cpp src/Shader/Cubemap.h
+        src/Shader/ITexture.h
+        src/Actors/SkySphere.cpp src/Actors/SkySphere.h
+        src/Shapes/BasicShapes.cpp src/Shapes/BasicShapes.h
+        )
 
 add_library(${PROJECT_NAME} SHARED ${ENGINE_SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
