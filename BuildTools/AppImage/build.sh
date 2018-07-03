@@ -26,7 +26,7 @@ mkdir -p ${destPath}
 cd ${destPath}
 
 echo "Copying AppDir Folder"
-cp -R ${appDirPath} .
+cp -R ${appDirPath} ${destPath}
 if [ $? -ne 0  ]; then
     echo "Failed Copying AppDir Folder. Exiting..."
     exit 1
