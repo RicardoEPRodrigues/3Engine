@@ -1,50 +1,63 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]; then
     echo "Missing Arguments. Usage: ./build.sh <Binaries Path> <AppDir Files Path> <Destination Path>"
     exit 1
 fi
 
-binariesPath=$(readlink -f $1)
-appDirPath=$(readlink -f $2)
-destPath=$(readlink -f $3)
-appDirName=${appDirPath##*/}
-destAppDirPath=${destPath}/${appDirName}
+SCRIPT_PATH=$(dirname "$0")
 
-if [ ! -d ${binariesPath} ]; then
-    echo "Binaries folder doesn't exist. ${binariesPath} . Exiting..."
+BINARIES_PATH=$(readlink -f $1)
+APPDIR_PATH=$(readlink -f $2)
+DEST_PATH=$(readlink -f $3)
+APPDIR_NAME=${APPDIR_PATH##*/}
+APPDIR_DEST_PATH=${DEST_PATH}/${APPDIR_NAME}
+
+if [ ! -d ${BINARIES_PATH} ]; then
+    echo "Binaries folder doesn't exist. ${BINARIES_PATH} . Exiting..."
     exit 1
 fi
 
-if [ ! -d ${appDirPath} ]; then
-    echo "AppDir folder doesn't exist. ${appDirPath} . Exiting..."
+if [ ! -d ${APPDIR_PATH} ]; then
+    echo "AppDir folder doesn't exist. ${APPDIR_PATH} . Exiting..."
     exit 1
 fi
 
 
-mkdir -p ${destPath}
-cd ${destPath}
+mkdir -p ${DEST_PATH}
+cd ${DEST_PATH}
 
 echo "Copying AppDir Folder"
-cp -R ${appDirPath} ${destPath}
+cp -R ${APPDIR_PATH} ${DEST_PATH}
 if [ $? -ne 0  ]; then
     echo "Failed Copying AppDir Folder. Exiting..."
     exit 1
 fi
 
 echo "Copying Binaries Files into AppDir"
-cp -R ${binariesPath}/. ${destAppDirPath}
+cp -R ${BINARIES_PATH}/. ${APPDIR_DEST_PATH}
 if [ $? -ne 0 ]; then
     echo "Failed Copying Binaries Files. Exiting..."
     exit 1
 fi
 
-echo "Moving Executables to AppDir/bin"
-mkdir -p ${destAppDirPath}/bin
+#CPLP=${SCRIPT_PATH}/cpld.sh
+
+#echo "Copy 3Engine library dependencies"
+#mkdir -p ${APPDIR_DEST_PATH}/lib
+#for i in `find ${APPDIR_DEST_PATH}/lib -maxdepth 1 -executable -type f`; do
+#    if [[ ${i} = *".so" ]]; then
+#        ${CPLP} ${i} ${APPDIR_DEST_PATH}/lib #> /dev/null
+#    fi
+#done
+
+echo "Moving Executables to AppDir/bin" # and copy library dependencies
+mkdir -p ${APPDIR_DEST_PATH}/bin
 # Gets all executables and places them on bin folder
-for i in `find ${destAppDirPath} -maxdepth 1 -executable -type f`; do
-    if [ ${i##*/} != "AppRun" ]; then
-        mv ${i} ${destAppDirPath}/bin
+for i in `find ${APPDIR_DEST_PATH} -maxdepth 1 -executable -type f`; do
+    if [ ${i##*/} != "AppRun" ] && [[ ${i} != *".desktop" ]] && [[ ${i} !=  *".png" ]]; then
+#        ${CPLP} ${i} ${APPDIR_DEST_PATH}/lib #> /dev/null
+        mv ${i} ${APPDIR_DEST_PATH}/bin
     fi
 done
 
@@ -65,10 +78,10 @@ fi
 export ARCH=x86_64
 
 # Create AppImage with the name of the AppDir Folder
-./appimagetool.AppImage ${appDirName} ${appDirName%.AppDir}.AppImage
+./appimagetool.AppImage ${APPDIR_NAME} ${APPDIR_NAME%.AppDir}.AppImage
 if [ $? -ne 0 ]; then
-    echo "Unable to create ${appDirName%.AppDir}.AppImage. Exiting..."
+    echo "Unable to create ${APPDIR_NAME%.AppDir}.AppImage. Exiting..."
     exit 1
 fi
 
-echo "Successfully created ${appDirName%.AppDir}.AppImage"
+echo "Successfully created ${APPDIR_NAME%.AppDir}.AppImage"
