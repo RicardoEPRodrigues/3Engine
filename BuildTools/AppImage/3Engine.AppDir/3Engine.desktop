@@ -4,4 +4,5 @@ Exec=LightScene %F
 Icon=3Engine
 Type=Application
 Terminal=true
+Categories=Game
 StartupNotify=true
