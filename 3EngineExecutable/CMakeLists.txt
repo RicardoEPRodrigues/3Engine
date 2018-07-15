@@ -7,7 +7,6 @@ set(CMAKE_INSTALL_RPATH "lib")
 set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 
 # Project files and executables/libraries
-include_directories(${CMAKE_SOURCE_DIR}/3Engine/src)
 
 add_executable(LightScene src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
 target_link_libraries(LightScene 3Engine)
@@ -21,10 +20,6 @@ target_link_libraries(Tangram3D 3Engine)
 # Post build commands
 
 add_custom_target(CopyFilesExe
-#        COMMAND ${CMAKE_COMMAND} -E echo Copying Engine files into Executable
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory ${3Engine_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory ${3Engine_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory ${3Engine_SOURCE_DIR}/assets ${EXECUTABLE_OUTPUT_PATH}/assets
         COMMAND ${CMAKE_COMMAND} -E echo Copying Executable files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders
@@ -41,6 +36,6 @@ if (UNIX AND NOT APPLE)
     add_custom_target(AppImage
             DEPENDS LightScene
             COMMAND ${CMAKE_COMMAND} -E echo Making AppImage from path ${EXECUTABLE_OUTPUT_PATH}
-            COMMAND /bin/bash "${CMAKE_CURRENT_SOURCE_DIR}/../BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/../BuildTools/AppImage/3Engine.AppDir" "${RUNTIME_OUTPUT_DIRECTORY}/AppImage"
+            COMMAND /bin/bash "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/3Engine.AppDir" "${RUNTIME_OUTPUT_DIRECTORY}/AppImage"
             )
 endif ()

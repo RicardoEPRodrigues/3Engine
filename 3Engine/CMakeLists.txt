@@ -8,18 +8,23 @@ find_package(OpenGL REQUIRED)
 
 if (WIN32) # WINDOWS specific properties
     if (DEFINED MINGW)
-        set(GLUT_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-mingw/include")
-        set(GLUT_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-mingw/lib/x64/libfreeglut.a")
-        set(GLEW_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/include")
-        set(GLEW_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/lib/x64/libglew32.dll.a")
+        message(STATUS "Using MINGW")
+        set(GLUT_INCLUDE_DIRS "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-mingw/include")
+        set(GLUT_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-mingw/lib/x64/libfreeglut.a")
+        set(GLUT_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-mingw/bin/x64/freeglut.dll")
+        set(GLEW_INCLUDE_DIRS "${CMAKE_HOME_DIRECTORY}/dependencies/glew-mingw/include")
+        set(GLEW_LIBRARIES "${CMAKE_HOME_DIRECTORY}/dependencies/glew-mingw/lib/x64/libglew32.dll.a")
+        set(GLEW_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/glew-mingw/bin/x64/glew32.dll")
     else ()
         # Assuming MSVC
-        set(GLUT_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/include")
-        set(GLUT_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/lib/x64/freeglut.lib")
-        set(GLEW_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-msvc/include")
-        set(GLEW_LIBRARIES "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-msvc/lib/Release/x64/glew32.lib")
+        message(STATUS "Using MSVC")
+        set(GLUT_INCLUDE_DIRS "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-msvc/include")
+        set(GLUT_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-msvc/lib/x64/freeglut.lib")
+        set(GLUT_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-msvc/bin/x64/freeglut.dll")
+        set(GLEW_INCLUDE_DIRS "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/include")
+        set(GLEW_LIBRARIES "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/lib/Release/x64/glew32.lib")
+        set(GLEW_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")
     endif ()
-
 elseif (APPLE)
 elseif (UNIX AND NOT APPLE)
     message(STATUS "GLEW and FreeGlut need to be installed.\nRun:\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
@@ -32,8 +37,6 @@ endif ()
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
 # Project files and executables/libraries
-
-include_directories(src)
 
 set(ENGINE_SOURCE_FILES
         # SOIL
@@ -84,21 +87,12 @@ target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW
 # Post build commands
 
 if (WIN32) # WINDOWS post build
-
-    if (DEFINED MINGW)
-        set(GLUT_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-mingw/bin/x64/freeglut.dll")
-        set(GLEW_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-mingw/bin/x64/glew32.dll")
-    else ()
-        # Assuming MSVC
-        set(GLUT_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/freeglut-msvc/bin/x64/freeglut.dll")
-        set(GLEW_SHARED_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")
-    endif ()
-
-    add_custom_command(TARGET 3Engine POST_BUILD
+    add_custom_target(CopyLibsEngine
             COMMAND ${CMAKE_COMMAND} -E echo Copying Libraries
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${EXECUTABLE_OUTPUT_PATH}
+            COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${LIBRARY_OUTPUT_PATH}
+            COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${LIBRARY_OUTPUT_PATH}
             )
+    add_dependencies(${PROJECT_NAME} CopyLibsEngine)
 endif ()
 
 

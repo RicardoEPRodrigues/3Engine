@@ -27,6 +27,8 @@ ENDIF ()
 
 if (WIN32) # WINDOWS specific properties
     add_definitions(-DOS_WIN)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+    add_definitions(-D_CRT_NO_VA_START_VALIDATION)
 elseif (APPLE)
     add_definitions(-DOS_MAC)
 elseif (UNIX AND NOT APPLE)
