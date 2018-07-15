@@ -25,6 +25,8 @@ if (WIN32) # WINDOWS specific properties
         set(GLEW_LIBRARIES "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/lib/Release/x64/glew32.lib")
         set(GLEW_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")
     endif ()
+
+    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 elseif (APPLE)
 elseif (UNIX AND NOT APPLE)
     message(STATUS "GLEW and FreeGlut need to be installed.\nRun:\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
