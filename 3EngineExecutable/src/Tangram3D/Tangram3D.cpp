@@ -3,8 +3,8 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
-#include <Shapes/BasicShapes.h>
 #include "Tangram3D.h"
+#include "../../../3Engine/src/Shapes/BasicShapes.h"
 #include "../../../3Engine/src/Shapes/MeshLoader.h"
 #include "../../../3Engine/src/Shader/TextureLoader.h"
 #include "../../../3Engine/src/Camera/Perspective.h"
