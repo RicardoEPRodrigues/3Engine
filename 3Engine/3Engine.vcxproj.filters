@@ -253,4 +253,15 @@
       <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\BRDF\fragment.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\BRDF\program.json">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\BRDF\vertex.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
 </Project>

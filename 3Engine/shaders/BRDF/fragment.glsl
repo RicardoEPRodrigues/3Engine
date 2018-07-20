@@ -34,10 +34,10 @@ void main(void)
 	vec3 e = normalize(ex_Eye);
 	vec3 n = normalize(ex_Normal);
 
-	mat4 invV = inverse(ViewMatrix);
-
-    vec3 l = normalize(vec3(-1, -1, -1));
-	vec3 h = normalize(l + e);
+//	mat4 invV = inverse(ViewMatrix);
+//
+//    vec3 l = normalize(vec3(-1, -1, -1));
+//	vec3 h = normalize(l + e);
 
 //	vec3 reflected = reflect(-e, n);
 //	reflected = vec3(invV * vec4(reflected, 0.0));
