@@ -40,7 +40,6 @@ namespace ThreeEngine {
         SetupOpenGL();
         Time::SetTimeCalculator(new SDLTimeCalculator());
         OnInit();
-        SetupCallbacks();
     }
 
     void Engine::CheckSystemInfo() {
@@ -169,25 +168,6 @@ namespace ThreeEngine {
         Debug::Log("GLSL version: %s", glslVersion);
     }
 
-    void Engine::SetupCallbacks() {
-//        glutCloseFunc(Cleanup);
-//        glutDisplayFunc(Display);
-//        glutIdleFunc(Idle);
-//        glutReshapeFunc(Reshape);
-//        glutTimerFunc(0, Timer, 0);
-//
-//        // Keyboard Input
-//        glutKeyboardFunc(NormalKeysDown);
-//        glutKeyboardUpFunc(NormalKeysUp);
-//        glutSpecialFunc(SpecialKeysDown);
-//        glutSpecialUpFunc(SpecialKeysUp);
-//
-//        // Mouse Input
-//        glutMouseFunc(MouseClick);
-//        glutMotionFunc(MouseMove);
-//        glutPassiveMotionFunc(MouseMove);
-    }
-
     void Engine::Run() {
         isRunning = true;
 
@@ -212,9 +192,9 @@ namespace ThreeEngine {
                     const char* name = SDL_GetKeyName(e.key.keysym.sym);
                     if (name[1] == '\0') {
                         auto key = (unsigned char) name[0];
-                        NormalKeysDown(key);
+                        input.NormalKeysDown(key);
                     } else {
-                        SpecialKeysDown(e.key.keysym.sym);
+                        input.SpecialKeysDown(e.key.keysym.sym);
                     }
                 }
                 if (e.type == SDL_KEYUP) {
@@ -223,20 +203,23 @@ namespace ThreeEngine {
                     const char* name = SDL_GetKeyName(e.key.keysym.sym);
                     if (name[1] == '\0') {
                         auto key = (unsigned char) name[0];
-                        NormalKeysUp(key);
+                        input.NormalKeysUp(key);
                     } else {
-                        SpecialKeysUp(e.key.keysym.sym);
+                        input.SpecialKeysUp(e.key.keysym.sym);
                     }
                 }
                 // Mouse Events
                 if (e.type == SDL_MOUSEBUTTONDOWN) {
-                    MouseButtonDown(e.button.button);
+                    input.MouseButtonDown(e.button.button);
                 }
                 if (e.type == SDL_MOUSEBUTTONUP) {
-                    MouseButtonUp(e.button.button);
+                    input.MouseButtonUp(e.button.button);
                 }
                 if (e.type == SDL_MOUSEMOTION) {
-                    MouseMove(e.motion.x, e.motion.y);
+                    input.MouseMove(e.motion.x, e.motion.y);
+                }
+                if (e.type == SDL_MOUSEWHEEL) {
+                    input.MouseScroll(e.wheel.x, e.wheel.y);
                 }
                 //Window event occured
                 if( e.type == SDL_WINDOWEVENT )
@@ -251,8 +234,8 @@ namespace ThreeEngine {
                     }
                 }
             }
-            Idle();
             Display();
+            Idle();
         }
 
         Exit();
@@ -289,7 +272,7 @@ namespace ThreeEngine {
         Time::Update();
         Update();
         input.Update();
-        // return bool, if true redisplay, don't if false.
+        // TODO return bool, if true redisplay, don't if false.
     }
 
     void Engine::Reshape(int w, int h) {
@@ -316,32 +299,8 @@ namespace ThreeEngine {
 //        glutTimerFunc(1000, Timer, 0);
     }
 
-    void Engine::NormalKeysDown(unsigned char key) {
-        input.NormalKeysDown(key);
-    }
-
-    void Engine::NormalKeysUp(unsigned char key) {
-        input.NormalKeysUp(key);
-    }
-
-    void Engine::SpecialKeysDown(int key) {
-        input.SpecialKeysDown(key);
-    }
-
-    void Engine::SpecialKeysUp(int key) {
-        input.SpecialKeysUp(key);
-    }
-
-    void Engine::MouseButtonDown(int button) {
-        input.MouseButtonDown(button);
-    }
-
-    void Engine::MouseButtonUp(int button) {
-        input.MouseButtonUp(button);
-    }
-
-    void Engine::MouseMove(int x, int y) {
-        input.MouseMove(x,y);
+    SDL_Window* Engine::GetWindow() {
+        return this->gWindow;
     }
 
 } /* namespace Divisaction */

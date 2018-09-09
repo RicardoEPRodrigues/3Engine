@@ -40,20 +40,6 @@ namespace ThreeEngine {
 
             void Timer(int value);
 
-            void NormalKeysDown(unsigned char key);
-
-            void NormalKeysUp(unsigned char key);
-
-            void SpecialKeysDown(int key);
-
-            void SpecialKeysUp(int key);
-
-            void MouseButtonDown(int button);
-
-            void MouseButtonUp(int button);
-
-            void MouseMove(int x, int y);
-
         protected:
 
             std::vector<IDrawable*> actors;
@@ -71,8 +57,6 @@ namespace ThreeEngine {
             void SetupOpenGL();
 
             void CheckOpenGLInfo();
-
-            void SetupCallbacks();
 
             /**
              * Called when a new frame is to be drawn, before Actors are drawn.
@@ -141,6 +125,8 @@ namespace ThreeEngine {
             };
 
             nlohmann::json runtimeConfig;
+
+            SDL_Window* GetWindow();
     };
 
 } /* namespace Divisaction */

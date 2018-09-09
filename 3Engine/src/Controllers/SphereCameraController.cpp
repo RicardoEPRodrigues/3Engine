@@ -103,6 +103,7 @@ namespace ThreeEngine {
             }
 
             engine->input.SetMouseScreenLocation(
+                    engine->GetWindow(),
                     static_cast<int>(newMouseLoc.X),
                     static_cast<int>(newMouseLoc.Y));
         } else {

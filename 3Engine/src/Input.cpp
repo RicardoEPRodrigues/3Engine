@@ -9,9 +9,13 @@ using namespace std;
 
 namespace ThreeEngine {
 
-    Input::Input() : clickKeys(), specialKeys(), modifierKeys(), mouseKeys() { }
+    Input::Input() : clickKeys(), specialKeys(), modifierKeys(), mouseKeys() {}
 
-    Input::~Input() = default;
+    Input::~Input() {
+        if (cursor) {
+            SDL_FreeCursor(cursor);
+        }
+    }
 
     void Input::updateModifierKeys() {
         for (auto&& modifierKey : modifierKeys) {
@@ -81,6 +85,11 @@ namespace ThreeEngine {
         mouseKeys[button] = false;
     }
 
+    void Input::MouseScroll(int, int y) {
+        mouseKeys[SCROLL_UP] = y > 0;
+        mouseKeys[SCROLL_DOWN] = y < 0;
+    }
+
     void Input::MouseMove(int x, int y) {
         mouseScreenLocation.X = (number) x;
         mouseScreenLocation.Y = (number) y;
@@ -90,12 +99,29 @@ namespace ThreeEngine {
         return mouseScreenLocation;
     }
 
-    void Input::SetMouseScreenLocation(int const & x, int const & y) {
-//        glutWarpPointer(x, y);
+    void Input::SetMouseScreenLocation(SDL_Window* window, int const& x, int const& y) {
+        SDL_WarpMouseInWindow(window, x, y);
     }
 
-    void Input::SetMouseCursor(MouseCursor cursor) {
-//        glutSetCursor(cursor);
+    void Input::SetMouseCursor(MouseCursor cursorDesign) {
+        if (cursorDesign == CURSOR_NONE) {
+            SDL_ShowCursor(false);
+            return;
+        }
+        SDL_ShowCursor(true);
+
+        if (cursorDesign == CURSOR_INHERIT) {
+            if (cursor) {
+                SDL_SetCursor(cursor);
+                return;
+            }
+            cursorDesign = CURSOR_ARROW;
+        }
+        if (cursor) {
+            SDL_FreeCursor(cursor);
+        }
+        cursor = SDL_CreateSystemCursor((SDL_SystemCursor) cursorDesign);
+        SDL_SetCursor(cursor);
     }
 
 } /* namespace Divisaction */
