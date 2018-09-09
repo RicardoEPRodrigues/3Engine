@@ -5,7 +5,7 @@ sudo: required
 compiler:
   - gcc
 script: mkdir -p intermediate; cd intermediate; cmake .. -DCMAKE_BUILD_TYPE=Debug; make
-# install: apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev
+# install: apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew-dev libxmu-dev libxi-dev
 matrix:
   include:
     # works on Precise and Trusty
@@ -16,7 +16,10 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-            - freeglut3-dev
+            - libsdl2-2.0-0
+            - libsdl2-image-2.0-0
+            - libsdl2-mixer-2.0-0
+            - libsdl2-ttf-2.0-0
             - libglew-dev
             - libxmu-dev
             - libxi-dev

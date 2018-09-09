@@ -42,7 +42,7 @@ if [ $? -ne 0 ]; then
 fi
 
 #CPLP=${SCRIPT_PATH}/cpld.sh
-
+#
 #echo "Copy 3Engine library dependencies"
 #mkdir -p ${APPDIR_DEST_PATH}/lib
 #for i in `find ${APPDIR_DEST_PATH}/lib -maxdepth 1 -executable -type f`; do

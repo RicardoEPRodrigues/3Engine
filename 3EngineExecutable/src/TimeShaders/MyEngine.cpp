@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 namespace Executable {
 
     MyEngine::MyEngine()
-            : Engine(), sceneGraph(new SceneGraph()), controller() { }
+            : Engine(), sceneGraph(new SceneGraph()), controller(this) { }
 
     MyEngine::~MyEngine() = default;
 

@@ -118,14 +118,11 @@ namespace ThreeEngine {
             exit(EXIT_FAILURE);
         }
 
-        //Initialize GLEW
-
         //Use Vsync
-//        if( SDL_GL_SetSwapInterval( 1 ) < 0 )
-//        {
-//            Debug::Error( "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
-//            exit(EXIT_FAILURE);
-//        }
+        if( SDL_GL_SetSwapInterval( 1 ) < 0 )
+        {
+            Debug::Warn( "Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
+        }
 
     }
 
@@ -135,7 +132,7 @@ namespace ThreeEngine {
         // present in the driver's extensions string.
         GLenum result = glewInit();
         if (result != GLEW_OK) {
-            Debug::Error("ERROR glewInit: %s", glewGetString(result));
+            Debug::Error("ERROR GLEW Init: %s", glewGetString(result));
             exit(EXIT_FAILURE);
         }
         CheckOpenGLError("Failed to setup GLEW.");
@@ -222,11 +219,11 @@ namespace ThreeEngine {
             Idle();
         }
 
-        Exit();
+        Cleanup();
     }
 
     void Engine::Exit() {
-        Cleanup();
+        isRunning = false;
     }
 
     /////////////////////////////////////////////////////////////////////// CALLBACKS

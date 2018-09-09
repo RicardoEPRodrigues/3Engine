@@ -33,7 +33,7 @@ namespace ThreeEngine {
 
 
     Tangram3D::Tangram3D()
-            : Engine(), sceneGraph(new SceneGraph()), controller() {}
+            : Engine(), sceneGraph(new SceneGraph()), controller(this) {}
 
     Tangram3D::~Tangram3D() = default;
 
