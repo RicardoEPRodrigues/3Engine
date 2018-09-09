@@ -17,7 +17,7 @@ namespace ThreeEngine {
         for (auto&& modifierKey : modifierKeys) {
             modifierKey.second = false;
         }
-        int mod = glutGetModifiers();
+        int mod = 0; // TODO Inputs glutGetModifiers();
         if (mod != 0) {
             modifierKeys[mod] = true;
         }
@@ -34,31 +34,31 @@ namespace ThreeEngine {
         mouseKeys[SCROLL_DOWN] = false;
     }
 
-    void Input::NormalKeysDown(unsigned char key, int, int) {
-        clickKeys[key].first = true;
+    void Input::NormalKeysDown(unsigned char key) {
+        clickKeys[tolower(key)].first = true;
         updateModifierKeys();
     }
 
-    void Input::NormalKeysUp(unsigned char key, int, int) {
-        clickKeys[key].first = false;
-        clickKeys[key].second = false;
+    void Input::NormalKeysUp(unsigned char key) {
+        clickKeys[tolower(key)].first = false;
+        clickKeys[tolower(key)].second = false;
     }
 
     bool Input::Click(unsigned char key) {
-        return clickKeys[key].first && !clickKeys[key].second;
+        return clickKeys[tolower(key)].first && !clickKeys[tolower(key)].second;
     }
 
-    void Input::SpecialKeysDown(int key, int, int) {
+    void Input::SpecialKeysDown(int key) {
         specialKeys[key] = true;
         updateModifierKeys();
     }
 
-    void Input::SpecialKeysUp(int key, int, int) {
+    void Input::SpecialKeysUp(int key) {
         specialKeys[key] = false;
     }
 
     bool Input::operator[](unsigned char key) {
-        return clickKeys[key].first;
+        return clickKeys[tolower(key)].first;
     }
 
     bool Input::operator[](SpecialKeys key) {
@@ -73,12 +73,12 @@ namespace ThreeEngine {
         return mouseKeys[key];
     }
 
-    void Input::MouseClick(int button, int state, int, int) {
-        if (button == SCROLL_UP || button == SCROLL_DOWN) {
-            if (state == GLUT_UP) return;
-        }
+    void Input::MouseButtonDown(int button) {
+        mouseKeys[button] = true;
+    }
 
-        mouseKeys[button] = state == GLUT_DOWN;
+    void Input::MouseButtonUp(int button) {
+        mouseKeys[button] = false;
     }
 
     void Input::MouseMove(int x, int y) {
@@ -91,11 +91,11 @@ namespace ThreeEngine {
     }
 
     void Input::SetMouseScreenLocation(int const & x, int const & y) {
-        glutWarpPointer(x, y);
+//        glutWarpPointer(x, y);
     }
 
     void Input::SetMouseCursor(MouseCursor cursor) {
-        glutSetCursor(cursor);
+//        glutSetCursor(cursor);
     }
 
 } /* namespace Divisaction */

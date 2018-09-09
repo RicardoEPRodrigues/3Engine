@@ -9,8 +9,8 @@
 
 namespace ThreeEngine {
 
-    SphereCameraController::SphereCameraController() :
-            engine(Engine::Instance()),
+    SphereCameraController::SphereCameraController(Engine* engine) :
+            engine(engine),
             inPerspective(true),
             previousMouseLocation(),
             yawPitch(),

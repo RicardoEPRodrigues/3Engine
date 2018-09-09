@@ -18,7 +18,7 @@ using json = nlohmann::json;
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    srand(static_cast <unsigned> (time(0)));
+    srand(static_cast <unsigned> (time(nullptr)));
 
     {
         ThreeEngine::LightScene engine;
@@ -48,28 +48,35 @@ namespace ThreeEngine {
 
     class MetallicRoughnessControl : public IUpdatable {
         public:
-            float metallic, roughness, step;
+            float metallic{}, roughness{}, step{};
+            Engine* engine{};
 
             void Update(milliseconds delta) override {
-                if (Engine::Instance()->input['q']) {
+                if (engine->input['q']) {
                     metallic -= step / delta;
                     if (metallic < 0) {
                         metallic = 0;
                     }
                 }
-                if (Engine::Instance()->input['w']) {
+                if (engine->input['w']) {
                     metallic += step / delta;
                     if (metallic > 1) {
                         metallic = 1;
                     }
                 }
-                if (Engine::Instance()->input['e']) {
+                if (engine->input['e']) {
                     roughness -= step / delta;
                     if (roughness < 0) {
                         roughness = 0;
                     }
                 }
-                if (Engine::Instance()->input['r']) {
+                if (engine->input['r']) {
+                    roughness += step / delta;
+                    if (roughness > 1) {
+                        roughness = 1;
+                    }
+                }
+                if (engine->input[SpecialKeys::F1]) {
                     roughness += step / delta;
                     if (roughness > 1) {
                         roughness = 1;
@@ -80,7 +87,7 @@ namespace ThreeEngine {
 
 
     LightScene::LightScene()
-            : Engine(), sceneGraph(new SceneGraph()), controller() { }
+            : Engine(), sceneGraph(new SceneGraph()), controller(this) { }
 
     LightScene::~LightScene() = default;
 
@@ -281,6 +288,7 @@ namespace ThreeEngine {
             object->SetParent(root);
 
             auto shaderController = new MetallicRoughnessControl();
+            shaderController->engine = this;
             shaderController->step = 0.1;
             Simulation::instance()->Add(shaderController);
 

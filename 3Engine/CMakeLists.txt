@@ -2,18 +2,6 @@
 cmake_minimum_required(VERSION 3.2)
 project(3Engine)
 
-# External Libraries configuration
-
-if (UNIX AND NOT APPLE)
-    message(STATUS "GLEW and FreeGlut need to be installed.")
-    message(STATUS "Run:\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
-endif ()
-
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
-find_package(GLEW REQUIRED)
-
-include_directories(${OPENGL_INCLUDE_DIRS} ${GLUT_INCLUDE_PATH} ${GLEW_INCLUDE_DIRS})
 
 # Project files and executables/libraries
 
@@ -43,7 +31,6 @@ set(ENGINE_SOURCE_FILES
         src/Camera/Ortho.cpp src/Camera/Ortho.h
         src/Math/Quat.cpp src/Math/Quat.h
         src/Time/Time.cpp src/Time/Time.h
-        src/Time/GlutTimeCalculator.cpp src/Time/GlutTimeCalculator.h
         src/Controllers/FreeCameraController.cpp src/Controllers/FreeCameraController.h
         src/Controllers/SphereCameraController.cpp src/Controllers/SphereCameraController.h
         src/Shapes/Mesh.cpp src/Shapes/Mesh.h
@@ -58,10 +45,17 @@ set(ENGINE_SOURCE_FILES
         src/Shader/ITexture.h
         src/Actors/SkySphere.cpp src/Actors/SkySphere.h
         src/Shapes/BasicShapes.cpp src/Shapes/BasicShapes.h
-        )
+        src/Time/SDLTimeCalculator.cpp src/Time/SDLTimeCalculator.h)
 
 add_library(${PROJECT_NAME} SHARED ${ENGINE_SOURCE_FILES})
-target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${GLEW_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(${PROJECT_NAME}
+        ${SDL2_LIBRARIES}
+        ${SDL2_IMAGE_LIBRARIES}
+        ${SDL2_TTF_LIBRARIES}
+        ${SDL2_MIXER_LIBRARIES}
+        ${OPENGL_LIBRARIES}
+        ${GLEW_LIBRARIES}
+        ${CMAKE_THREAD_LIBS_INIT})
 
 # Post build commands
 

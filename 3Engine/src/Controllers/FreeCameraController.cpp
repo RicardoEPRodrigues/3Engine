@@ -10,8 +10,8 @@
 
 namespace ThreeEngine {
 
-    FreeCameraController::FreeCameraController() :
-            engine(Engine::Instance()), inPerspective(true),
+    FreeCameraController::FreeCameraController(Engine* engine) :
+            engine(engine), inPerspective(true),
             previousMouseLocation(), yawPitch(),
             translation(Matrix::IdentityMatrix()),
             rotation(Matrix::IdentityMatrix()), camera(nullptr) {

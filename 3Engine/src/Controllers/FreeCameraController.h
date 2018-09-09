@@ -25,7 +25,7 @@ namespace ThreeEngine {
 
             Camera* camera;
 
-            FreeCameraController();
+            FreeCameraController(Engine* engine);
 
             virtual ~FreeCameraController();
 

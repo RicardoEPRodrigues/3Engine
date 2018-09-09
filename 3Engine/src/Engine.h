@@ -6,6 +6,9 @@
 #ifndef THREEENGINE_ENGINE_H
 #define THREEENGINE_ENGINE_H
 
+#include <SDL2/SDL.h>
+#include <GL/glew.h>
+#include <SDL2/SDL_opengl.h>
 #include <string>
 #include "Utilities/json.hpp"
 #include "IDrawable.h"
@@ -16,33 +19,40 @@ namespace ThreeEngine {
 
     class Engine {
         private:
-            // GLUT needs static method for it's callback functions.
-            static Engine* instance;
+            //The window we'll be rendering to
+            SDL_Window* gWindow = NULL;
+
+            //OpenGL context
+            SDL_GLContext gContext;
+
+            bool isRunning = 0;
 
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
 
-            static void Cleanup();
+            void Cleanup();
 
-            static void Display();
+            void Display();
 
-            static void Idle();
+            void Idle();
 
-            static void Reshape(int w, int h);
+            void Reshape(int w, int h);
 
-            static void Timer(int value);
+            void Timer(int value);
 
-            static void NormalKeysDown(unsigned char key, int x, int y);
+            void NormalKeysDown(unsigned char key);
 
-            static void NormalKeysUp(unsigned char key, int x, int y);
+            void NormalKeysUp(unsigned char key);
 
-            static void SpecialKeysDown(int key, int x, int y);
+            void SpecialKeysDown(int key);
 
-            static void SpecialKeysUp(int key, int x, int y);
+            void SpecialKeysUp(int key);
 
-            static void MouseClick(int button, int state, int x, int y);
+            void MouseButtonDown(int button);
 
-            static void MouseMove(int x, int y);
+            void MouseButtonUp(int button);
+
+            void MouseMove(int x, int y);
 
         protected:
 
@@ -54,7 +64,7 @@ namespace ThreeEngine {
 
             void SetupRuntimeConfig();
 
-            void SetupGLUT(int argc, char** argv);
+            void SetupSDL(int argc, char** argv);
 
             void SetupGLEW();
 
@@ -106,8 +116,6 @@ namespace ThreeEngine {
             Engine();
 
             virtual ~Engine();
-
-            static Engine* Instance();
 
             void Init(int argc, char** argv);
 

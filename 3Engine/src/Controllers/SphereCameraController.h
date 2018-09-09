@@ -33,7 +33,7 @@ namespace ThreeEngine {
 
             Camera* camera;
 
-            SphereCameraController();
+            explicit SphereCameraController(Engine* engine);
 
             virtual ~SphereCameraController();
 

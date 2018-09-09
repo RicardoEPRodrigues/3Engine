@@ -6,11 +6,12 @@
 #include <sstream>
 #include <fstream>
 
-#include "GL/glew.h"
-#include "GL/freeglut.h"
+#include <SDL.h>
+#include <GL/glew.h>
+#include <SDL_opengl.h>
 
 #include "Engine.h"
-#include "Time/GlutTimeCalculator.h"
+#include "Time/SDLTimeCalculator.h"
 #include "OpenGLUtils.h"
 
 using json = nlohmann::json;
@@ -24,28 +25,20 @@ extern "C" {
 
 namespace ThreeEngine {
 
-    Engine* Engine::instance = nullptr;
-
-    Engine::Engine() {
-        instance = this;
-    }
+    Engine::Engine() = default;
 
     Engine::~Engine() = default;
-
-    Engine* Engine::Instance() {
-        return instance;
-    }
 
     /////////////////////////////////////////////////////////////////////// SETUP
 
     void Engine::Init(int argc, char** argv) {
         CheckSystemInfo();
         SetupConfig();
-        SetupGLUT(argc, argv);
+        SetupSDL(argc, argv);
         SetupGLEW();
         CheckOpenGLInfo();
         SetupOpenGL();
-        Time::SetTimeCalculator(new GlutTimeCalculator());
+        Time::SetTimeCalculator(new SDLTimeCalculator());
         OnInit();
         SetupCallbacks();
     }
@@ -93,25 +86,48 @@ namespace ThreeEngine {
         }
     }
 
-    void Engine::SetupGLUT(int argc, char** argv) {
-        glutInit(&argc, argv);
+    void Engine::SetupSDL(int, char**) {
 
-        glutInitContextVersion(config["opengl"]["major"], config["opengl"]["minor"]);
-        glutInitContextProfile(GLUT_CORE_PROFILE);
-        //glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
-        glutInitContextFlags(GLUT_FORWARD_COMPATIBLE);
-        //glutInitContextFlags(GLUT_DEBUG);
-
-        glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
-
-        glutInitWindowSize(config["window"]["x"], config["window"]["y"]);
-        glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-        std::string caption = config["window"]["caption"];
-        WindowHandle = glutCreateWindow(caption.c_str());
-        if (WindowHandle < 1) {
-            Debug::Error("ERROR: Could not create a new rendering window.");
+        //Initialize SDL
+        if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+        {
+            Debug::Error( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
             exit(EXIT_FAILURE);
         }
+
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, config["opengl"]["major"] );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, config["opengl"]["minor"] );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG );
+        SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
+        // TODO glutInitDisplayMode(GLUT_RGBA);
+
+        //Create window
+        std::string caption = config["window"]["caption"];
+        gWindow = SDL_CreateWindow( caption.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, config["window"]["x"], config["window"]["y"], SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
+        if( gWindow == nullptr )
+        {
+            Debug::Error( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
+            exit(EXIT_FAILURE);
+        }
+
+        //Create context
+        gContext = SDL_GL_CreateContext( gWindow );
+        if( gContext == nullptr )
+        {
+            Debug::Error( "OpenGL context could not be created! SDL Error: %s\n", SDL_GetError() );
+            exit(EXIT_FAILURE);
+        }
+
+        //Initialize GLEW
+
+        //Use Vsync
+//        if( SDL_GL_SetSwapInterval( 1 ) < 0 )
+//        {
+//            Debug::Error( "Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
+//            exit(EXIT_FAILURE);
+//        }
+
     }
 
     void Engine::SetupGLEW() {
@@ -139,7 +155,7 @@ namespace ThreeEngine {
         glCullFace(GL_BACK);
         glFrontFace(GL_CCW);
         // Transparency
-        glEnable(GL_BLEND); 
+        glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     }
 
@@ -154,30 +170,96 @@ namespace ThreeEngine {
     }
 
     void Engine::SetupCallbacks() {
-        glutCloseFunc(Cleanup);
-        glutDisplayFunc(Display);
-        glutIdleFunc(Idle);
-        glutReshapeFunc(Reshape);
-        glutTimerFunc(0, Timer, 0);
-
-        // Keyboard Input
-        glutKeyboardFunc(NormalKeysDown);
-        glutKeyboardUpFunc(NormalKeysUp);
-        glutSpecialFunc(SpecialKeysDown);
-        glutSpecialUpFunc(SpecialKeysUp);
-
-        // Mouse Input
-        glutMouseFunc(MouseClick);
-        glutMotionFunc(MouseMove);
-        glutPassiveMotionFunc(MouseMove);
+//        glutCloseFunc(Cleanup);
+//        glutDisplayFunc(Display);
+//        glutIdleFunc(Idle);
+//        glutReshapeFunc(Reshape);
+//        glutTimerFunc(0, Timer, 0);
+//
+//        // Keyboard Input
+//        glutKeyboardFunc(NormalKeysDown);
+//        glutKeyboardUpFunc(NormalKeysUp);
+//        glutSpecialFunc(SpecialKeysDown);
+//        glutSpecialUpFunc(SpecialKeysUp);
+//
+//        // Mouse Input
+//        glutMouseFunc(MouseClick);
+//        glutMotionFunc(MouseMove);
+//        glutPassiveMotionFunc(MouseMove);
     }
 
     void Engine::Run() {
-        glutMainLoop();
+        isRunning = true;
+
+        //Event handler
+        SDL_Event e;
+
+        //While application is running
+        while( isRunning )
+        {
+            //Handle events on queue
+            while( SDL_PollEvent( &e ) != 0 )
+            {
+                //User requests quit
+                if( e.type == SDL_QUIT )
+                {
+                    isRunning = false;
+                }
+                //Keyboard Events
+                if (e.type == SDL_KEYDOWN) {
+                    int x = 0, y = 0;
+                    SDL_GetMouseState( &x, &y );
+                    const char* name = SDL_GetKeyName(e.key.keysym.sym);
+                    if (name[1] == '\0') {
+                        auto key = (unsigned char) name[0];
+                        NormalKeysDown(key);
+                    } else {
+                        SpecialKeysDown(e.key.keysym.sym);
+                    }
+                }
+                if (e.type == SDL_KEYUP) {
+                    int x = 0, y = 0;
+                    SDL_GetMouseState( &x, &y );
+                    const char* name = SDL_GetKeyName(e.key.keysym.sym);
+                    if (name[1] == '\0') {
+                        auto key = (unsigned char) name[0];
+                        NormalKeysUp(key);
+                    } else {
+                        SpecialKeysUp(e.key.keysym.sym);
+                    }
+                }
+                // Mouse Events
+                if (e.type == SDL_MOUSEBUTTONDOWN) {
+                    MouseButtonDown(e.button.button);
+                }
+                if (e.type == SDL_MOUSEBUTTONUP) {
+                    MouseButtonUp(e.button.button);
+                }
+                if (e.type == SDL_MOUSEMOTION) {
+                    MouseMove(e.motion.x, e.motion.y);
+                }
+                //Window event occured
+                if( e.type == SDL_WINDOWEVENT )
+                {
+                    switch( e.window.event )
+                    {
+                        //Get new dimensions and repaint on window size change
+                        case SDL_WINDOWEVENT_SIZE_CHANGED:
+                            Reshape(e.window.data1, e.window.data2);
+                            break;
+                        default:break;
+                    }
+                }
+            }
+            Idle();
+            Display();
+        }
+
+        Exit();
     }
 
     void Engine::Exit() {
-        glutLeaveMainLoop();
+        Cleanup();
     }
 
     /////////////////////////////////////////////////////////////////////// CALLBACKS
@@ -185,75 +267,81 @@ namespace ThreeEngine {
     void Engine::Cleanup() {
         glUseProgram(0);
         glBindVertexArray(0);
-        instance->OnCleanup();
-        for (auto& actor : instance->actors) {
+        OnCleanup();
+        for (auto& actor : actors) {
             delete actor;
         }
     }
 
     void Engine::Display() {
-        ++instance->FrameCount;
+        ++FrameCount;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        instance->PreDraw();
-        for (auto& actor : instance->actors) {
+        PreDraw();
+        for (auto& actor : actors) {
             actor->Draw();
         }
-        instance->PostDraw();
-        glutSwapBuffers();
+        PostDraw();
+        //Update screen
+        SDL_GL_SwapWindow( gWindow );
     }
 
     void Engine::Idle() {
         Time::Update();
-        instance->Update();
-        instance->input.Update();
-        glutPostRedisplay();
+        Update();
+        input.Update();
+        // return bool, if true redisplay, don't if false.
     }
 
     void Engine::Reshape(int w, int h) {
-        instance->config["window"]["x"] = w;
-        instance->config["window"]["y"] = h;
-        glViewport(0, 0, instance->config["window"]["x"], instance->config["window"]["y"]);
-        instance->OnReshape(w, h);
+        config["window"]["x"] = w;
+        config["window"]["y"] = h;
+        glViewport(0, 0, config["window"]["x"], config["window"]["y"]);
+        OnReshape(w, h);
     }
 
     void Engine::Timer(int) {
-        instance->SetupRuntimeConfig();
+        // TODO set timers
+        SetupRuntimeConfig();
 
-        std::string caption = instance->config["window"]["caption"];
+        std::string caption = config["window"]["caption"];
         // Update Window Title
         std::ostringstream oss;
-        oss << caption << ": " << instance->FrameCount << " FPS @ ("
-            << instance->config["window"]["x"] << "x"
-            << instance->config["window"]["y"] << ")";
+        oss << caption << ": " << FrameCount << " FPS @ ("
+            << config["window"]["x"] << "x"
+            << config["window"]["y"] << ")";
         std::string s = oss.str();
-        glutSetWindow(instance->WindowHandle);
-        glutSetWindowTitle(s.c_str());
-        instance->FrameCount = 0;
-        glutTimerFunc(1000, Timer, 0);
+        FrameCount = 0;
+//        glutSetWindow(WindowHandle);
+//        glutSetWindowTitle(s.c_str());
+//        glutTimerFunc(1000, Timer, 0);
     }
 
-    void Engine::NormalKeysDown(unsigned char key, int x, int y) {
-        instance->input.NormalKeysDown(key, x, y);
+    void Engine::NormalKeysDown(unsigned char key) {
+        input.NormalKeysDown(key);
     }
 
-    void Engine::NormalKeysUp(unsigned char key, int x, int y) {
-        instance->input.NormalKeysUp(key, x, y);
+    void Engine::NormalKeysUp(unsigned char key) {
+        input.NormalKeysUp(key);
     }
 
-    void Engine::SpecialKeysDown(int key, int x, int y) {
-        instance->input.SpecialKeysDown(key, x, y);
+    void Engine::SpecialKeysDown(int key) {
+        input.SpecialKeysDown(key);
     }
 
-    void Engine::SpecialKeysUp(int key, int x, int y) {
-        instance->input.SpecialKeysUp(key, x, y);
+    void Engine::SpecialKeysUp(int key) {
+        input.SpecialKeysUp(key);
     }
 
-    void Engine::MouseClick(int button, int state, int x, int y) {
-        instance->input.MouseClick(button, state, x, y);
+    void Engine::MouseButtonDown(int button) {
+        input.MouseButtonDown(button);
+    }
+
+    void Engine::MouseButtonUp(int button) {
+        input.MouseButtonUp(button);
     }
 
     void Engine::MouseMove(int x, int y) {
-        instance->input.MouseMove(x,y);
+        input.MouseMove(x,y);
     }
 
 } /* namespace Divisaction */

@@ -25,13 +25,14 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
     set(LIBRARY_OUTPUT_PATH ${RUNTIME_OUTPUT_DIRECTORY_RELEASE}/lib)
 ENDIF ()
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_HOME_DIRECTORY}/cmake")
+
 if (WIN32) # WINDOWS specific properties
     add_definitions(-DOS_WIN)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-D_CRT_NO_VA_START_VALIDATION)
 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -W3")
-    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_HOME_DIRECTORY}/cmake")
 elseif (APPLE)
     add_definitions(-DOS_MAC)
 elseif (UNIX AND NOT APPLE)
@@ -39,6 +40,40 @@ elseif (UNIX AND NOT APPLE)
 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized")
 endif ()
+
+
+# External Libraries configuration
+
+if (UNIX AND NOT APPLE)
+    message(STATUS "GLEW and SDL need to be installed.")
+    message(STATUS "Run:\tsudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew-dev libxmu-dev libxi-dev")
+endif ()
+
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+find_package(SDL2_mixer REQUIRED)
+
+set(OpenGL_GL_PREFERENCE GLVND)
+find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
+
+include_directories(
+        ${SDL2_INCLUDE_DIRS}
+        ${SDL2_IMAGE_INCLUDE_DIRS}
+        ${SDL2_TTF_INCLUDE_DIRS}
+        ${SDL2_MIXER_INCLUDE_DIRS}
+
+        ${OPENGL_INCLUDE_DIRS}
+        ${GLEW_INCLUDE_DIRS})
+
+set(GRAPHIC_LIBRARIES
+        ${SDL2_LIBRARIES}
+        ${SDL2_IMAGE_LIBRARIES}
+        ${SDL2_TTF_LIBRARIES}
+        ${SDL2_MIXER_LIBRARIES}
+        ${OPENGL_LIBRARIES}
+        ${GLEW_LIBRARIES})
 
 # Project files and executables/libraries
 

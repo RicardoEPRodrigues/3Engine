@@ -9,13 +9,13 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 # Project files and executables/libraries
 
 add_executable(LightScene src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
-target_link_libraries(LightScene 3Engine)
+target_link_libraries(LightScene ${GRAPHIC_LIBRARIES} 3Engine)
 
 add_executable(TimeShaders src/TimeShaders/MyEngine.h src/TimeShaders/MyEngine.cpp)
-target_link_libraries(TimeShaders 3Engine)
+target_link_libraries(TimeShaders ${GRAPHIC_LIBRARIES} 3Engine)
 
 add_executable(Tangram3D src/Tangram3D/Tangram3D.h src/Tangram3D/Tangram3D.cpp)
-target_link_libraries(Tangram3D 3Engine)
+target_link_libraries(Tangram3D ${GRAPHIC_LIBRARIES} 3Engine)
 
 # Post build commands
 
