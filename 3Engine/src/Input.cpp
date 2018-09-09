@@ -52,21 +52,12 @@ namespace ThreeEngine {
         return clickKeys[tolower(key)].first && !clickKeys[tolower(key)].second;
     }
 
-    void Input::SpecialKeysDown(int key) {
-        specialKeys[key] = true;
-        updateModifierKeys();
-    }
-
-    void Input::SpecialKeysUp(int key) {
-        specialKeys[key] = false;
-    }
-
     bool Input::operator[](unsigned char key) {
         return clickKeys[tolower(key)].first;
     }
 
     bool Input::operator[](SpecialKeys key) {
-        return specialKeys[key];
+        return clickKeys[key].first;
     }
 
     bool Input::operator[](ModifierKeys key) {

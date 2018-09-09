@@ -187,26 +187,10 @@ namespace ThreeEngine {
                 }
                 //Keyboard Events
                 if (e.type == SDL_KEYDOWN) {
-                    int x = 0, y = 0;
-                    SDL_GetMouseState( &x, &y );
-                    const char* name = SDL_GetKeyName(e.key.keysym.sym);
-                    if (name[1] == '\0') {
-                        auto key = (unsigned char) name[0];
-                        input.NormalKeysDown(key);
-                    } else {
-                        input.SpecialKeysDown(e.key.keysym.sym);
-                    }
+                    input.NormalKeysDown(e.key.keysym.sym);
                 }
                 if (e.type == SDL_KEYUP) {
-                    int x = 0, y = 0;
-                    SDL_GetMouseState( &x, &y );
-                    const char* name = SDL_GetKeyName(e.key.keysym.sym);
-                    if (name[1] == '\0') {
-                        auto key = (unsigned char) name[0];
-                        input.NormalKeysUp(key);
-                    } else {
-                        input.SpecialKeysUp(e.key.keysym.sym);
-                    }
+                    input.NormalKeysUp(e.key.keysym.sym);
                 }
                 // Mouse Events
                 if (e.type == SDL_MOUSEBUTTONDOWN) {

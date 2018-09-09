@@ -52,11 +52,11 @@ namespace ThreeEngine {
     };
 
     enum MouseKeys {
-        SCROLL_UP = 50,
-        SCROLL_DOWN = 51,
         LEFT = SDL_BUTTON_LEFT,
         RIGHT = SDL_BUTTON_RIGHT,
         MIDDLE = SDL_BUTTON_MIDDLE,
+        SCROLL_UP = 50,
+        SCROLL_DOWN = 51,
     };
 
     enum MouseCursor {
@@ -90,10 +90,6 @@ namespace ThreeEngine {
             void NormalKeysDown(unsigned char key);
 
             void NormalKeysUp(unsigned char key);
-
-            void SpecialKeysDown(int key);
-
-            void SpecialKeysUp(int key);
 
             void MouseButtonDown(int button);
 
