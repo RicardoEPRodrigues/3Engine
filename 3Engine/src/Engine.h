@@ -38,7 +38,7 @@ namespace ThreeEngine {
 
             void Reshape(int w, int h);
 
-            void Timer(int value);
+            void Timer();
 
         protected:
 
@@ -111,7 +111,8 @@ namespace ThreeEngine {
                     {"window",   {
                                          {"x",          800},
                                          {"y",          600},
-                                         {"caption",    "Hello World"}
+                                         {"caption",    "Hello World"},
+                                         {"vsync",      1}
                                  }},
                     {"opengl",   {
                                          {"major",      4},

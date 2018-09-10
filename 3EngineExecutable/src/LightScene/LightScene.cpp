@@ -82,6 +82,18 @@ namespace ThreeEngine {
                         roughness = 1;
                     }
                 }
+                if (engine->input[SpecialKeys::F2] && engine->input[SpecialKeys::SHIFT]) {
+                    roughness += step / delta;
+                    if (roughness > 1) {
+                        roughness = 1;
+                    }
+                }
+                if (engine->input[MouseKeys::RIGHT] && engine->input[SpecialKeys::SHIFT]) {
+                    roughness += step / delta;
+                    if (roughness > 1) {
+                        roughness = 1;
+                    }
+                }
             }
     };
 

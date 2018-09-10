@@ -35,18 +35,14 @@ namespace ThreeEngine {
         PAGE_DOWN = SDLK_PAGEDOWN,
         HOME = SDLK_HOME,
         END = SDLK_END,
-        INSERT = SDLK_INSERT
-    };
-
-    // TODO Implement Modifier keys
-    enum ModifierKeys {
-        SHIFT = SDLK_LSHIFT,
+        INSERT = SDLK_INSERT,
+        SHIFT,
         SHIFT_LEFT = SDLK_LSHIFT,
         SHIFT_RIGHT = SDLK_RSHIFT,
-        CTRL = SDLK_LCTRL,
+        CTRL,
         CTRL_LEFT = SDLK_LCTRL,
         CTRL_RIGHT = SDLK_RCTRL,
-        ALT = SDLK_LALT,
+        ALT,
         ALT_LEFT = SDLK_LALT,
         ALT_RIGHT = SDLK_RALT,
     };
@@ -71,12 +67,9 @@ namespace ThreeEngine {
 
     class Input {
         private:
-            std::map<unsigned char, std::pair<bool, bool>> clickKeys;
+            std::map<int, std::pair<bool, bool>> clickKeys;
             std::map<int, bool> specialKeys;
-            std::map<int, bool> modifierKeys;
             std::map<int, bool> mouseKeys;
-
-            void updateModifierKeys();
 
             Vector2 mouseScreenLocation;
 
@@ -87,9 +80,9 @@ namespace ThreeEngine {
 
             virtual ~Input();
 
-            void NormalKeysDown(unsigned char key);
+            void NormalKeysDown(int key);
 
-            void NormalKeysUp(unsigned char key);
+            void NormalKeysUp(int key);
 
             void MouseButtonDown(int button);
 
@@ -108,8 +101,6 @@ namespace ThreeEngine {
             bool operator[](unsigned char key);
 
             bool operator[](SpecialKeys key);
-
-            bool operator[](ModifierKeys key);
 
             bool operator[](MouseKeys key);
 

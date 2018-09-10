@@ -99,7 +99,6 @@ namespace ThreeEngine {
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG );
         SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
-        // TODO glutInitDisplayMode(GLUT_RGBA);
 
         //Create window
         std::string caption = config["window"]["caption"];
@@ -119,7 +118,7 @@ namespace ThreeEngine {
         }
 
         //Use Vsync
-        if( SDL_GL_SetSwapInterval( 1 ) < 0 )
+        if( SDL_GL_SetSwapInterval( config["window"]["vsync"] ) < 0 )
         {
             Debug::Warn( "Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
         }
@@ -217,6 +216,7 @@ namespace ThreeEngine {
             }
             Display();
             Idle();
+            Timer();
         }
 
         Cleanup();
@@ -263,21 +263,25 @@ namespace ThreeEngine {
         OnReshape(w, h);
     }
 
-    void Engine::Timer(int) {
-        // TODO set timers
+    milliseconds counter = 0;
+    void Engine::Timer() {
+        if (counter < 1000) {
+            counter += Time::Delta();
+            return;
+        }
+        counter = 0;
+
         SetupRuntimeConfig();
 
         std::string caption = config["window"]["caption"];
         // Update Window Title
-        std::ostringstream oss;
+        std::stringstream oss;
         oss << caption << ": " << FrameCount << " FPS @ ("
             << config["window"]["x"] << "x"
             << config["window"]["y"] << ")";
         std::string s = oss.str();
         FrameCount = 0;
-//        glutSetWindow(WindowHandle);
-//        glutSetWindowTitle(s.c_str());
-//        glutTimerFunc(1000, Timer, 0);
+        SDL_SetWindowTitle(gWindow, s.c_str());
     }
 
     SDL_Window* Engine::GetWindow() {

@@ -9,23 +9,12 @@ using namespace std;
 
 namespace ThreeEngine {
 
-    Input::Input() : clickKeys(), specialKeys(), modifierKeys(), mouseKeys() {}
+    Input::Input() : clickKeys(), specialKeys(), mouseKeys() {}
 
     Input::~Input() {
         if (cursor) {
             SDL_FreeCursor(cursor);
         }
-    }
-
-    void Input::updateModifierKeys() {
-        for (auto&& modifierKey : modifierKeys) {
-            modifierKey.second = false;
-        }
-        int mod = 0; // TODO Inputs glutGetModifiers();
-        if (mod != 0) {
-            modifierKeys[mod] = true;
-        }
-
     }
 
     void Input::Update() {
@@ -38,12 +27,11 @@ namespace ThreeEngine {
         mouseKeys[SCROLL_DOWN] = false;
     }
 
-    void Input::NormalKeysDown(unsigned char key) {
+    void Input::NormalKeysDown(int key) {
         clickKeys[tolower(key)].first = true;
-        updateModifierKeys();
     }
 
-    void Input::NormalKeysUp(unsigned char key) {
+    void Input::NormalKeysUp(int key) {
         clickKeys[tolower(key)].first = false;
         clickKeys[tolower(key)].second = false;
     }
@@ -57,11 +45,16 @@ namespace ThreeEngine {
     }
 
     bool Input::operator[](SpecialKeys key) {
-        return clickKeys[key].first;
-    }
-
-    bool Input::operator[](ModifierKeys key) {
-        return modifierKeys[key];
+        switch (key) {
+            case SHIFT:
+                return clickKeys[SHIFT_LEFT].first || clickKeys[SHIFT_RIGHT].first;
+            case CTRL:
+                return clickKeys[CTRL_LEFT].first || clickKeys[CTRL_RIGHT].first;
+            case ALT:
+                return clickKeys[ALT_LEFT].first || clickKeys[ALT_RIGHT].first;
+            default:
+                return clickKeys[key].first;
+        }
     }
 
     bool Input::operator[](MouseKeys key) {
