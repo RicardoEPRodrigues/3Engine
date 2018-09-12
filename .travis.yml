@@ -4,8 +4,12 @@ dist: trusty
 sudo: required
 compiler:
   - gcc
-script: mkdir -p intermediate; cd intermediate; cmake .. -DCMAKE_BUILD_TYPE=Debug; make
-# install: apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew-dev libxmu-dev libxi-dev
+script: |
+  mkdir -p intermediate
+  cd intermediate
+  cmake .. -DCMAKE_BUILD_TYPE=Debug
+  make
+# install: apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libglew-dev libxmu-dev libxi-dev
 matrix:
   include:
     # works on Precise and Trusty
@@ -16,10 +20,10 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-7
-            - libsdl2-2.0-0
-            - libsdl2-image-2.0-0
-            - libsdl2-mixer-2.0-0
-            - libsdl2-ttf-2.0-0
+            - libsdl2-dev
+            - libsdl2-image-dev
+            - libsdl2-mixer-dev
+            - libsdl2-ttf-dev
             - libglew-dev
             - libxmu-dev
             - libxi-dev

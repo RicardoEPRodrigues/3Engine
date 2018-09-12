@@ -1,6 +1,6 @@
 # [3Engine](https://ricardoeprodrigues.github.io/3Engine/)
 
-[![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine) [![AppVeyor](https://ci.appveyor.com/api/projects/status/3kcxkyeddhu9qhuq?svg=true)](https://ci.appveyor.com/project/RicardoEPRodrigues/3engine)
+[![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) <!-- [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine) --> [![AppVeyor](https://ci.appveyor.com/api/projects/status/3kcxkyeddhu9qhuq?svg=true)](https://ci.appveyor.com/project/RicardoEPRodrigues/3engine)
 
 Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for Games*.
 
@@ -8,7 +8,7 @@ Fun feature: uses JSON files for configuration with realtime change detection.
 
 This project depends on OpenGL, GLEW and SDL2. While the first is normally installed by default in most systems the latter libraries are not.
 
-You might want to visit the [Release page](https://github.com/RicardoEPRodrigues/3Engine/releases) and check out pre-built versions of the engine.
+You might want to visit the [Release page](https://github.com/RicardoEPRodrigues/3Engine/releases) and check out pre-built versions of the engine. On Linux you need SDL installed to run a release: `sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew1.13`.
 
 **CONTRIBUTIONS: Help make the library more usable. Mainly regarding using pre-built versions.**
 
