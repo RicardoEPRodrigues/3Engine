@@ -1,6 +1,6 @@
 # [3Engine](https://ricardoeprodrigues.github.io/3Engine/)
 
-[![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) <!-- [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine) --> [![AppVeyor](https://ci.appveyor.com/api/projects/status/3kcxkyeddhu9qhuq?svg=true)](https://ci.appveyor.com/project/RicardoEPRodrigues/3engine)
+[![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine) [![AppVeyor](https://ci.appveyor.com/api/projects/status/3kcxkyeddhu9qhuq?svg=true)](https://ci.appveyor.com/project/RicardoEPRodrigues/3engine)
 
 Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for Games*.
 
