@@ -87,13 +87,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
@@ -136,10 +136,10 @@
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
-      <Command>echo Copying FreeGLUT
-copy "$(SolutionDir)\dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+      <Command>echo Copying SDL2
+copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
 echo Copying GLEW
-copy "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
@@ -190,23 +190,29 @@ xcopy "$(ProjectDir)assets" "$(OutDir)assets\" /E</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>$(SolutionDir)dependencies\SDL2-msvc\lib\x64\;$(SolutionDir)dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
-      <Command>echo Copying FreeGLUT
-copy "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+      <Command>echo Copying SDL2
+copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
 echo Copying GLEW
-copy "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files
 cd "$(OutDir)"
 if exist config rd /s /q config
 mkdir config
-xcopy "$(SolutionDir)config" "$(OutDir)config\" /E
+xcopy "$(SolutionDir)3Engine\config" "$(OutDir)config\" /E
+xcopy "$(ProjectDir)config" "$(OutDir)config\" /E
 if exist shaders rd /s /q shaders
 mkdir shaders
-xcopy "$(SolutionDir)shaders" "$(OutDir)shaders\" /E</Command>
+xcopy "$(SolutionDir)3Engine\shaders" "$(OutDir)shaders\" /E
+xcopy "$(ProjectDir)shaders" "$(OutDir)shaders\" /E
+if exist assets rd /s /q assets
+mkdir assets
+xcopy "$(SolutionDir)3Engine\assets" "$(OutDir)assets\" /E
+xcopy "$(ProjectDir)assets" "$(OutDir)assets\" /E</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
