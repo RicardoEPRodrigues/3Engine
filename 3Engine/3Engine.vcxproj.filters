@@ -13,6 +13,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\BRDF\fragment.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\BRDF\program.json">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\BRDF\vertex.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\Actor.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -106,7 +117,7 @@
     <ClCompile Include="src\SOIL\stb_image_aug.c">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\Time\GlutTimeCalculator.cpp">
+    <ClCompile Include="src\Time\SDLTimeCalculator.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Time\Time.cpp">
@@ -231,7 +242,7 @@
     <ClInclude Include="src\SOIL\stb_image_aug.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\Time\GlutTimeCalculator.h">
+    <ClInclude Include="src\Time\SDLTimeCalculator.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Time\Time.h">
@@ -252,16 +263,5 @@
     <ClInclude Include="src\Utilities\singleton.h">
       <Filter>Engine</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="shaders\BRDF\fragment.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="shaders\BRDF\program.json">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="shaders\BRDF\vertex.glsl">
-      <Filter>Shaders</Filter>
-    </None>
   </ItemGroup>
 </Project>

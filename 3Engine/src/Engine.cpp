@@ -6,9 +6,9 @@
 #include <sstream>
 #include <fstream>
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <GL/glew.h>
-#include <SDL_opengl.h>
+#include <SDL2/SDL_opengl.h>
 
 #include "Engine.h"
 #include "Time/SDLTimeCalculator.h"
@@ -18,9 +18,9 @@ using json = nlohmann::json;
 
 // NVIDIA Dedicated Graphics (Optimus)
 #if OS_WIN
-extern "C" {
-    _declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
-}
+//extern "C" {
+//    _declspec(dllexport) DWORD NvOptimusEnablement = 0x00000001;
+//}
 #endif
 
 namespace ThreeEngine {

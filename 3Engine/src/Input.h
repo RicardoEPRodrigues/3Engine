@@ -7,7 +7,7 @@
 #define THREEENGINE_INPUT_H
 
 #include <map>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "Debug.h"
 #include "GL/glew.h"
 #include "Math/Vector2.h"

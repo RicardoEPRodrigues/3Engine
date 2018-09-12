@@ -19,6 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\BRDF\fragment.glsl" />
+    <None Include="shaders\BRDF\program.json" />
+    <None Include="shaders\BRDF\vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\Actor.cpp" />
     <ClCompile Include="src\Actors\SkySphere.cpp" />
     <ClCompile Include="src\Camera\Camera.cpp" />
@@ -50,7 +55,7 @@
     <ClCompile Include="src\SOIL\image_helper.c" />
     <ClCompile Include="src\SOIL\SOIL.c" />
     <ClCompile Include="src\SOIL\stb_image_aug.c" />
-    <ClCompile Include="src\Time\GlutTimeCalculator.cpp" />
+    <ClCompile Include="src\Time\SDLTimeCalculator.cpp" />
     <ClCompile Include="src\Time\Time.cpp" />
     <ClCompile Include="src\Utilities\Simulation.cpp" />
   </ItemGroup>
@@ -93,18 +98,13 @@
     <ClInclude Include="src\SOIL\stbi_DDS_aug.h" />
     <ClInclude Include="src\SOIL\stbi_DDS_aug_c.h" />
     <ClInclude Include="src\SOIL\stb_image_aug.h" />
-    <ClInclude Include="src\Time\GlutTimeCalculator.h" />
+    <ClInclude Include="src\Time\SDLTimeCalculator.h" />
     <ClInclude Include="src\Time\Time.h" />
     <ClInclude Include="src\Utilities\json.hpp" />
     <ClInclude Include="src\Utilities\Manager.h" />
     <ClInclude Include="src\Utilities\Managers.h" />
     <ClInclude Include="src\Utilities\Simulation.h" />
     <ClInclude Include="src\Utilities\singleton.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="shaders\BRDF\fragment.glsl" />
-    <None Include="shaders\BRDF\program.json" />
-    <None Include="shaders\BRDF\vertex.glsl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -163,7 +163,7 @@
     <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
@@ -171,7 +171,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
-    <IncludePath>$(SolutionDir)\dependencies\glew-msvc\include;$(SolutionDir)\dependencies\freeglut-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.dll</TargetExt>
@@ -214,7 +214,7 @@
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying FreeGLUT
-copy "$(SolutionDir)\dependencies\freeglut-msvc\bin\x64\freeglut.dll" "$(OutDir)"
+copy "$(SolutionDir)\dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
 echo Copying GLEW
 copy "$(SolutionDir)\dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files

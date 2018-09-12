@@ -3,7 +3,7 @@
  * 
  * Copyright (C) Ricardo Rodrigues 2018 - All Rights Reserved
  */
-#include <SDL_timer.h>
+#include <SDL2/SDL_timer.h>
 #include "SDLTimeCalculator.h"
 
 namespace ThreeEngine {
