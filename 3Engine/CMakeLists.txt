@@ -6,8 +6,6 @@ project(3Engine)
 # Project files and executables/libraries
 
 set(ENGINE_SOURCE_FILES
-        # SOIL
-        src/SOIL/image_DXT.c src/SOIL/image_DXT.h src/SOIL/image_helper.c src/SOIL/image_helper.h src/SOIL/SOIL.c src/SOIL/SOIL.h src/SOIL/stb_image_aug.c src/SOIL/stb_image_aug.h src/SOIL/stbi_DDS_aug.h src/SOIL/stbi_DDS_aug_c.h
         src/Utilities/json.hpp
         src/Utilities/singleton.h
         src/Debug.h

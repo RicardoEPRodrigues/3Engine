@@ -11,11 +11,11 @@ namespace ThreeEngine {
     Cubemap::Cubemap() = default;
 
     Cubemap::~Cubemap() {
-        glBindTexture(GL_TEXTURE_2D, id);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, id);
         {
             glDeleteTextures(1, &id);
         }
-        glBindTexture(GL_TEXTURE_2D, 0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
     }
 
     void Cubemap::Init() {

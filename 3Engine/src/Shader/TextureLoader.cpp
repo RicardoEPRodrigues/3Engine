@@ -4,8 +4,8 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "../Debug.h"
-#include "../SOIL/SOIL.h"
 #include "TextureLoader.h"
+#include <SDL_image.h>
 
 namespace ThreeEngine {
 
@@ -13,9 +13,34 @@ namespace ThreeEngine {
 
     void TextureLoader::LoadImageData(std::string const& filepath,
                                       ImageData& imageData) {
-        imageData.data = SOIL_load_image(filepath.c_str(), &(imageData.width),
-                                         &(imageData.height), nullptr,
-                                         SOIL_LOAD_RGBA);
+
+//        SDL_PixelFormat* format = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA8888);
+        SDL_PixelFormat* format = SDL_AllocFormat(SDL_PIXELFORMAT_RGBA32);
+        SDL_Surface* optimizedSurface = nullptr;
+
+        //Load image at specified path
+        SDL_Surface* loadedSurface = IMG_Load(filepath.c_str());
+        if (loadedSurface == nullptr) {
+            Debug::Error("Unable to load image %s! SDL_image Error: %s\n", filepath.c_str(), IMG_GetError());
+            return;
+        }
+
+        //Convert surface to screen format
+        optimizedSurface = SDL_ConvertSurface(loadedSurface, format, 0);
+        if (optimizedSurface == nullptr) {
+            Debug::Error("Unable to optimize image %s! SDL Error: %s\n", filepath.c_str(), SDL_GetError());
+            return;
+        }
+        //Get rid of old loaded surface
+        SDL_FreeSurface(loadedSurface);
+
+        imageData.data = static_cast<unsigned char*>(malloc(optimizedSurface->h * optimizedSurface->pitch));
+        SDL_memcpy(imageData.data, optimizedSurface->pixels, optimizedSurface->h * optimizedSurface->pitch);
+
+        imageData.height = optimizedSurface->h;
+        imageData.width = optimizedSurface->w;
+
+        SDL_FreeSurface(optimizedSurface);
     }
 
     std::shared_ptr<Texture>
