@@ -213,7 +213,7 @@ namespace ThreeEngine {
         }
         free(blockIndices);
         free(nameLength);
-#elif
+#else
         glGetProgramInterfaceiv(static_cast<GLuint>(id), GL_UNIFORM,
                                 GL_ACTIVE_RESOURCES, &numUniforms);
         const GLenum properties[4] = {GL_BLOCK_INDEX, GL_TYPE, GL_NAME_LENGTH,
