@@ -88,14 +88,14 @@
     <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\SDL2-image-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <TargetName>$(ProjectName)_dbg</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\SDL2-image-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <TargetName>$(ProjectName)_rls</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
@@ -130,14 +130,20 @@
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies\SDL2-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dependencies\SDL2-msvc\lib\x64\;$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying SDL2
 copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\SDL2_image.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\zlib1.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libtiff-5.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libwebp-7.dll" "$(OutDir)"
 echo Copying GLEW
 copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files
@@ -189,14 +195,20 @@ xcopy "$(SolutionDir)3Engine\assets" "$(OutDir)assets\" /E
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(SolutionDir)dependencies\SDL2-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)dependencies\SDL2-msvc\lib\x64\;$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\;$(SolutionDir)\dependencies\glew-msvc\lib\Release\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;SDL2.lib;SDL2main.lib;glew32.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
     <PostBuildEvent>
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying SDL2
 copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\SDL2_image.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\zlib1.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libtiff-5.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libwebp-7.dll" "$(OutDir)"
 echo Copying GLEW
 copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files

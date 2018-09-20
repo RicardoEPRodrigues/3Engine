@@ -51,10 +51,6 @@
     <ClCompile Include="src\Shapes\BasicShapes.cpp" />
     <ClCompile Include="src\Shapes\Mesh.cpp" />
     <ClCompile Include="src\Shapes\MeshLoader.cpp" />
-    <ClCompile Include="src\SOIL\image_DXT.c" />
-    <ClCompile Include="src\SOIL\image_helper.c" />
-    <ClCompile Include="src\SOIL\SOIL.c" />
-    <ClCompile Include="src\SOIL\stb_image_aug.c" />
     <ClCompile Include="src\Time\SDLTimeCalculator.cpp" />
     <ClCompile Include="src\Time\Time.cpp" />
     <ClCompile Include="src\Utilities\Simulation.cpp" />
@@ -92,12 +88,6 @@
     <ClInclude Include="src\Shapes\BasicShapes.h" />
     <ClInclude Include="src\Shapes\Mesh.h" />
     <ClInclude Include="src\Shapes\MeshLoader.h" />
-    <ClInclude Include="src\SOIL\image_DXT.h" />
-    <ClInclude Include="src\SOIL\image_helper.h" />
-    <ClInclude Include="src\SOIL\SOIL.h" />
-    <ClInclude Include="src\SOIL\stbi_DDS_aug.h" />
-    <ClInclude Include="src\SOIL\stbi_DDS_aug_c.h" />
-    <ClInclude Include="src\SOIL\stb_image_aug.h" />
     <ClInclude Include="src\Time\SDLTimeCalculator.h" />
     <ClInclude Include="src\Time\Time.h" />
     <ClInclude Include="src\Utilities\json.hpp" />
@@ -163,7 +153,7 @@
     <IntDir>$(SolutionDir)\intermediate\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\SDL2-image-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
@@ -171,7 +161,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
-    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)dependencies\SDL2-msvc\include;$(SolutionDir)dependencies\SDL2-image-msvc\include;$(SolutionDir)dependencies\glew-msvc\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <TargetName>$(ProjectName)</TargetName>
     <IntDir>$(SolutionDir)intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <TargetExt>.dll</TargetExt>
@@ -215,6 +205,12 @@
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying SDL2
 copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\SDL2_image.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\zlib1.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libtiff-5.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libwebp-7.dll" "$(OutDir)"
 echo Copying GLEW
 copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files
@@ -274,6 +270,12 @@ xcopy "$(ProjectDir)assets" "$(OutDir)assets\" /E /Y</Command>
       <Message>Copy dependencies libraries</Message>
       <Command>echo Copying SDL2
 copy /Y "$(SolutionDir)dependencies\SDL2-msvc\lib\x64\SDL2.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\SDL2_image.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\zlib1.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libjpeg-9.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libpng16-16.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libtiff-5.dll" "$(OutDir)"
+copy /Y "$(SolutionDir)dependencies\SDL2-image-msvc\lib\x64\libwebp-7.dll" "$(OutDir)"
 echo Copying GLEW
 copy /Y "$(SolutionDir)dependencies\glew-msvc\bin\Release\x64\glew32.dll" "$(OutDir)"
 echo Copying Config Files

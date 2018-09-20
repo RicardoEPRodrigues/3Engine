@@ -76,11 +76,13 @@ The inclusion of the said libraries are needed, yet dependencies are ignored to 
 1. Download precompiled builds for MSVC (or compile it yourself) 
         
     * [SDL2](https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-msvc.zip)
+    * [SDL2-image](https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-image-msvc.zip)
     * [GLEW](https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip)
 
 1. Create a folder named `dependencies` and place inside the libraries. Rename them as shown:
 
     * SDL2-msvc
+    * SDL2-image-msvc
     * glew-msvc
 
 ### Compiling
