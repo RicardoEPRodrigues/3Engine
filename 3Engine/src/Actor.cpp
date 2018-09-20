@@ -59,10 +59,12 @@ namespace ThreeEngine {
 
             if (preDraw) {
                 preDraw();
+                CheckOpenGLError("Error while on Pre Draw.");
             }
             mesh->Draw();
             if (postDraw) {
                 postDraw();
+                CheckOpenGLError("Error while on Post Draw.");
             }
 
             for (auto&& texture : textures) {

@@ -51,8 +51,8 @@ endif ()
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
-find_package(SDL2_ttf REQUIRED)
-find_package(SDL2_mixer REQUIRED)
+#find_package(SDL2_ttf REQUIRED)
+#find_package(SDL2_mixer REQUIRED)
 
 set(OpenGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)

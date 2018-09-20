@@ -96,8 +96,19 @@ namespace ThreeEngine {
             exit(EXIT_FAILURE);
         }
 
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, config["opengl"]["major"] );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, config["opengl"]["minor"] );
+        int glMajor = config["opengl"]["major"];
+        int glMinor = config["opengl"]["minor"];
+
+#if OS_MAC
+        if (glMajor == 4) {
+            glMinor = glMinor > 1 ? 1 : glMinor;
+        }
+#endif
+
+        Debug::Log("Running OpenGL %d.%d", glMajor, glMinor);
+
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, glMajor );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, glMinor );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG );
         SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);

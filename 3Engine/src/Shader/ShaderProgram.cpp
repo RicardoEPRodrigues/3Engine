@@ -185,6 +185,35 @@ namespace ThreeEngine {
 
     void ShaderProgram::ExtractUniform(int id, std::vector<std::pair<int, std::string>>& uniforms) {
         GLint numUniforms = 0;
+
+        // On Mac OS X, OpenGL only goes up to 4.1, so we need to use this old version.
+#if OS_MAC
+        glGetProgramiv(id, GL_ACTIVE_UNIFORMS, &numUniforms);
+        vector<GLuint> indices;
+        for (int unif = 0; unif < numUniforms; ++unif) {
+            indices.push_back(unif);
+        }
+
+        GLint *blockIndices = (GLint*) calloc(sizeof(GLint), numUniforms);
+        glGetActiveUniformsiv(id, numUniforms, &(indices[0]), GL_UNIFORM_BLOCK_INDEX, blockIndices);
+        GLint *nameLength = (GLint*) calloc(sizeof(GLint), numUniforms);
+        glGetActiveUniformsiv(id, numUniforms, &(indices[0]), GL_UNIFORM_NAME_LENGTH, nameLength);
+        for (int unif = 0; unif < numUniforms; ++unif) {
+            // Skip any uniforms that are in a block.
+            if (blockIndices[unif] != -1)
+                continue;
+
+            int length;
+            char* name = (char *)calloc(sizeof(char), nameLength[unif]);
+            glGetActiveUniformName(id, unif, nameLength[unif] * sizeof(char), &length, name);
+            int loc = glGetUniformLocation(id, name);
+            uniforms.emplace_back(loc, std::string(name));
+            free(name);
+            CheckOpenGLWarn("Could not get Uniform Information.");
+        }
+        free(blockIndices);
+        free(nameLength);
+#elif
         glGetProgramInterfaceiv(static_cast<GLuint>(id), GL_UNIFORM,
                                 GL_ACTIVE_RESOURCES, &numUniforms);
         const GLenum properties[4] = {GL_BLOCK_INDEX, GL_TYPE, GL_NAME_LENGTH,
@@ -205,6 +234,7 @@ namespace ThreeEngine {
             uniforms.emplace_back(values[3], name);
             CheckOpenGLWarn("Could not get Uniform Information.");
         }
+#endif
     }
 
     GLint ShaderProgram::GetUniformLocation(const GLchar* name) {

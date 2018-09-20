@@ -51,7 +51,7 @@ namespace ThreeEngine {
                 message += "Context Lost: OpenGL context has been lost due to a graphics card reset.";
                 break;
             default:
-                message += "Unknown: Error Code " + errorCode;
+                message += "Unknown: Error Code " + std::to_string(errorCode);
                 break;
         }
         return message;

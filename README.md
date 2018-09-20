@@ -96,3 +96,28 @@ The JSON config files are copied from `config` folder to a same named folder on 
 ### Run
 
 Either press Play in Visual Studio or double-click on a compiled executable in the `bin` folder.
+
+
+## How to Run in Mac OS X?
+
+### Dependencies
+
+The inclusion of the said libraries are needed, yet dependencies are ignored to reduce the size of the project. To get the project to run follow the steps.
+
+1. [Install SDL2 Development Libraries](http://lazyfoo.net/tutorials/SDL/01_hello_SDL/mac/index.php)
+
+1. Following similar steps, install [SDL-image Development Libraries](https://www.libsdl.org/projects/SDL_image/).
+
+1. Using [Homebrew](https://brew.sh), install GLEW:
+
+    ```bash
+    brew install glew
+    ```
+
+### Compiling
+
+Follow the Linux instructions.
+
+### Run
+
+Follow the Linux instructions.

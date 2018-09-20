@@ -12,6 +12,7 @@
 
 #include <cstdarg>  // For va_start, etc.
 #include <memory>    // For std::unique_ptr
+#include <csignal>
 #include <cstring>
 
 #if defined DEBUG && defined OS_LINUX
