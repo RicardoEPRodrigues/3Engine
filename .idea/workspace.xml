@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="3EngineGlobal" targetName="Tangram3D" />
       <config projectName="3EngineGlobal" targetName="AppImage" />
@@ -21,13 +21,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3EngineTests/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineTests/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/bin/release/" />
@@ -37,7 +34,6 @@
     <ignored path="$PROJECT_DIR$/intermediate/cmake-debug/" />
     <ignored path="$PROJECT_DIR$/intermediate/cmake-release/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,55 +45,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+            <state relative-caret-position="174">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3Engine/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="145" column="49" selection-start-line="145" selection-start-column="49" selection-end-line="145" selection-end-column="49" />
+            <state relative-caret-position="783">
+              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+            <state relative-caret-position="1160">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3EngineTests/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            <state relative-caret-position="812">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.sh" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="766">
+              <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppRun" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="348">
               <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
             </state>
           </provider>
@@ -223,17 +219,15 @@
         <option value="$PROJECT_DIR$/3EngineTests/src/VectorTests.h" />
         <option value="$PROJECT_DIR$/3EngineTests/src/MatrixTests.h" />
         <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" />
-        <option value="$PROJECT_DIR$/BuildTools/AppImage/build.sh" />
         <option value="$PROJECT_DIR$/3EngineTests/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/3Engine/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/3Engine/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/BuildTools/AppImage/build.sh" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -241,15 +235,8 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="32" />
     <option name="width" value="1824" />
     <option name="height" value="994" />
@@ -310,7 +297,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="yaml" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/AppImage/3Engine.AppImage" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
@@ -343,17 +330,63 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.AppImage">
-    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST" />
-    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST" />
-    <configuration name="3Engine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3Engine" CONFIG_NAME="Debug" />
-    <configuration name="AppImage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="AppImage" CONFIG_NAME="Debug" />
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene" EXPLICIT_BUILD_TARGET_NAME="all" />
-    <configuration name="CopyFilesEngine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesEngine" CONFIG_NAME="Debug" />
-    <configuration name="CopyFilesExe" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesExe" CONFIG_NAME="Debug" />
-    <configuration name="CopyFilesTests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesTests" CONFIG_NAME="Debug" />
-    <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene" />
-    <configuration name="Tangram3D" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Tangram3D" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Tangram3D" />
-    <configuration name="TimeShaders" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="TimeShaders" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="TimeShaders" />
+    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="3Engine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3Engine" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppImage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="AppImage" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/bin/AppImage/3Engine.AppImage">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CopyFilesEngine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesEngine" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CopyFilesExe" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesExe" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CopyFilesTests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesTests" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tangram3D" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Tangram3D" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Tangram3D">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeShaders" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="TimeShaders" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="TimeShaders">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.3Engine" />
@@ -438,6 +471,7 @@
       <workItem from="1523318724178" duration="931000" />
       <workItem from="1530612677934" duration="447000" />
       <workItem from="1530613134316" duration="13656000" />
+      <workItem from="1550627470104" duration="536000" />
     </task>
     <servers />
   </component>
@@ -459,7 +493,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367664000" />
+    <option name="totallyTimeSpent" value="368200000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,71 +505,62 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="32" width="1824" height="994" extended-state="0" />
+    <frame x="0" y="52" width="3840" height="2108" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993036" visible="true" weight="0.16528009" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993036" visible="true" weight="0.16693291" />
+      <window_info id="Structure" order="1" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
+      <window_info id="Favorites" order="2" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32790697" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5131579" weight="0.26364127" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" visible="true" weight="0.27570093" />
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.27920562" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" visible="true" weight="0.27552673" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.27876824" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.4868421" side_tool="true" weight="0.2960373" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49973586" weight="0.32961783" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32790697" />
-      <window_info id="Structure" order="1" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4954763" weight="0.33746356" />
-      <window_info id="Favorites" order="2" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5131579" weight="0.26401868" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
+      <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
       <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21439916" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32922912" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
       <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3298153" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32922912" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5332989" visible="true" weight="0.20770878" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" weight="0.253212" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.23715204" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.37460977" side_tool="true" weight="0.238247" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49607587" weight="0.32958803" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.23715204" />
-      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5332989" visible="true" weight="0.20770878" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49607587" weight="0.32958803" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.37460977" side_tool="true" weight="0.238247" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" weight="0.253212" />
-      <window_info id="Favorites" order="2" side_tool="true" weight="0.3298153" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="79" />
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -576,62 +601,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="149" selection-start-line="77" selection-start-column="149" selection-end-line="77" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Engine/Engine.cpp" />
     <entry file="file://$PROJECT_DIR$/shaders/SkySphere/program.json" />
     <entry file="file://$PROJECT_DIR$/src/Engine/Camera/Camera.h" />
@@ -727,20 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -748,31 +703,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineTests/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        <state relative-caret-position="174">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        <state relative-caret-position="1160">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/3Engine/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="145" column="49" selection-start-line="145" selection-start-column="49" selection-end-line="145" selection-end-column="49" />
+        <state relative-caret-position="783">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3EngineTests/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
         </state>
       </provider>
     </entry>

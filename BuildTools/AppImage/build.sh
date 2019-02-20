@@ -41,6 +41,11 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+
+echo "Copy 3Engine library dependencies"
+DEPS="/usr/lib/x86_64-linux-gnu/libglut.so"
+cp ${DEPS} ${APPDIR_DEST_PATH}/lib
+
 #CPLP=${SCRIPT_PATH}/cpld.sh
 
 #echo "Copy 3Engine library dependencies"

@@ -9,6 +9,7 @@ if (UNIX AND NOT APPLE)
     message(STATUS "Run:\tsudo apt install freeglut3-dev libglew-dev libxmu-dev libxi-dev")
 endif ()
 
+set(OpenGL_GL_PREFERENCE "GLVND")
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 find_package(GLEW REQUIRED)
