@@ -47,7 +47,8 @@ DEPS="\
 /usr/lib/x86_64-linux-gnu/libSDL2.so \
 /usr/lib/x86_64-linux-gnu/libSDL2_image.so \
 /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so"
+/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so \
+/usr/lib/x86_64-linux-gnu/libGLEW.so"
 cp ${DEPS} ${APPDIR_DEST_PATH}/lib
 
 #CPLP=${SCRIPT_PATH}/cpld.sh
