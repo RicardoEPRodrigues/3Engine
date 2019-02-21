@@ -43,7 +43,9 @@ fi
 
 
 echo "Copy 3Engine library dependencies"
-DEPS="/usr/lib/x86_64-linux-gnu/libglut.so"
+DEPS="\
+/usr/lib/x86_64-linux-gnu/libglut.so \
+/usr/lib/x86_64-linux-gnu/libGLEW.so"
 cp ${DEPS} ${APPDIR_DEST_PATH}/lib
 
 #CPLP=${SCRIPT_PATH}/cpld.sh
