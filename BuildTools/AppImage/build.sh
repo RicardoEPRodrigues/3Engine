@@ -23,7 +23,7 @@ if [ ! -d ${APPDIR_PATH} ]; then
     exit 1
 fi
 
-
+rm -rf ${DEST_PATH}/*
 mkdir -p ${DEST_PATH}
 cd ${DEST_PATH}
 
@@ -44,8 +44,16 @@ fi
 
 echo "Copy 3Engine library dependencies"
 DEPS="\
+/usr/lib/x86_64-linux-gnu/libOpenGL.so \
+/usr/lib/x86_64-linux-gnu/libOpenGL.so.0 \
+/usr/lib/x86_64-linux-gnu/libOpenGL.so.0.0.0 \
 /usr/lib/x86_64-linux-gnu/libglut.so \
-/usr/lib/x86_64-linux-gnu/libGLEW.so"
+/usr/lib/x86_64-linux-gnu/libglut.so.3 \
+/usr/lib/x86_64-linux-gnu/libglut.so.3.9.0 \
+/usr/lib/x86_64-linux-gnu/libGLEW.so \
+/usr/lib/x86_64-linux-gnu/libGLEW.so.2.0 \
+/usr/lib/x86_64-linux-gnu/libGLEW.so.2.0.0
+"
 cp ${DEPS} ${APPDIR_DEST_PATH}/lib
 
 #CPLP=${SCRIPT_PATH}/cpld.sh
@@ -85,7 +93,7 @@ fi
 export ARCH=x86_64
 
 # Create AppImage with the name of the AppDir Folder
-./appimagetool.AppImage ${APPDIR_NAME} ${APPDIR_NAME%.AppDir}.AppImage
+./appimagetool.AppImage ${APPDIR_NAME} ${APPDIR_NAME%.AppDir}.freeGLUT.AppImage
 if [ $? -ne 0 ]; then
     echo "Unable to create ${APPDIR_NAME%.AppDir}.AppImage. Exiting..."
     exit 1
