@@ -21,7 +21,7 @@ You might want to visit the [Release page](https://github.com/RicardoEPRodrigues
 Please open a terminal and run:
 
 ``` 
-sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew-dev libxmu-dev libxi-dev
+sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libglew-dev libxmu-dev libxi-dev
 ```
 
 (This will only work on Debian/Ubuntu based systems, if anyone wants to give me the commands for other OSes)
