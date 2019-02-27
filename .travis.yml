@@ -4,6 +4,12 @@ dist: xenial
 sudo: required
 compiler:
   - gcc
+before_install:
+    - eval "${MATRIX_EVAL}"
+    - wget https://www.libsdl.org/release/SDL2-2.0.9.zip -O SDL2.tar.gz
+    - tar -xzvf SDL2.tar.gz
+install:
+    - (cd SDL2 && ./configure && make && sudo make install)
 script: |
   mkdir -p intermediate
   cd intermediate
@@ -30,6 +36,3 @@ matrix:
             - cmake
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
-
-before_install:
-    - eval "${MATRIX_EVAL}"
