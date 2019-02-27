@@ -6,10 +6,10 @@ compiler:
   - gcc
 before_install:
     - eval "${MATRIX_EVAL}"
-    - wget https://www.libsdl.org/release/SDL2-2.0.9.tar.gz -O SDL2.tar.gz
-    - tar -xzvf SDL2.tar.gz
+    - wget https://www.libsdl.org/release/SDL2-2.0.9.tar.gz -O SDL2-2.0.9.tar.gz
+    - tar -xzvf SDL2-2.0.9.tar.gz
 install:
-    - (cd SDL2 && ./configure && make && sudo make install)
+    - (cd SDL2-2.0.9 && ./configure && make && sudo make install)
 script: |
   mkdir -p intermediate
   cd intermediate
