@@ -18,7 +18,7 @@ install:
     - (cd SDL2-2.0.9 && ./configure && make && sudo make install && cd ..)
     - (cd SDL2_image-2.0.4 && ./configure && make && sudo make install && cd ..)
     - (cd SDL2_ttf-2.0.15 && ./configure && make && sudo make install && cd ..)
-    - (cd SDL2_mixer-2.0.4.tar.gz && ./configure && make && sudo make install && cd ..)
+    - (cd SDL2_mixer-2.0.4 && ./configure && make && sudo make install && cd ..)
 script: |
   mkdir -p intermediate
   cd intermediate
