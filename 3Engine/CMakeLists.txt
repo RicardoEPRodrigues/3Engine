@@ -6,6 +6,7 @@ project(3Engine)
 # Project files and executables/libraries
 
 set(ENGINE_SOURCE_FILES
+        src/Utilities/gamemode_client.h
         src/Utilities/json.hpp
         src/Utilities/singleton.h
         src/Debug.h
@@ -43,7 +44,8 @@ set(ENGINE_SOURCE_FILES
         src/Shader/ITexture.h
         src/Actors/SkySphere.cpp src/Actors/SkySphere.h
         src/Shapes/BasicShapes.cpp src/Shapes/BasicShapes.h
-        src/Time/SDLTimeCalculator.cpp src/Time/SDLTimeCalculator.h)
+        src/Time/SDLTimeCalculator.cpp src/Time/SDLTimeCalculator.h
+        )
 
 add_library(${PROJECT_NAME} SHARED ${ENGINE_SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME}

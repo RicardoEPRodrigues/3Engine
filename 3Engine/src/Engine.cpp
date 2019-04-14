@@ -25,6 +25,11 @@ extern "C" {
 }
 #endif
 
+#if OS_LINUX
+#define GAMEMODE_AUTO
+#include "Utilities/gamemode_client.h"
+#endif
+
 namespace ThreeEngine {
 
     Engine::Engine() = default;
