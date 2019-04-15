@@ -4,6 +4,7 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "FreeCameraController.h"
+#include "../Engine.h"
 #include "../Camera/Ortho.h"
 #include "../Camera/Perspective.h"
 #include "../Camera/LookAt.h"

@@ -20,12 +20,12 @@ namespace ThreeEngine {
     class Engine {
         private:
             //The window we'll be rendering to
-            SDL_Window* gWindow = NULL;
+            SDL_Window* gWindow = nullptr;
 
             //OpenGL context
-            SDL_GLContext gContext;
+            SDL_GLContext gContext{};
 
-            bool isRunning = 0;
+            bool isRunning = false;
 
             int WindowHandle = 0;
             unsigned int FrameCount = 0;
@@ -49,6 +49,10 @@ namespace ThreeEngine {
             void SetupConfig();
 
             void SetupRuntimeConfig();
+
+            void SetupGamemode() const;
+
+            void CleanupGamemode() const;
 
             void SetupSDL(int argc, char** argv);
 

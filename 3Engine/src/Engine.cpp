@@ -26,8 +26,10 @@ extern "C" {
 #endif
 
 #if OS_LINUX
-#define GAMEMODE_AUTO
+//#define GAMEMODE_AUTO
+
 #include "Utilities/gamemode_client.h"
+
 #endif
 
 namespace ThreeEngine {
@@ -41,6 +43,7 @@ namespace ThreeEngine {
     void Engine::Init(int argc, char** argv) {
         CheckSystemInfo();
         SetupConfig();
+        SetupGamemode();
         SetupSDL(argc, argv);
         SetupGLEW();
         CheckOpenGLInfo();
@@ -80,24 +83,46 @@ namespace ThreeEngine {
             json runtimeConfig;
             file >> runtimeConfig;
 
-            if (this->runtimeConfig != runtimeConfig)
-            {
+            if (this->runtimeConfig != runtimeConfig) {
                 this->runtimeConfig = json::merge(this->runtimeConfig, runtimeConfig);
 
-                if (this->runtimeConfig["viewport"].is_object() && this->runtimeConfig["viewport"]["clearColor"].is_array())
-                {
-                    glClearColor(this->runtimeConfig["viewport"]["clearColor"][0], this->runtimeConfig["viewport"]["clearColor"][1], this->runtimeConfig["viewport"]["clearColor"][2], this->runtimeConfig["viewport"]["clearColor"][3]);
+                if (this->runtimeConfig["viewport"].is_object() &&
+                    this->runtimeConfig["viewport"]["clearColor"].is_array()) {
+                    glClearColor(this->runtimeConfig["viewport"]["clearColor"][0],
+                                 this->runtimeConfig["viewport"]["clearColor"][1],
+                                 this->runtimeConfig["viewport"]["clearColor"][2],
+                                 this->runtimeConfig["viewport"]["clearColor"][3]);
                 }
             }
         }
     }
 
+    void Engine::SetupGamemode() const {
+#ifdef OS_LINUX
+        if (gamemode_request_start() != 0) {
+            Debug::Warn("Gamemode failed to start: %s\n", gamemode_error_string());
+        }
+
+        int status = gamemode_query_status();
+        if (status > 0) {
+            Debug::Log("Gamemode is running. Status %d", status);
+        }
+#endif
+    }
+
+    void Engine::CleanupGamemode() const {
+#ifdef OS_LINUX
+        if (gamemode_request_end() != 0) {
+            Debug::Warn("Gamemode failed to end: %s\n", gamemode_error_string());
+        }
+#endif
+    }
+
     void Engine::SetupSDL(int, char**) {
 
         //Initialize SDL
-        if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-        {
-            Debug::Error( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
+        if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+            Debug::Error("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
             exit(EXIT_FAILURE);
         }
 
@@ -112,18 +137,19 @@ namespace ThreeEngine {
 
         Debug::Log("Running OpenGL %d.%d", glMajor, glMinor);
 
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, glMajor );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, glMinor );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG );
-        SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, glMajor);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, glMinor);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+        SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS, SDL_GL_CONTEXT_FORWARD_COMPATIBLE_FLAG);
+        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
         //Create window
         std::string caption = config["window"]["caption"];
-        gWindow = SDL_CreateWindow( caption.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, config["window"]["x"], config["window"]["y"], SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN );
-        if( gWindow == nullptr )
-        {
-            Debug::Error( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
+        gWindow = SDL_CreateWindow(caption.c_str(), SDL_WINDOWPOS_UNDEFINED,
+                                   SDL_WINDOWPOS_UNDEFINED, config["window"]["x"],
+                                   config["window"]["y"], SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+        if (gWindow == nullptr) {
+            Debug::Error("Window could not be created! SDL Error: %s\n", SDL_GetError());
             exit(EXIT_FAILURE);
         }
 
@@ -135,17 +161,15 @@ namespace ThreeEngine {
         }
 
         //Create context
-        gContext = SDL_GL_CreateContext( gWindow );
-        if( gContext == nullptr )
-        {
-            Debug::Error( "OpenGL context could not be created! SDL Error: %s\n", SDL_GetError() );
+        gContext = SDL_GL_CreateContext(gWindow);
+        if (gContext == nullptr) {
+            Debug::Error("OpenGL context could not be created! SDL Error: %s\n", SDL_GetError());
             exit(EXIT_FAILURE);
         }
 
         //Use Vsync
-        if( SDL_GL_SetSwapInterval( config["window"]["vsync"] ) < 0 )
-        {
-            Debug::Warn( "Unable to set VSync! SDL Error: %s\n", SDL_GetError() );
+        if (SDL_GL_SetSwapInterval(config["window"]["vsync"]) < 0) {
+            Debug::Warn("Unable to set VSync! SDL Error: %s\n", SDL_GetError());
         }
 
     }
@@ -163,7 +187,8 @@ namespace ThreeEngine {
     }
 
     void Engine::SetupOpenGL() {
-        glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1], config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
+        glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1],
+                     config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
         // Z Test
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LEQUAL);
@@ -196,14 +221,11 @@ namespace ThreeEngine {
         SDL_Event e;
 
         //While application is running
-        while( isRunning )
-        {
+        while (isRunning) {
             //Handle events on queue
-            while( SDL_PollEvent( &e ) != 0 )
-            {
+            while (SDL_PollEvent(&e) != 0) {
                 //User requests quit
-                if( e.type == SDL_QUIT )
-                {
+                if (e.type == SDL_QUIT) {
                     isRunning = false;
                 }
                 //Keyboard Events
@@ -227,15 +249,14 @@ namespace ThreeEngine {
                     input.MouseScroll(e.wheel.x, e.wheel.y);
                 }
                 //Window event occured
-                if( e.type == SDL_WINDOWEVENT )
-                {
-                    switch( e.window.event )
-                    {
+                if (e.type == SDL_WINDOWEVENT) {
+                    switch (e.window.event) {
                         //Get new dimensions and repaint on window size change
                         case SDL_WINDOWEVENT_SIZE_CHANGED:
                             Reshape(e.window.data1, e.window.data2);
                             break;
-                        default:break;
+                        default:
+                            break;
                     }
                 }
             }
@@ -260,6 +281,7 @@ namespace ThreeEngine {
         for (auto& actor : actors) {
             delete actor;
         }
+        CleanupGamemode();
     }
 
     void Engine::Display() {
@@ -271,7 +293,7 @@ namespace ThreeEngine {
         }
         PostDraw();
         //Update screen
-        SDL_GL_SwapWindow( gWindow );
+        SDL_GL_SwapWindow(gWindow);
     }
 
     void Engine::Idle() {
@@ -289,6 +311,7 @@ namespace ThreeEngine {
     }
 
     milliseconds counter = 0;
+
     void Engine::Timer() {
         if (counter < 1000) {
             counter += Time::Delta();

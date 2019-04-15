@@ -7,13 +7,12 @@
 #define THREEENGINE_CAMERACONTROLLER_H
 
 #include "../Camera/Camera.h"
-#include "../Engine.h"
 
 namespace ThreeEngine {
 
     class FreeCameraController {
         private:
-            Engine* engine;
+            class Engine* engine;
 
             bool inPerspective;
 
@@ -25,7 +24,7 @@ namespace ThreeEngine {
 
             Camera* camera;
 
-            FreeCameraController(Engine* engine);
+            FreeCameraController(class Engine* engine);
 
             virtual ~FreeCameraController();
 

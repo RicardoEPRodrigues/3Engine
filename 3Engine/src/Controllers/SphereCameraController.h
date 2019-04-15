@@ -6,7 +6,6 @@
 #ifndef THREEENGINE_CAMERACONTROLLERROT_H
 #define THREEENGINE_CAMERACONTROLLERROT_H
 
-#include "../Engine.h"
 #include "../Math/Quat.h"
 #include "../Camera/Camera.h"
 
@@ -14,7 +13,7 @@ namespace ThreeEngine {
 
     class SphereCameraController {
         private:
-            Engine* engine;
+            class Engine* engine;
 
             bool inPerspective;
 
@@ -33,7 +32,7 @@ namespace ThreeEngine {
 
             Camera* camera;
 
-            explicit SphereCameraController(Engine* engine);
+            explicit SphereCameraController(class Engine* engine);
 
             virtual ~SphereCameraController();
 

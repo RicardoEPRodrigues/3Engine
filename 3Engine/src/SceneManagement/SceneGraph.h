@@ -13,7 +13,7 @@
 
 namespace ThreeEngine {
 
-    class SceneGraph : public IDrawable{
+    class SceneGraph : public IDrawable {
             Actor* root = nullptr;
 
             Camera* camera;
