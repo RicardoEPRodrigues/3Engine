@@ -41,10 +41,10 @@ namespace ThreeEngine {
         glBindBuffer(GL_UNIFORM_BUFFER, vboId);
         number viewMatrix[16];
         (transform * (*view)).ToArray(viewMatrix);
-        glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(Matrix), viewMatrix);
+        glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix), viewMatrix);
         number projectionMatrix[16];
         projection->ToArray(projectionMatrix);
-        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(Matrix), sizeof(Matrix), projectionMatrix);
+        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(viewMatrix), sizeof(projectionMatrix), projectionMatrix);
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
         CheckOpenGLError("Could not draw camera.");
     }

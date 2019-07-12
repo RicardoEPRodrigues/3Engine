@@ -10,7 +10,7 @@
 
 namespace ThreeEngine {
 
-    class LookAt : public Matrix {
+    struct LookAt : public Matrix {
         public:
             Vector eye, center, up, view, v, side, s, u;
 

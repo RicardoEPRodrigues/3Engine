@@ -10,7 +10,7 @@
 
 namespace ThreeEngine {
 
-    class Perspective : public Matrix {
+    struct Perspective : public Matrix {
         public:
             number angle, d;
             Perspective(number FOVy, number aspect, number zNear, number zFar);

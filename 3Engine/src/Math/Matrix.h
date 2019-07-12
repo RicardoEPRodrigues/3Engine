@@ -20,6 +20,8 @@ namespace ThreeEngine {
 
         Matrix();
 
+        virtual ~Matrix();
+
         explicit Matrix(const number& in);
 
         explicit Matrix(Matrix2 m);

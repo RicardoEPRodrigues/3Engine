@@ -10,7 +10,7 @@
 
 namespace ThreeEngine {
 
-    class Ortho : public Matrix {
+    struct Ortho : public Matrix {
         public:
             Ortho(number left, number right,  number bottom, number top, number near, number far);
     };

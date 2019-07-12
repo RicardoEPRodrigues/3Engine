@@ -11,9 +11,12 @@ using namespace std;
 
 namespace ThreeEngine {
 
-
     Matrix::Matrix() {
         Reset(0.0f);
+    }
+
+    Matrix::~Matrix() {
+
     }
 
     Matrix::Matrix(const number& in) {

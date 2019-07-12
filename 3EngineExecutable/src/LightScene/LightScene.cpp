@@ -99,7 +99,7 @@ namespace ThreeEngine {
 
 
     LightScene::LightScene()
-            : Engine(), sceneGraph(new SceneGraph()), controller(this) { }
+            : Engine(), sceneGraph(new SceneGraph()), controller(this) {}
 
     LightScene::~LightScene() = default;
 
@@ -296,7 +296,7 @@ namespace ThreeEngine {
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
             hTransform.scale = Vector(10);
-            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1, 0, 0));
             object->SetParent(root);
 
             auto shaderController = new MetallicRoughnessControl();
@@ -333,7 +333,7 @@ namespace ThreeEngine {
             auto&& hTransform = object->transform;
             hTransform.scale = Vector(10.0f);
             hTransform.translation = Vector(-20, 0, 0);
-            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1, 0, 0));
             object->SetParent(root);
 
             object->preDraw = [program]() {
@@ -353,7 +353,7 @@ namespace ThreeEngine {
             auto&& hTransform = object->transform;
             hTransform.scale = Vector(10.0f);
             hTransform.translation = Vector(20, 0, 0);
-            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1,0,0));
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1, 0, 0));
             object->SetParent(root);
 
             object->preDraw = [program]() {
