@@ -46,28 +46,17 @@ fi
 
 echo "Copy 3Engine library dependencies"
 DEPS="\
-/usr/lib/x86_64-linux-gnu/libOpenGL.so \
-/usr/lib/x86_64-linux-gnu/libOpenGL.so.0 \
-/usr/lib/x86_64-linux-gnu/libOpenGL.so.0.0.0 \
-/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so \
-/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 \
-/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.8.0 \
+/usr/lib/x86_64-linux-gnu/libOpenGL.so* \
+/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so* \
 /usr/lib/x86_64-linux-gnu/libSDL2.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0 \
-/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0.2.1 \
+/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so* \
 /usr/lib/x86_64-linux-gnu/libSDL2_image.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so.0 \
-/usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so.0.2.0 \
+/usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so* \
 /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0 \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.14.0 \
+/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so* \
 /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so \
-/usr/lib/x86_64-linux-gnu/libGLEW.so.2.0 \
-/usr/lib/x86_64-linux-gnu/libsndio.so \
-/usr/lib/x86_64-linux-gnu/libsndio.so.6.1
+/usr/lib/x86_64-linux-gnu/libGLEW.so* \
+/usr/lib/x86_64-linux-gnu/libsndio.so*
 "
 # Dependencies for Ubuntu 14.04
 #DEPS="${DEPS} \
