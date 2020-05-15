@@ -301,7 +301,7 @@ namespace ThreeEngine {
 
             auto shaderController = new MetallicRoughnessControl();
             shaderController->engine = this;
-            shaderController->step = 0.1;
+            shaderController->step = 0.1f;
             Simulation::instance()->Add(shaderController);
 
 //            auto cycleCount = new CycleNumber();

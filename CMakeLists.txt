@@ -27,15 +27,15 @@ ENDIF ()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_HOME_DIRECTORY}/cmake")
 
-if (WIN32) # WINDOWS specific properties
+if (WIN32) # WINDOWS
     add_definitions(-DOS_WIN)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-D_CRT_NO_VA_START_VALIDATION)
 
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -W3")
-elseif (APPLE)
+elseif (APPLE) # MACOS
     add_definitions(-DOS_MAC)
-elseif (UNIX AND NOT APPLE)
+elseif (UNIX AND NOT APPLE) #LINUX
     add_definitions(-DOS_LINUX)
 
     if (TRAVIS)
@@ -44,6 +44,8 @@ elseif (UNIX AND NOT APPLE)
         set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined -g -fsanitize-address-use-after-scope")
     endif ()
 endif ()
+
+add_definitions(-DGLEW_NO_GLU)
 
 
 # External Libraries configuration

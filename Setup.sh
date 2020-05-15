@@ -23,6 +23,9 @@ if hash apt 2>/dev/null; then
   if ! dpkg --get-selections | grep libjpeg-dev; then
     sudo apt-get install -y libwebp-dev
   fi
+  if ! dpkg --get-selections | grep libfreetype6-dev; then
+    sudo apt-get install -y libfreetype6-dev
+  fi
 fi
 
 
@@ -46,4 +49,4 @@ tar -xzvf SDL2_mixer-2.0.4.tar.gz
 wget https://github.com/nigels-com/glew/releases/download/glew-2.1.0/glew-2.1.0.tgz -O glew-2.1.0.tgz
 tar -xzvf glew-2.1.0.tgz
 
-(cd glew-2.1.0        && make clean && make && GLEW_DEST="${DEPENDENCIES_DIR}/GLEW" make install && cd ..)
+(cd glew-2.1.0        && make clean && make && GLEW_NO_GLU=1 GLEW_DEST="${DEPENDENCIES_DIR}/GLEW" make install && cd ..)
