@@ -1,5 +1,5 @@
 #cmake_minimum_required(VERSION 3.6)
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 2.8)
 project(3EngineGlobal)
 
 # Compiler configuration
@@ -38,23 +38,27 @@ elseif (APPLE)
 elseif (UNIX AND NOT APPLE)
     add_definitions(-DOS_LINUX)
 
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined -g -fsanitize-address-use-after-scope")
+    if (TRAVIS)
+        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized")
+    else ()
+        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined -g -fsanitize-address-use-after-scope")
+    endif ()
 endif ()
 
 
 # External Libraries configuration
 
-add_library( SDL2 SHARED IMPORTED )
-set_target_properties( SDL2 PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2.so )
-add_library( SDL2_IMAGE SHARED IMPORTED )
-set_target_properties( SDL2_IMAGE PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_image.so )
-add_library( SDL2_TTF SHARED IMPORTED )
-set_target_properties( SDL2_TTF PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_ttf.so )
-add_library( SDL2_MIXER SHARED IMPORTED )
-set_target_properties( SDL2_MIXER PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_mixer.so )
+add_library(SDL2 SHARED IMPORTED)
+set_target_properties(SDL2 PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2.so)
+add_library(SDL2_IMAGE SHARED IMPORTED)
+set_target_properties(SDL2_IMAGE PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_image.so)
+add_library(SDL2_TTF SHARED IMPORTED)
+set_target_properties(SDL2_TTF PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_ttf.so)
+add_library(SDL2_MIXER SHARED IMPORTED)
+set_target_properties(SDL2_MIXER PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_mixer.so)
 
-add_library( GLEW SHARED IMPORTED )
-set_target_properties( GLEW PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/lib64/libGLEW.so )
+add_library(GLEW SHARED IMPORTED)
+set_target_properties(GLEW PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/lib64/libGLEW.so)
 
 set(OpenGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)
@@ -71,8 +75,6 @@ set(GRAPHIC_LIBRARIES
         SDL2_MIXER
         GLEW
         ${OPENGL_LIBRARIES})
-
-message(STATUS "OpenGL libs: ${OPENGL_LIBRARIES}")
 
 # Project files and executables/libraries
 

@@ -23,7 +23,7 @@ install:
 script: |
   mkdir -p intermediate
   cd intermediate
-  cmake .. -DCMAKE_BUILD_TYPE=Debug
+  cmake .. -DCMAKE_BUILD_TYPE=Debug -DTRAVIS=1
   make
 matrix:
   include:
