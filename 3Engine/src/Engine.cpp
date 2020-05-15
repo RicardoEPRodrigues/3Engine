@@ -9,7 +9,12 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 #include <SDL2/SDL_opengl.h>
+
+#if OS_WIN
+#include <SDL_image.h>
+#else
 #include <SDL2/SDL_image.h>
+#endif
 
 #include "Engine.h"
 #include "Time/SDLTimeCalculator.h"

@@ -5,7 +5,12 @@
  */
 #include "../Debug.h"
 #include "TextureLoader.h"
+
+#if OS_WIN
+#include <SDL_image.h>
+#else
 #include <SDL2/SDL_image.h>
+#endif
 
 namespace ThreeEngine {
 
