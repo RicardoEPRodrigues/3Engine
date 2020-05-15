@@ -2,10 +2,6 @@
 cmake_minimum_required(VERSION 2.8)
 project(3EngineExecutable)
 
-# RPATH correct path for libs
-set(CMAKE_INSTALL_RPATH "lib")
-set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
-
 # Project files and executables/libraries
 
 add_executable(LightScene src/LightScene/LightScene.h src/LightScene/LightScene.cpp)

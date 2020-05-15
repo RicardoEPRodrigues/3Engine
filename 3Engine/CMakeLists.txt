@@ -76,4 +76,4 @@ add_custom_target(CopyFilesEngine
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets ${EXECUTABLE_OUTPUT_PATH}/assets/
         )
 
-add_dependencies(${PROJECT_NAME} CopyFilesEngine)
+add_dependencies(${PROJECT_NAME} CopyLibs CopyFilesEngine)

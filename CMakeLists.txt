@@ -7,6 +7,10 @@ project(3EngineGlobal)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# RPATH correct path for libs
+set(CMAKE_INSTALL_RPATH "lib")
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast")
@@ -83,6 +87,13 @@ set(GRAPHIC_LIBRARIES
 add_custom_target(Setup.sh
         COMMAND chmod 755 ${CMAKE_CURRENT_SOURCE_DIR}/Setup.sh
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/Setup.sh
+        )
+
+add_custom_target(CopyLibs
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMAND ${CMAKE_COMMAND} -E echo Copying Engine files
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/lib64 ${EXECUTABLE_OUTPUT_PATH}/lib/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib ${EXECUTABLE_OUTPUT_PATH}/lib/
         )
 
 add_subdirectory(3Engine)
