@@ -12,29 +12,21 @@
       <config projectName="3EngineGlobal" targetName="Setup.sh" />
       <config projectName="3EngineGlobal" targetName="3Engine" />
       <config projectName="3EngineGlobal" targetName="CopyFilesTests" />
+      <config projectName="3EngineGlobal" targetName="CopyLibs" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_DIR="intermediate/cmake-debug" />
       <configuration PROFILE_NAME="Release" CONFIG_NAME="Release" GENERATION_DIR="intermediate/cmake-release" />
+      <configuration PROFILE_NAME="Travis" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DTRAVIS=1" GENERATION_DIR="intermediate/cmake-travis" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3Engine/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Engine.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindGLUT.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_image.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_mixer.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_ttf.cmake" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +36,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Travis" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -89,7 +81,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.sanitizers" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -107,7 +99,7 @@
       <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.AppImage">
+  <component name="RunManager" selected="CMake Application.LightScene">
     <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -150,6 +142,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CopyLibs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyLibs" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -172,6 +169,7 @@
     </configuration>
     <list>
       <item itemvalue="Catch.3Engine Tests" />
+      <item itemvalue="CMake Application.CopyLibs" />
       <item itemvalue="CMake Application.Setup.sh" />
       <item itemvalue="CMake Application.3Engine" />
       <item itemvalue="CMake Application.AppImage" />
@@ -272,7 +270,7 @@
       <workItem from="1589546061960" duration="11917000" />
       <workItem from="1589558105253" duration="1341000" />
       <workItem from="1589559458038" duration="1717000" />
-      <workItem from="1589561190231" duration="3449000" />
+      <workItem from="1589561190231" duration="11319000" />
     </task>
     <servers />
   </component>
@@ -294,54 +292,74 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1864" height="255" key="GridCell.Tab.0.bottom" timestamp="1589559446382">
+    <state x="1302" y="344" width="599" height="581" key="#3Engine" timestamp="1589571234520">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.0.center" timestamp="1589559446382">
+    <state x="1302" y="344" width="599" height="581" key="#3Engine/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589571234520" />
+    <state x="347" y="478" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589571324029">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.0.left" timestamp="1589559446382">
+    <state x="347" y="478" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589571324029" />
+    <state x="745" y="645" width="471" height="342" key="#com.intellij.tools.ToolEditorDialog" timestamp="1589570739532">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.0.right" timestamp="1589559446382">
+    <state x="745" y="645" width="471" height="342" key="#com.intellij.tools.ToolEditorDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570739532" />
+    <state x="746" y="584" width="729" height="479" key="EnvironmentVariablesDialog" timestamp="1589570718634">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.1.bottom" timestamp="1589559446382">
+    <state x="746" y="584" width="729" height="479" key="EnvironmentVariablesDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570718634" />
+    <state width="1864" height="255" key="GridCell.Tab.0.bottom" timestamp="1589572549082">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.1.center" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
+    <state width="1864" height="255" key="GridCell.Tab.0.center" timestamp="1589572549082">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.1.left" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
+    <state width="1864" height="255" key="GridCell.Tab.0.left" timestamp="1589572549082">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.1.right" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
+    <state width="1864" height="255" key="GridCell.Tab.0.right" timestamp="1589572549082">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.2.bottom" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
+    <state width="1864" height="255" key="GridCell.Tab.1.bottom" timestamp="1589572549023">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.2.center" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
+    <state width="1864" height="255" key="GridCell.Tab.1.center" timestamp="1589572549022">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.2.left" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
+    <state width="1864" height="255" key="GridCell.Tab.1.left" timestamp="1589572549022">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
-    <state width="1864" height="255" key="GridCell.Tab.2.right" timestamp="1589559446382">
+    <state width="1864" height="255" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
+    <state width="1864" height="255" key="GridCell.Tab.1.right" timestamp="1589572549022">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
+    <state width="1864" height="255" key="GridCell.Tab.2.bottom" timestamp="1589572549023">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
+    <state width="1864" height="255" key="GridCell.Tab.2.center" timestamp="1589572549023">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
+    <state width="1864" height="255" key="GridCell.Tab.2.left" timestamp="1589572549023">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
+    <state width="1864" height="255" key="GridCell.Tab.2.right" timestamp="1589572549023">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
+    <state x="1281" y="543" key="SettingsEditor" timestamp="1589567193032">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="1281" y="543" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589567193032" />
     <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog" timestamp="1589558085808">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
@@ -350,18 +368,22 @@
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
     <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589558080780" />
-    <state x="989" y="349" width="581" height="768" key="find.popup" timestamp="1589551588908">
+    <state x="783" y="599" width="394" height="427" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1589570739897">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="989" y="349" width="581" height="768" key="find.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589551588908" />
+    <state x="783" y="599" width="394" height="427" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570739897" />
+    <state x="989" y="349" width="581" height="768" key="find.popup" timestamp="1589572317120">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="989" y="349" width="581" height="768" key="find.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572317120" />
     <state x="944" y="342" key="run.anything.popup" timestamp="1589547162352">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
     <state x="944" y="342" key="run.anything.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589547162352" />
-    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup" timestamp="1589561156962">
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup" timestamp="1589567935186">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589561156962" />
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589567935186" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>

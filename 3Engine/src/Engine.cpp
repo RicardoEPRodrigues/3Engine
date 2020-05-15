@@ -140,6 +140,11 @@ namespace ThreeEngine {
         }
 #endif
 
+#if TRAVIS
+        glMajor = 3;
+        glMinor = 3;
+#endif
+
         Debug::Log("Running OpenGL %d.%d", glMajor, glMinor);
 
         SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, glMajor);

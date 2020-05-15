@@ -43,6 +43,7 @@ elseif (UNIX AND NOT APPLE) #LINUX
     add_definitions(-DOS_LINUX)
 
     if (TRAVIS)
+        add_definitions(-DTRAVIS)
         set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized")
     else ()
         set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra -pedantic -g3 -Og -Wuninitialized -fno-omit-frame-pointer -fsanitize=address -fsanitize=leak -fsanitize=undefined -g -fsanitize-address-use-after-scope")
