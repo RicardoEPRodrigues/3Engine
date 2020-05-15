@@ -2,15 +2,16 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="3EngineGlobal" targetName="Tangram3D" />
       <config projectName="3EngineGlobal" targetName="AppImage" />
+      <config projectName="3EngineGlobal" targetName="CopyFilesExe" />
       <config projectName="3EngineGlobal" targetName="CopyFilesEngine" />
-      <config projectName="3EngineGlobal" targetName="3Engine" />
+      <config projectName="3EngineGlobal" targetName="3EngineTests" />
       <config projectName="3EngineGlobal" targetName="TimeShaders" />
       <config projectName="3EngineGlobal" targetName="LightScene" />
-      <config projectName="3EngineGlobal" targetName="Tangram3D" />
+      <config projectName="3EngineGlobal" targetName="Setup.sh" />
+      <config projectName="3EngineGlobal" targetName="3Engine" />
       <config projectName="3EngineGlobal" targetName="CopyFilesTests" />
-      <config projectName="3EngineGlobal" targetName="CopyFilesExe" />
-      <config projectName="3EngineGlobal" targetName="3EngineTests" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -22,24 +23,19 @@
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Camera/Camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Camera/Camera.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Camera/Camera.h" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Camera/Camera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Camera/LookAt.h" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Camera/LookAt.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Camera/Ortho.h" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Camera/Ortho.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Camera/Perspective.h" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Camera/Perspective.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Math/Matrix.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Math/Matrix.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Math/Matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Math/Matrix.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3Engine/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTools/AppImage/build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/FindGLUT.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_image.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_mixer.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake/FindSDL2_ttf.cmake" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/bin/release/" />
-    <ignored path="$PROJECT_DIR$/bin/debug/" />
-    <ignored path="$PROJECT_DIR$/bin/cmake-debug/" />
-    <ignored path="$PROJECT_DIR$/bin/cmake-release/" />
-    <ignored path="$PROJECT_DIR$/intermediate/cmake-debug/" />
-    <ignored path="$PROJECT_DIR$/intermediate/cmake-release/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,71 +44,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FavoritesManager">
-    <favorites_list name="ThreeEngine" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Camera.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-              <folding>
-                <element signature="e#115#134#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Debug.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Math/Matrix.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Ortho.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/LookAt.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3Engine/src/Math/Matrix.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -122,123 +54,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>glut</find>
-      <find>SHIFT</find>
-      <find>ALT</find>
-      <find>Cube</find>
-      <find>Quaternion</find>
-      <find>struct</find>
-      <find>std::ifstream</find>
-      <find>ifstream</find>
-      <find>back</find>
-      <find>shaderProgram</find>
-      <find>update</find>
-      <find>fish</find>
-      <find>translation</find>
-      <find>GLUT_</find>
-      <find>size</find>
-      <find>begin</find>
-      <find>Texture</find>
-      <find>float3</find>
-      <find>float2</find>
-      <find>roughness</find>
-      <find>EXIT_FAILURE</find>
-      <find>src/Engine</find>
-      <find>src/Executable</find>
-      <find>EXECUTABLE_OUTPUT_PATH</find>
-      <find>RUNTIME_OUTPUT_DIRECTORY</find>
-      <find>glew</find>
-      <find>MeshManager</find>
-      <find>debug::</find>
-      <find>radicalInverse_VdC</find>
-      <find>~M</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>Vector2</replace>
-      <replace>Matrix</replace>
-      <replace>TMatrix</replace>
-      <replace>SimpleColor/program.json</replace>
-      <replace>Wireframe/program.json</replace>
-      <replace>Vector</replace>
-      <replace>Quat</replace>
-      <replace>X</replace>
-      <replace>Y</replace>
-      <replace>Z</replace>
-      <replace>number</replace>
-      <replace>Quaternion</replace>
-      <replace>ENGINE_SOURCE_FILES</replace>
-      <replace>CubeMesh</replace>
-      <replace>LoaderAndScene</replace>
-      <replace>GetShaderProgram()</replace>
-      <replace>CubemapTexture</replace>
-      <replace>vec3</replace>
-      <replace>vec2</replace>
-      <replace>1</replace>
-      <replace>src</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Engine/Actors/Cube.cpp" />
-        <option value="$PROJECT_DIR$/shaders/SkySphere/program.json" />
-        <option value="$PROJECT_DIR$/shaders/SkySphere/vertex.glsl" />
-        <option value="$PROJECT_DIR$/shaders/SimpleCubemapping/vertex.glsl" />
-        <option value="$PROJECT_DIR$/shaders/BRDF/vertex.glsl" />
-        <option value="$PROJECT_DIR$/shaders/BRDF/program.json" />
-        <option value="$PROJECT_DIR$/src/Engine/Shapes/Triangle3D.cpp" />
-        <option value="$PROJECT_DIR$/shaders/BRDF/fragment.glsl" />
-        <option value="$PROJECT_DIR$/src/Executable/LightScene/LightScene.cpp" />
-        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun" />
-        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop.desktop" />
-        <option value="$PROJECT_DIR$/3EngineExecutable/config/RuntimeConfig.json" />
-        <option value="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.h" />
-        <option value="$PROJECT_DIR$/3Engine/shaders/BRDF/fragment.glsl" />
-        <option value="$PROJECT_DIR$/3EngineTests/src/tests.cpp" />
-        <option value="$PROJECT_DIR$/3EngineTests/src/VectorTests.h" />
-        <option value="$PROJECT_DIR$/3EngineTests/src/MatrixTests.h" />
-        <option value="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" />
-        <option value="$PROJECT_DIR$/3EngineTests/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/cmake/FindSDL2.cmake" />
-        <option value="$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp" />
-        <option value="$PROJECT_DIR$/bin/debug/config/SetupConfig.json" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/3Engine/src/OpenGLUtils.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Debug.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Shapes/Mesh.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Actor.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/shaders/Color3D/fragment.glsl" />
-        <option value="$PROJECT_DIR$/3EngineExecutable/src/Tangram3D/Tangram3D.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Shader/ShaderProgram.cpp" />
-        <option value="$PROJECT_DIR$/BuildTools/AppImage/build.sh" />
-        <option value="$PROJECT_DIR$/3Engine/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/3Engine/src/Utilities/gamemode_client.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Controllers/SphereCameraController.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Controllers/SphereCameraController.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Controllers/FreeCameraController.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Controllers/FreeCameraController.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/SceneManagement/SceneGraph.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Engine.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Engine.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Camera/Camera.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Camera/Perspective.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Camera/Ortho.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Camera/LookAt.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Math/Matrix.h" />
-        <option value="$PROJECT_DIR$/3Engine/src/Math/Matrix.cpp" />
-        <option value="$PROJECT_DIR$/3Engine/src/Camera/Camera.cpp" />
-      </list>
-    </option>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -248,94 +65,33 @@
     <auto-save>true</auto-save>
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="y" value="54" />
-    <option name="width" value="2789" />
-    <option name="height" value="1978" />
-  </component>
+  <component name="ProjectId" id="1bwbMpN0f5ZCSemcq8jM6wywgAN" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="3EngineExecutable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="3EngineExecutable" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
-              <item name="AppImage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="3EngineGlobal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="3Engine" type="462c0819:PsiDirectoryNode" />
-              <item name="BuildTools" type="462c0819:PsiDirectoryNode" />
-              <item name="AppImage" type="462c0819:PsiDirectoryNode" />
-              <item name="3Engine.AppDir" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="cmakeli&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/CMakeLists.txt&#10;cmake&#9;ACTION&#9;ActivateCMakeToolWindow&#10;light&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LightScene/LightScene.cpp&#10;engin&#9;null&#9;null&#10;cubem&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shader/Cubemap.cpp&#10;actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;free&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Controllers/FreeCameraController.cpp&#10;controller&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/MoveController.cpp&#10;Vector&#9;null&#9;null&#10;quat&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Quat.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.cpp&#10;MEsh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;act&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;debug&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Debug.h&#10;acto&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Loader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/LoaderAndScene.h&#10;mesh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/OpenGLUtils.h&#10;meshlo&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/MeshLoader.cpp&#10;Cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.h&#10;V&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector4.h&#10;vector2.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;program.json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;camera&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Camera/Camera.h&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/main.cpp&#10;shader&#9;null&#9;null&#10;input&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Input.h&#10;engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;Time.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/Time.h&#10;gluttim&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/GlutTimeCalculator.cpp&#10;Engine.cp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.cpp&#10;Camera&#9;null&#9;null&#10;Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/debug/config/RuntimeConfig.json" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="yaml" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.sanitizers" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/3EngineTests" />
-      <recent name="$PROJECT_DIR$/3Engine" />
-      <recent name="$PROJECT_DIR$/3EngineExecutable" />
-      <recent name="$PROJECT_DIR$/shaders" />
-      <recent name="$PROJECT_DIR$/assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Engine/Actors" />
       <recent name="$PROJECT_DIR$/assets/Meshes" />
@@ -343,79 +99,80 @@
       <recent name="$PROJECT_DIR$/src/Engine/Utilities" />
       <recent name="$PROJECT_DIR$/src/Engine/Controllers" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3EngineTests" />
+      <recent name="$PROJECT_DIR$/3Engine" />
+      <recent name="$PROJECT_DIR$/3EngineExecutable" />
+      <recent name="$PROJECT_DIR$/shaders" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="CMake Application.LightScene">
-    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake Application.AppImage">
+    <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="ThreeEngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="ThreeEngineTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="3Engine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3Engine" CONFIG_NAME="Debug">
+    <configuration name="3Engine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3Engine" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppImage" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="AppImage" CONFIG_NAME="Debug">
+    <configuration name="AppImage" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="AppImage" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/bin/AppImage/3Engine.AppImage">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene" EXPLICIT_BUILD_TARGET_NAME="all">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CopyFilesEngine" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesEngine" CONFIG_NAME="Debug">
+    <configuration name="CopyFilesEngine" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesEngine" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CopyFilesExe" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesExe" CONFIG_NAME="Debug">
+    <configuration name="CopyFilesExe" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesExe" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CopyFilesTests" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesTests" CONFIG_NAME="Debug">
+    <configuration name="CopyFilesTests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="CopyFilesTests" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene">
+    <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tangram3D" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Tangram3D" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Tangram3D">
+    <configuration name="Setup.sh" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Setup.sh" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TimeShaders" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="TimeShaders" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="TimeShaders">
+    <configuration name="Tangram3D" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Tangram3D" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Tangram3D">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeShaders" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="TimeShaders" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="TimeShaders">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Catch.3Engine Tests" />
+      <item itemvalue="CMake Application.Setup.sh" />
       <item itemvalue="CMake Application.3Engine" />
       <item itemvalue="CMake Application.AppImage" />
       <item itemvalue="CMake Application.Build All" />
@@ -509,29 +266,15 @@
       <workItem from="1555282575826" duration="708000" />
       <workItem from="1555321689468" duration="2940000" />
       <workItem from="1562894838268" duration="3489000" />
-      <workItem from="1562898351342" duration="796000" />
+      <workItem from="1562898351342" duration="947000" />
+      <workItem from="1563304320066" duration="68000" />
+      <workItem from="1563304542421" duration="2630000" />
+      <workItem from="1589546061960" duration="11917000" />
+      <workItem from="1589558105253" duration="1341000" />
+      <workItem from="1589559458038" duration="1717000" />
+      <workItem from="1589561190231" duration="3449000" />
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="3Engine_Tests - 2017.10.19 at 20h 12m 13s.xml">
-      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="3Engine_Tests - 2017.10.23 at 22h 42m 16s.xml">
-      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="3Engine_Tests - 2017.10.30 at 00h 05m 54s.xml">
-      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="3Engine_Tests - 2017.11.01 at 22h 41m 29s.xml">
-      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="3Engine_Tests - 2018.04.10 at 00h 50m 45s.xml">
-      <configuration name="3Engine Tests" configurationId="CMakeCatchTestRunConfigurationType" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391469000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,63 +285,83 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="54" width="2789" height="1978" extended-state="4" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993036" visible="true" weight="0.22735675" />
-      <window_info id="Structure" order="1" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
-      <window_info id="Favorites" order="2" sideWeight="0.50069636" side_tool="true" weight="0.1627047" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.25980106" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.327677" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.5131579" visible="true" weight="0.26272675" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" weight="0.3820948" />
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.27677006" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.4868421" side_tool="true" weight="0.2960373" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49973586" weight="0.32943243" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4954763" weight="0.33645406" />
-      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32943243" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21439916" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" weight="0.3298153" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32922912" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32922912" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5332989" visible="true" weight="0.20770878" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4667011" side_tool="true" weight="0.20787401" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.66959214" weight="0.253212" />
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.620031" weight="0.23715204" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.37460977" side_tool="true" weight="0.238247" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49607587" weight="0.32958803" />
-      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3296588" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24977416" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.3190694" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1864" height="255" key="GridCell.Tab.0.bottom" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.0.center" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.0.left" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.0.right" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.1.bottom" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.1.center" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.1.left" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.1.right" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.2.bottom" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.2.center" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.2.left" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state width="1864" height="255" key="GridCell.Tab.2.right" timestamp="1589559446382">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state width="1864" height="255" key="GridCell.Tab.2.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589559446382" />
+    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog" timestamp="1589558085808">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589558085808" />
+    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog" timestamp="1589558080780">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589558080780" />
+    <state x="989" y="349" width="581" height="768" key="find.popup" timestamp="1589551588908">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="989" y="349" width="581" height="768" key="find.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589551588908" />
+    <state x="944" y="342" key="run.anything.popup" timestamp="1589547162352">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="944" y="342" key="run.anything.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589547162352" />
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup" timestamp="1589561156962">
+      <screen x="0" y="27" width="2560" height="1413" />
+    </state>
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589561156962" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
@@ -623,375 +386,6 @@
       </path>
     </expand>
     <select />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>nameLength-&gt;*nameLength</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>indices[0]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>indices[1]</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>texture-&gt;height</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>texture</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/bin/AppImage/3Engine.AppDir/AppRun" />
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/bin/AppImage/3Engine.AppDir/3Engine.desktop" />
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineTests/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/AppRun">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/debug/config/SetupConfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake/FindSDL2.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="154" column="68" selection-start-line="154" selection-start-column="68" selection-end-line="154" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Shader/TextureLoader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/src/Tangram/Tangram.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4122">
-          <caret line="229" selection-start-line="229" selection-end-line="229" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/SkySphere/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/BRDF/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/SkySphere/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Shader/ShaderProgram.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6293">
-          <caret line="217" column="67" selection-start-line="217" selection-start-column="67" selection-end-line="217" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Shapes/Mesh.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3190">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/cpld.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Actor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2059">
-          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
-          <folding>
-            <element signature="e#114#134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/src/Tangram3D/Tangram3D.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2784">
-          <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/Color3D/vertex.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/Color3D/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/shaders/Default/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BuildTools/AppImage/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="38" column="170" selection-start-line="38" selection-start-column="170" selection-end-line="38" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Controllers/SphereCameraController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#208#233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Controllers/SphereCameraController.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Controllers/FreeCameraController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Controllers/FreeCameraController.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/SceneManagement/SceneGraph.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Utilities/json.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325750">
-          <caret line="11606" selection-start-line="11606" selection-end-line="11606" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Engine.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
-          <folding>
-            <element signature="e#177#198#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Utilities/gamemode_client.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4669">
-          <caret line="161" column="5" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
-          <folding>
-            <element signature="e#2914#2934#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="725">
-            <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/shaders/BRDF/fragment.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="136" column="9" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="40" column="104" selection-start-line="40" selection-start-column="104" selection-end-line="40" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Camera.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Engine.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#416#516#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5278">
-          <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Perspective.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Perspective.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Ortho.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/LookAt.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/8/ext/new_allocator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/GL/glew.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="1705" column="8" selection-start-line="1705" selection-start-column="8" selection-end-line="1705" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/OpenGLUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Math/Matrix.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Debug.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Math/Matrix.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3Engine/src/Camera/Camera.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-          <folding>
-            <element signature="e#115#134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

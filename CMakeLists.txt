@@ -44,38 +44,42 @@ endif ()
 
 # External Libraries configuration
 
-if (UNIX AND NOT APPLE)
-    message(STATUS "GLEW and SDL need to be installed.")
-    message(STATUS "Run:\tsudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libglew-dev libxmu-dev libxi-dev")
-endif ()
+add_library( SDL2 SHARED IMPORTED )
+set_target_properties( SDL2 PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2.so )
+add_library( SDL2_IMAGE SHARED IMPORTED )
+set_target_properties( SDL2_IMAGE PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_image.so )
+add_library( SDL2_TTF SHARED IMPORTED )
+set_target_properties( SDL2_TTF PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_ttf.so )
+add_library( SDL2_MIXER SHARED IMPORTED )
+set_target_properties( SDL2_MIXER PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/lib/libSDL2_mixer.so )
 
-find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
-#find_package(SDL2_ttf REQUIRED)
-#find_package(SDL2_mixer REQUIRED)
+add_library( GLEW SHARED IMPORTED )
+set_target_properties( GLEW PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/lib64/libGLEW.so )
 
 set(OpenGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)
-find_package(GLEW REQUIRED)
 
 include_directories(
-        ${SDL2_INCLUDE_DIRS}
-        ${SDL2_IMAGE_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS}
-        ${SDL2_MIXER_INCLUDE_DIRS}
-
-        ${OPENGL_INCLUDE_DIRS}
-        ${GLEW_INCLUDE_DIRS})
+        ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/include
+        ${OPENGL_INCLUDE_DIRS})
 
 set(GRAPHIC_LIBRARIES
-        ${SDL2_LIBRARIES}
-        ${SDL2_IMAGE_LIBRARIES}
-        ${SDL2_TTF_LIBRARIES}
-        ${SDL2_MIXER_LIBRARIES}
-        ${OPENGL_LIBRARIES}
-        ${GLEW_LIBRARIES})
+        SDL2
+        SDL2_IMAGE
+        SDL2_TTF
+        SDL2_MIXER
+        GLEW
+        ${OPENGL_LIBRARIES})
+
+message(STATUS "OpenGL libs: ${OPENGL_LIBRARIES}")
 
 # Project files and executables/libraries
+
+add_custom_target(Setup.sh
+        COMMAND chmod 755 ${CMAKE_CURRENT_SOURCE_DIR}/Setup.sh
+        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/Setup.sh
+        )
 
 add_subdirectory(3Engine)
 

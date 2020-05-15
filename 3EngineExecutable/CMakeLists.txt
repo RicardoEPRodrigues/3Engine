@@ -36,6 +36,6 @@ if (UNIX AND NOT APPLE)
     add_custom_target(AppImage
             DEPENDS LightScene
             COMMAND ${CMAKE_COMMAND} -E echo Making AppImage from path ${EXECUTABLE_OUTPUT_PATH}
-            COMMAND /bin/bash "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/3Engine.AppDir" "${RUNTIME_OUTPUT_DIRECTORY}/AppImage"
+            COMMAND /bin/bash "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/build.sh" "${EXECUTABLE_OUTPUT_PATH}" "${CMAKE_HOME_DIRECTORY}/BuildTools/AppImage/3Engine.AppDir" "${RUNTIME_OUTPUT_DIRECTORY}/AppImage" "${CMAKE_CURRENT_SOURCE_DIR}/../dependencies"
             )
 endif ()

@@ -10,6 +10,7 @@ SCRIPT_PATH=$(dirname "$0")
 BINARIES_PATH=$(readlink -f $1)
 APPDIR_PATH=$(readlink -f $2)
 DEST_PATH=$(readlink -f $3)
+DEPENDENCIES_PATH=$(readlink -f $4)
 APPDIR_NAME=${APPDIR_PATH##*/}
 APPDIR_DEST_PATH=${DEST_PATH}/${APPDIR_NAME}
 
@@ -46,17 +47,12 @@ fi
 
 echo "Copy 3Engine library dependencies"
 DEPS="\
-/usr/lib/x86_64-linux-gnu/libOpenGL.so* \
-/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so* \
-/usr/lib/x86_64-linux-gnu/libSDL2.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so* \
-/usr/lib/x86_64-linux-gnu/libSDL2_image.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so* \
-/usr/lib/x86_64-linux-gnu/libSDL2_mixer.so \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so* \
-/usr/lib/x86_64-linux-gnu/libSDL2_ttf.so \
-/usr/lib/x86_64-linux-gnu/libGLEW.so* \
-/usr/lib/x86_64-linux-gnu/libsndio.so*
+#/usr/lib/x86_64-linux-gnu/libOpenGL.so* \
+#/usr/lib/x86_64-linux-gnu/libGLX.so* \
+#/usr/lib/x86_64-linux-gnu/libGLdispatch.so* \
+${DEPENDENCIES_PATH}/SDL2/lib/libSDL2* \
+${DEPENDENCIES_PATH}/GLEW/lib64/libGLEW.so* \
+/usr/lib/x86_64-linux-gnu/libsndio.so* \
 "
 # Dependencies for Ubuntu 14.04
 #DEPS="${DEPS} \
@@ -96,7 +92,7 @@ cp ${DEPS} ${APPDIR_DEST_PATH}/lib
 echo "Moving Executables to AppDir/bin" # and copy library dependencies
 mkdir -p ${APPDIR_DEST_PATH}/bin
 # Gets all executables and places them on bin folder
-for i in `find ${APPDIR_DEST_PATH} -maxdepth 1 -executable -type f`; do
+for i in $(find "${APPDIR_DEST_PATH}" -maxdepth 1 -executable -type f); do
     if [ ${i##*/} != "AppRun" ] && [[ ${i} != *".desktop" ]] && [[ ${i} !=  *".png" ]]; then
 #        ${CPLP} ${i} ${APPDIR_DEST_PATH}/lib #> /dev/null
         mv ${i} ${APPDIR_DEST_PATH}/bin

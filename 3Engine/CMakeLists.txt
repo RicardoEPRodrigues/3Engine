@@ -49,12 +49,7 @@ set(ENGINE_SOURCE_FILES
 
 add_library(${PROJECT_NAME} SHARED ${ENGINE_SOURCE_FILES})
 target_link_libraries(${PROJECT_NAME}
-        ${SDL2_LIBRARIES}
-        ${SDL2_IMAGE_LIBRARIES}
-        ${SDL2_TTF_LIBRARIES}
-        ${SDL2_MIXER_LIBRARIES}
-        ${OPENGL_LIBRARIES}
-        ${GLEW_LIBRARIES}
+        ${GRAPHIC_LIBRARIES}
         ${CMAKE_THREAD_LIBS_INIT})
 
 # Post build commands
