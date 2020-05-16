@@ -245,14 +245,14 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
             THEN("vector +-*/ number") {
 
                 CHECK((m + 1.0f) == Matrix(2));
-                CHECK((m - 1.0f) == Matrix((const number) 0));
+                CHECK((m - 1.0f) == Matrix((number) 0));
                 CHECK((m * 2.0f) == Matrix(2));
                 CHECK((m / 2.0f) == Matrix(.5f));
             }
 
             THEN("number +-*/ vector") {
                 CHECK((1.0f + m) == Matrix(2));
-                CHECK((1.0f - m) == Matrix((const number) 0));
+                CHECK((1.0f - m) == Matrix((number) 0));
                 CHECK((2.0f * m) == Matrix(2));
                 CHECK((2.0f / m) == Matrix(2));
             }

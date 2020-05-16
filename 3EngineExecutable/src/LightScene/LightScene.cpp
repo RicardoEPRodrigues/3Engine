@@ -4,6 +4,7 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include <cmath>
+#include <ctime>
 #include "LightScene.h"
 
 #include "../../../3Engine/src/Shapes/MeshLoader.h"

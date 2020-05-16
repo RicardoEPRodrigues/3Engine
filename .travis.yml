@@ -1,6 +1,6 @@
 language: cpp
 os: linux
-dist: trusty
+dist: xenial
 compiler:
 - gcc
 before_install:
