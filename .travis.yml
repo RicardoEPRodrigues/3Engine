@@ -3,23 +3,12 @@ os: linux
 dist: xenial
 sudo: required
 compiler:
-  - gcc
+- gcc
 before_install:
-    - eval "${MATRIX_EVAL}"
-#    - wget https://www.libsdl.org/release/SDL2-2.0.9.tar.gz -O SDL2-2.0.9.tar.gz
-#    - tar -xzvf SDL2-2.0.9.tar.gz
-#    - wget https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.4.tar.gz -O SDL2_image-2.0.4.tar.gz
-#    - tar -xzvf SDL2_image-2.0.4.tar.gz
-#    - wget https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.15.tar.gz -O SDL2_ttf-2.0.15.tar.gz
-#    - tar -xzvf SDL2_ttf-2.0.15.tar.gz
-#    - wget https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.4.tar.gz -O SDL2_mixer-2.0.4.tar.gz
-#    - tar -xzvf SDL2_mixer-2.0.4.tar.gz
+- eval "${MATRIX_EVAL}"
 install:
-    - chmod 755 Setup.sh
-    - ./Setup.sh
-#    - (cd SDL2_image-2.0.4 && ./configure && make && sudo make install && cd ..)
-#    - (cd SDL2_ttf-2.0.15 && ./configure && make && sudo make install && cd ..)
-#    - (cd SDL2_mixer-2.0.4 && ./configure && make && sudo make install && cd ..)
+- chmod 755 Setup.sh
+- "./Setup.sh"
 script: |
   mkdir -p intermediate
   cd intermediate
@@ -28,24 +17,24 @@ script: |
   make AppImage
 matrix:
   include:
-    # works on Precise and Trusty
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
-#            - libglew-dev
-            - libxmu-dev
-            - libxi-dev
-            - cmake
-      env:
-        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+  - os: linux
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - g++-7
+        - libxmu-dev
+        - libxi-dev
+        - cmake
+    env:
+    - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 deploy:
   provider: releases
-  api_key: "7fd73ebea40e0e19cf9931e8df33fb9dbaaa75e0"
-  file: "bin/AppImage/3Engine.AppImage"
-  skip_cleanup: true
+  api_key:
+    secure: jTrJYbbrOxPBRiXvZHqT1svFZi7Efblxx6CTAolnlCYe4kVZSEA9VRXtNlYLvq4HDbUV0S4kdjIVlUj65d3DTobrw403WHWLeLBdH8uKTOBanckevSVav/4WwoaYBfN7mdjwQgLOiPr7fA7caUKtKEhXdg/Au2ABM26mYoXUw1lFXO7D1C10XJo25o+5ijr49dqHgXOOQLGAWKHNSujV8QUa8ThJ6ErqokuF1XRYagiOFc6Dtpd1TW3RREJulNssbY2PGR3QfG3OkCpWP7HQrUrxsOIWG6b4xm9RR6CHpgJTT05WhA2+hzPuAkE32qWO3q1dzbe6pfY79VFCH+5mKyrOONZ08ovH8wv1k1fH7Otd+BlYkliTld7OzANxljP3Fyxyn/3VVDARQEj06s0LDDdQfjpY899/v57PuFasQU0DTVCxKwASCeClGXq2b+qUh1ZxJJQh/1o8wH4R162uC7O9W/8M75az3tUXxE6WxWK8tfFvDicrhsPry9sc6pjhEEKopF91RxtZlafoNFO3JlSmCkzzDDYYEBIHaASyl5D4TPGd6vuf4hEHZv65lFBV1BGsxjb8pUquD//GDT2sCXa9Kur1KZYVgiVx0ZaaNjsd80KPX2tCVEn5V2SJVDvCKZbYmxX/u2ng2IFC6wZ+5Nf/apoUSd4RFdVhHuKtgAk=
+  file: bin/AppImage/3Engine.AppImage
   on:
     tags: true
+    repo: RicardoEPRodrigues/3Engine
+  skip_cleanup: 'true'
