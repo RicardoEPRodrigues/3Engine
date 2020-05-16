@@ -25,6 +25,7 @@ script: |
   cd intermediate
   cmake .. -DCMAKE_BUILD_TYPE=Debug -DTRAVIS=1
   make
+  make AppImage
 matrix:
   include:
     # works on Precise and Trusty
@@ -41,3 +42,10 @@ matrix:
             - cmake
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+deploy:
+  provider: releases
+  api_key: "7fd73ebea40e0e19cf9931e8df33fb9dbaaa75e0"
+  file: "bin/AppImage/3Engine.AppImage"
+  skip_cleanup: true
+  on:
+    tags: true
