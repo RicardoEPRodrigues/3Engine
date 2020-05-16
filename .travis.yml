@@ -1,7 +1,6 @@
 language: cpp
 os: linux
-dist: xenial
-sudo: required
+dist: trusty
 compiler:
 - gcc
 before_install:
@@ -16,27 +15,22 @@ script: |
   make
   make AppImage
   cd ..
-  ls
 matrix:
   include:
   - os: linux
     addons:
       apt:
-#        sources:
-#        - ubuntu-toolchain-r-test
         packages:
-#        - g++-7
         - g++
         - libxmu-dev
         - libxi-dev
         - cmake
-#    env:
-#    - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 deploy:
   provider: releases
   api_key:
     secure: jTrJYbbrOxPBRiXvZHqT1svFZi7Efblxx6CTAolnlCYe4kVZSEA9VRXtNlYLvq4HDbUV0S4kdjIVlUj65d3DTobrw403WHWLeLBdH8uKTOBanckevSVav/4WwoaYBfN7mdjwQgLOiPr7fA7caUKtKEhXdg/Au2ABM26mYoXUw1lFXO7D1C10XJo25o+5ijr49dqHgXOOQLGAWKHNSujV8QUa8ThJ6ErqokuF1XRYagiOFc6Dtpd1TW3RREJulNssbY2PGR3QfG3OkCpWP7HQrUrxsOIWG6b4xm9RR6CHpgJTT05WhA2+hzPuAkE32qWO3q1dzbe6pfY79VFCH+5mKyrOONZ08ovH8wv1k1fH7Otd+BlYkliTld7OzANxljP3Fyxyn/3VVDARQEj06s0LDDdQfjpY899/v57PuFasQU0DTVCxKwASCeClGXq2b+qUh1ZxJJQh/1o8wH4R162uC7O9W/8M75az3tUXxE6WxWK8tfFvDicrhsPry9sc6pjhEEKopF91RxtZlafoNFO3JlSmCkzzDDYYEBIHaASyl5D4TPGd6vuf4hEHZv65lFBV1BGsxjb8pUquD//GDT2sCXa9Kur1KZYVgiVx0ZaaNjsd80KPX2tCVEn5V2SJVDvCKZbYmxX/u2ng2IFC6wZ+5Nf/apoUSd4RFdVhHuKtgAk=
   file: bin/AppImage/3Engine.AppImage
+  overwrite: true
   on:
     tags: true
     repo: RicardoEPRodrigues/3Engine
