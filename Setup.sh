@@ -11,6 +11,15 @@ if hash apt 2>/dev/null; then
   if ! dpkg --get-selections | grep g++; then
     sudo apt-get install -y g++
   fi
+  if ! dpkg --get-selections | grep libxmu-dev; then
+    sudo apt-get install -y libxmu-dev
+  fi
+  if ! dpkg --get-selections | grep libxi-dev; then
+    sudo apt-get install -y libxi-dev
+  fi
+  if ! dpkg --get-selections | grep cmake; then
+    sudo apt-get install -y cmake
+  fi
   if ! dpkg --get-selections | grep libgl1-mesa-dev; then
     sudo apt-get install -y libgl1-mesa-dev
   fi
