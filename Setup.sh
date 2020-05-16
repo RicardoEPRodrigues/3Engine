@@ -26,10 +26,10 @@ if hash apt 2>/dev/null; then
   if ! dpkg --get-selections | grep libjpeg-dev; then
     sudo apt-get install -y libjpeg-dev
   fi
-  if ! dpkg --get-selections | grep libjpeg-dev; then
+  if ! dpkg --get-selections | grep libtiff-dev; then
     sudo apt-get install -y libtiff-dev
   fi
-  if ! dpkg --get-selections | grep libjpeg-dev; then
+  if ! dpkg --get-selections | grep libwebp-dev; then
     sudo apt-get install -y libwebp-dev
   fi
   if ! dpkg --get-selections | grep libfreetype6-dev; then
