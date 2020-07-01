@@ -70,8 +70,15 @@ set_target_properties(SDL2_MIXER PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SO
 add_library(GLEW SHARED IMPORTED)
 set_target_properties(GLEW PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/GLEW/lib64/libGLEW.so)
 
-set(OpenGL_GL_PREFERENCE GLVND)
+#set(OpenGL_GL_PREFERENCE GLVND)
+set(OpenGL_GL_PREFERENCE LEGACY)
 find_package(OpenGL REQUIRED)
+
+IF (OpenGL_GL_PREFERENCE STREQUAL "LEGACY")
+    SET(OPENGL_LIBS "${OPENGL_gl_LIBRARY}")
+ELSE()
+    SET(OPENGL_LIBS "${OPENGL_opengl_LIBRARY};${OPENGL_glx_LIBRARY}")
+ENDIF()
 
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/SDL2/include
@@ -84,7 +91,7 @@ set(GRAPHIC_LIBRARIES
         SDL2_TTF
         SDL2_MIXER
         GLEW
-        ${OPENGL_LIBRARIES})
+        ${OPENGL_LIBS})
 
 # Project files and executables/libraries
 
