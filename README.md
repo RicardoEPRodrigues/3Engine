@@ -8,7 +8,7 @@ Fun feature: uses JSON files for configuration with realtime change detection.
 
 This project depends on OpenGL, GLEW and SDL2. While the first is normally installed by default in most systems the latter libraries are not.
 
-You might want to visit the [Release page](https://github.com/RicardoEPRodrigues/3Engine/releases) and check out pre-built versions of the engine. On Linux you need SDL installed to run a release: `sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-mixer-2.0-0 libsdl2-ttf-2.0-0 libglew1.13`.
+You might want to visit the [Release page](https://github.com/RicardoEPRodrigues/3Engine/releases) and check out pre-built versions of the engine.
 
 **CONTRIBUTIONS: Help make the library more usable. Mainly regarding using pre-built versions.**
 
@@ -16,15 +16,27 @@ You might want to visit the [Release page](https://github.com/RicardoEPRodrigues
 
 ## How to Run in Linux?
 
-### Dependencies
+### Setup
 
-Please open a terminal and run:
+To add all the necessary dependencies you need to run the ```Setup.sh``` file. It will install some dependencies on Ubuntu/Debian Oses and download and prepare GLEW and SDL2 libraries.
 
-``` 
-sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libglew-dev libxmu-dev libxi-dev
+```
+./Setup.sh
 ```
 
-(This will only work on Debian/Ubuntu based systems, if anyone wants to give me the commands for other OSes)
+#### Non-Ubuntu OSes Dependencies
+
+If you don't use a Ubuntu/Debian OS, please install the following dependencies.
+
+* g++
+* libxmu-dev
+* libxi-dev
+* cmake
+* libgl1-mesa-dev
+* libjpeg-dev
+* libtiff-dev
+* libwebp-dev
+* libfreetype6-dev
 
 ### Compiling
 
@@ -49,7 +61,7 @@ The JSON config files are copied from `config` folder to a same named folder on 
 Either press Play in Clion or using the terminal follow these steps:
 
 ```bash
-cd project-folder/bin/debug/
+cd bin/debug/
 ./LightScene
 ```
 
@@ -97,7 +109,7 @@ The JSON config files are copied from `config` folder to a same named folder on 
 
 ### Run
 
-Either press Play in Visual Studio or double-click on a compiled executable in the `bin` folder.
+Either press Play in Visual Studio or double-click the compiled executable in the `bin` folder.
 
 
 ## How to Run in Mac OS X?
