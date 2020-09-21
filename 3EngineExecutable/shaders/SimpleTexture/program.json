@@ -1,0 +1,14 @@
+{
+    "vertex": "shaders/SimpleTexture/vertex.glsl",
+    "fragment": "shaders/SimpleTexture/fragment.glsl",
+    "attributes": [
+        [0, "in_Position"],
+        [2, "in_TexCoord"]
+    ],
+    "uniformBlocks": {
+        "SharedMatrices": [0]
+    },
+    "textures": {
+        "tex": 0
+    }
+}
