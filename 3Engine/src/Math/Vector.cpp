@@ -12,11 +12,17 @@ namespace ThreeEngine {
 
     const Vector Vector::OneVector = Vector(1);
 
-    const Vector Vector::UpVector = Vector(0, 0, 1);
+    const Vector Vector::UpVector = Vector(0, 1, 0);
 
-    const Vector Vector::ForwardVector = Vector(1, 0, 0);
+    const Vector Vector::DownVector = Vector(0, -1, 0);
 
-    const Vector Vector::LeftVector = Vector(0, 1, 0);
+    const Vector Vector::ForwardVector = Vector(0, 0, -1);
+
+    const Vector Vector::BackVector = Vector(0, 0, 1);
+
+    const Vector Vector::LeftVector = Vector(-1, 0, 0);
+
+    const Vector Vector::RightVector = Vector(1, 0, 0);
 
     Vector::Vector() : Vector(0) {}
 

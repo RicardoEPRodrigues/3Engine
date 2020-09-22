@@ -82,6 +82,12 @@ namespace ThreeEngine {
 
             static void ToAngleAxis(const Quat& q, number& theta, Vector4& axis);
 
+            static Quat FromEulerAngles(const Vector& eulerAngles);
+
+            static void ToEulerAngles(const Quat& q, Vector& eulerAngles);
+
+            static Vector ToEulerAngles(const Quat& q);
+
             static Quat Lerp(const Quat& q0, const Quat& q1, number time);
 
             static Quat Slerp(const Quat& q0, const Quat& q1, number time);

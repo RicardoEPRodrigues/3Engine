@@ -13,7 +13,7 @@ namespace ThreeEngine {
 
     Quat::~Quat() = default;
 
-    Quat::Quat(number InX, number InY, number InZ, number InW) : T(InX), X(InY), Y(InZ), Z(InW) { }
+    Quat::Quat(number InX, number InY, number InZ, number InW) : T(InX), X(InY), Y(InZ), Z(InW) {}
 
     Quat::Quat(const Quat& Q) {
         operator=(Q);
@@ -21,7 +21,7 @@ namespace ThreeEngine {
 
     Quat& Quat::operator=(const Quat& Other) = default;
 
-    Quat::Quat(const Vector& v) : T(0), X(v.X), Y(v.Y), Z(v.Z) { }
+    Quat::Quat(const Vector& v) : T(0), X(v.X), Y(v.Y), Z(v.Z) {}
 
     void Quat::Clean() {
         if (abs(T) < Epsilon) { T = 0; }
@@ -161,6 +161,56 @@ namespace ThreeEngine {
             axis.Z = qN.Z / s;
             axis.W = 1.0f;
         }
+    }
+
+    Quat Quat::FromEulerAngles(const Vector& eulerAngles) {
+        number yaw = Maths::ToRadians(-eulerAngles.Z);
+        number pitch = Maths::ToRadians(eulerAngles.Y);
+        number roll = Maths::ToRadians(eulerAngles.X);
+
+        number cy = cos(yaw * 0.5f);
+        number sy = sin(yaw * 0.5f);
+        number cp = cos(pitch * 0.5f);
+        number sp = sin(pitch * 0.5f);
+        number cr = cos(roll * 0.5f);
+        number sr = sin(roll * 0.5f);
+
+        Quat q;
+        q.T = cr * cp * cy + sr * sp * sy;
+        q.X = sr * cp * cy - cr * sp * sy;
+        q.Y = cr * sp * cy + sr * cp * sy;
+        q.Z = cr * cp * sy - sr * sp * cy;
+        q.Clean();
+
+        return q.Normalize();
+    }
+
+    void Quat::ToEulerAngles(const Quat& q, Vector& eulerAngles) {
+        number yaw, pitch, roll;
+        // roll (x-axis rotation)
+        number sinr_cosp = 2 * (q.T * q.X + q.Y * q.Z);
+        number cosr_cosp = 1 - 2 * (q.X * q.X + q.Y * q.Y);
+        roll = std::atan2(sinr_cosp, cosr_cosp);
+
+        // pitch (y-axis rotation)
+        number sinp = 2 * (q.T * q.Y - q.Z * q.X);
+        if (std::abs(sinp) >= 1)
+            pitch = std::copysign(M_PI / 2, sinp); // use 90 degrees if out of range
+        else
+            pitch = std::asin(sinp);
+
+        // yaw (z-axis rotation)
+        number siny_cosp = 2 * (q.T * q.Z + q.X * q.Y);
+        number cosy_cosp = 1 - 2 * (q.Y * q.Y + q.Z * q.Z);
+        yaw = std::atan2(siny_cosp, cosy_cosp);
+
+        eulerAngles = {Maths::ToDegrees(roll), Maths::ToDegrees(pitch), Maths::ToDegrees(-yaw)};
+    }
+
+    Vector Quat::ToEulerAngles(const Quat& q) {
+        Vector eulerAngles;
+        ToEulerAngles(q, eulerAngles);
+        return eulerAngles;
     }
 
     Quat Quat::Lerp(const Quat& q0, const Quat& q1, number time) {

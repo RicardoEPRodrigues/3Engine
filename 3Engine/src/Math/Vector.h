@@ -24,14 +24,29 @@ namespace ThreeEngine {
         /** One vector (1,1,1) */
         static const Vector OneVector;
 
-        /** World up vector (0,0,1) */
+        /** OpenGL up vector (0,1,0) (INUSE) */
+        /** Unreal up vector (0,0,1) */
         static const Vector UpVector;
 
+        /** OpenGL up vector (0,-1,0) (INUSE) */
+        /** Unreal up vector (0,0,-1) */
+        static const Vector DownVector;
+
+        /** OpenGL forward vector (0,0,-1) (INUSE) */
         /** Unreal forward vector (1,0,0) */
         static const Vector ForwardVector;
 
-        /** Unreal right vector (0,1,0) */
+        /** OpenGL forward vector (0,0,1) (INUSE) */
+        /** Unreal forward vector (-1,0,0) */
+        static const Vector BackVector;
+
+        /** OpenGL left vector (-1,0,0) (INUSE) */
+        /** Unreal left vector (0,1,0) */
         static const Vector LeftVector;
+
+        /** OpenGL right vector (1,0,0) (INUSE) */
+        /** Unreal right vector (0,-1,0) */
+        static const Vector RightVector;
 
         Vector();
 
