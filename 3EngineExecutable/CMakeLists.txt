@@ -11,7 +11,7 @@ add_custom_target(CopyFilesExe
 
 # Project files and executables/libraries
 
-add_executable(Application CGJ-project-01/src/main.h CGJ-project-01/src/main.cpp)
+add_executable(Application AVT-project-01/src/main.h AVT-project-01/src/main.cpp)
 target_link_libraries(Application ${GRAPHIC_LIBRARIES} 3Engine)
 add_dependencies(Application CopyFilesExe)
 

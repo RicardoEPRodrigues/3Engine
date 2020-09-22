@@ -20,7 +20,7 @@ class Application : public ThreeEngine::Engine {
 
         ThreeEngine::SceneGraph* sceneGraph;
 
-        ThreeEngine::SphereCameraController controller;
+        ThreeEngine::SphereCameraController cameraController;
 
     protected:
 
