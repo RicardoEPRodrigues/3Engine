@@ -267,6 +267,7 @@ namespace ThreeEngine {
 //
 //            auto shaderController = new MetallicRoughnessControl();
 //            shaderController->step = 0.1;
+//            shaderController->engine = this;
 //            Simulation::instance()->Add(shaderController);
 //
 ////            auto cycleCount = new CycleNumber();
@@ -328,13 +329,14 @@ namespace ThreeEngine {
             auto object = new Actor();
             auto program = ShaderProgramManager::instance()->Get("BRDF");
             object->setShaderProgram(program);
-            object->mesh = MeshManager::instance()->Get("Dragon");
+//            object->mesh = MeshManager::instance()->Get("Dragon");
+            object->mesh = MeshManager::instance()->Get("Horse");
             object->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
-            hTransform.scale = Vector(10.0f);
-            hTransform.translation = Vector(-20, 0, 0);
-            hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1, 0, 0));
+            hTransform.scale = Vector(0.05f);
+            hTransform.translation = Vector(-20, -7, 0);
+            hTransform.rotation = Quat::FromAngleAxis(-90, Vector::UpVector);
             object->SetParent(root);
 
             object->preDraw = [program]() {
@@ -348,11 +350,12 @@ namespace ThreeEngine {
             auto object = new Actor();
             auto program = ShaderProgramManager::instance()->Get("BRDF");
             object->setShaderProgram(program);
-            object->mesh = MeshManager::instance()->Get("Dragon");
+//            object->mesh = MeshManager::instance()->Get("Dragon");
+            object->mesh = MeshManager::instance()->Get("Sphere");
             object->textures.push_back(
                     TextureManager::instance()->Get("GGB3"));
             auto&& hTransform = object->transform;
-            hTransform.scale = Vector(10.0f);
+            hTransform.scale = Vector(7.0f);
             hTransform.translation = Vector(20, 0, 0);
             hTransform.rotation = Quat::FromAngleAxis(-90, Vector(1, 0, 0));
             object->SetParent(root);

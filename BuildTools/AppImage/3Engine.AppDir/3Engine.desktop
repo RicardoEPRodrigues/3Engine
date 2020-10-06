@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=3Engine
-Exec=LightScene %F
+Exec=Application %F
 Icon=3Engine
 Type=Application
 Terminal=true

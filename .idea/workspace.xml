@@ -2,15 +2,13 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="3EngineGlobal" targetName="Tangram3D" />
       <config projectName="3EngineGlobal" targetName="AppImage" />
       <config projectName="3EngineGlobal" targetName="CopyFilesExe" />
-      <config projectName="3EngineGlobal" targetName="CopyFilesEngine" />
       <config projectName="3EngineGlobal" targetName="3EngineTests" />
-      <config projectName="3EngineGlobal" targetName="TimeShaders" />
-      <config projectName="3EngineGlobal" targetName="LightScene" />
+      <config projectName="3EngineGlobal" targetName="CopyFilesEngine" />
       <config projectName="3EngineGlobal" targetName="Setup.sh" />
       <config projectName="3EngineGlobal" targetName="3Engine" />
+      <config projectName="3EngineGlobal" targetName="Application" />
       <config projectName="3EngineGlobal" targetName="CopyFilesTests" />
       <config projectName="3EngineGlobal" targetName="CopyLibs" />
     </generated>
@@ -25,7 +23,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6f14e751-0902-47e1-a07f-fb9a4fa0058b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3Engine/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3Engine/src/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/3EngineExecutable/src/LightScene/LightScene.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" beforeDir="false" afterPath="$PROJECT_DIR$/BuildTools/AppImage/3Engine.AppDir/3Engine.desktop" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Travis" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -66,6 +66,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="cmakeli&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/CMakeLists.txt&#10;cmake&#9;ACTION&#9;ActivateCMakeToolWindow&#10;light&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LightScene/LightScene.cpp&#10;engin&#9;null&#9;null&#10;cubem&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shader/Cubemap.cpp&#10;actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;free&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Controllers/FreeCameraController.cpp&#10;controller&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/MoveController.cpp&#10;Vector&#9;null&#9;null&#10;quat&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Quat.cpp&#10;engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.cpp&#10;MEsh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;act&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Actor&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;debug&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Debug.h&#10;acto&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Actor.cpp&#10;Loader&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/LoaderAndScene/LoaderAndScene.h&#10;mesh&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Mesh.cpp&#10;Engine&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;opengl&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/OpenGLUtils.h&#10;meshlo&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/MeshLoader.cpp&#10;Cube&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Shapes/Cube.h&#10;V&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector4.h&#10;vector2.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;program.json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;camera&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Camera/Camera.h&#10;vector&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Math/Vector2.h&#10;main&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Executable/main.cpp&#10;shader&#9;null&#9;null&#10;input&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Input.h&#10;engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.h&#10;Time.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/Time.h&#10;gluttim&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Time/GlutTimeCalculator.cpp&#10;Engine.cp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine/Engine.cpp&#10;Camera&#9;null&#9;null&#10;Color3d/progr&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Color3D/program.json&#10;parall&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Parallelogram.h&#10;squa&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.h&#10;maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h&#10;triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.h&#10;shaderpro&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;squar&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Square.cpp&#10;Triang&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Tangram/Triangle.cpp&#10;Engine.h&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Engine.h&#10;utils&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/OpenGLUtils.h&#10;json&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/shaders/Tangram.json&#10;shaderprogram&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.h&#10;shaderp&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Shader/ShaderProgram.cpp&#10;Maths&#9;FILE&#9;file:///home/ricardo/Documents/Projects/3Engine/src/Math/Maths.h" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -73,33 +75,39 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="yaml" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/AppImage/3Engine.AppImage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3EngineExecutable" />
+      <recent name="$PROJECT_DIR$/3EngineExecutable/shaders" />
+      <recent name="$PROJECT_DIR$/3EngineExecutable/src/CGJ-project-01" />
+      <recent name="$PROJECT_DIR$/3Engine/src/Utilities" />
+      <recent name="$PROJECT_DIR$/3EngineTests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3EngineExecutable/CGJ-project-01/src" />
+      <recent name="$PROJECT_DIR$/3EngineExecutable" />
       <recent name="$PROJECT_DIR$/src/Engine/Actors" />
       <recent name="$PROJECT_DIR$/assets/Meshes" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Engine/Utilities" />
-      <recent name="$PROJECT_DIR$/src/Engine/Controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/3EngineTests" />
-      <recent name="$PROJECT_DIR$/3Engine" />
-      <recent name="$PROJECT_DIR$/3EngineExecutable" />
-      <recent name="$PROJECT_DIR$/shaders" />
-      <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.LightScene">
+  <component name="RunManager" selected="CMake Application.AppImage">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="3Engine Tests" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="3EngineTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="3EngineTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -118,6 +126,11 @@
       </method>
     </configuration>
     <configuration name="AppImage" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="AppImage" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/bin/AppImage/3Engine.AppImage">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Application" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Application">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -147,41 +160,30 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightScene" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="LightScene" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="LightScene">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Setup.sh" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Setup.sh" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tangram3D" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="Tangram3D" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="Tangram3D">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TimeShaders" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="3EngineGlobal" TARGET_NAME="TimeShaders" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="3EngineGlobal" RUN_TARGET_NAME="TimeShaders">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Catch.3Engine Tests" />
-      <item itemvalue="CMake Application.CopyLibs" />
-      <item itemvalue="CMake Application.Setup.sh" />
       <item itemvalue="CMake Application.3Engine" />
-      <item itemvalue="CMake Application.AppImage" />
       <item itemvalue="CMake Application.Build All" />
       <item itemvalue="CMake Application.CopyFilesEngine" />
+      <item itemvalue="CMake Application.AppImage" />
+      <item itemvalue="CMake Application.Application" />
       <item itemvalue="CMake Application.CopyFilesExe" />
       <item itemvalue="CMake Application.CopyFilesTests" />
-      <item itemvalue="CMake Application.LightScene" />
-      <item itemvalue="CMake Application.Tangram3D" />
-      <item itemvalue="CMake Application.TimeShaders" />
+      <item itemvalue="CMake Application.CopyLibs" />
+      <item itemvalue="CMake Application.Setup.sh" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
@@ -270,7 +272,26 @@
       <workItem from="1589546061960" duration="11917000" />
       <workItem from="1589558105253" duration="1341000" />
       <workItem from="1589559458038" duration="1717000" />
-      <workItem from="1589561190231" duration="11319000" />
+      <workItem from="1589561190231" duration="21222000" />
+      <workItem from="1593539725573" duration="611000" />
+      <workItem from="1593600371781" duration="3684000" />
+      <workItem from="1593605876536" duration="407000" />
+      <workItem from="1595501615540" duration="311000" />
+      <workItem from="1595503741960" duration="128000" />
+      <workItem from="1599489650115" duration="35000" />
+      <workItem from="1600692588395" duration="5749000" />
+      <workItem from="1600728566065" duration="3989000" />
+      <workItem from="1600763508713" duration="12007000" />
+      <workItem from="1601022227301" duration="6256000" />
+      <workItem from="1601376337024" duration="535000" />
+      <workItem from="1601589863842" duration="78000" />
+      <workItem from="1601628562526" duration="78000" />
+      <workItem from="1601642738766" duration="241000" />
+      <workItem from="1602004060138" duration="775000" />
+      <workItem from="1602004859174" duration="51000" />
+      <workItem from="1602004938117" duration="71000" />
+      <workItem from="1602005022197" duration="43000" />
+      <workItem from="1602005134652" duration="608000" />
     </task>
     <servers />
   </component>
@@ -284,7 +305,7 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -292,98 +313,97 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1302" y="344" width="599" height="581" key="#3Engine" timestamp="1589571234520">
+    <state x="738" y="391" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600732205216">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="1302" y="344" width="599" height="581" key="#3Engine/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589571234520" />
-    <state x="347" y="478" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589571324029">
+    <state x="738" y="391" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732205216" />
+    <state x="626" y="300" width="424" height="491" key="FileChooserDialogImpl" timestamp="1602004337261">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="347" y="478" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589571324029" />
-    <state x="745" y="645" width="471" height="342" key="#com.intellij.tools.ToolEditorDialog" timestamp="1589570739532">
+    <state x="626" y="300" width="424" height="491" key="FileChooserDialogImpl/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602004337261" />
+    <state width="2518" height="394" key="GridCell.Tab.0.bottom" timestamp="1602005325586">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="745" y="645" width="471" height="342" key="#com.intellij.tools.ToolEditorDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570739532" />
-    <state x="746" y="584" width="729" height="479" key="EnvironmentVariablesDialog" timestamp="1589570718634">
+    <state width="2518" height="394" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602005325586" />
+    <state width="1878" height="285" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980619" />
+    <state width="2518" height="394" key="GridCell.Tab.0.center" timestamp="1602005325586">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="746" y="584" width="729" height="479" key="EnvironmentVariablesDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570718634" />
-    <state width="1864" height="255" key="GridCell.Tab.0.bottom" timestamp="1589572549082">
+    <state width="2518" height="394" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602005325586" />
+    <state width="1878" height="285" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980618" />
+    <state width="2518" height="394" key="GridCell.Tab.0.left" timestamp="1602005325586">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
-    <state width="1864" height="255" key="GridCell.Tab.0.center" timestamp="1589572549082">
+    <state width="2518" height="394" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602005325586" />
+    <state width="1878" height="285" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980618" />
+    <state width="2518" height="394" key="GridCell.Tab.0.right" timestamp="1602005325586">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
-    <state width="1864" height="255" key="GridCell.Tab.0.left" timestamp="1589572549082">
+    <state width="2518" height="394" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602005325586" />
+    <state width="1878" height="285" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980618" />
+    <state width="2518" height="394" key="GridCell.Tab.1.bottom" timestamp="1602004834224">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
-    <state width="1864" height="255" key="GridCell.Tab.0.right" timestamp="1589572549082">
+    <state width="2518" height="394" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602004834224" />
+    <state width="1878" height="285" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980619" />
+    <state width="2518" height="394" key="GridCell.Tab.1.center" timestamp="1602004834224">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.0.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549082" />
-    <state width="1864" height="255" key="GridCell.Tab.1.bottom" timestamp="1589572549023">
+    <state width="2518" height="394" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602004834224" />
+    <state width="1878" height="285" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980619" />
+    <state width="2518" height="394" key="GridCell.Tab.1.left" timestamp="1602004834224">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
-    <state width="1864" height="255" key="GridCell.Tab.1.center" timestamp="1589572549022">
+    <state width="2518" height="394" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602004834224" />
+    <state width="1878" height="285" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980619" />
+    <state width="2518" height="394" key="GridCell.Tab.1.right" timestamp="1602004834224">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
-    <state width="1864" height="255" key="GridCell.Tab.1.left" timestamp="1589572549022">
+    <state width="2518" height="394" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1602004834224" />
+    <state width="1878" height="285" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1601642980619" />
+    <state width="2518" height="303" key="GridCell.Tab.2.bottom" timestamp="1600732315470">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
-    <state width="1864" height="255" key="GridCell.Tab.1.right" timestamp="1589572549022">
+    <state width="2518" height="303" key="GridCell.Tab.2.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732315470" />
+    <state width="2518" height="303" key="GridCell.Tab.2.center" timestamp="1600732315470">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.1.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549022" />
-    <state width="1864" height="255" key="GridCell.Tab.2.bottom" timestamp="1589572549023">
+    <state width="2518" height="303" key="GridCell.Tab.2.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732315470" />
+    <state width="2518" height="303" key="GridCell.Tab.2.left" timestamp="1600732315470">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.bottom/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
-    <state width="1864" height="255" key="GridCell.Tab.2.center" timestamp="1589572549023">
+    <state width="2518" height="303" key="GridCell.Tab.2.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732315470" />
+    <state width="2518" height="303" key="GridCell.Tab.2.right" timestamp="1600732315470">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.center/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
-    <state width="1864" height="255" key="GridCell.Tab.2.left" timestamp="1589572549023">
+    <state width="2518" height="303" key="GridCell.Tab.2.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732315470" />
+    <state x="1020" y="364" width="992" height="737" key="SettingsEditor" timestamp="1600732236174">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.left/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
-    <state width="1864" height="255" key="GridCell.Tab.2.right" timestamp="1589572549023">
+    <state x="1020" y="364" width="992" height="737" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600732236174" />
+    <state x="3205" y="209" width="992" height="737" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593605230897" />
+    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog" timestamp="1593605858087">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state width="1864" height="255" key="GridCell.Tab.2.right/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572549023" />
-    <state x="1281" y="543" key="SettingsEditor" timestamp="1589567193032">
+    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1593605858087" />
+    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog" timestamp="1600692761170">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="1281" y="543" key="SettingsEditor/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589567193032" />
-    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog" timestamp="1589558085808">
+    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600692761170" />
+    <state x="3302" y="246" width="899" height="588" key="find.popup" timestamp="1593600537577">
+      <screen x="2560" y="0" width="1920" height="1080" />
+    </state>
+    <state x="989" y="349" width="581" height="768" key="find.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1593540259179" />
+    <state x="3302" y="246" width="899" height="588" key="find.popup/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593600537577" />
+    <state x="944" y="342" key="run.anything.popup" timestamp="1600693795739">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="1364" y="478" width="485" height="313" key="cloudConfig.PluginsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589558085808" />
-    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog" timestamp="1589558080780">
+    <state x="944" y="342" key="run.anything.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1600693795739" />
+    <state x="3268" y="241" key="run.anything.popup/0.27.2560.1413/2560.0.1920.1080@2560.0.1920.1080" timestamp="1593602422316" />
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup" timestamp="1601376347084">
       <screen x="0" y="27" width="2560" height="1413" />
     </state>
-    <state x="1488" y="478" width="497" height="365" key="cloudConfig.SelfSettingsDialog/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589558080780" />
-    <state x="783" y="599" width="394" height="427" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1589570739897">
-      <screen x="0" y="27" width="2560" height="1413" />
-    </state>
-    <state x="783" y="599" width="394" height="427" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589570739897" />
-    <state x="989" y="349" width="581" height="768" key="find.popup" timestamp="1589572317120">
-      <screen x="0" y="27" width="2560" height="1413" />
-    </state>
-    <state x="989" y="349" width="581" height="768" key="find.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589572317120" />
-    <state x="944" y="342" key="run.anything.popup" timestamp="1589547162352">
-      <screen x="0" y="27" width="2560" height="1413" />
-    </state>
-    <state x="944" y="342" key="run.anything.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589547162352" />
-    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup" timestamp="1589567935186">
-      <screen x="0" y="27" width="2560" height="1413" />
-    </state>
-    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1589567935186" />
+    <state x="1270" y="298" width="672" height="678" key="search.everywhere.popup/0.27.2560.1413/2560.0.1920.1080@0.27.2560.1413" timestamp="1601376347084" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
