@@ -15,7 +15,8 @@ add_custom_target(CopyFilesExe
 #add_executable(Application src/LightScene/LightScene.h src/LightScene/LightScene.cpp)
 #add_executable(Application src/TimeShaders/MyEngine.h src/TimeShaders/MyEngine.cpp)
 #add_executable(Application src/Tangram3D/Tangram3D.h src/Tangram3D/Tangram3D.cpp)
-add_executable(Application AVT-project-01/src/main.h AVT-project-01/src/main.cpp)
+#add_executable(Application AVT-project-01/src/main.h AVT-project-01/src/main.cpp)
+add_executable(Application CGJ-project-01/src/main.h CGJ-project-01/src/main.cpp)
 target_link_libraries(Application ${GRAPHIC_LIBRARIES} 3Engine)
 add_dependencies(Application CopyFilesExe)
 

@@ -10,9 +10,8 @@
 namespace ThreeEngine {
 
     Actor::Actor()
-            : IDrawable(), shaderProgram(nullptr), isInitiated(false),
-              transform(), mesh(nullptr), textures(), parent(nullptr),
-              children() { }
+            : IDrawable(), shaderProgram(nullptr), isInitiated(false), parent(nullptr), transform(),
+              mesh(nullptr), textures(), children() {}
 
     Actor::~Actor() {
         for (auto&& child : children) {
@@ -26,8 +25,7 @@ namespace ThreeEngine {
         }
         isInitiated = true;
         if (!GetShaderProgram()) {
-            shaderProgram = std::make_shared<ShaderProgram>(
-                    "shaders/Default/program.json");
+            shaderProgram = std::make_shared<ShaderProgram>("shaders/Default/program.json");
         }
         GetShaderProgram()->Init();
         if (mesh) {

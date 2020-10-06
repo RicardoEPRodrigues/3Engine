@@ -27,6 +27,8 @@ namespace ThreeEngine {
 
             Matrix GetParentModelMatrix();
 
+            Actor* parent;
+
 
         public:
             struct Transform {
@@ -42,8 +44,6 @@ namespace ThreeEngine {
             std::shared_ptr<Mesh> mesh;
 
             std::vector<std::shared_ptr<ITexture>> textures;
-
-            Actor* parent;
 
             std::vector<Actor*> children;
 
