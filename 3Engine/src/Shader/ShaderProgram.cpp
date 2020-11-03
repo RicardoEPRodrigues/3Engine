@@ -88,7 +88,7 @@ namespace ThreeEngine {
             GLint binding = (*it)[0];
             GLint index = GetUniformBlockIndex(name.c_str());
             (*it)[1] = index;
-            UniformBlockBinding((GLuint)index, (GLuint)binding);
+            UniformBlockBinding((GLuint) index, (GLuint) binding);
         }
         Bind();
         for (json::iterator it = info["textures"].begin();
@@ -216,14 +216,12 @@ namespace ThreeEngine {
 #else
         glGetProgramInterfaceiv(static_cast<GLuint>(id), GL_UNIFORM,
                                 GL_ACTIVE_RESOURCES, &numUniforms);
-        const GLenum properties[4] = {GL_BLOCK_INDEX, GL_TYPE, GL_NAME_LENGTH,
-                                      GL_LOCATION};
+        const GLenum properties[4] = {GL_BLOCK_INDEX, GL_TYPE, GL_NAME_LENGTH, GL_LOCATION};
 
         for (int unif = 0; unif < numUniforms; ++unif) {
             GLint values[4];
-            glGetProgramResourceiv(static_cast<GLuint>(id), GL_UNIFORM,
-                                   static_cast<GLuint>(unif), 4,
-                                   properties, 4, nullptr, values);
+            glGetProgramResourceiv(static_cast<GLuint>(id), GL_UNIFORM, static_cast<GLuint>(unif),
+                                   4, properties, 4, nullptr, values);
 
             // Skip any uniforms that are in a block.
             if (values[0] != -1)

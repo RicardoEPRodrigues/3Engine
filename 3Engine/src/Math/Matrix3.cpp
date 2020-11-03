@@ -80,8 +80,9 @@ namespace ThreeEngine {
         Vector vNorm = vector;
         vNorm.Normalize();
         Matrix3 dualM = DualMatrix(vNorm);
-        Matrix3 dualMSqr = (TMatrix)dualM * dualM;
-        return Identity() + (TMatrix)dualM * sin(angleInRadian) + (1.0f - cos(angleInRadian)) * dualMSqr;
+        Matrix3 dualMSqr = (TMatrix) dualM * dualM;
+        return Identity() + (TMatrix) dualM * sin(angleInRadian) +
+               (1.0f - cos(angleInRadian)) * dualMSqr;
     }
 
     Vector Matrix3::operator*(const Vector& v) {
@@ -115,28 +116,26 @@ namespace ThreeEngine {
     }
 
     Matrix3 Matrix3::Minors() const {
-        Matrix3 m;
+        static const Matrix2 m00 = {M[1][1], M[1][2],
+                                    M[2][1], M[2][2]};
+        static const Matrix2 m01 = {M[1][0], M[1][2],
+                                    M[2][0], M[2][2]};
+        static const Matrix2 m02 = {M[1][0], M[1][1],
+                                    M[2][0], M[2][1]};
 
-        Matrix2 m00 = {M[1][1], M[1][2],
-                       M[2][1], M[2][2]};
-        Matrix2 m01 = {M[1][0], M[1][2],
-                       M[2][0], M[2][2]};
-        Matrix2 m02 = {M[1][0], M[1][1],
-                       M[2][0], M[2][1]};
+        static const Matrix2 m10 = {M[0][1], M[0][2],
+                                    M[2][1], M[2][2]};
+        static const Matrix2 m11 = {M[0][0], M[0][2],
+                                    M[2][0], M[2][2]};
+        static const Matrix2 m12 = {M[0][0], M[0][1],
+                                    M[2][0], M[2][1]};
 
-        Matrix2 m10 = {M[0][1], M[0][2],
-                       M[2][1], M[2][2]};
-        Matrix2 m11 = {M[0][0], M[0][2],
-                       M[2][0], M[2][2]};
-        Matrix2 m12 = {M[0][0], M[0][1],
-                       M[2][0], M[2][1]};
-
-        Matrix2 m20 = {M[0][1], M[0][2],
-                       M[1][1], M[1][2]};
-        Matrix2 m21 = {M[0][0], M[0][2],
-                       M[1][0], M[1][2]};
-        Matrix2 m22 = {M[0][0], M[0][1],
-                       M[1][0], M[1][1]};
+        static const Matrix2 m20 = {M[0][1], M[0][2],
+                                    M[1][1], M[1][2]};
+        static const Matrix2 m21 = {M[0][0], M[0][2],
+                                    M[1][0], M[1][2]};
+        static const Matrix2 m22 = {M[0][0], M[0][1],
+                                    M[1][0], M[1][1]};
 
         return {
                 m00.Determinant(), m01.Determinant(), m02.Determinant(),

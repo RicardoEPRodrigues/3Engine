@@ -40,7 +40,7 @@ namespace ThreeEngine {
     void Camera::Draw() {
         glBindBuffer(GL_UNIFORM_BUFFER, vboId);
         number viewMatrix[16];
-        (transform * (*view)).ToArray(viewMatrix);
+        (*view).ToArray(viewMatrix);
         glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix), viewMatrix);
         number projectionMatrix[16];
         projection->ToArray(projectionMatrix);

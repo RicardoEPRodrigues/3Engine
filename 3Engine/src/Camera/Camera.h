@@ -17,7 +17,6 @@ namespace ThreeEngine {
 
             Matrix* projection, * view;
         public:
-            Matrix transform = Matrix::IdentityMatrix();
 
             GLuint uniformBlockBidingID;
 

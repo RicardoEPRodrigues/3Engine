@@ -268,6 +268,44 @@ SCENARIO("vectors arithmetic testing", "[vector]") {
             CHECK(!vector.IsNormalized());
         }
     }
+
+
+    GIVEN("Evaluation Formulas") {
+        WHEN("Camera Coordinate Frame from View and Up vectors") {
+            std::vector<Vector> vectors =
+                    {
+                            Vector{ 1.0f,0.0f,0.0f },
+                            Vector{ 0.0f,2.0f,0.0f },
+                            Vector{ 0.0f,0.0f,3.0f }
+                    };
+
+            for (Vector& view : vectors)
+            {
+                for (Vector& up : vectors)
+                {
+                    try
+                    {
+                        std::cout << "view=" << view << " up=" << up << std::endl;
+                        Vector v = Vector::Normalize(view);
+                        Vector w = Vector::Normalize(up ^ v);
+                        Vector u = v ^ w;
+                        std::cout << "u=" << u << " v=" << v << " w=" << w << std::endl;
+                    } catch (std::exception& e) {
+                        std::cout << e.what() << std::endl;
+                    }
+                    std::cout << std::endl;
+                }
+            }
+            CHECK(true);
+        }
+
+        WHEN("Distance to Plane") {
+            Vector v1 = {1, 0, 0},
+                    v2 = {0, 1, 0},
+                    p1 = {1, 1, 2};
+            CHECK(true);
+        }
+    }
 }
 
 #endif //THREEENGINE_VECTORTESTS_H
