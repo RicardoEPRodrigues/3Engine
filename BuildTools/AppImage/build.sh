@@ -47,13 +47,14 @@ fi
 
 echo "Copy 3Engine library dependencies"
 DEPS="\
-#/usr/lib/x86_64-linux-gnu/libOpenGL.so* \
-#/usr/lib/x86_64-linux-gnu/libGLX.so* \
-#/usr/lib/x86_64-linux-gnu/libGLdispatch.so* \
 ${DEPENDENCIES_PATH}/SDL2/lib/libSDL2* \
 ${DEPENDENCIES_PATH}/GLEW/lib64/libGLEW.so* \
 /usr/lib/x86_64-linux-gnu/libsndio.so* \
 "
+#/usr/lib/x86_64-linux-gnu/libOpenGL.so* \
+#/usr/lib/x86_64-linux-gnu/libGLX.so* \
+#/usr/lib/x86_64-linux-gnu/libGLdispatch.so* \
+
 # Dependencies for Ubuntu 14.04
 #DEPS="${DEPS} \
 #/usr/lib/x86_64-linux-gnu/libGLX.so.0 \
