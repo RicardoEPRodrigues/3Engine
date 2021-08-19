@@ -26,11 +26,15 @@ int main(int argc, char* argv[]) {
 
     {
         Application engine;
-        engine.Init(argc, argv);
-        engine.Run();
+        if (engine.Init(argc, argv)) {
+            engine.Run();
+        } else {
+            Debug::Error("Unable to Initialize Engine");
+            _Exit(EXIT_FAILURE);
+        }
     }
 
-    exit(EXIT_SUCCESS);
+    _Exit(EXIT_SUCCESS);
 }
 
 class RotationControl : public IUpdatable {

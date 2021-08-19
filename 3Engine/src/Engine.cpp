@@ -7,13 +7,16 @@
 #include <fstream>
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_syswm.h>
 #include <GL/glew.h>
 #include <SDL2/SDL_opengl.h>
 
 #if OS_WIN
 #include <SDL_image.h>
 #else
+
 #include <SDL2/SDL_image.h>
+
 #endif
 
 #include "Engine.h"
@@ -45,16 +48,18 @@ namespace ThreeEngine {
 
     /////////////////////////////////////////////////////////////////////// SETUP
 
-    void Engine::Init(int argc, char** argv) {
+    bool Engine::Init(int argc, char** argv) {
         CheckSystemInfo();
-        SetupConfig();
-        SetupGamemode();
-        SetupSDL(argc, argv);
-        SetupGLEW();
+        if (!SetupConfig()) return false;
+        if (!SetupGamemode()) return false;
+        if (!SetupSDL(argc, argv)) return false;
+        if (!SetupGLEW()) return false;
         CheckOpenGLInfo();
-        SetupOpenGL();
+        if (!SetupOpenGL()) return false;
         Time::SetTimeCalculator(new SDLTimeCalculator());
         OnInit();
+
+        return true;
     }
 
     void Engine::CheckSystemInfo() {
@@ -67,29 +72,32 @@ namespace ThreeEngine {
 #endif
     }
 
-    void Engine::SetupConfig() {
+    bool Engine::SetupConfig() {
         // Assuming always the same path config/SetupConfig.json
         std::ifstream file("config/SetupConfig.json");
         if (file.good()) {
 
             Debug::Log("Using SetupConfig JSON file.");
 
-            json config;
-            file >> config;
+            json configFile;
+            file >> configFile;
 
-            this->config = json::merge(this->config, config);
+            this->config = json::merge(this->config, configFile);
+
+            return true;
         }
+        return false;
     }
 
-    void Engine::SetupRuntimeConfig() {
+    bool Engine::SetupRuntimeConfig() {
         // Assuming always the same path config/SetupConfig.json
         std::ifstream file("config/RuntimeConfig.json");
         if (file.good()) {
-            json runtimeConfig;
-            file >> runtimeConfig;
+            json runtimeConfigFile;
+            file >> runtimeConfigFile;
 
-            if (this->runtimeConfig != runtimeConfig) {
-                this->runtimeConfig = json::merge(this->runtimeConfig, runtimeConfig);
+            if (this->runtimeConfig != runtimeConfigFile) {
+                this->runtimeConfig = json::merge(this->runtimeConfig, runtimeConfigFile);
 
                 if (this->runtimeConfig["viewport"].is_object() &&
                     this->runtimeConfig["viewport"]["clearColor"].is_array()) {
@@ -99,13 +107,15 @@ namespace ThreeEngine {
                                  this->runtimeConfig["viewport"]["clearColor"][3]);
                 }
             }
+            return true;
         }
+        return false;
     }
 
-    void Engine::SetupGamemode() const {
+    bool Engine::SetupGamemode() {
 #ifdef OS_LINUX
         if (gamemode_request_start() != 0) {
-            Debug::Warn("Gamemode failed to start: %s\n", gamemode_error_string());
+            Debug::Warn("Gamemode failed to start: %s", gamemode_error_string());
         }
 
         int status = gamemode_query_status();
@@ -113,22 +123,96 @@ namespace ThreeEngine {
             Debug::Log("Gamemode is running. Status %d", status);
         }
 #endif
+        return true;
     }
 
-    void Engine::CleanupGamemode() const {
+    void Engine::CleanupGamemode() {
 #ifdef OS_LINUX
         if (gamemode_request_end() != 0) {
-            Debug::Warn("Gamemode failed to end: %s\n", gamemode_error_string());
+            Debug::Warn("Gamemode failed to end: %s", gamemode_error_string());
         }
 #endif
     }
 
-    void Engine::SetupSDL(int, char**) {
+    void Engine::SDLInfo(SDL_Window* window) {
+        SDL_SysWMinfo info;
+        SDL_VERSION(&info.version) /* initialize info structure with SDL version info */
+
+        if (SDL_GetWindowWMInfo(window, &info)) { /* the call returns true on success */
+            /* success */
+            const char* subsystem = "an unknown system!";
+            switch (info.subsystem) {
+                case SDL_SYSWM_UNKNOWN:
+                    break;
+                case SDL_SYSWM_WINDOWS:
+                    subsystem = "Microsoft Windows(TM)";
+                    break;
+                case SDL_SYSWM_X11:
+                    subsystem = "X11";
+                    break;
+#if SDL_VERSION_ATLEAST(2, 0, 3)
+                case SDL_SYSWM_WINRT:
+                    subsystem = "WinRT";
+                    break;
+#endif
+                case SDL_SYSWM_DIRECTFB:
+                    subsystem = "DirectFB";
+                    break;
+                case SDL_SYSWM_COCOA:
+                    subsystem = "Apple OS X";
+                    break;
+                case SDL_SYSWM_UIKIT:
+                    subsystem = "UIKit";
+                    break;
+#if SDL_VERSION_ATLEAST(2, 0, 2)
+                case SDL_SYSWM_WAYLAND:
+                    subsystem = "Wayland";
+                    break;
+                case SDL_SYSWM_MIR:
+                    subsystem = "Mir";
+                    break;
+#endif
+#if SDL_VERSION_ATLEAST(2, 0, 4)
+                case SDL_SYSWM_ANDROID:
+                    subsystem = "Android";
+                    break;
+#endif
+#if SDL_VERSION_ATLEAST(2, 0, 5)
+                case SDL_SYSWM_VIVANTE:
+                    subsystem = "Vivante";
+                    break;
+#endif
+#if SDL_VERSION_ATLEAST(2, 0, 16)
+                case SDL_SYSWM_OS2:
+                    subsystem = "Operating System/2";
+                    break;
+                case SDL_SYSWM_HAIKU:
+                    subsystem = "HAIKU";
+                    break;
+                case SDL_SYSWM_KMSDRM:
+                    subsystem = "KMS DRM";
+                    break;
+#endif
+            }
+
+            Debug::Log("SDL version %d.%d.%d",
+                       (int) info.version.major,
+                       (int) info.version.minor,
+                       (int) info.version.patch);
+            Debug::Log("Window Subsystem %s",
+                       subsystem);
+        } else {
+            /* call failed */
+            Debug::Error("Couldn't get window information: %s", SDL_GetError());
+        }
+    }
+
+    bool Engine::SetupSDL(int, char**) {
 
         //Initialize SDL
         if (SDL_Init(SDL_INIT_VIDEO) < 0) {
             Debug::Error("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
+            return false;
         }
 
         int glMajor = config["opengl"]["major"];
@@ -157,46 +241,50 @@ namespace ThreeEngine {
         std::string caption = config["window"]["caption"];
         gWindow = SDL_CreateWindow(caption.c_str(), SDL_WINDOWPOS_UNDEFINED,
                                    SDL_WINDOWPOS_UNDEFINED, config["window"]["x"],
-                                   config["window"]["y"], SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+                                   config["window"]["y"],
+                                   SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
         if (gWindow == nullptr) {
             Debug::Error("Window could not be created! SDL Error: %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
+            return false;
         }
+
+        SDLInfo(gWindow);
 
         //Initialize PNG loading
         unsigned imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
-        if (!((unsigned) IMG_Init(imgFlags) & imgFlags)) {
+        if (!((unsigned) IMG_Init((int) imgFlags) & imgFlags)) {
             Debug::Error("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
-            exit(EXIT_FAILURE);
+            return false;
         }
 
         //Create context
         gContext = SDL_GL_CreateContext(gWindow);
         if (gContext == nullptr) {
             Debug::Error("OpenGL context could not be created! SDL Error: %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
+            return false;
         }
 
         //Use Vsync
         if (SDL_GL_SetSwapInterval(config["window"]["vsync"]) < 0) {
             Debug::Warn("Unable to set VSync! SDL Error: %s\n", SDL_GetError());
         }
-
+        return true;
     }
 
-    void Engine::SetupGLEW() {
+    bool Engine::SetupGLEW() {
         glewExperimental = GL_TRUE;
         // Allow extension entry points to be loaded even if the extension isn't
         // present in the driver's extensions string.
         GLenum result = glewInit();
         if (result != GLEW_OK) {
             Debug::Error("ERROR GLEW Init: %s", glewGetString(result));
-            exit(EXIT_FAILURE);
+            return false;
         }
         CheckOpenGLError("Failed to setup GLEW.");
+        return true;
     }
 
-    void Engine::SetupOpenGL() {
+    bool Engine::SetupOpenGL() {
         glClearColor(config["viewport"]["clearColor"][0], config["viewport"]["clearColor"][1],
                      config["viewport"]["clearColor"][2], config["viewport"]["clearColor"][3]);
         // Z Test
@@ -212,6 +300,8 @@ namespace ThreeEngine {
         // Transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        return true;
     }
 
     void Engine::CheckOpenGLInfo() {

@@ -89,7 +89,9 @@ namespace ThreeEngine {
 
             static void Warn(const std::string& message) {
 #ifdef DEBUG
-                std::cerr << "WARNING: " << message << std::endl;
+                // Color in terminal
+                // https://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal
+                std::cerr << "\033[33mWARNING: " << message << "\033[0m" << std::endl;
 #endif
             }
 

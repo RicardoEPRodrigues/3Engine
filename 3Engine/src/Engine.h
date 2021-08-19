@@ -44,23 +44,25 @@ namespace ThreeEngine {
 
             std::vector<IDrawable*> actors;
 
-            void CheckSystemInfo();
+            static void CheckSystemInfo();
 
-            void SetupConfig();
+            bool SetupConfig();
 
-            void SetupRuntimeConfig();
+            bool SetupRuntimeConfig();
 
-            void SetupGamemode() const;
+            static bool SetupGamemode() ;
 
-            void CleanupGamemode() const;
+            static void CleanupGamemode() ;
 
-            void SetupSDL(int argc, char** argv);
+            static void SDLInfo(SDL_Window* window);
 
-            void SetupGLEW();
+            bool SetupSDL(int argc, char** argv);
 
-            void SetupOpenGL();
+            static bool SetupGLEW();
 
-            void CheckOpenGLInfo();
+            bool SetupOpenGL();
+
+            static void CheckOpenGLInfo();
 
             /**
              * Called when a new frame is to be drawn, before Actors are drawn.
@@ -105,7 +107,7 @@ namespace ThreeEngine {
 
             virtual ~Engine();
 
-            void Init(int argc, char** argv);
+            bool Init(int argc, char** argv);
 
             void Run();
 

@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(3EngineExecutable)
 
-add_custom_target(CopyFilesExe
+add_custom_target(CopyFilesExe DEPENDS CopyFilesEngine
         COMMAND ${CMAKE_COMMAND} -E echo Copying Executable files
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/config ${EXECUTABLE_OUTPUT_PATH}/config
         COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${EXECUTABLE_OUTPUT_PATH}/shaders
