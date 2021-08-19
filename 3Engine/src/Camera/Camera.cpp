@@ -6,20 +6,19 @@
 #include "Camera.h"
 #include "../OpenGLUtils.h"
 #include "LookAt.h"
-#include "Perspective.h"
 
 namespace ThreeEngine {
 
-    Camera::Camera() : Camera(0) { }
+    Camera::Camera() : Camera(0) {}
 
-    Camera::Camera(GLuint uniformBlockBidingID) : Camera(uniformBlockBidingID,
-                                                         new Perspective(30, 640.0f / 480.0f, 1,
-                                                                         10),
-                                                         new LookAt({5, 5, 5}, {0, 0, 0},
-                                                                    {0, 1, 0})) { }
+    Camera::Camera(GLuint uniformBlockBidingID)
+            : Camera(uniformBlockBidingID,
+                     new Matrix(Matrix::PerspectiveMatrix(30, 640.0f / 480.0f, 1, 10)),
+                     new LookAt({5, 5, 5}, {0, 0, 0},
+                                {0, 1, 0})) {}
 
     Camera::Camera(GLuint uniformBlockBidingID, Matrix* projection, Matrix* view)
-            : projection(projection), view(view), uniformBlockBidingID(uniformBlockBidingID) { }
+            : projection(projection), view(view), uniformBlockBidingID(uniformBlockBidingID) {}
 
     Camera::~Camera() {
         glDeleteBuffers(1, &vboId);
@@ -44,7 +43,8 @@ namespace ThreeEngine {
         glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(viewMatrix), viewMatrix);
         number projectionMatrix[16];
         projection->ToArray(projectionMatrix);
-        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(viewMatrix), sizeof(projectionMatrix), projectionMatrix);
+        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(viewMatrix), sizeof(projectionMatrix),
+                        projectionMatrix);
         glBindBuffer(GL_UNIFORM_BUFFER, 0);
         CheckOpenGLError("Could not draw camera.");
     }
@@ -53,37 +53,37 @@ namespace ThreeEngine {
         return projection;
     }
 
-    void Camera::SetProjection(Matrix* projection) {
-        if (this->projection == projection) {
+    void Camera::SetProjection(Matrix* matrix) {
+        if (this->projection == matrix) {
             return;
         }
         delete this->projection;
-        this->projection = projection;
+        this->projection = matrix;
     }
 
-    void Camera::SetProjection(Matrix const& projection) {
+    void Camera::SetProjection(Matrix const& matrix) {
         if (!this->projection) {
             return;
         }
-        *this->projection = projection;
+        *this->projection = matrix;
     }
 
     Matrix* Camera::GetView() const {
         return view;
     }
 
-    void Camera::SetView(Matrix* view) {
-        if (this->view == view) {
+    void Camera::SetView(Matrix* matrix) {
+        if (this->view == matrix) {
             return;
         }
         delete this->view;
-        this->view = view;
+        this->view = matrix;
     }
 
-    void Camera::SetView(Matrix const& view) {
+    void Camera::SetView(Matrix const& matrix) {
         if (!this->view) {
             return;
         }
-        *this->view = view;
+        *this->view = matrix;
     }
 } /* namespace Divisaction */

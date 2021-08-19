@@ -15,9 +15,7 @@ namespace ThreeEngine {
         Reset(0.0f);
     }
 
-    Matrix::~Matrix() {
-
-    }
+    Matrix::~Matrix() = default;
 
     Matrix::Matrix(const number& in) {
         Reset(in);
@@ -52,7 +50,7 @@ namespace ThreeEngine {
                                        0, 0, 0, 1) {}
 
     Matrix::Matrix(const Matrix& other) {
-        operator=(other); 
+        operator=(other);
     }
 
     Matrix& Matrix::operator=(const Matrix& other) {
@@ -391,25 +389,22 @@ namespace ThreeEngine {
     }
 
     Matrix Matrix::ScaleMatrix(const number& inX, const number& inY,
-        const number& inZ, const number& inW) {
-        return { inX, 0, 0, 0,
+                               const number& inZ, const number& inW) {
+        return {inX, 0, 0, 0,
                 0, inY, 0, 0,
                 0, 0, inZ, 0,
-                0, 0, 0, inW };
-    }
-
-    Matrix Matrix::ScaleMatrix(Vector4 const& v) {
-        return { v.X, 0, 0, 0,
-                0, v.Y, 0, 0,
-                0, 0, v.Z, 0,
-                0, 0, 0, v.W };
+                0, 0, 0, inW};
     }
 
     Matrix Matrix::ScaleMatrix(Vector const& v) {
-        return { v.X, 0, 0, 0,
+        return {v.X, 0, 0, 0,
                 0, v.Y, 0, 0,
                 0, 0, v.Z, 0,
-                0, 0, 0, 1 };
+                0, 0, 0, 1};
+    }
+
+    Matrix Matrix::ScaleMatrix(Vector4 const& v) {
+        return ScaleMatrix((Vector const&) v);
     }
 
     Matrix Matrix::ScaleMatrixInverted(const number& inX, const number& inY, const number& inZ,
@@ -442,16 +437,29 @@ namespace ThreeEngine {
     }
 
     Matrix Matrix::TranslationMatrix(const Vector& vector) {
-        return Matrix(1, 0, 0, vector.X,
-                      0, 1, 0, vector.Y,
-                      0, 0, 1, vector.Z,
-                      0, 0, 0, 1);
+        return {1, 0, 0, vector.X,
+                0, 1, 0, vector.Y,
+                0, 0, 1, vector.Z,
+                0, 0, 0, 1};
     }
 
     Matrix Matrix::TranslationMatrix(const Vector4& vector) {
-        return Matrix(1, 0, 0, vector.X,
-                      0, 1, 0, vector.Y,
-                      0, 0, 1, vector.Z,
-                      0, 0, 0, 1);
+        return TranslationMatrix((const Vector&) vector);
+    }
+
+    Matrix Matrix::PerspectiveMatrix(number FOVy, number aspect, number zNear, number zFar) {
+        number angle = Maths::ToRadians(FOVy / 2.0f);
+        number d = 1.0f / tanf(angle);
+        return {d / aspect, 0, 0, 0,
+                0, d, 0, 0,
+                0, 0, (zNear + zFar) / (zNear - zFar), (2 * zFar * zNear) / (zNear - zFar),
+                0, 0, -1.0f, 0};
+    }
+
+    Matrix Matrix::OrthoMatrix(number left, number right, number bottom, number top, number near, number far) {
+        return {2.0f / (right - left), 0, 0, (left + right) / (left - right),
+                0, 2.0f / (top - bottom), 0, (bottom + top) / (bottom - top),
+                0, 0, 2.0f / (near - far), (near + far) / (near - far),
+                0, 0, 0, 1};
     }
 } /* namespace Divisaction */

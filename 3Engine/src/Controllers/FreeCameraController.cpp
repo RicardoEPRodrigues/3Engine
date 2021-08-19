@@ -5,8 +5,6 @@
  */
 #include "FreeCameraController.h"
 #include "../Engine.h"
-#include "../Camera/Ortho.h"
-#include "../Camera/Perspective.h"
 #include "../Camera/LookAt.h"
 
 namespace ThreeEngine {
@@ -28,18 +26,22 @@ namespace ThreeEngine {
 
         if (engine->input.Click('p')) {
             if (inPerspective) {
-                camera->SetProjection(new Ortho(-2, 2, -2, 2, 1, 100));
+                camera->SetProjection(new Matrix(Matrix::OrthoMatrix(-2, 2, -2, 2, 1, 100)));
                 inPerspective = false;
             } else {
                 number width = engine->config["window"]["x"];
                 number height = engine->config["window"]["y"];
                 number aspect = width / height;
-                camera->SetProjection(new Perspective(30, aspect, 1, 100));
+                camera->SetProjection(new Matrix(Matrix::PerspectiveMatrix(30, aspect, 1, 100)));
                 inPerspective = true;
             }
         }
 
-        auto lookAt = static_cast<LookAt*>(camera->GetView());
+        auto lookAt = dynamic_cast<LookAt*>(camera->GetView());
+        if(!lookAt) {
+            Debug::Error("Unable to cast camera view matrix to LookAt");
+            return;
+        }
 
         if (engine->input['w'] || engine->input[SpecialKeys::UP_KEY]) {
             //                translation = Matrix::TranslationMatrix({0, 0, 0.1f, 0}) * translation;

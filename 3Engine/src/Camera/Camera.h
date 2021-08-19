@@ -34,15 +34,15 @@ namespace ThreeEngine {
 
             Matrix* getProjection() const;
 
-            void SetProjection(Matrix* projection);
+            void SetProjection(Matrix* matrix);
 
-            void SetProjection(Matrix const& projection);
+            void SetProjection(Matrix const& matrix);
 
             Matrix* GetView() const;
 
-            void SetView(Matrix* view);
+            void SetView(Matrix* matrix);
 
-            void SetView(Matrix const& view);
+            void SetView(Matrix const& matrix);
     };
 
 } /* namespace Divisaction */

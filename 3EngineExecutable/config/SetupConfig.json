@@ -1,8 +1,8 @@
 {
   "window": {
-    "x": 800,
-    "y": 800,
-    "caption": "3Engine: Hello World"
+    "x": 1280,
+    "y": 720,
+    "caption": "3Engine: Demo Application"
   },
   "opengl": {
     "major": 4,

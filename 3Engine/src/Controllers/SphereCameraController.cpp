@@ -5,8 +5,6 @@
  */
 #include "SphereCameraController.h"
 #include "../Engine.h"
-#include "../Camera/Ortho.h"
-#include "../Camera/Perspective.h"
 
 namespace ThreeEngine {
 
@@ -29,13 +27,13 @@ namespace ThreeEngine {
         // Toggle between Ortho and Perspective
         if (engine->input.Click('p')) {
             if (inPerspective) {
-                camera->SetProjection(new Ortho(-10, 10, -10, 10, 1, 100));
+                camera->SetProjection(new Matrix(Matrix::OrthoMatrix(-10, 10, -10, 10, 1, 100)));
                 inPerspective = false;
             } else {
                 number width = engine->config["window"]["x"];
                 number height = engine->config["window"]["y"];
                 number aspect = width / height;
-                camera->SetProjection(new Perspective(30, aspect, 1, 100));
+                camera->SetProjection(new Matrix(Matrix::PerspectiveMatrix(30, aspect, 1, 100)));
                 inPerspective = true;
             }
         }

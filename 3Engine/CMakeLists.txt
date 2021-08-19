@@ -26,8 +26,6 @@ set(ENGINE_SOURCE_FILES
         src/Camera/Camera.cpp src/Camera/Camera.h
         src/Input.cpp src/Input.h
         src/Camera/LookAt.cpp src/Camera/LookAt.h
-        src/Camera/Perspective.cpp src/Camera/Perspective.h
-        src/Camera/Ortho.cpp src/Camera/Ortho.h
         src/Math/Quat.cpp src/Math/Quat.h
         src/Time/Time.cpp src/Time/Time.h
         src/Controllers/FreeCameraController.cpp src/Controllers/FreeCameraController.h

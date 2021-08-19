@@ -16,7 +16,7 @@ namespace ThreeEngine {
 
     struct Matrix {
 
-        number M[4][4];
+        number M[4][4]{};
 
         Matrix();
 
@@ -292,7 +292,7 @@ namespace ThreeEngine {
             return is;
         };
 
-        operator std::string() const {
+        explicit operator std::string() const {
             std::string message = "\n";
             for (int i = 0; i < 4; ++i) {
                 message += "[ ";
@@ -307,7 +307,7 @@ namespace ThreeEngine {
             return message;
         }
 
-        operator Matrix3() const {
+        explicit operator Matrix3() const {
             Matrix3 m;
             for (int i = 0; i < 3; ++i) {
                 for (int j = 0; j < 3; ++j) {
@@ -334,6 +334,10 @@ namespace ThreeEngine {
         static Matrix TranslationMatrix(const Vector& vector);
 
         static Matrix TranslationMatrix(const Vector4& vector);
+
+        static Matrix PerspectiveMatrix(number FOVy, number aspect, number zNear, number zFar);
+
+        static Matrix OrthoMatrix(number left, number right, number bottom, number top, number near, number far);
     };
 
 } /* namespace Divisaction */
