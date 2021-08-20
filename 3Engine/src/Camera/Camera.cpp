@@ -13,11 +13,11 @@ namespace ThreeEngine {
 
     Camera::Camera(GLuint uniformBlockBidingID)
             : Camera(uniformBlockBidingID,
-                     new Matrix(Matrix::PerspectiveMatrix(30, 640.0f / 480.0f, 1, 10)),
+                     new PerspectiveCameraMatrix(30, 640.0f, 480.0f, 1, 1000),
                      new LookAt({5, 5, 5}, {0, 0, 0},
                                 {0, 1, 0})) {}
 
-    Camera::Camera(GLuint uniformBlockBidingID, Matrix* projection, Matrix* view)
+    Camera::Camera(GLuint uniformBlockBidingID, CameraMatrix* projection, CameraMatrix* view)
             : projection(projection), view(view), uniformBlockBidingID(uniformBlockBidingID) {}
 
     Camera::~Camera() {
@@ -49,11 +49,11 @@ namespace ThreeEngine {
         CheckOpenGLError("Could not draw camera.");
     }
 
-    Matrix* Camera::getProjection() const {
+    CameraMatrix* Camera::getProjection() const {
         return projection;
     }
 
-    void Camera::SetProjection(Matrix* matrix) {
+    void Camera::SetProjection(CameraMatrix* matrix) {
         if (this->projection == matrix) {
             return;
         }
@@ -61,18 +61,18 @@ namespace ThreeEngine {
         this->projection = matrix;
     }
 
-    void Camera::SetProjection(Matrix const& matrix) {
+    void Camera::SetProjection(CameraMatrix const& matrix) {
         if (!this->projection) {
             return;
         }
         *this->projection = matrix;
     }
 
-    Matrix* Camera::GetView() const {
+    CameraMatrix* Camera::GetView() const {
         return view;
     }
 
-    void Camera::SetView(Matrix* matrix) {
+    void Camera::SetView(CameraMatrix* matrix) {
         if (this->view == matrix) {
             return;
         }
@@ -80,10 +80,39 @@ namespace ThreeEngine {
         this->view = matrix;
     }
 
-    void Camera::SetView(Matrix const& matrix) {
+    void Camera::SetView(CameraMatrix const& matrix) {
         if (!this->view) {
             return;
         }
         *this->view = matrix;
+    }
+
+    void Camera::OnReshape(int w, int h) {
+        view->OnReshape(w, h);
+        projection->OnReshape(w, h);
+    }
+
+
+    /*MATRIX CAMERA*/
+
+    PerspectiveCameraMatrix::PerspectiveCameraMatrix() : PerspectiveCameraMatrix(30, 1280, 720, 1,
+                                                                                 1000) {}
+
+    PerspectiveCameraMatrix::PerspectiveCameraMatrix(number FOVy, number width, number height,
+                                                     number zNear, number zFar)
+            : CameraMatrix(), FOVy(FOVy), zNear(zNear), zFar(zFar) {
+        number aspect = (number) width / (number) height;
+        if (height > width) {
+            aspect = (number) height / (number) width;
+        }
+        Matrix::PerspectiveMatrix(*this, FOVy, aspect, zNear, zFar);
+    }
+
+    void PerspectiveCameraMatrix::OnReshape(int width, int height) {
+        number aspect = (number) width / (number) height;
+//        if (height > width) {
+//            aspect = (number) height / (number) width;
+//        }
+        Matrix::PerspectiveMatrix(*this, FOVy, aspect, zNear, zFar);
     }
 } /* namespace Divisaction */

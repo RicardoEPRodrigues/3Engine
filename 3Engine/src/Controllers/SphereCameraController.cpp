@@ -15,7 +15,7 @@ namespace ThreeEngine {
             yawPitch(),
             quat(),
             translation(0, 0, -100),
-            camera(nullptr) { }
+            camera(nullptr) {}
 
     SphereCameraController::~SphereCameraController() = default;
 
@@ -27,13 +27,13 @@ namespace ThreeEngine {
         // Toggle between Ortho and Perspective
         if (engine->input.Click('p')) {
             if (inPerspective) {
-                camera->SetProjection(new Matrix(Matrix::OrthoMatrix(-10, 10, -10, 10, 1, 100)));
+                camera->SetProjection(
+                        new CameraMatrix(Matrix::OrthoMatrix(-10, 10, -10, 10, 1, 100)));
                 inPerspective = false;
             } else {
                 number width = engine->config["window"]["x"];
                 number height = engine->config["window"]["y"];
-                number aspect = width / height;
-                camera->SetProjection(new Matrix(Matrix::PerspectiveMatrix(30, aspect, 1, 100)));
+                camera->SetProjection(new PerspectiveCameraMatrix(30, width, height, 1, 100));
                 inPerspective = true;
             }
         }
@@ -68,8 +68,8 @@ namespace ThreeEngine {
         }
 
         if (updateCamera) {
-            camera->SetView(Matrix::TranslationMatrix(translation) *
-                            quat.ToMatrix());
+            camera->SetView(new CameraMatrix(Matrix::TranslationMatrix(translation) *
+                                             quat.ToMatrix()));
         }
     }
 
@@ -83,10 +83,10 @@ namespace ThreeEngine {
         // check if mouse is at window borders
         bool mouseXUpdate =
                 (mouse.X <= 0) ||
-                (mouse.X >= (int) engine->config["window"]["x"] - 1);
+                (mouse.X >= (float) ((int) engine->config["window"]["x"] - 100));
         bool mouseYUpdate =
                 (mouse.Y <= 0) ||
-                (mouse.Y >= (int) engine->config["window"]["y"] - 1);
+                (mouse.Y >= (float) ((int) engine->config["window"]["y"] - 100));
 
         if (mouseXUpdate || mouseYUpdate) {
             Vector2 newMouseLoc = mouse;

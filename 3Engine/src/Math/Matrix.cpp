@@ -447,19 +447,34 @@ namespace ThreeEngine {
         return TranslationMatrix((const Vector&) vector);
     }
 
-    Matrix Matrix::PerspectiveMatrix(number FOVy, number aspect, number zNear, number zFar) {
+    void Matrix::PerspectiveMatrix(Matrix& matrix, number FOVy, number aspect, number zNear,
+                                   number zFar) {
         number angle = Maths::ToRadians(FOVy / 2.0f);
         number d = 1.0f / tanf(angle);
-        return {d / aspect, 0, 0, 0,
-                0, d, 0, 0,
-                0, 0, (zNear + zFar) / (zNear - zFar), (2 * zFar * zNear) / (zNear - zFar),
-                0, 0, -1.0f, 0};
+        matrix.Set(d / aspect, 0, 0, 0,
+                   0, d, 0, 0,
+                   0, 0, (zNear + zFar) / (zNear - zFar), (2 * zFar * zNear) / (zNear - zFar),
+                   0, 0, -1.0f, 0);
     }
 
-    Matrix Matrix::OrthoMatrix(number left, number right, number bottom, number top, number near, number far) {
-        return {2.0f / (right - left), 0, 0, (left + right) / (left - right),
-                0, 2.0f / (top - bottom), 0, (bottom + top) / (bottom - top),
-                0, 0, 2.0f / (near - far), (near + far) / (near - far),
-                0, 0, 0, 1};
+    Matrix Matrix::PerspectiveMatrix(number FOVy, number aspect, number zNear, number zFar) {
+        Matrix mat{};
+        PerspectiveMatrix(mat, FOVy, aspect, zNear, zFar);
+        return mat;
+    }
+
+    void Matrix::OrthoMatrix(Matrix& matrix, number left, number right, number bottom, number top,
+                             number near, number far) {
+        matrix.Set(2.0f / (right - left), 0, 0, (left + right) / (left - right),
+                   0, 2.0f / (top - bottom), 0, (bottom + top) / (bottom - top),
+                   0, 0, 2.0f / (near - far), (near + far) / (near - far),
+                   0, 0, 0, 1);
+    }
+
+    Matrix Matrix::OrthoMatrix(number left, number right, number bottom, number top, number near,
+                               number far) {
+        Matrix mat{};
+        OrthoMatrix(mat, left, right, bottom, top, near, far);
+        return mat;
     }
 } /* namespace Divisaction */

@@ -15,7 +15,7 @@ namespace ThreeEngine {
         private:
             GLuint id;
 
-            void LoadMapSide(GLenum sideTarget, const ImageData& imageData) const;
+            static void LoadMapSide(GLenum sideTarget, const ImageData& imageData) ;
         public:
             GLenum texUnit = GL_TEXTURE0;
             ImageData imagesData[6]{{}};

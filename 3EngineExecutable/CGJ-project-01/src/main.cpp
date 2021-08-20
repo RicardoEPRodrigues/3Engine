@@ -231,15 +231,14 @@ void Application::scene() {
     { // Camera handling
         number width = config["window"]["x"];
         number height = config["window"]["y"];
-        number aspect = (number) width / (number) height;
         auto* camera = new Camera(
                 static_cast<GLuint>(
                         ShaderProgramManager::instance()->Get(
                                 "default")->GetUniformBlockBidingId(
                                 "SharedMatrices")),
-                new Matrix(Matrix::PerspectiveMatrix(30, aspect, 1, 1000)),
+                new PerspectiveCameraMatrix(30, width, height, 1, 1000),
 //                new Ortho(-30, 30, -30, 30, 1, 1000),
-                new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
+                new CameraMatrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
         );
         sceneGraph->SetCamera(camera);
@@ -348,14 +347,11 @@ void Application::scene() {
 }
 
 void Application::OnReshape(int width, int height) {
-//        number aspect = (number) w / (number) h,
-//                angle = Maths::ToRadians(30.0f / 2.0f),
-//                d = 1.0f / tanf(angle);
-//        camera->projection.M[0][0] = d / aspect;
-    if (Camera* camera = sceneGraph->GetCamera()) {
-        number aspect = (number) width / (number) height;
-        camera->SetProjection(Matrix::PerspectiveMatrix(30, aspect, 1, 1000));
+    if (!sceneGraph) {
+        Debug::Warn("SceneGraph is undefined");
+        return;
     }
+    sceneGraph->OnReshape(width, height);
 }
 
 void Application::PreDraw() {

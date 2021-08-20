@@ -17,12 +17,12 @@ namespace ThreeEngine {
 
     void SceneGraph::Init() {
         if (!camera) {
-            Debug::Log("No Camera found in Scene Graph. Using default Camera.");
+            Debug::Warn("No Camera found in Scene Graph. Using default Camera.");
             camera = new Camera();
         }
         camera->Init();
         if (!root) {
-            Debug::Log("No root found in Scene Graph. Using default actor.");
+            Debug::Warn("No root found in Scene Graph. Using default actor.");
             root = new Actor();
         }
         root->Init();
@@ -53,6 +53,15 @@ namespace ThreeEngine {
             delete SceneGraph::camera;
         }
         SceneGraph::camera = camera;
+    }
+
+    void SceneGraph::OnReshape(int w, int h) {
+        if (!SceneGraph::camera) {
+            Debug::Warn("Missing camera in Scene Graph");
+            return;
+        }
+
+        camera->OnReshape(w,h);
     }
 
 } /* namespace ThreeEngine */

@@ -47,8 +47,7 @@ namespace ThreeEngine {
         glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER,
-                        GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
         glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
@@ -68,7 +67,7 @@ namespace ThreeEngine {
 
     void
     Cubemap::LoadMapSide(GLenum sideTarget,
-                                const ImageData& imageData) const {
+                         const ImageData& imageData) {
         // copy image data into 'target' side of cube map
         glTexImage2D(sideTarget, 0, GL_RGBA, imageData.width, imageData.height,
                      0, GL_RGBA, GL_UNSIGNED_BYTE, imageData.data);

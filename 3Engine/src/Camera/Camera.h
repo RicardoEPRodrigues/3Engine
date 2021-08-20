@@ -11,11 +11,37 @@
 
 namespace ThreeEngine {
 
+    class CameraMatrix : public Matrix {
+        public:
+            CameraMatrix() : Matrix() {}
+
+            explicit CameraMatrix(const Matrix& other) : Matrix(other) {}
+
+            virtual void OnReshape(int, int) {}
+    };
+
+    class PerspectiveCameraMatrix : public CameraMatrix {
+        private:
+            number FOVy{30};
+            number zNear{1};
+            number zFar{1000};
+        public:
+            PerspectiveCameraMatrix();
+
+            PerspectiveCameraMatrix(number FOVy, number width, number height, number zNear,
+                                    number zFar);
+
+            explicit PerspectiveCameraMatrix(const CameraMatrix& other) : CameraMatrix(other) {}
+
+            void OnReshape(int w, int h) override;
+    };
+
     class Camera : public IDrawable {
         private:
             GLuint vboId{};
 
-            Matrix* projection, * view;
+            CameraMatrix* projection, * view;
+
         public:
 
             GLuint uniformBlockBidingID;
@@ -24,7 +50,7 @@ namespace ThreeEngine {
 
             explicit Camera(GLuint uniformBlockBidingID);
 
-            Camera(GLuint uniformBlockBidingID, Matrix* projection, Matrix* view);
+            Camera(GLuint uniformBlockBidingID, CameraMatrix* projection, CameraMatrix* view);
 
             ~Camera() override;
 
@@ -32,17 +58,19 @@ namespace ThreeEngine {
 
             void Draw() override;
 
-            Matrix* getProjection() const;
+            CameraMatrix* getProjection() const;
 
-            void SetProjection(Matrix* matrix);
+            void SetProjection(CameraMatrix* matrix);
 
-            void SetProjection(Matrix const& matrix);
+            void SetProjection(CameraMatrix const& matrix);
 
-            Matrix* GetView() const;
+            CameraMatrix* GetView() const;
 
-            void SetView(Matrix* matrix);
+            void SetView(CameraMatrix* matrix);
 
-            void SetView(Matrix const& matrix);
+            void SetView(CameraMatrix const& matrix);
+
+            void OnReshape(int w, int h);
     };
 
 } /* namespace Divisaction */

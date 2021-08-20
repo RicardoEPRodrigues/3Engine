@@ -20,11 +20,13 @@ namespace ThreeEngine {
 
             Matrix translation, rotation;
 
+            class LookAt* lookAtMatrix;
+
         public:
 
             Camera* camera;
 
-            FreeCameraController(class Engine* engine);
+            FreeCameraController(class Engine* engine, LookAt* lookAtMatrix);
 
             virtual ~FreeCameraController();
 

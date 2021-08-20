@@ -335,7 +335,11 @@ namespace ThreeEngine {
 
         static Matrix TranslationMatrix(const Vector4& vector);
 
+        static void PerspectiveMatrix(Matrix& matrix, number FOVy, number aspect, number zNear, number zFar);
+
         static Matrix PerspectiveMatrix(number FOVy, number aspect, number zNear, number zFar);
+
+        static void OrthoMatrix(Matrix& matrix, number left, number right, number bottom, number top, number near, number far);
 
         static Matrix OrthoMatrix(number left, number right, number bottom, number top, number near, number far);
     };

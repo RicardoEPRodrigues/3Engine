@@ -9,11 +9,11 @@
 
 namespace ThreeEngine {
 
-    FreeCameraController::FreeCameraController(Engine* engine) :
+    FreeCameraController::FreeCameraController(Engine* engine, LookAt* lookAtMatrix) :
             engine(engine), inPerspective(true),
             previousMouseLocation(), yawPitch(),
             translation(Matrix::IdentityMatrix()),
-            rotation(Matrix::IdentityMatrix()), camera(nullptr) {
+            rotation(Matrix::IdentityMatrix()), lookAtMatrix(lookAtMatrix), camera(nullptr) {
     }
 
     FreeCameraController::~FreeCameraController() = default;
@@ -26,19 +26,18 @@ namespace ThreeEngine {
 
         if (engine->input.Click('p')) {
             if (inPerspective) {
-                camera->SetProjection(new Matrix(Matrix::OrthoMatrix(-2, 2, -2, 2, 1, 100)));
+                camera->SetProjection(new CameraMatrix(Matrix::OrthoMatrix(-2, 2, -2, 2, 1, 100)));
                 inPerspective = false;
             } else {
                 number width = engine->config["window"]["x"];
                 number height = engine->config["window"]["y"];
-                number aspect = width / height;
-                camera->SetProjection(new Matrix(Matrix::PerspectiveMatrix(30, aspect, 1, 100)));
+                camera->SetProjection(new PerspectiveCameraMatrix(30, width, height, 1, 100));
                 inPerspective = true;
             }
         }
 
         auto lookAt = dynamic_cast<LookAt*>(camera->GetView());
-        if(!lookAt) {
+        if (!lookAt) {
             Debug::Error("Unable to cast camera view matrix to LookAt");
             return;
         }

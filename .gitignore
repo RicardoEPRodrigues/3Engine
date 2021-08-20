@@ -38,3 +38,5 @@ intermediate
 
 # accept all files from
 !*/assets/*
+
+cmake-build-*

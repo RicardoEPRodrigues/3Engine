@@ -36,6 +36,7 @@ namespace ThreeEngine {
 
             void SetCamera(Camera* camera);
 
+            virtual void OnReshape(int w, int h);
     };
 
 } /* namespace ThreeEngine */

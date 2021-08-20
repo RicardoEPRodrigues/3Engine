@@ -7,10 +7,11 @@
 #define THREEENGINE_LOOKAT_H
 
 #include "../Math/Matrix.h"
+#include "Camera.h"
 
 namespace ThreeEngine {
 
-    struct LookAt : public Matrix {
+    struct LookAt : public CameraMatrix {
         public:
             Vector eye, center, up, view, v, side, s, u;
 
