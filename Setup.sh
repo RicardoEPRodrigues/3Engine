@@ -55,7 +55,9 @@ tar -xzvf SDL2_mixer-2.0.4.tar.gz
 (cd SDL2_ttf-2.0.15   && ./configure --prefix="${DEPENDENCIES_DIR}/SDL2" --with-sdl-prefix="${DEPENDENCIES_DIR}/SDL2" && make clean && make -j4 && make install && cd ..)
 (cd SDL2_mixer-2.0.4  && ./configure --prefix="${DEPENDENCIES_DIR}/SDL2" --with-sdl-prefix="${DEPENDENCIES_DIR}/SDL2" && make clean && make -j4 && make install && cd ..)
 
-wget https://github.com/nigels-com/glew/releases/download/glew-2.1.0/glew-2.1.0.tgz -O glew-2.1.0.tgz
-tar -xzvf glew-2.1.0.tgz
+wget https://github.com/nigels-com/glew/releases/download/glew-2.2.0/glew-2.2.0.tgz -O glew-2.2.0.tgz
+tar -xzvf glew-2.2.0.tgz
 
-(cd glew-2.1.0        && make clean && make && GLEW_NO_GLU=1 GLEW_DEST="${DEPENDENCIES_DIR}/GLEW" make install && cd ..)
+(cd glew-2.2.0        && make clean && make && GLEW_NO_GLU=1 GLEW_DEST="${DEPENDENCIES_DIR}/GLEW" make install && cd ..)
+# WAYLAND SUPPORT: Comment line above and Uncomment line below
+#(cd glew-2.2.0         && make clean && make && SYSTEM=linux-egl GLEW_NO_GLU=1 GLEW_DEST="${DEPENDENCIES_DIR}/GLEW" make install && cd ..)
