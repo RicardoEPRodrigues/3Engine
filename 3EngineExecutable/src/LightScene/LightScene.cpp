@@ -9,7 +9,6 @@
 
 #include "../../../3Engine/src/Shapes/MeshLoader.h"
 #include "../../../3Engine/src/Shader/TextureLoader.h"
-#include "../../../3Engine/src/Camera/Perspective.h"
 #include "../../../3Engine/src/Utilities/Managers.h"
 #include "../../../3Engine/src/Utilities/Simulation.h"
 #include "../../../3Engine/src/Actors/SkySphere.h"
@@ -175,14 +174,13 @@ namespace ThreeEngine {
         { // Camera handling
             number width = config["window"]["x"];
             number height = config["window"]["y"];
-            number aspect = width / height;
-            Camera* camera = new Camera(
+            auto* camera = new Camera(
                     static_cast<GLuint>(
                             ShaderProgramManager::instance()->Get(
                                     "default")->GetUniformBlockBidingId(
                                     "SharedMatrices")),
-                    new Perspective(30, aspect, 1, 1000),
-                    new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
+                    new PerspectiveCameraMatrix(30, width, height, 1, 1000),
+                    new CameraMatrix(Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100))))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
             );
             sceneGraph->SetCamera(camera);
@@ -372,11 +370,12 @@ namespace ThreeEngine {
         sceneGraph->Init();
     }
 
-    void LightScene::OnReshape(int, int) {
-//        number aspect = (number) w / (number) h,
-//                angle = Maths::ToRadians(30.0f / 2.0f),
-//                d = 1.0f / tanf(angle);
-//        camera->projection.M[0][0] = d / aspect;
+    void LightScene::OnReshape(int width, int height) {
+        if (!sceneGraph) {
+            Debug::Warn("SceneGraph is undefined");
+            return;
+        }
+        sceneGraph->OnReshape(width, height);
     }
 
     void LightScene::PreDraw() {

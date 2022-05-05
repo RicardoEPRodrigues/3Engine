@@ -2,6 +2,8 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://github.com/RicardoEPRodrigues/3Engine/releases) [![Travis](https://img.shields.io/travis/RicardoEPRodrigues/3Engine.svg?style=flat-square)](https://travis-ci.org/RicardoEPRodrigues/3Engine) [![AppVeyor](https://ci.appveyor.com/api/projects/status/3kcxkyeddhu9qhuq?svg=true)](https://ci.appveyor.com/project/RicardoEPRodrigues/3engine)
 
+![3Engine Screenshot](./media/3EngineScreenshot.png?raw=true)
+
 Game Engine **3Engine** using OpenGL made for a class on *Computer Graphics for Games*.
 
 Fun feature: uses JSON files for configuration with realtime change detection.
