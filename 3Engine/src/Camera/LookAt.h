@@ -11,7 +11,7 @@
 
 namespace ThreeEngine {
 
-    struct LookAt : public CameraMatrix {
+    class LookAt : public CameraMatrix {
         public:
             Vector eye, center, up, view, v, side, s, u;
 

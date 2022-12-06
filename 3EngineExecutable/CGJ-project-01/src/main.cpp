@@ -289,7 +289,7 @@ void Application::scene() {
         auto shape = new LInverseShape();
 
         auto&& hTransform = shape->transform;
-        hTransform.translation = {6.3, 0, 0};
+        hTransform.translation = {6.3f, 0, 0};
 //        hTransform.rotation = Quat::FromEulerAngles({-120, 0, 120});
 
         auto lerpController = new LerpRotation(this, shape);
@@ -304,12 +304,12 @@ void Application::scene() {
         auto shape = new SquareShape();
 
         auto&& hTransform = shape->transform;
-        hTransform.translation = {2.1, 2.1, 0};
+        hTransform.translation = {2.1f, 2.1f, 0};
 //        hTransform.rotation = Quat::FromEulerAngles({0, 180, 0});
 
         auto lerpController = new LerpPosition(this, shape);
         lerpController->InitialPosition = hTransform.translation;
-        lerpController->EndPosition = {4.1, 3.5 + 8.4, -4.1};
+        lerpController->EndPosition = {4.1f, 3.5f + 8.4f, -4.1f};
         Simulation::instance()->Add(lerpController);
 
         auto lerpRotationController = new LerpRotation(this, shape);
@@ -324,17 +324,17 @@ void Application::scene() {
         auto shape = new LineShape();
 
         auto&& hTransform = shape->transform;
-        hTransform.translation = {0, 6.3, 0};
+        hTransform.translation = {0, 6.3f, 0};
 //        hTransform.rotation = Quat::FromEulerAngles({0, 0, -90});
 
         auto lerpController = new LerpPosition(this, shape);
         lerpController->InitialPosition = hTransform.translation;
-        lerpController->EndPosition = {3.05, 3.05, -4.1};
+        lerpController->EndPosition = {3.05f, 3.05f, -4.1f};
         Simulation::instance()->Add(lerpController);
 
         auto lerpRotationController = new LerpRotation(this, shape);
         lerpRotationController->InitialRotation = Quat::FromEulerAngles({0, 0, 0});
-        lerpRotationController->EndRotation = Quat::FromEulerAngles({0, 0, -90});
+        lerpRotationController->EndRotation = Quat::FromEulerAngles({0, 0, -90.f});
         Simulation::instance()->Add(lerpRotationController);
 
         shape->SetParent(shapesRoot);
@@ -396,7 +396,7 @@ LShape::LShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {0, 2.1, 0};
+        hTransform.translation = {0, 2.1f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -413,7 +413,7 @@ LShape::LShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {0, 4.2, 0};
+        hTransform.translation = {0, 4.2f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -430,7 +430,7 @@ LShape::LShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {2.1, 0, 0};
+        hTransform.translation = {2.1f, 0, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -466,7 +466,7 @@ LInverseShape::LInverseShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {0, 2.1, 0};
+        hTransform.translation = {0, 2.1f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -483,7 +483,7 @@ LInverseShape::LInverseShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {0, 4.2, 0};
+        hTransform.translation = {0, 4.2f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -500,7 +500,7 @@ LInverseShape::LInverseShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {-2.1, 0, 0};
+        hTransform.translation = {-2.1f, 0, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -536,7 +536,7 @@ SquareShape::SquareShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {0, 2.1, 0};
+        hTransform.translation = {0, 2.1f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -553,7 +553,7 @@ SquareShape::SquareShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {2.1, 2.1, 0};
+        hTransform.translation = {2.1f, 2.1f, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -570,7 +570,7 @@ SquareShape::SquareShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {2.1, 0, 0};
+        hTransform.translation = {2.1f, 0, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -623,7 +623,7 @@ LineShape::LineShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {4.2, 0, 0};
+        hTransform.translation = {4.2f, 0, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);
@@ -640,7 +640,7 @@ LineShape::LineShape() : Actor() {
         object->mesh = MeshManager::instance()->Get("Cube");
         object->textures.push_back(TextureManager::instance()->Get("skysphere"));
         auto&& hTransform = object->transform;
-        hTransform.translation = {6.3, 0, 0};
+        hTransform.translation = {6.3f, 0, 0};
 
         object->preDraw = [program]() {
             glUniform1f(program->GetUniformLocationId("Roughness"), 0.5f);

@@ -1,5 +1,5 @@
-#cmake_minimum_required(VERSION 3.6)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.6)
+#cmake_minimum_required(VERSION 2.8)
 project(3Engine)
 
 
@@ -51,20 +51,6 @@ target_link_libraries(${PROJECT_NAME}
         ${CMAKE_THREAD_LIBS_INIT})
 
 # Post build commands
-
-if (WIN32) # WINDOWS post build
-
-    set(GLUT_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/freeglut-msvc/bin/x64/freeglut.dll")
-    set(GLEW_SHARED_LIBRARY "${CMAKE_HOME_DIRECTORY}/dependencies/glew-msvc/bin/Release/x64/glew32.dll")
-
-    add_custom_target(CopyLibsEngine
-            COMMAND ${CMAKE_COMMAND} -E echo Copying Libraries
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLUT_SHARED_LIBRARY} ${LIBRARY_OUTPUT_PATH}
-            COMMAND ${CMAKE_COMMAND} -E copy ${GLEW_SHARED_LIBRARY} ${LIBRARY_OUTPUT_PATH}
-            )
-    add_dependencies(${PROJECT_NAME} CopyLibsEngine)
-endif ()
-
 
 add_custom_target(CopyFilesEngine
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}

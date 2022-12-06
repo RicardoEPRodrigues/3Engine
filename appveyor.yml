@@ -5,9 +5,9 @@ image:
 - Visual Studio 2017
 install:
   - ps: New-Item -ItemType Directory -Force -Path dependencies
-  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-msvc.zip' -FileName 'SDL2-msvc.zip'
-  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-image-msvc.zip' -FileName 'SDL2-image-msvc.zip'
-  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip' -FileName 'glew-msvc.zip'
-  - ps: Expand-Archive -Path SDL2-msvc.zip –DestinationPath dependencies
-  - ps: Expand-Archive -Path SDL2-image-msvc.zip –DestinationPath dependencies
-  - ps: Expand-Archive -Path glew-msvc.zip –DestinationPath dependencies
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-msvc.zip' -FileName 'SDL2.zip'
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/SDL2-image-msvc.zip' -FileName 'SDL2-image.zip'
+  - ps: Start-FileDownload 'https://github.com/RicardoEPRodrigues/Dependencies/raw/master/glew-msvc.zip' -FileName 'GLEW.zip'
+  - ps: Expand-Archive -Path SDL2.zip –DestinationPath dependencies
+  - ps: Expand-Archive -Path SDL2-image.zip –DestinationPath dependencies
+  - ps: Expand-Archive -Path GLEW.zip –DestinationPath dependencies

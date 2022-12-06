@@ -1,5 +1,5 @@
-#cmake_minimum_required(VERSION 3.6)
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.6)
+#cmake_minimum_required(VERSION 2.8)
 project(3EngineExecutable)
 
 add_custom_target(CopyFilesExe DEPENDS CopyFilesEngine

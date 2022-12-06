@@ -195,7 +195,7 @@ namespace ThreeEngine {
         // pitch (y-axis rotation)
         number sinp = 2 * (q.T * q.Y - q.Z * q.X);
         if (std::abs(sinp) >= 1)
-            pitch = std::copysign(M_PI / 2, sinp); // use 90 degrees if out of range
+            pitch = std::copysign(Maths::PI / 2, sinp); // use 90 degrees if out of range
         else
             pitch = std::asin(sinp);
 
