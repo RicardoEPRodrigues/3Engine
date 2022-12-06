@@ -7,7 +7,7 @@
 #include "../../../3Engine/src/Shapes/BasicShapes.h"
 #include "../../../3Engine/src/Shapes/MeshLoader.h"
 #include "../../../3Engine/src/Shader/TextureLoader.h"
-#include "../../../3Engine/src/Camera/Perspective.h"
+#include "../../../3Engine/src/Camera/Camera.h"
 #include "../../../3Engine/src/Utilities/Managers.h"
 #include "../../../3Engine/src/Utilities/Simulation.h"
 #include "../../../3Engine/src/Actors/SkySphere.h"
@@ -79,14 +79,13 @@ namespace ThreeEngine {
         { // Camera handling
             number width = config["window"]["x"];
             number height = config["window"]["y"];
-            number aspect = width / height;
             Camera* camera = new Camera(
                     static_cast<GLuint>(
                             ShaderProgramManager::instance()->Get(
                                     "default")->GetUniformBlockBidingId(
                                     "SharedMatrices")),
-                    new Perspective(30, aspect, 1, 1000),
-                    new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
+                    new PerspectiveCameraMatrix(30, width, height, 1, 1000),
+                    new CameraMatrix(Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100))))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
             );
             sceneGraph->SetCamera(camera);

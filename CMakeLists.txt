@@ -164,9 +164,14 @@ set(GRAPHIC_LIBRARIES
         SDL2_IMAGE
         #        SDL2_TTF
         #        SDL2_MIXER
-        SDL2MAIN
         GLEW
         ${OPENGL_LIBS})
+
+if (WIN32) # WINDOWS
+    set(GRAPHIC_LIBRARIES
+            ${GRAPHIC_LIBRARIES}
+            SDL2MAIN)
+endif ()
 
 ###############################
 # Project files and executables/libraries

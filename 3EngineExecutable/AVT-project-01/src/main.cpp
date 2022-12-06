@@ -9,7 +9,7 @@
 
 #include "../../../3Engine/src/Shapes/MeshLoader.h"
 #include "../../../3Engine/src/Shader/TextureLoader.h"
-#include "../../../3Engine/src/Camera/Ortho.h"
+#include "../../../3Engine/src/Camera/Camera.h"
 #include "../../../3Engine/src/Utilities/Managers.h"
 #include "../../../3Engine/src/Utilities/Simulation.h"
 #include "../../../3Engine/src/Actors/SkySphere.h"
@@ -147,8 +147,8 @@ void Application::scene() {
                                 "default")->GetUniformBlockBidingId(
                                 "SharedMatrices")),
 //                new Perspective(30, aspect, 1, 1000),
-                new Ortho(-30, 30, -30, 30, 1, 1000),
-                new Matrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
+                new CameraMatrix(Matrix::OrthoMatrix(-30, 30, -30, 30, 1, 1000)),
+                new CameraMatrix(Matrix::TranslationMatrix(Vector(0, 0, -100)))
 //                    new LookAt({5, 0.5f, 0}, {0, 0.5f, 0}, {0, 1, 0})
         );
         sceneGraph->SetCamera(camera);
