@@ -16,9 +16,11 @@ namespace ThreeEngine {
 
         Matrix3();
 
-        Matrix3(TMatrix<3, 3>);
+        Matrix3(const TMatrix<3, 3>& m);
 
-        explicit Matrix3(Matrix2 m);
+        Matrix3(const struct Matrix& m);
+
+        Matrix3(const struct Matrix2& m);
 
         Matrix3(number in0, number in1, number in2,
                 number in3, number in4, number in5,
@@ -48,7 +50,7 @@ namespace ThreeEngine {
          */
         friend Vector operator*(const Vector& v, const Matrix3& m);
 
-        operator Matrix2() const {
+        explicit operator Matrix2() const {
             Matrix2 m;
             for (int i = 0; i < 2; ++i) {
                 for (int j = 0; j < 2; ++j) {

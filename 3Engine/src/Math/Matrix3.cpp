@@ -4,13 +4,15 @@
  * Copyright (C) Ricardo Rodrigues 2017 - All Rights Reserved
  */
 #include "Matrix3.h"
+#include "Matrix2.h"
+#include "Matrix.h"
 
 using namespace std;
 
 namespace ThreeEngine {
     Matrix3::Matrix3() : TMatrix() {}
 
-    Matrix3::Matrix3(TMatrix<3, 3> m) {
+    Matrix3::Matrix3(const TMatrix<3, 3>& m) {
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 3; ++j) {
                 M[i][j] = m.M[i][j];
@@ -18,9 +20,14 @@ namespace ThreeEngine {
         }
     }
 
-    Matrix3::Matrix3(Matrix2 m) : Matrix3(m.M[0][0], m.M[0][1], 0,
+    Matrix3::Matrix3(const Matrix2& m) : Matrix3(m.M[0][0], m.M[0][1], 0,
                                           m.M[1][0], m.M[1][1], 0,
                                           0, 0, 1) {}
+
+    Matrix3::Matrix3(const Matrix& m) : Matrix3(m.M[0][0], m.M[0][1], m.M[0][2],
+                                         m.M[1][0], m.M[1][1], m.M[1][2],
+                                         m.M[2][0], m.M[2][1], m.M[2][2]) {}
+
 
     Matrix3::Matrix3(number in0, number in1, number in2, number in3, number in4, number in5,
                      number in6, number in7, number in8) {
@@ -80,7 +87,7 @@ namespace ThreeEngine {
         Vector vNorm = vector;
         vNorm.Normalize();
         Matrix3 dualM = DualMatrix(vNorm);
-        Matrix3 dualMSqr = (TMatrix) dualM * dualM;
+        Matrix3 dualMSqr = Matrix3(((TMatrix) dualM) * ((TMatrix) dualM));
         return Identity() + (TMatrix) dualM * sin(angleInRadian) +
                (1.0f - cos(angleInRadian)) * dualMSqr;
     }

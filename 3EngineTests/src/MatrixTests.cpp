@@ -5,10 +5,14 @@
 #ifndef THREEENGINE_MATRIXTESTS_H
 #define THREEENGINE_MATRIXTESTS_H
 
+#include "tests.h"
+
 #include "../../3Engine/src/Math/Matrix.h"
 #include "../../3Engine/src/Math/TMatrix.h"
 #include "../../3Engine/src/Math/Matrix3.h"
 #include "../../3Engine/src/Math/Matrix2.h"
+
+using namespace ThreeEngine;
 
 SCENARIO("matrix arithmetic testing", "[matrix]") {
 
@@ -148,7 +152,7 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                 Matrix3 m31 = Matrix3(1, 2, 2,
                                       0, 1, 5,
                                       6, 7, 8);
-                Matrix2 m21 = m31;
+                Matrix2 m21 = Matrix2(m31);
                 Matrix2 m21Result = Matrix2(1, 2,
                                             0, 1);
 
@@ -355,7 +359,7 @@ SCENARIO("matrix arithmetic testing", "[matrix]") {
                               0, 6, 2, 0,
                               3, 8, 1, 4,
                               1, 8, 5, 6);
-            Matrix3 m3 = m;
+            Matrix3 m3 = Matrix3(m);
             Matrix3 m3Result = Matrix3(5, 2, 6,
                                        0, 6, 2,
                                        3, 8, 1);

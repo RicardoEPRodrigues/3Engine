@@ -6,9 +6,11 @@ project(3EngineTests)
 
 set(TESTS_SOURCE_FILES
         src/catch.hpp
+        src/tests.h
         src/tests.cpp
-        src/VectorTests.h
-        src/MatrixTests.h)
+        src/VectorTests.cpp
+        src/MatrixTests.cpp
+        )
 
 add_executable(3EngineTests ${TESTS_SOURCE_FILES})
 target_link_libraries(3EngineTests 3Engine)

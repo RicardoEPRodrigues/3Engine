@@ -5,10 +5,13 @@
 #ifndef THREEENGINE_VECTORTESTS_H
 #define THREEENGINE_VECTORTESTS_H
 
+#include "tests.h"
+
 #include "../../3Engine/src/Math/Vector.h"
 #include "../../3Engine/src/Math/Vector2.h"
 #include "../../3Engine/src/Math/Vector4.h"
-#include "catch.hpp"
+
+using namespace ThreeEngine;
 
 SCENARIO("vectors arithmetic testing", "[vector]") {
 
@@ -299,12 +302,12 @@ SCENARIO("vectors arithmetic testing", "[vector]") {
             CHECK(true);
         }
 
-        WHEN("Distance to Plane") {
-            Vector v1 = {1, 0, 0},
-                    v2 = {0, 1, 0},
-                    p1 = {1, 1, 2};
-            CHECK(true);
-        }
+//        WHEN("Distance to Plane") {
+//            Vector v1 = {1, 0, 0},
+//                    v2 = {0, 1, 0},
+//                    p1 = {1, 1, 2};
+//            CHECK(true);
+//        }
     }
 }
 

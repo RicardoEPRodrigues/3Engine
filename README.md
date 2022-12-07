@@ -16,7 +16,7 @@ You might want to visit the [Release page](https://github.com/RicardoEPRodrigues
 
 ---
 
-## How to Run in Linux?
+## How to Build in Linux?
 
 ### Setup
 
@@ -42,7 +42,7 @@ If you don't use a Ubuntu/Debian OS, please install the following dependencies.
 
 ### Compiling
 
-In Linux we created a CMake project and currently use CLion IDE. To open a project open the `CMakeLists.txt` file with CLion.
+In Linux, we created a CMake project and currently use CLion IDE. To open a project open the `CMakeLists.txt` file with CLion.
 
 You can use any other IDE that supports CMake (CodeLite, Kdevelop, etc.).
 
@@ -81,7 +81,7 @@ make AppImage
 
 To run in just double-click on the `3Engine.AppImage` file in the `bin/AppImage` folder.
 
-## How to Run in Windows?
+## How to Build in Windows?
 
 ### Dependencies
 
@@ -95,19 +95,17 @@ The inclusion of the said libraries are needed, yet dependencies are ignored to 
 
 1. Create a folder named `dependencies` and place inside the libraries. Rename them as shown:
 
-    * SDL2-msvc
-    * SDL2-image-msvc
-    * glew-msvc
+    * SDL2
+    * SDL2-image
+    * GLEW
 
 ### Compiling
 
-In Windows we created a Visual Studio Project. We recommend Visual Studio 2017 Community edition. To open the project just double-click the `3Engine.sln`.
+As in Linux, we make use of CMake to compile the code. We use the Visual Studio compiler. We recommend Visual Studio 2017 Community edition. To open the project just open the base project folder with Visual Studio or the `CMakeLists.txt` with Clion (if you use Clion you still need to have VS installed).
 
 Set the configuration to `Debug` or `Release`, and the platform to `x64`. Then just press Play to run.
 
-The default build folder is in 'bin' folder. `.dll` files from *SDL2* and *GLEW* are copied to the build folder.
-
-The JSON config files are copied from `config` folder to a same named folder on the build folder.
+The default build folder is in 'bin' folder. `.dll` files from *SDL2* and *GLEW* are copied to the build folder (along with other needed files).
 
 ### Run
 
