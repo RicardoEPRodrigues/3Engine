@@ -69,7 +69,11 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_HOME_DIRECTORY}/cmake")
 ###############################
 # OS Specific Definitions
 
+set(CMAKE_GENERATOR "Unix Makefiles" CACHE INTERNAL "" FORCE)
+
 if (WIN32) # WINDOWS
+    set(CMAKE_GENERATOR "Visual Studio 17 2022" CACHE INTERNAL "" FORCE)
+
     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
     add_definitions(-DOS_WIN)
